@@ -4,7 +4,10 @@ DreamObjects, etc). Aimed at developers who wish to learn how to use
 DreamCloud standard APIs to automate common tasks.
 
 The documentation is organized by product and level of knowledge
-required to understand the documentation:
+required to understand the documentation, stored in the source/
+directory in sphinx formatted files. The source/ dir contains subdirs,
+one for each of DreamCloud products and subdirs to group articles
+based on depth of knowledge required by readers:
 
  - dreamcompute
    - gettingstarted
@@ -15,14 +18,28 @@ required to understand the documentation:
    - tutorials
    - api-docs
 
-Publishing to zendesk
----------------------
-Use the publish.py script in the https://github.com/dreamhost/zendesk-publish-script
-Instructions are in that repo on how to publish to zendesk
+ ```note```: some of the directories above are empty and the content
+you see in the Knowledge Base comes from other sources, like upstream
+OpenStack docs forked by DreamHost and published automatically.
 
 Building the Documentation
 --------------------------
-run `tox` in the repo to build the documentation, the build directories are in
-build/html/$category/$section/$article
-For example, the dreamcompute tutorials documentation will be built to
+
+run `tox` in the repo to build the documentation, the build
+directories are in build/html/$category/$section/$article. For
+example, the dreamcompute tutorials documentation will be built to    
 "build/html/dreamcompute/tutorials/"
+
+How to contribute
+-----------------
+
+Fork the repository, modify or add articles, run tox for basic syntax
+checks and verify the built html locally before committing. Once
+you're satisfied with the local results, create a pull request.
+
+Publishing to DreamHost Knowledge Base
+--------------------------------------
+
+The built html files are automatically published via Jenkins job to
+(DreamHost Knowledge Base)[https://support.dreamhost.com] once merged
+to master.
