@@ -1,5 +1,20 @@
 #! /bin/bash
 
+if [ -z "$EMAIL" ] ; then
+    echo '$EMAIL is not set'
+    exit 1
+fi
+
+if [ -z "$ZENDESK_PASS" ] ; then
+    echo '$ZENDESK_PASS is not set'
+    exit 1
+fi
+
+if [ -z "$ZENDESK_URL" ] ; then
+    echo '$ZENDESK_URL is not set'
+    exit 1
+fi
+
 # Build the documentation
 tox
 
@@ -24,6 +39,10 @@ for file in $files ; do
             dir="`dirname $file`"
             section_id="`cat ${dir}/section_id.txt`"
             python zendesk-publish-script/publish.py "$html_file" "$section_id"
+            stat=`echo $?`
+            if [ $? -ne 0 ] ; then
+                exit 1
+            fi
         fi
     fi
 done
