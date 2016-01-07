@@ -79,4 +79,4 @@ or
 Type in your current password when prompted.
 
 .. meta::
-   :labels: DreamCompute password reset
+   :labels: password reset

@@ -206,7 +206,7 @@ Compatibility notes
   per-bucket CORS was originally available.
 * As of 2015/10/01, per-bucket CORS policies are fully supported, but the
   wildcard in some places remains in place to avoid inadvertent breakages.
-* As of 2015/11/14, this wildcard WILL become unavailable, and users who need
+* As of 2016/02/01, this wildcard WILL become unavailable, and users who need
   CORS functionality MUST deploy their own CORS configuration to the relevant
   buckets.
 

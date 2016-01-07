@@ -72,4 +72,4 @@ The final step is to connect via ssh:
     * Connect via ssh -i ~/path/to/key dhc-user@IPADDRESS
 
 .. meta::
-    :labels: ssh key keys ssh-keys
+    :labels: ssh key

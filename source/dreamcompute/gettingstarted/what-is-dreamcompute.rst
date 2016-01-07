@@ -42,8 +42,8 @@ Network
 Networking services for DreamCompute are delivered through OpenStack's
 `Neutron service <http://wiki.openstack.org/Neutron>`_, coupled with
 `VMWare's NSX <http://www.vmware.com/products/nsx>`_ (Network Virtualization
-Platform), and DreamHost's own `Akanda <https://github.com/dreamhost/akanda>`_
-project.
+Platform), and DreamHost's own `Akanda <https://github.com/openstack/astara>`_
+project which has been picked up by OpenStack and renamed Astara.
 
 VMWare's NSX, in concert with OpenStack Neutron, provides the ability to create
 private networks per tenant with high availability and network hardware
@@ -100,7 +100,7 @@ FAQ
 How do I sign up?
 -----------------
 
-DreamCompute is in open beta and your first month of the 2GB plan is free. If
+DreamCompute is in open beta and your first month of the 1GB plan is free. If
 you've already got a DreamHost account then you can sign up from your
 `Control Panel <http://panel.dreamhost.com/dreamcompute>`_. If not, sign up from
 our site - http://www.dreamhost.com/cloud/dreamcompute
@@ -115,7 +115,7 @@ within the resource caps of the quota. It allows for a lot of flexibility
 without having to guess what your bill will be at the end of the month.
 
 DreamCompute has three simple pricing plans with a flat monthly fee, so no more
-confusing invoices or bills. Prices start at only $19/month.
+confusing invoices or bills. Prices start at only $10/month.
 
 Where are the data centers located?
 -----------------------------------

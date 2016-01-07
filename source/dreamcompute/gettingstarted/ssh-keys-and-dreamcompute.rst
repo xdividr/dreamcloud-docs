@@ -147,4 +147,4 @@ contents of your public key, then click "Import
 Keypair" to save it.
 
 .. meta::
-    :labels: ssh key keys ssh-keys
+    :labels: ssh key

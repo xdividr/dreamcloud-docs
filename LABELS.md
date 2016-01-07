@@ -52,6 +52,7 @@ nginx
 irc
 jabber
 dns
+cdn
 
 Operating Systems
 ~~~~~~~~~~~~~~~~~
@@ -99,6 +100,7 @@ move
 rename
 authentication
 backup
+reset
 
 Product-specific components
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -124,3 +126,4 @@ Other topics
 quota
 billing
 CORS
+password

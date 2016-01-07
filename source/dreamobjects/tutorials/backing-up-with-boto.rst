@@ -81,15 +81,17 @@ First,  define some variables we know we'll need later:
 
 Here's what they will all be used for:
 * *tmp_dir* defines where we will temporarily store our backup file.
+
 * *backup_bucket* defines the bucket name where we will be storing
-our backups.  You need to first create the bucket and it has to
-be uniquely named so you'll have to use something more creative
-than "website-backup".
+  our backups.  You need to first create the bucket and it has to
+  be uniquely named so you'll have to use something more creative
+  than "website-backup".
+
 * *target_dir* defines the name of the directory we want to use
-as the basis for our backups.  In this example I'm assuming
-it's just your website directory.  If you have more than one
-website, I'll talk about how to manage that best a bit later
-on.
+  as the basis for our backups.  In this example I'm assuming
+  it's just your website directory.  If you have more than one
+  website, I'll talk about how to manage that best a bit later
+  on.
 
 Create the backup file
 ^^^^^^^^^^^^^^^^^^^^^^
