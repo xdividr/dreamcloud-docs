@@ -26,10 +26,10 @@ with Amazon S3 to specify permissions on buckets and objects.
 .. figure:: images/01_DreamObjects.fw.png
 
 - using **Signed URL**: a signed URL allows an object to be accessed
-regardless of its permissions. In the `DreamObjects control panel`_,
-open your bucket and navigate to the object in the DreamObjects file
-browser. Right-click the download link to copy a URL. By default, this
-link is valid for one hour.
+  regardless of its permissions. In the `DreamObjects control panel`_,
+  open your bucket and navigate to the object in the DreamObjects file
+  browser. Right-click the download link to copy a URL. By default,
+  this link is valid for one hour.
 
 .. figure:: images/02_DreamObjects.fw.png
 
