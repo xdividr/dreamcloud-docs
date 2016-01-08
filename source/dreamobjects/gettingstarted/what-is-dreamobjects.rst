@@ -20,8 +20,10 @@ page`_:
 
 DreamObjects can be used is used for diverse purposes such as
 storing photos, songs, documents, backups and more without worrying
-of filling up a disk. While DreamObjects may resemble an FTP system,
-some details are very different:
+of filling up a disk.
+
+While DreamObjects may resemble an FTP system, some details are very
+different:
 
 - files (`objects`) stored in DreamObjects have a unique identifier in
   the form of URI.
@@ -56,6 +58,7 @@ Control Panel`_.
 
 .. _DreamHost Control Panel: https://panel.dreamhost.com/index.cgi?tree=cloud.objects
 .. _Wikipedia Object Storage page: https://en.wikipedia.org/wiki/Object_storage
+.. _Acceptable Use Policy: http://dreamhost.com/acceptable-use-policy/
 
 .. meta::
     :labels: create rename upload download bucket object acl
