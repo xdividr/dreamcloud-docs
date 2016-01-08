@@ -4,6 +4,8 @@ build/html/dreamobjects/gettingstarted/:
     - what-is-dreamobjects.html
     - account-management.html
     - uploading-files-using-the-control-panel.html
+    - how-to-monitor-usage-and-cost-of-dreamcompute.rst
+    - how-to-upload-files-in-dreamobjects.rst
     - what-are-users.html
     - what-are-objects.html
     - what-are-keys.html
@@ -33,7 +35,6 @@ build/html/dreamobjects/tutorials/:
     - swift-examples-java.html
     - swift-examples-python.html
     - swift-examples-ruby.html
-    - swift-protocolsinteroperability.html
     - uploading-screenshots-to-dreamobjects.html
     - what-is-dreamspeed.html
     - how-to-use-arq-with-dreamobjects.html
