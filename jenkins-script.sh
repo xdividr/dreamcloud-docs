@@ -18,11 +18,26 @@ fi
 # Build the documentation
 tox
 
+if [ $? -ne 0 ] ; then
+    echo "tox build failed"
+    exit 1
+fi
+
 # Clone the publish script
 git clone https://github.com/dreamhost/zendesk-publish-script.git
 
+if [ $? -ne 0 ] ; then
+    echo "Could not clone the publishing script"
+    exit 1
+fi
+
 # create a venv to run the publishing script
 virtualenv venv ; . venv/bin/activate ; pip install -r zendesk-publish-script/requirements.txt
+
+if [ $? -ne 0 ] ; then
+    echo "Failed to make a virtualenv with the proper modules"
+    exit 1
+fi
 
 # Get all the files that have changed since the last time the script published
 # to zendesk
