@@ -1,5 +1,5 @@
 =======================================
-How to download files into DreamObjects
+How to download files from DreamObjects
 =======================================
 
 There are a wide variety of ways to download files from DreamObjects,
