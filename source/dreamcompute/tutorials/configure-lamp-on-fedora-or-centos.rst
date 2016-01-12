@@ -61,17 +61,11 @@ Configuration
 The below links contain details on the configuration of each part of the newly
 installed LAMP stack.
 
-`Apache Directories and Main Configuration Files`_
+.. `Apache Directories and Main Configuration Files`_: 215231178-How-to-Configure-Apache-on-DreamCompute-Running-Fedora-or-Centos
 
-.. `MySQL Configuration`_
+.. `PHP Configuration Files`_: 215231208-How-to-Configure-PHP-on-DreamCompute-running-Fedora-or-Centos
 
-`PHP Configuration Files`_
-
-.. _Apache Directories and Main Configuration Files: 215231178-How-to-Configure-Apache-on-DreamCompute-Running-Fedora-or-Centos
-
-.. _MySQL Configuration: FIXME
-
-.. _PHP Configuration Files: 215231208-How-to-Configure-PHP-on-DreamCompute-running-Fedora-or-Centos
+.. _MySQL Configuration: 215879487-How-to-Configure-MYSQL-on-DreamCompute-running-Debian-or-Ubuntu
 
 .. meta::
     :labels: php apache mysql fedora centos nova

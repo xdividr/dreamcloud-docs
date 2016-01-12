@@ -48,11 +48,15 @@ and hitting enter.
     Building dependency tree
     Reading state information... Done
     The following extra packages will be installed:
-    libaio1 libdbd-mysql-perl libdbi-perl libhtml-template-perl libmysqlclient18 mysql-client-5.5 mysql-common mysql-server-5.5 mysql-server-core-5.5
+    libaio1 libdbd-mysql-perl libdbi-perl libhtml-template-perl
+    libmysqlclient18 mysql-client-5.5 mysql-common mysql-server-5.5
+    mysql-server-core-5.5
     Suggested packages:
     libipc-sharedcache-perl libterm-readkey-perl tinyca
     The following NEW packages will be installed:
-    libaio1 libdbd-mysql-perl libdbi-perl libhtml-template-perl libmysqlclient18 mysql-client-5.5 mysql-common mysql-server mysql-server-5.5
+    libaio1 libdbd-mysql-perl libdbi-perl libhtml-template-perl
+    libmysqlclient18 mysql-client-5.5 mysql-common mysql-server
+    mysql-server-5.5
     mysql-server-core-5.5
     0 upgraded, 10 newly installed, 0 to remove and 1 not upgraded.
     Need to get 9,696 kB of archives.
@@ -66,7 +70,8 @@ should have a strong password.
 .. code::
 
     Configuring mysql-server-5.5
-    While not mandatory, it is highly recommended that you set a password for the MySQL administrative "root" user.
+    While not mandatory, it is highly recommended that you set a
+    password for the MySQL administrative "root" user.
     If this field is left blank, the password will not be changed.
     New password for the MySQL "root" user:
 

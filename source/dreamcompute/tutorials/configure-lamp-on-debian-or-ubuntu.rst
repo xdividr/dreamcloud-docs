@@ -79,12 +79,6 @@ Configuration
 The below links contain details on the configuration of each part of the newly
 installed LAMP stack.
 
-`Apache Directories and Main Configuration Files`_
-
-`MySQL Configuration`_
-
-`PHP Configuration Files`_
-
 .. _Apache Directories and Main Configuration Files: 215879457-How-to-Configure-Apache-on-DreamCompute-Running-Debian-or-Ubuntu
 
 .. _MySQL Configuration: 215879487-How-to-Configure-MYSQL-on-DreamCompute-running-Debian-or-Ubuntu

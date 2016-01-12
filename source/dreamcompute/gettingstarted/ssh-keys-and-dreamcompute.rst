@@ -2,38 +2,38 @@
 How to upload an SSH key via the web UI
 =======================================
 
-DreamCompute utilizes ssh keys for accessing your instances, instead of using
-passwords alone.  This is done for increased security and simplifies managing
-users for OpenStack (the public key is injected into the instance at boot).
-This prevents needing to modify files or passwords on the operating system on
-startup.
+DreamCompute utilizes ssh keys for accessing your instances, instead
+of using passwords alone.  This is done for increased security and
+simplifies managing users for OpenStack (the public key is injected
+into the instance at boot). This prevents needing to modify files or
+passwords on the operating system on startup.
 
-SSH keypairs are managed on the
-`Access & Security - Keypairs <https://dashboard.dreamcompute.com/project/access_and_security/?tab=access_security_tabs__keypairs_tab>`_
+SSH keypairs are managed on the `Access & Security - Keypairs`_
 section of the dashboard.
 
 SSH Key Components
 ~~~~~~~~~~~~~~~~~~
 
-There are two parts to an SSH key: a private key and a public key.  The private
-key is known only to you and should be safeguarded.  On unix-based systems such
-as Mac and Linux, the private key is generally stored in:
+There are two parts to an SSH key: a private key and a public key.
+The private key is known only to you and should be safeguarded.  On
+unix-based systems such as Mac and Linux, the private key is generally
+stored in:
 
 .. code-block:: bash
 
     /home/myuser/.ssh/id_rsa
 
-The public key can be shared with any server that you would like ssh access
-to.  Similarly, the public key will be stored in:
+The public key can be shared with any server that you would like ssh
+access to.  Similarly, the public key will be stored in:
 
 .. code-block:: bash
 
     /home/myuser/.ssh/id_rsa.pub
 
 SSH keys generated on Windows systems using the
-`PuTTY <http://www.chiark.greenend.org.uk/~sgtatham/putty/>`_ key generator
-(puttygen.exe) are not stored in a uniform location, but instead where the
-user chooses to save them.
+`PuTTY <http://www.chiark.greenend.org.uk/~sgtatham/putty/>`_ key
+generator (puttygen.exe) are not stored in a uniform location, but
+instead where the user chooses to save them.
 
 Create a new SSH key
 ~~~~~~~~~~~~~~~~~~~~
@@ -41,30 +41,31 @@ Create a new SSH key
 via the DreamCompute dashboard
 ------------------------------
 
-The easiest way to generate a key is to have DreamCompute generate one for
-you.  You can do this by going to the DreamCompute
-`Access & Security - Keypairs <https://dashboard.dreamcompute.com/project/access_and_security/?tab=access_security_tabs__keypairs_tab>`_
-dashboard.  On the top right, click the "Create
-Keypair" button, give the key a name, and click "Create Keypair".  Your
-browser will start downloading the private key named the same as they name
-given with a .pem file extension.  Save this file for later user as your
-id_rsa private key file.
+The easiest way to generate a key is to have DreamCompute generate one
+for you.  You can do this by going to the DreamCompute `Access &
+Security - Keypairs <https://dashboard.dreamcompute.com/project/access_and_security/?tab=access_security_tabs__keypairs_tab>`_
+dashboard.  On the top right, click the "Create Keypair" button, give
+the key a name, and click "Create Keypair".  Your browser will start
+downloading the private key named the same as they name given with a
+.pem file extension.  Save this file for later user as your id_rsa
+private key file.
 
 via puttygen.exe
 ----------------
 
 This program can be downloaded from the
-`PuTTY <http://www.chiark.greenend.org.uk/~sgtatham/putty/>`_ website.  After
-running the program, click on the "generate" button, and follow the
-instructions to generate random data.  When complete, you can click the "save
-private key" button to save the .ppk (PuTTY Private Key File) file for use
-with PuTTY later.  The text at the top labeled "Public key for pasting into
-OpenSSH authorized_keys file" can be copy/pasted into a text file for
-importing into the DreamCompute dashboard and other future uses.  The "save
-public key" button saves a modified version of the public key that won't
-directly import into the DreamCompute dashboard.  Save these files in a safe
-location.  The final step is to continue to the
-Import an Existing section to import the key into DreamCompute.
+`PuTTY <http://www.chiark.greenend.org.uk/~sgtatham/putty/>`_ website.
+After running the program, click on the "generate" button, and follow
+the instructions to generate random data.  When complete, you can
+click the "save private key" button to save the .ppk (PuTTY Private
+Key File) file for use with PuTTY later.  The text at the top labeled
+"Public key for pasting into OpenSSH authorized_keys file" can be
+copy/pasted into a text file for importing into the DreamCompute
+dashboard and other future uses.  The "save public key" button saves a
+modified version of the public key that won't directly import into the
+DreamCompute dashboard.  Save these files in a safe location.  The
+final step is to continue to the Import an Existing section to import
+the key into DreamCompute.
 
 Here is an example of the puttygen.exe program:
 
@@ -82,8 +83,8 @@ When run:
 STEP 1: Enter a file name to save private key to (**hit enter for the
 recommended default that you see in parenthesis**).
 
-STEP 2: Enter a password (recommended). You can press enter twice to not have
-a password.
+STEP 2: Enter a password (recommended). You can press enter twice to
+not have a password.
 
 The output looks like this:
 
@@ -111,20 +112,17 @@ The output looks like this:
     |   ..*E.         |
     +-----------------+
 
-The final step is to continue to the
-Import an Existing SSH Key section to import the key
-into DreamCompute.
+The final step is to continue to the Import an Existing SSH Key
+section to import the key into DreamCompute.
 
 Checking For An Existing Key
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For a Windows system, there isn't an easy way to find
-where keys were generated or stored.  A private key
-generated from puttygen.exe is saved with the .ppk file
-extension, but the other files it generates has no
-default extension.  You could search your system for
-.ppk files and perhaps find your public key in the same
-location.
+For a Windows system, there isn't an easy way to find where keys were
+generated or stored.  A private key generated from puttygen.exe is
+saved with the .ppk file extension, but the other files it generates
+has no default extension.  You could search your system for .ppk files
+and perhaps find your public key in the same location.
 
 On Mac and Linux systems, you can check in the above
 described location:
@@ -137,14 +135,13 @@ described location:
 Import an Existing SSH key into the Dashboard
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Find the public key file, and open it to copy its
-contents.  Next, go to the DreamCompute
-`Access & Security - Keypairs
-<https://dashboard.dreamcompute.com/project/access_and_security/?tab=access_security_tabs__keypairs_tab>`_
-dashboard and click on
-"Import Keypair".  Give it a name and paste in the
-contents of your public key, then click "Import
-Keypair" to save it.
+Find the public key file, and open it to copy its contents.  Next, go
+to the DreamCompute `Access & Security - Keypairs`_ dashboard and
+click on "Import Keypair".  Give it a name and paste in the contents
+of your public key, then click "Import Keypair" to save it.
+
+
+.. _Access & Security - Keypairs: https://dashboard.dreamcompute.com/project/access_and_security/?tab=access_security_tabs__keypairs_tab
 
 .. meta::
-    :labels: ssh key
+    :labels: ssh key mac linux windows

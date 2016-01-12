@@ -31,28 +31,27 @@ private key" button to save it into a .ppk file.
 
 Now you can open PuTTY and navigate to the Connection
 -> SSH -> Auth setting page to click the "browse"
-button near the "Private key file for
-authentification" field.  Select the .ppk file you
-generated and then click open.  You can now navigate
-to the "Session" setting page, and enter into the host
-name field "dhc-user@" followed immediately by your
-instance's public ip address.  Click Open to start
-your session.
+button near the "Private key file for authentication"
+field.  Select the .ppk file you generated and then
+click open.  You can now navigate to the "Session"
+setting page, and enter into the host name field
+"dhc-user@" followed immediately by your instance's
+public ip address.  Click Open to start your session.
 
 Using Mac & Linux
 -----------------
 
-On unix based systems, the key will need to setup
+On Unix based systems, the ssh key will need to setup
 first.  There are several ways to do this:
 
 * Configure as your main key
-    * Copy the key or .pem file to your home directory, to the ~/.ssh/id_rsa
-      file.
+    * Copy the key or .pem file to your home directory,
+      to the ~/.ssh/id_rsa file.
 
 * Configure as an alternative key
-    * Copy the key or .pem file to a safe place, and then edit our
-      ~/.ssh/config file to specify that connections to that specific host
-      will use this alternate key.
+    * Copy the key or .pem file to a safe place, and then edit
+      your ~/.ssh/config file to specify that connections to
+      that specific host will use this alternate key.
 
     .. code-block:: bash
 
@@ -72,4 +71,4 @@ The final step is to connect via ssh:
     * Connect via ssh -i ~/path/to/key dhc-user@IPADDRESS
 
 .. meta::
-    :labels: ssh key
+    :labels: ssh key mac linux windows
