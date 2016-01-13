@@ -4,8 +4,8 @@ build/html/dreamobjects/gettingstarted/:
     - what-is-dreamobjects.html
     - account-management.html
     - uploading-files-using-the-control-panel.html
-    - how-to-monitor-usage-and-cost-of-dreamcompute.rst
-    - how-to-upload-files-in-dreamobjects.rst
+    - how-to-monitor-usage-and-cost-of-dreamcompute.html
+    - how-to-upload-files-in-dreamobjects.html
     - what-are-users.html
     - what-are-objects.html
     - what-are-keys.html
@@ -23,18 +23,6 @@ build/html/dreamobjects/tutorials/:
     - how-to-use-crossftp-with-dreamobjects.html
     - how-to-use-duck-with-dreamobjects.html
     - how-to-use-s3cmd-with-dreamobjects.html
-    - s3-commons.html
-    - s3-example-cpp.html
-    - s3-example-csharp.html
-    - s3-example-java.html
-    - s3-example-perl.html
-    - s3-example-php2.html
-    - s3-example-python.html
-    - s3-example-ruby.html
-    - swift-commons.html
-    - swift-examples-java.html
-    - swift-examples-python.html
-    - swift-examples-ruby.html
     - uploading-screenshots-to-dreamobjects.html
     - what-is-dreamspeed.html
     - how-to-use-arq-with-dreamobjects.html
@@ -48,6 +36,19 @@ build/html/dreamobjects/tutorials/:
 build/html/dreamobjects/api-docs/:
   section_id: 203167028
   articles:
+    - s3-commons.html
+    - s3-example-cpp.html
+    - s3-example-csharp.html
+    - s3-example-java.html
+    - s3-example-perl.html
+    - s3-example-php2.html
+    - s3-example-python.html
+    - s3-example-ruby.html
+    - swift-commons.html
+    - swift-examples-java.html
+    - swift-examples-python.html
+    - swift-examples-ruby.html
+    - swift-protocolsinteroperability.html
     - s3-acl.html
     - s3-authentication.html
     - s3-bucketops.html
