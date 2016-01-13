@@ -1,3 +1,4 @@
+=========================================================
 What are Buckets in DreamObjects and How Do You Use Them?
 =========================================================
 
@@ -88,7 +89,7 @@ Options for editing a Bucket are limited, but you can:
 Deleting a Bucket
 -----------------
 
-1. Navigate to the (`Panel > ‘Could Services’ > ‘DreamObjects’
+1. Navigate to the (`Panel > ‘Cloud Services’ > ‘DreamObjects’
    <https://panel.dreamhost.com/index.cgi?tree=cloud.objects&>`_) page in your
    DreamHost panel.
 2. Click the ‘Manage’ tab.

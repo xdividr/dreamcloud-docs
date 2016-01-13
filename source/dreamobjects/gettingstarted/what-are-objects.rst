@@ -1,8 +1,6 @@
+=========================================================
 What are Objects in DreamObjects and How Do You Use Them?
 =========================================================
-
-Objects
-~~~~~~~
 
 Objects are files that are uploaded into DreamObjects.
 

@@ -1,8 +1,6 @@
+=======================================================
 What are Users in DreamObjects and How Do You Use Them?
 =======================================================
-
-Users
-~~~~~
 
 * DreamObjects Users are added separately, and are distinct from any other users
   in the panel.
