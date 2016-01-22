@@ -1,6 +1,5 @@
-build/html/dreamobjects/gettingstarted/:
-  section_id: 203167008
-  articles:
+203167008:
+  build/html/dreamobjects/gettingstarted/:
     - what-is-dreamobjects.html
     - account-management.html
     - uploading-files-using-the-control-panel.html
@@ -11,9 +10,8 @@ build/html/dreamobjects/gettingstarted/:
     - what-are-keys.html
     - what-are-buckets.html
 
-build/html/dreamobjects/tutorials/:
-  section_id: 203167018
-  articles:
+203167018:
+  build/html/dreamobjects/tutorials/:
     - backing-up-with-boto.html
     - backing-up-with-duplicity.html
     - dreamobjects-cname.html
@@ -33,9 +31,8 @@ build/html/dreamobjects/tutorials/:
     - how-to-use-transmit-for-ios-with-dreamobjects.html
     - how-to-use-transmit-with-dreamobjects.html
 
-build/html/dreamobjects/api-docs/:
-  section_id: 203167028
-  articles:
+203167028:
+  build/html/dreamobjects/api-docs/:
     - s3-commons.html
     - s3-example-cpp.html
     - s3-example-csharp.html
