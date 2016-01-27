@@ -18,19 +18,21 @@ DreamObjects.
 Installing AWS CLI
 ~~~~~~~~~~~~~~~~
 
-There are downloads available for Windows in .msi format that can be installed
-directly.
+Depending on the operating system you are running, there are several options.
 
-For Mac and Linux, the suggested installation is through python "pip".
+For Windows there are files in .msi format that can be installed directly.
 
-The basic install on your home or work computer can be accomplished with:
+For Mac and Linux, the suggested installation is through python "pip".  To do
+this, run the following command on your local computer:
 
-    .. code::
-        $ pip install awscli
+.. code::
+    $ pip install awscli
 
 To install the client on a DreamHost shared, VPS or dedicated server will
-require the use of python virtualenv and then using its pip to install the
-AWS CLI client locally with the same pip install command above.
+require the use of python virtualenv and then using its "pip" to install the
+AWS CLI client locally with the same pip install command above.  Please see
+the `Python <http://wiki.dreamhost.com/Python#Virtualenv>`_ article for
+specifics on how to accomplish this.
 
 Configuring AWS CLI
 ~~~~~~~~~~~~~~~~~
