@@ -26,6 +26,7 @@ For Mac and Linux, the suggested installation is through python "pip".  To do
 this, run the following command on your local computer:
 
 .. code::
+
     $ pip install awscli
 
 To install the client on a DreamHost shared, VPS or dedicated server will
@@ -48,6 +49,7 @@ things:
    commands.
 
 .. code::
+
     $ aws configure get default.s3.signature_version
     s3v4
     $ aws configure set default.s3.signature_version ""
@@ -57,6 +59,7 @@ things:
    by hitting enter.
 
 .. code::
+
     $ aws configure
     AWS Access Key ID [None]: 
     AWS Secret Access Key [None]:
