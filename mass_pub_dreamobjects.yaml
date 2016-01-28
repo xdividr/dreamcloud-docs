@@ -30,6 +30,7 @@
     - how-to-use-sharex-with-dreamobjects.html
     - how-to-use-transmit-for-ios-with-dreamobjects.html
     - how-to-use-transmit-with-dreamobjects.html
+    - how-to-use-aws-cli-with-dreamobjects.html
 
 203167028:
   build/html/dreamobjects/api-docs/:
