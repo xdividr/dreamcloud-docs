@@ -1,6 +1,6 @@
-==================================
+====================================
 How to use AWS CLI with DreamObjects
-==================================
+====================================
 
 Overview
 ~~~~~~~~
@@ -16,7 +16,7 @@ The following instructions help you install and configure AWS CLI to work with
 DreamObjects.
 
 Installing AWS CLI
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 Depending on the operating system you are running, there are several options.
 
@@ -36,10 +36,10 @@ the `Python <http://wiki.dreamhost.com/Python#Virtualenv>`_ article for
 specifics on how to accomplish this.
 
 Configuring AWS CLI
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 This client has features that apply to many services offered by Amazon, but
-for this tutorial we only are concerned with using the S3 functionality in 
+for this tutorial we only are concerned with using the S3 functionality in
 combination with DreamObjects.  To use the S3 features, you must ensure a few
 things:
 
@@ -53,7 +53,7 @@ things:
     $ aws configure get default.s3.signature_version
     s3v4
     $ aws configure set default.s3.signature_version ""
-   
+
 2. Run the following command to input your access and secret keys for AWS CLI
    to store them rypted) for you.  Accept the default region and output format
    by hitting enter.
@@ -61,7 +61,7 @@ things:
 .. code::
 
     $ aws configure
-    AWS Access Key ID [None]: 
+    AWS Access Key ID [None]:
     AWS Secret Access Key [None]:
     Default region name [None]:
     Default output format [None]:
@@ -114,6 +114,7 @@ Example Commands
 **Deleting an empty bucket**
 
 .. code::
+
     $ aws --endpoint-url http://objects.dreamhost.com s3 rb s3://newbucketname/
     remove_bucket: s3://newbucketname/
 
