@@ -15,7 +15,6 @@
     - backing-up-with-boto.html
     - backing-up-with-duplicity.html
     - dreamobjects-cname.html
-    - guide.html
     - how-to-use-arq-with-dreamobjects.html
     - how-to-use-cloudberry-backup-with-dreamobjects.html
     - how-to-use-crossftp-with-dreamobjects.html
@@ -33,6 +32,7 @@
 
 203167028:
   build/html/dreamobjects/api-docs/:
+    - guide.html
     - s3-commons.html
     - s3-example-cpp.html
     - s3-example-csharp.html
