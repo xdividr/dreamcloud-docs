@@ -81,14 +81,6 @@ the private IP:
 
         ssh 10.10.10.5
 
-See also
-~~~~~~~~
-
-If you’re looking for more info on jump hosts, proxies, and SSH
-configuration, check out this `wikibook
-<https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Proxies_and_Jump_Hosts>`_
-as a great reference and inspiration for this article.
-
 .. _how to upload SSH keys in DreamCompute: 214843617-How-to-upload-an-SSH-key-via-the-web-UI
 
 .. meta::
