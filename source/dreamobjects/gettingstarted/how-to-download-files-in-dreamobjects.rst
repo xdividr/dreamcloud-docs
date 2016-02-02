@@ -55,7 +55,7 @@ it meets the conditions of the `Acceptable Use Policy`_.
 .. _DreamObjects control panel: https://panel.dreamhost.com/index.cgi?tree=cloud.objects&
 .. _Panel > Could Services > DreamObjects: https://panel.dreamhost.com/index.cgi?tree=cloud.objects&
 .. _Acceptable Use Policy: http://dreamhost.com/acceptable-use-policy/
-.. _supports Access Control Lists (ACL): /articles/215916697-Understand-DreamObjects-S3-compatible-Access-Control-List
+.. _supports Access Control Lists (ACL): 215916697-Understand-DreamObjects-S3-compatible-Access-Control-List
 
 .. meta::
     :labels: desktop upload object bucket
