@@ -32,7 +32,7 @@ this, run the following command on your local computer:
 To install the client on a DreamHost shared, VPS or dedicated server will
 require the use of python virtualenv and then using its "pip" to install the
 AWS CLI client locally with the same pip install command above.  Please see
-the `Python <http://wiki.dreamhost.com/Python#Virtualenv>`_ article for
+the Python_ article for
 specifics on how to accomplish this.
 
 Configuring AWS CLI
@@ -131,6 +131,8 @@ values such as "private" or "public-read".
     upload: syncdir/file3 to s3://newbucketname/file3
     upload: syncdir/file1 to s3://newbucketname/file1
     upload: syncdir/file2 to s3://newbucketname/file2
+
+.. _Python: 215489338-Installing-virtualenv-and-custom-modules-in-Python
 
 .. meta::
     :labels: linux mac windows aws awscli
