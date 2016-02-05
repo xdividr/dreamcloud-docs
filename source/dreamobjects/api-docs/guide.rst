@@ -183,7 +183,7 @@ Digging Deeper
 Now that you've walked through this simple guide, you should be ready to dive
 deeper into DreamObjects! Take a look at the api documentation
 
-.. _the example script: https://raw.githubusercontent.com/dreamhost/dreamcloud-docs/master/dreamobjects/tutorials/source/demo/demo.py
+.. _the example script: https://raw.githubusercontent.com/dreamhost/dreamcloud-docs/master/source/dreamobjects/api-docs/demo/demo.py
 
 .. meta::
     :labels: api S3 boto acl bucket
