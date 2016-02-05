@@ -237,10 +237,5 @@ API
 * `Amazon S3: REST API, Bucket DELETE CORS <http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketDELETEcors.html>`_
 * `Amazon S3: REST API, Bucket GET CORS <http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETcors.html>`_
 
-Examples
---------
-
-* `(SCHOCK) Hosting Web fonts on a CDN?  You’re going to need some CORS. <http://schock.net/articles/2013/07/03/hosting-web-fonts-on-a-cdn-youre-going-to-need-some-cors/>`_
-
 .. meta::
     :labels: CORS
