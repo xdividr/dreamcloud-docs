@@ -10,7 +10,7 @@ same IP address to save cost and to allow applications to horizontally
 scale out instances running on multiple virtual machines.
 
 One of the most popular open source load balancers is
-`HAProxy <http://www.haproxy.org/HAProxy>`_. It is well supported,
+`HAProxy <http://www.haproxy.org/>`_. It is well supported,
 featureful, high performing, and widely available.
 
 In this tutorial, we will be creating a virtual machine inside of
