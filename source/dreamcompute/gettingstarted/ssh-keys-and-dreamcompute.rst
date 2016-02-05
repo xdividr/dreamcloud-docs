@@ -88,7 +88,7 @@ not have a password.
 
 The output looks like this:
 
-.. code-block:: bash
+.. code::
 
     $ ssh-keygen -t rsa
     Generating public/private rsa key pair.
