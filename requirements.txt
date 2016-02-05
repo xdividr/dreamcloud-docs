@@ -1,5 +1,5 @@
 requests
 beautifulsoup4
 openstackdocstheme
-sphinx
+sphinx==1.3.3
 doc8
