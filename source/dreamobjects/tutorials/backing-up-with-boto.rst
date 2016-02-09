@@ -25,10 +25,7 @@ end, but it'll be more fun if you follow along with me yourself!
 
 Set Up DreamObjects and Create a Bucket
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Follow
-http://wiki.dreamhost.com/DreamObjects_End_User_Guide#Users
-and
-http://wiki.dreamhost.com/DreamObjects_End_User_Guide#Buckets
+Follow `DreamObjects User Tutorial`_ and `DreamObjects Bucket Tutorial`_
 to setup a user and bucket in your DreamObjects account that we will use
 for this tutorial.
 
@@ -237,6 +234,9 @@ DreamObjects daily, but what if you want to do more
 with those backups?  In a future post, I'll talk about
 how to list your available backups and choose one to
 restore from.
+
+.. _DreamObjects User Tutorial: 215986327-What-are-Users-in-DreamObjects-and-How-Do-You-Use-Them-
+.. _DreamObjects Bucket Tutorial: 215321178-What-are-Buckets-in-DreamObjects-and-How-Do-You-Use-Them-
 
 .. meta::
     :labels: python linux boto backup
