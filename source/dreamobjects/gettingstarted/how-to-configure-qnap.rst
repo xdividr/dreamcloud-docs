@@ -27,4 +27,4 @@ device on your account.
 .. _App Center: https://www.qnap.com/i/en/app_center
 
 .. meta::
-    :labels: object
+    :labels: nas backup object
