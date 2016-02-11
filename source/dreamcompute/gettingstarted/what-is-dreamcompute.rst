@@ -160,7 +160,7 @@ redundant data copies, delivering enterprise-grade durability. During the Beta
 period, we recommend that you take a regular snapshot of your disk volume as a
 back up, which can be stored locally.
 
-.. _DreamObjects:: https://dreamhost.com/cloud/storage
+.. _DreamObjects: https://dreamhost.com/cloud/storage
 
 .. meta::
     :labels: nova glance keystone akanda neutron network dashboard
