@@ -88,6 +88,7 @@ owncloud
 sharex
 duplicati
 cyberduck
+strongsync
 
 Actions
 ~~~~~~~
