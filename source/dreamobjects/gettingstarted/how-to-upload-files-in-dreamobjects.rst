@@ -11,8 +11,8 @@ mainly depending on your preferences and skills.
   desktop and command line utilities to WordPress plugins to mobile
   apps, that allow you to store files in DreamObjects. All of these
   applications use the RESTful API, making it easy to integrate with
-  DreamObjects.
-- using the REST API and any of the libraries supporting either the S3
+  DreamObjects. Check the `Advanced Tutorials`_ to learn how to use them.
+- using the `REST API` and any of the libraries supporting either the S3
   or OpenStack Swift API.
 
 Objects are limited to 10TBs, but must be uploaded in 5GB chunks.
@@ -30,6 +30,7 @@ it meets the conditions of the `Acceptable Use Policy`_.
 
 .. _DreamObjects control panel: https://panel.dreamhost.com/index.cgi?tree=cloud.objects&
 .. _Acceptable Use Policy: http://dreamhost.com/acceptable-use-policy/
-
+.. _Advanced Tutorials: /hc/en-us/sections/203167018
+.. _REST API: /hc/en-us/sections/203167028-API-Documentation
 .. meta::
     :labels: desktop upload object bucket
