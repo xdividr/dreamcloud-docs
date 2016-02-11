@@ -12,7 +12,7 @@ mainly depending on your preferences and skills.
   apps, that allow you to store files in DreamObjects. All of these
   applications use the RESTful API, making it easy to integrate with
   DreamObjects. Check the `Advanced Tutorials`_ to learn how to use them.
-- using the `REST API` and any of the libraries supporting either the S3
+- using the `REST API`_ and any of the libraries supporting either the S3
   or OpenStack Swift API.
 
 Objects are limited to 10TBs, but must be uploaded in 5GB chunks.
