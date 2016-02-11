@@ -20,12 +20,6 @@ You can set up your DreamObjects connection inside Cyberduck in two ways:
 * Semi-automatically by downloading a preconfigured connection profile.
 * Manually by creating a new profile.
 
-Before you can connect CyberDuck with DreamObjects, you must enable
-DreamObjects and create the required user and keys. If you haven't already
-completed this step, please visit the following page for further information:
-
-* [[DreamObjects_End_User_Guide#How_do_I_use_it.3F|How to use DreamObjects]]
-
 Connecting Cyberduck with DreamObjects semi-automatically using a connection profile
 ------------------------------------------------------------------------------------
 
