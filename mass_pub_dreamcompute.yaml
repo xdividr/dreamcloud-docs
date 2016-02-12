@@ -4,6 +4,7 @@
     - password-reset.html
     - ssh-keys-and-dreamcompute.html
     - connect-to-an-instance-with-ssh-keys.html
+    - network-topology.html
 
 203167038:
   build/html/dreamcompute/tutorials/:
