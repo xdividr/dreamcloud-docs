@@ -35,6 +35,7 @@
     - how-to-use-strongsync-with-dreamobjects.html
     - how-to-use-updraftplus-with-dreamobjects.html
     - how-to-use-aws-cli-with-dreamobjects.html
+    - how-to-use-dropshare-with-dreamobjects.html
 
 203167028:
   build/html/dreamobjects/api-docs/:
