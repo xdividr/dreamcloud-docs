@@ -64,4 +64,4 @@ Configure Dropshare
 .. _bucket: 215321178-What-are-Buckets-in-DreamObjects-and-How-Do-You-Use-Them-
 
 .. meta::
-    :labels: dropshare
+    :labels: dropshare macos desktop S3 object
