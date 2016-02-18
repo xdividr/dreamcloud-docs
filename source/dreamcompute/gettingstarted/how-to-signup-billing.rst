@@ -52,10 +52,10 @@ default maximum amounts per customer are set as follows:
  - Instances: 32
 
 These limits can be overridden to allow for specific needs. Please
-contact FIXME.
+contact `DreamHost Support team`_.
 
-How much does it cost to store in DreamCompute?
------------------------------------------------
+How much does storage cost in DreamCompute?
+-------------------------------------------
 
 For a limited time, each new customer of DreamCompute will have a
 maximum amount of 10 volumes with 100Gb maximum each. When prices will
@@ -95,8 +95,8 @@ Where are the data centers located?
 
 DreamHost cloud services are currently located in the United States, but
 accessible from anywhere globally.  DreamCompute is located in our
-Ashburn, Virginia (US-East) datacenter, and DreamObjects is located in our
-Irvine, California (US-West) datacenter.
+Ashburn, Virginia (US-East) datacenter. DreamObjects is located in our
+Irvine, California (US-West) datacenter, in Ashburn and in Portland.
 
 Will DreamCompute scale?
 ------------------------
@@ -121,9 +121,9 @@ from the old to the new volume.
 Can I scale my CPU or memory on a running instance?
 ---------------------------------------------------
 
-If you wish to add more memory or vCPU capacity to an instance, you will need
-to start a new larger instance.  First, take a snapshot of your current
-instance, then start a new larger instance based on that snapshot.
+You can add or reduce the amount of memory or vCPU size of any
+DreamCompute instance by using the API, the `OpenStack command line
+client`_ or the `web dashboard`_.
 
 Is my data backed up?
 ---------------------
@@ -143,7 +143,11 @@ creates new replicas from redundant data copies, delivering
 enterprise-grade durability. Those are security and safety measures
 and don't constitute a back up in practical terms.
 
+
+.. _web dashboard: /hc/en-us/articles/215912848-How-launch-and-manage-instances-with-the-DreamCompute-dashboard
+.. _OpenStack Command Line Client: hc/en-us/articles/215912748-How-to-change-the-size-of-your-DreamCompute-server
 .. _DreamObjects: https://dreamhost.com/cloud/storage
+.. _DreamHost Support Team: https://panel.dreamhost.com/index.cgi?tree=support.msg&
 
 .. meta::
     :labels: nova glance keystone akanda neutron network dashboard
