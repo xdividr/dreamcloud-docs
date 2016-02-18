@@ -58,3 +58,7 @@ target/
 
 # Build location
 /firstapp/build*/
+
+# temp files
+.*.swp
+*.*~
