@@ -15,5 +15,6 @@
     - configure-lamp-on-debian-or-ubuntu.html
     - configure-lamp-on-fedora-or-centos.html
     - configure-mysql-on-debian-or-ubuntu.html
+    - configure-mariadb-on-fedora-or-centos.html
     - configure-php-on-debian-or-ubuntu.html
     - configure-php-on-fedora-or-centos.html
