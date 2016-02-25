@@ -53,6 +53,8 @@ irc
 jabber
 dns
 cdn
+mysql
+mariadb
 
 Operating Systems
 ~~~~~~~~~~~~~~~~~

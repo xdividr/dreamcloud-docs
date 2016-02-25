@@ -2,12 +2,13 @@
 How to Configure LAMP on DreamCompute running Fedora or Centos
 ==============================================================
 
-LAMP (Linux, Apache, MySQL, PHP) stacks are a popular way to create web
-service solutions that offer consistent tools and capabilities between
-multiple systems.  DreamHost shared, VPS and dedicated hosting services are
-based on these same services, and you can use it for your DreamCompute
-instance as well.  These instructions assume you run a Fedora- or CentOS-based
-system as they have their own specific configuration and file hierarchy.
+LAMP (Linux, Apache, MySQL (we'll use mariadb instead), PHP) stacks are a
+popular way to create web service solutions that offer consistent tools and
+capabilities between multiple systems.  DreamHost shared, VPS and dedicated
+hosting services are based on these same services, and you can use it for your
+DreamCompute instance as well.  These instructions assume you run a Fedora-
+(19+) or CentOS-based (7+) system as they have their own specific
+configuration and file hierarchy.
 
 Installation
 ~~~~~~~~~~~~
@@ -23,27 +24,24 @@ commands:
 
 .. code::
 
-    service httpd start
-    chkconfig httpd on
+    systemctl start httpd
+    systemctl enable httpd
 
-Install MySQL client and server with the following command:
+Install MariaDB client and server with the following command:
 
 .. code::
 
-    yum install mysql mysql-server
+    yum install mariadb-server
 
-MySQL can be started and the system told to start it on boot with these
+MariaDB can be started and the system told to start it on boot with these
 commands:
 
 .. code::
 
-    service mysqld start
-    chkconfig mysqld on
-    chkconfig mariadb on
+    systemctl start mariadb
+    systemctl enable mariadb
 
-Both operating systems use "mysqld" for the service start.  For the chkconfig,
-CentOS uses "mysqld" because it still runs official MySQL packages and Fedora
-uses "mariadb" because it uses the MariaDB MySQL packages.
+Both operating systems use "mariadb" for the service start.
 
 PHP can be installed with the following command:
 
@@ -63,13 +61,15 @@ installed LAMP stack.
 
 `Apache Directories and Main Configuration Files`_
 
+`MariaDB Configuration`_
+
 `PHP Configuration Files`_
 
 .. _Apache Directories and Main Configuration Files: 215231178-How-to-Configure-Apache-on-DreamCompute-Running-Fedora-or-Centos
 
 .. _PHP Configuration Files: 215231208-How-to-Configure-PHP-on-DreamCompute-running-Fedora-or-Centos
 
-.. _MySQL Configuration: 215879487-How-to-Configure-MYSQL-on-DreamCompute-running-Debian-or-Ubuntu
+.. _MariaDB Configuration: 217471877-How-to-Configure-MariaDB-on-DreamCompute-running-Fedora-or-Centos
 
 .. meta::
-    :labels: php apache mysql fedora centos nova
+    :labels: php apache mariadb mysql fedora centos nova
