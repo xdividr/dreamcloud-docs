@@ -75,7 +75,7 @@ jump host called “jump”.
           host and port.
 
 #. To connect to your private instances from a local machine, SSH to
-the private IP:
+   the private IP:
 
     .. code::
 
