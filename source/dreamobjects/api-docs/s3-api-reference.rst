@@ -9,11 +9,11 @@ DreamObjects supports the Amazon S3 API, so it’s easy to use your
 existing apps, but unlike Amazon, DreamObjects uses RGW, the RADOS
 Gateway that is built on the CEPH file store.
 
-- Common Entities
-- Authentication and ACLs
-- Service Operations
-- Bucket Operations
-- Object Operations
+- :ref:`Common_Entities`
+- :ref:`Authentication`
+- :ref:`Service_Operations`
+- :ref:`Bucket_Operations`
+- :ref:`Object_Operations`
 
 
 Features Support
@@ -91,6 +91,7 @@ The following common request header fields are not supported:
 | x-amz-version-id       |  Response |
 +------------------------+-----------+
 
+.. _Common_Entities:
 
 Common Entities
 ---------------
@@ -205,6 +206,8 @@ Common Response Status
 | ``500``       | InternalError                     |
 +---------------+-----------------------------------+
 
+.. _Authentication:
+
 How To Authenticate to DreamObjects with S3 API
 -----------------------------------------------
 
@@ -282,6 +285,8 @@ object:
 | ``FULL_CONTROL`` | Grantee has full permissions for object in the bucket. | Grantee can read or write to the object ACL. |
 +------------------+--------------------------------------------------------+----------------------------------------------+
 
+.. _Service_Operations:
+
 Understand DreamObjects S3-compatible Service Operations
 --------------------------------------------------------
 
@@ -324,6 +329,8 @@ Response Entities
 +----------------------------+-------------+-----------------------------------------------------------------+
 | ``DisplayName``            | String      | The bucket owner's display name.                                |
 +----------------------------+-------------+-----------------------------------------------------------------+
+
+.. _Bucket_Operations:
 
 Understand DreamObjects S3-compatible Bucket Operations
 -------------------------------------------------------
@@ -651,6 +658,8 @@ Response Entities
 +-----------------------------------------+-------------+----------------------------------------------------------------------------------------------------------+
 | ``CommonPrefixes.Prefix``               | String      | The substring of the key after the prefix as defined by the ``prefix`` request parameter.                |
 +-----------------------------------------+-------------+----------------------------------------------------------------------------------------------------------+
+
+.. _Object_Operations:
 
 Understand DreamObjects S3-compatible Object Operations
 -------------------------------------------------------
