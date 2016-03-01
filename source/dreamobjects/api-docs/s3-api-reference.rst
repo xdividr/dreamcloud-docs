@@ -16,8 +16,8 @@ Gateway that is built on the CEPH file store.
 - :ref:`Object_Operations`
 
 
-Features Support
-~~~~~~~~~~~~~~~~
+Features Supported
+~~~~~~~~~~~~~~~~~~
 
 The following table describes the support status for current Amazon S3
 functional features:
