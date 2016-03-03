@@ -43,3 +43,11 @@ Publishing to DreamHost Knowledge Base
 The built html files are automatically published via Jenkins job to
 (DreamHost Knowledge Base)[https://support.dreamhost.com] once merged
 to master.
+
+Hacks we have to make things pretty
+-----------------------------------
+
+ - If you create a TOC with labels using :ref: to refer to them, insert the
+   TOC in '.. container:: table_of_content' and the Headers associated with
+   each item in the TOC will remain at the top of the screen as you scroll past
+   them
