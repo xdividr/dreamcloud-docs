@@ -5,11 +5,11 @@ How To Use DreamObjects S3-compatible API
 .. container:: table_of_content
 
     - :ref:`RADOS_S3_API`
-    - :ref:`Common_Entities`
-    - :ref:`Authentication`
-    - :ref:`Service_Operations`
-    - :ref:`Bucket_Operations`
-    - :ref:`Object_Operations`
+    - :ref:`Common_Entities_S3`
+    - :ref:`Authentication_S3`
+    - :ref:`Service_Operations_S3`
+    - :ref:`Bucket_Operations_S3`
+    - :ref:`Object_Operations_S3`
 
 .. _RADOS_S3_API:
 
@@ -95,7 +95,7 @@ The following common request header fields are not supported:
 | x-amz-version-id       |  Response |
 +------------------------+-----------+
 
-.. _Common_Entities:
+.. _Common_Entities_S3:
 
 Common Entities
 ---------------
@@ -210,7 +210,7 @@ Common Response Status
 | ``500``       | InternalError                     |
 +---------------+-----------------------------------+
 
-.. _Authentication:
+.. _Authentication_S3:
 
 How To Authenticate to DreamObjects with S3 API
 -----------------------------------------------
@@ -289,7 +289,7 @@ object:
 | ``FULL_CONTROL`` | Grantee has full permissions for object in the bucket. | Grantee can read or write to the object ACL. |
 +------------------+--------------------------------------------------------+----------------------------------------------+
 
-.. _Service_Operations:
+.. _Service_Operations_S3:
 
 Understand DreamObjects S3-compatible Service Operations
 --------------------------------------------------------
@@ -334,7 +334,7 @@ Response Entities
 | ``DisplayName``            | String      | The bucket owner's display name.                                |
 +----------------------------+-------------+-----------------------------------------------------------------+
 
-.. _Bucket_Operations:
+.. _Bucket_Operations_S3:
 
 Understand DreamObjects S3-compatible Bucket Operations
 -------------------------------------------------------
@@ -663,7 +663,7 @@ Response Entities
 | ``CommonPrefixes.Prefix``               | String      | The substring of the key after the prefix as defined by the ``prefix`` request parameter.                |
 +-----------------------------------------+-------------+----------------------------------------------------------------------------------------------------------+
 
-.. _Object_Operations:
+.. _Object_Operations_S3:
 
 Understand DreamObjects S3-compatible Object Operations
 -------------------------------------------------------
@@ -1070,4 +1070,4 @@ Syntax
     DELETE /{bucket}/{object}?uploadId= HTTP/1.1
 
 .. meta::
-    :labels: S3 bucket
+    :labels: S3 bucket object authentication

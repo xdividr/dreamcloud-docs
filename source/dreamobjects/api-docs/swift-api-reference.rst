@@ -2,6 +2,16 @@
 How To Use DreamObjects Swift Compatible API
 ============================================
 
+.. container:: table_of_content
+
+    - :ref:`Common_Entities_Swift`
+    - :ref:`Authentication_Swift`
+    - :ref:`Service_Operations_Swift`
+    - :ref:`Container_Operations_Swift`
+    - :ref:`Object_Operations_Swift`
+
+.. _Common_Entities_Swift:
+
 Common Entities
 ---------------
 
@@ -76,6 +86,7 @@ Response Status
 | 500           | InternalError                     |                   |
 +---------------+-----------------------------------+-------------------+
 
+.. _Authentication_Swift:
 
 How to Authenticate to DreamObjects with the Swift API
 ------------------------------------------------------
@@ -130,6 +141,8 @@ Access Control Lists
 
 TBD
 
+.. _Service_Operations_Swift:
+
 Understand DreamObjects Swift-compatible Service Operations
 -----------------------------------------------------------
 
@@ -177,6 +190,7 @@ Response Entities
 | bytes       | Integer     | Total container size                  |
 +-------------+-------------+---------------------------------------+
 
+.. _Container_Operations_Swift:
 
 Understand DreamObjects Swift-compatible Container Operations
 -------------------------------------------------------------
@@ -338,6 +352,7 @@ Request Headers
 | X-Container-Write   |               |                | No         |
 +---------------------+---------------+----------------+------------+
 
+.. _Object_Operations_Swift:
 
 Understand DreamObjects Swift-compatible Object Operations
 ----------------------------------------------------------
