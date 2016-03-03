@@ -5,6 +5,7 @@
     - ssh-keys-and-dreamcompute.html
     - connect-to-an-instance-with-ssh-keys.html
     - network-topology.html
+    - different-boot-disks-explained.html
 
 203167038:
   build/html/dreamcompute/tutorials/:
