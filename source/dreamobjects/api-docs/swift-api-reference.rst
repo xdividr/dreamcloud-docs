@@ -1,5 +1,5 @@
 ============================================
-How To Use DreamObjects Swift Compatible API
+How To Use DreamObjects Swift-Compatible API
 ============================================
 
 .. container:: table_of_content
