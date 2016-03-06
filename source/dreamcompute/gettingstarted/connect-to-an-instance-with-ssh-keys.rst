@@ -41,7 +41,7 @@ public ip address.  Click Open to start your session.
 Using Mac & Linux
 -----------------
 
-On Unix based systems, the ssh key will need to setup
+On Unix based systems, the ssh key will need to be setup
 first.  There are several ways to do this:
 
 * Configure as your main key
