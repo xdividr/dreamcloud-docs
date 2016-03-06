@@ -9,7 +9,7 @@ It's easy to reset your DreamCompute password in the DreamHost Control Panel.
 
 * Go to the `DreamCompute <https://panel.dreamhost.com/dreamcompute>`_ page in
   the control panel.
-* Click the "Login Details" button and then the "Reset My Password" button.
+* Click the "Reset My Password" link under your Tenant ID and Username.
 * Your new password will be displayed at the top of the page. Please note that
   a may take a few minutes for the change to take affect.
 
