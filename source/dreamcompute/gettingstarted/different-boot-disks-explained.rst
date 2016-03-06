@@ -5,22 +5,22 @@ What's the difference between ephemeral and volume boot disks?
 Different Boot Sources
 ----------------------
 
-There are several different kinds of sources to boot from in DreamCompute panel,
-but they all need to create some sort of virtual disk for the virtual machine
-to boot. The virtual disk can be either an *ephemeral* or *volume* boot disk.
-In the DreamCompute panel you see the options:
+There are several different kinds of sources to boot from in the DreamCompute
+panel, but they all need to create some sort of virtual disk for the virtual
+machine to boot. The virtual disk can be either an *ephemeral* or *volume* boot
+disk. In the DreamCompute panel you see the options:
 
-* **Image**: Creates an ephemeral disk from the image you choose
-* **Volume**: Boots an instance from a bootable volume
+* **Image**: Creates an ephemeral disk from the image you choose.
+* **Volume**: Boots an instance from an existing bootable volume.
 * **Image (create a new volume)**: Creates a bootable volume from the image
-  you choose and then boot an instance from it
+  you choose and then boots an instance from it.
 * **Volume snapshot (create a new volume)**: Creates a volume from the
-  volume snapshot you choose and boots an instance from it
+  volume snapshot you choose and boots an instance from it.
 
 Ephemeral Boot Disks
 --------------------
 
-Ephemeral disks are virtual disks that are create for the sole purpose of
+Ephemeral disks are virtual disks that are created for the sole purpose of
 booting a virtual machine and should be thought of as temporary.
 
 Ephemeral disks are useful if you aren't worried about needing to duplicate an
@@ -30,14 +30,12 @@ needs to be saved on it, instead of using the volume as the root of your OS.
 
 - **Do not use up volume quota**: If you have more instance quota, you can
   always boot it from an ephemeral disk even if you don't have any volume
-  quota left
+  quota left.
 - **Cannot be snapshotted**: This means you cannot duplicate an instance
   easily and you also can't use snapshots to back your instance up.
 - **Are destroyed when the instance is terminated**: This means if you want to
   temporarily delete an instance to free up some instance quota, you can't
-  without losing your data
-
-
+  without losing your data.
 
 Volume Boot Disks
 -----------------
