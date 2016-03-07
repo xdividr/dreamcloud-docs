@@ -47,14 +47,14 @@ How is my monthly data storage calculated?
 
 Your total data usage is monitored regularly and stored in the system
 as bytes. DreamHost uses the maximum bytes stored during the billing
-period, convert that to GB, then multiply by the appropriate rate.
+period, converts that to GB and then multiplied by the appropriate rate.
 
 How is my monthly download bandwidth calculated?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Download bandwidth is calculated based on metered data transferred out
 of DreamObjects. Similar to storage, download bandwidth is stored in
-bytes. The aggregate number of bytes downloaded is converted to GB
+bytes. The aggregate number of bytes downloaded is converted to GB and
 then multiplied by the download rate of 5¢ per GB.
 
 There is no charge for uploading data into DreamObjects.

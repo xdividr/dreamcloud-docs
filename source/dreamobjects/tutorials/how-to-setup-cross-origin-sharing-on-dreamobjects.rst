@@ -10,10 +10,6 @@ This aricle describes how to set up the Cross-Origin Resource Sharing
 intended for any users that need to set up DreamObjects for use across domains,
 such as WebFonts, or cross-domain uploads.
 
-If you already have a CORS configuration, please be aware that the DreamObjects
-default CORS policy will change in the future, and read the important
-**compatibility notes** at the end of this document.
-
 Background and use cases
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -49,6 +45,8 @@ any discussion of the effectiveness of this policy, web fonts must be able to
 work on web sites with specific graphic design needs. The CORS policy for a
 WebFont must specify that it’s permitted to download (GET request) the WebFont
 for use on a given website.
+
+This same-origin policy is mandated by the `CSS3-Fonts specification <http://www.w3.org/TR/css3-fonts/#same-origin-restriction>`_.
 
 DreamObjects CORS usage
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -181,22 +179,89 @@ support CORS policies, and the listing should not be taken as exhaustive or
 guaranteed correct (some clients have experienced broken CORS support at some
 points).
 
+s3cmd (1.6.0 and newer)
+-----------------------
+
+Since 1.6.0, s3cmd supports setting or deleting a CORS config; however it does
+not support getting it back except as a part of an "info" request.
+
+.. code-block:: bash
+
+    # Set the CORS rules
+    s3cmd setcors rules.xml s3://bucketname
+    # Delete the CORS rules
+    s3cmd delcors s3://bucketname
+    # Get bucket info including CORS rules
+    s3cmd info s3://bucketname
+
+Python/BOTO (pre-made XML)
+--------------------------
+
 The following is a minimal snippet of boto Python to deploy a CORS
 configuration to DreamObjects:
 
 .. code-block:: python
 
     from boto.s3.connection import S3Connection
-    host = ‘objects.dreamhost.com’
-    access_key = ...
-    secret_key = ...
-    conn = S3Connection(host=host,access_key_id=access_key, aws_secret_access_key=secret_key)
-    my_cors_conf = “””
+    host = 'objects.dreamhost.com'
+    access_key = '...'
+    secret_key = '...'
+    conn = S3Connection(host=host, aws_access_key_id=access_key, aws_secret_access_key=secret_key)
+    my_cors_conf = """
     <CORSConfiguration>
     <!-- policy goes here -->
     </CORSConfiguration>
-    “””
-    conn.set_cors_xml(my_cors_conf)
+    """
+    bucket = conn.get_bucket('examplebucketname')
+    bucket.set_cors_xml(my_cors_conf)
+
+Python/BOTO (Programmatic)
+--------------------------
+
+The following is a minimal snippet of boto Python to construct and deploy CORS
+configuration to DreamObjects:
+
+.. code-block:: python
+
+    import boto.s3.connection
+    import boto.s3.cors
+    import itertools
+
+    host = 'objects.dreamhost.com'
+    access_key = '...'
+    secret_key = '...'
+    bucket_name = '...'
+
+    conn = boto.s3.connection.S3Connection(host=host, aws_access_key_id=access_key, aws_secret_access_key=secret_key)
+    bucket = conn.get_bucket(bucket_name)
+
+    try:
+      corsobj = bucket.get_cors()
+    except:
+      corsobj = boto.s3.cors.CORSConfiguration()
+
+    id = 'DH-CORS-Example-ID1234' # each rule may have an optional ID, and if so they must be unique
+    domains = ['example.com', 'demo.com', ... ] # edit as needed
+    methods = ['GET', 'HEAD', 'PUT', 'POST', 'DELETE' ] # edit as needed, this covers AWS JS SDK + WebFont
+    ahdr = ['Authorization', 'Content-*', 'X-Amz-*', 'Origin', 'Host'] # edit as needed, this covers AWS JS SDK + WebFont
+    ehdr = ['ETag', 'Content-MD5']
+
+    # Construct the origins from domains, allowing HTTP, HTTPS, on the domain with and without 'www.'
+    # If you want to require HTTPS, you should remove http:// elements from this list.
+    origins = list(itertools.chain.from_iterable([('http://'+d, 'https://'+d, 'http://www.'+d, 'https://www.'+d) for d in domains]))
+    # Add the rule to the CORS object
+    corsobj.add_rule(methods, origins, id=id, allowed_header=ahdr, max_age_seconds=3600, expose_header=ehdr)
+
+    # This little bit of magic allows us to deduplicate CORS rules:
+    # 1. Allow us to compare CORSRule elements
+    def CORSRule_eq(self, other):
+        return self.__dict__ == other.__dict__
+    boto.s3.cors.CORSRule.__eq__ = CORSRule_eq
+    # 2. Now find unique elements
+    corsobj = boto.s3.cors.CORSConfiguration([key for key,_ in itertools.groupby(corsobj)])
+
+    # Put the updated CORS on the bucket
+    bucket.set_cors(corsobj)
 
 Compatibility notes
 ~~~~~~~~~~~~~~~~~~~
@@ -205,8 +270,8 @@ Compatibility notes
   the **\*** wildcard, which permitted ANY origin to be used; no
   per-bucket CORS was originally available.
 * As of 2015/10/01, per-bucket CORS policies are fully supported, but the
-  wildcard in some places remains in place to avoid inadvertent breakages.
-* As of 2016/02/01, this wildcard WILL become unavailable, and users who need
+  wildcard in some places remained in place to avoid inadvertent breakages.
+* As of 2016/02/01, this wildcard became unavailable, and users who need
   CORS functionality MUST deploy their own CORS configuration to the relevant
   buckets.
 
