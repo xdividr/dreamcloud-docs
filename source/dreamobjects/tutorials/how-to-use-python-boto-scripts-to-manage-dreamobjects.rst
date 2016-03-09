@@ -135,52 +135,11 @@ boto script below.
     #Finish the upload
     mp.complete_upload()
 
-Boto vs. Boto3
-~~~~~~~~~~~~~~
+Additional Examples
+~~~~~~~~~~~~~~~~~~~
 
-An example script from the `DreamObjects documentation <http://docs.dreamobjects.net/s3-examples/python.html>`_
-shows how to list available buckets.
-
-.. code:: python
-
-    import boto
-    import boto.s3.connection
-    access_key = 'put your access key here!'
-    secret_key = 'put your secret key here!'
-
-    conn = boto.connect_s3(
-        aws_access_key_id = access_key,
-        aws_secret_access_key = secret_key,
-        host = 'objects.dreamhost.com',
-        calling_format = boto.s3.connection.OrdinaryCallingFormat(),
-        )
-
-    for bucket in conn.get_all_buckets():
-        print "{name}\t{created}".format(
-            name = bucket.name,
-            created = bucket.creation_date,
-            )
-
-The latest version of boto, `boto3 <https://github.com/boto/boto3>`_, no longer
-takes a "host" parameter.  Instead, use it like below.
-
-.. code:: python
-
-    import boto3
-    access_key = 'put your access key here!'
-    secret_key = 'put your secret key here!'
-
-    s3 = boto3.resource('s3',
-        aws_access_key_id = access_key,
-        aws_secret_access_key = secret_key,
-        endpoint_url='http://objects.dreamhost.com',
-        )
-
-    for bucket in s3.buckets.all():
-        print("{name}\t{created}".format(
-            name=bucket.name,
-            created=bucket.creation_date,
-            ))
+For more examples of Python code using DreamObjects, please see
+`Sample Python Code Using DreamObjects <https://help.dreamhost.com/hc/en-us/articles/214948118-Sample-Python-Code-Using-DreamObjects-S3-compatible-API-And-Boto>`_.
 
 .. _Python: 215489338-Installing-virtualenv-and-custom-modules-in-Python
 
