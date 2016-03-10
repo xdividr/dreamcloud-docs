@@ -37,6 +37,7 @@
     - how-to-use-updraftplus-with-dreamobjects.html
     - how-to-use-aws-cli-with-dreamobjects.html
     - how-to-use-dropshare-with-dreamobjects.html
+    - dreamspeed-advanced-cache-settings.html
 
 203167028:
   build/html/dreamobjects/api-docs/:

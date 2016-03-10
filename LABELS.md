@@ -123,6 +123,7 @@ dashboard
 horizon
 key
 volume
+dreamspeed
 
 Other topics
 ~~~~~~~~~~~~
