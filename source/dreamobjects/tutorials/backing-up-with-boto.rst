@@ -38,11 +38,10 @@ only have to do this once.
 
 Brief Setup
 -----------
-We'll be creating a file called ".boto" (note the leading dot) in the home
+We'll be creating a file called *.boto* (note the leading dot) in the home
 directory of the user your website is hosted under.  Follow the
-instructions found on the boto wiki article to create the configuration
-file and set the permissions properly, then proceed to the next step.
-http://wiki.dreamhost.com/Boto
+instructions on `how to use Python boto library to manage DreamObjects`_,
+then proceed to the next step.
 
 The Script
 ----------
@@ -237,6 +236,7 @@ restore from.
 
 .. _DreamObjects User Tutorial: 215986327-What-are-Users-in-DreamObjects-and-How-Do-You-Use-Them-
 .. _DreamObjects Bucket Tutorial: 215321178-What-are-Buckets-in-DreamObjects-and-How-Do-You-Use-Them-
+.. _how to use Python boto library to manage DreamObjects: https://help.dreamhost.com/hc/en-us/articles/217473228
 
 .. meta::
     :labels: python linux boto backup
