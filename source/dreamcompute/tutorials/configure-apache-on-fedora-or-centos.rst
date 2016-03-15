@@ -44,7 +44,7 @@ with:
 
     chkconfig httpd on
 
-If you visit the floating IP in your browser for your DreamCompute
+If you visit the public IP in your browser for your DreamCompute
 instance, you are able to see the 'getting started' page.  You can
 find this IP on the `Instances`_ (IP Address column) or
 `Access & Security`_ (floating ips tab) panel pages.

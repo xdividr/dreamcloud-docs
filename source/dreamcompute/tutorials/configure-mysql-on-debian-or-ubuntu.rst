@@ -104,11 +104,8 @@ may wish to change:
     localhost), meaning that the MySQL service will only be accessible from
     the instance it is installed on.  If you want to connect to it from other
     DreamCompute instances, you can change this to your instances IPv4 or IPv6
-    private ip address.  If you want to connect to it from anywhere and not
-    just DreamCompute instances, you can provide the instances floating IPv4
-    address, or if the security group allows public IPv6 ingress/egress then
-    your IPv6 address as well.  Here is what an IPv6 configured mysql bind
-    variable looks like:
+    IP address.  Here is what an IPv6 configured mysql bind variable looks
+    like:
 
 .. code::
 

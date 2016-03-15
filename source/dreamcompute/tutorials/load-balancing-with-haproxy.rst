@@ -35,6 +35,10 @@ machine.
 
 2. Click **Associate Floating IP**.
 
+   .. note::
+
+        This is only necessary if you have private networking enabled
+
     *The following dialog box appears:*
 
 .. figure:: images/HAProxy_manage_floating_ip.fw.png
@@ -46,6 +50,10 @@ machine.
     * Once you've associated the IP address, give DreamCompute a few
       seconds to complete the association, and then you should be able
       to SSH into your instance via its IPv4 address.
+
+   .. note::
+
+        This is only necessary if you have private networking enabled
 
 .. figure:: images/HAProxy_SSH1.fw.png
 
@@ -170,7 +178,7 @@ Next, you'll need to activate HAProxy by setting ENABLED to 1 in
     sudo service haproxy restart
 
 Assuming that you have configured your DNS to point app1.domain.io and
-app2.domain.io to your floating IP address, you should be able to
+app2.domain.io to your public IP address, you should be able to
 access your applications via HAProxy. Congratulations!
 
 .. _Access & Security: https://dashboard.dreamcompute.com/project/access_and_security/
