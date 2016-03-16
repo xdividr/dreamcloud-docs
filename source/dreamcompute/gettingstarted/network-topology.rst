@@ -48,12 +48,13 @@ Other Features
 
 The Network Topology page also contains buttons on the upper right which open
 other parts of the DreamCompute dashboard, including:
-* Launch Instance &mdash; opens the
-`**Instances** <https://dashboard.dreamcompute.com/project/instances/>`_ page,
-* Create Network &mdash; opens the
-`**Networks** <https://dashboard.dreamcompute.com/project/networks/>`_ page, and
-* Create Router &mdash; opens the
-`**Routers** <https://dashboard.dreamcompute.com/project/routers/>`_ page.
+
+* Launch Instance -- opens the
+  `**Instances** <https://dashboard.dreamcompute.com/project/instances/>`_ page,
+* Create Network -- opens the
+  `**Networks** <https://dashboard.dreamcompute.com/project/networks/>`_ page, and
+* Create Router -- opens the
+  `**Routers** <https://dashboard.dreamcompute.com/project/routers/>`_ page.
 
 If you hover your mouse over an router or instance, you can see additional
 details with additional management shortcuts.
