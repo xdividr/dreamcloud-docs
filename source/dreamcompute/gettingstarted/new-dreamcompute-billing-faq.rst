@@ -9,22 +9,19 @@ for taking advantage of the resources provided by your plan. We also heard that
 you liked predictable monthly bills. We've found a way to address both concerns
 with the introduction of predictable hourly billing.
 
-The new hourly billing system starts once you opt-in, and will
-transition you from a pre-paid plan, to only paying for what you use.
-We've also dropped the price of IP addresses. Your monthly bill will
-change depending on your usage of DreamCompute, in many cases it may
-be lower.
+The new hourly billing system starts once you opt-in, and will transition you
+from a pre-paid plan, to only paying for what you use. Depending on your usage
+of DreamCompute, your bill may be higher or lower.
 
-Additionally, we're adding a new, faster DreamCompute cluster called US-East-2.
-It's twice as fast as US-East-1, and powered by speedy Intel Xeon X5 processors,
+Additionally, we're adding a new, faster DreamCompute cluster called US-East 2.
+It's twice as fast as US-East 1, and powered by speedy Intel Xeon E5 processors,
 all-SSD storage, and hardware accelerated virtual networking.
 
 How does hourly billing work?
 -----------------------------
 
-Once enabled, we'll bill you for each virtual server per hour of usage. If a
-virtual server runs for 25 days in a billing period, it will be charged a
-flat monthly fee for that period.
+Once enabled, we'll bill you for each virtual server per hour of usage until
+reaching the monthly price.
 
 When is a virtual server considered running?
 --------------------------------------------
@@ -34,11 +31,16 @@ Billing stops for a virtual server once it is deleted/terminated.
 What are the hourly prices?
 ---------------------------
 
-Since US-East 2 is so much faster than US-East 1, virtual servers in each
-cluster have different prices.
+Opting into predictable hourly billing will allow you to access both
+DreamCompute clusters. Since US-East 2 is so much faster than US-East 1, virtual
+servers in each cluster have different prices.
 
 US-East 1
 ~~~~~~~~~
+
+The original DreamCompute cluster is outfitted with AMD Opteron 6200 series
+processors, traditional hard drives and private networking. Sizes range from
+1GB to 64GB.
 
 +-------------+--------+------+--------------+---------------+
 | Flavor Name | Memory | vCPU | Hourly Price | Monthly Price |
@@ -60,6 +62,10 @@ US-East 1
 
 US-East 2
 ~~~~~~~~~
+
+Twice as fast as the original, powered by Intel Xeon E5 series processors, all-
+SSD storage, and hardware accelerated public networking. Sizes range from 512MB
+to 16GB.
 
 +----------------+--------+------+--------------+---------------+
 |  Flavor Name   | Memory | vCPU | Hourly Price | Monthly Price |
@@ -121,6 +127,14 @@ Private networking is coming soon to US-East 2 with improvements based on the
 feedback we received. We will allow you to add multiple networks at $5 each
 per month. Let us know if you'd like to trial this feature in US-East 2 at no
 charge!
+
+How do I get started?
+---------------------
+
+You can activate predictable hourly billing and gain access to the new, faster
+DreamCompute cluster from the `DreamHost Control Panel`_.
+
+.. _DreamHost Control Panel: https://panel.dreamhost.com/dreamcompute
 
 .. meta::
   :labels: dreamcompute faq billing
