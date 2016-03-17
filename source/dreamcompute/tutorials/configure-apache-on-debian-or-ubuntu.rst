@@ -48,7 +48,7 @@ To install Apache on your system, run the following commands:
 
 * When it completes, the apache HTTP server is installed and runs with
   its default configuration.
-* If you visit the floating IP in your browser for your DreamCompute
+* If you visit the public IP in your browser for your DreamCompute
   instance, you are able to see the 'getting started' page.
 * You can find this IP on the `Instances`_ (IP Address column) or
   `Access & Security`_ (floating ips tab) panel pages.
