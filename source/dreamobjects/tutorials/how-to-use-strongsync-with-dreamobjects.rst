@@ -5,8 +5,8 @@ How to Use Strongsync with DreamObjects
 .. Important::
 
     The instructions in this wiki are for an older version of
-    Strongsync. A newer version is due to be released this fall. This article
-    will be updated at that time.
+    Strongsync. Strongsync has been renamed ExpanDrive, click this `link`_ to go
+    to our tutorial on how to use ExpanDrive with DreamObjects.
 
 `Strongsync <http://www.expandrive.com/apps/strongysnc/>`_ is an app that provides
 Dropbox-like sync and backup functionality to
@@ -51,6 +51,8 @@ computers, including Windows and Mac, while staying in control of your data.
 .. |mac32| image:: images/mac32.png
 
 .. |windows32| image:: images/windows32.png
+
+.. _link: 215988527-How-to-Use-ExpanDrive-with-DreamObjects
 
 .. meta::
     :labels: windows osx macos strongsync
