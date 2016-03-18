@@ -1,6 +1,19 @@
 Sample Python Code Using DreamObjects OpenStack Swift-compatible API
 ====================================================================
 
+.. container:: table_of_content
+
+    - :ref:`Swift_Python_Creating_A_Connection`
+    - :ref:`Swift_Python_Listing_Owned_Containers`
+    - :ref:`Swift_Python_Creating_A_Container`
+    - :ref:`Swift_Python_Listing_A_Containers_Content`
+    - :ref:`Swift_Python_Deleting_A_Container`
+    - :ref:`Swift_Python_Creating_An_Object`
+    - :ref:`Swift_Python_Download_An_Object`
+    - :ref:`Swift_Python_Delete_An_Object`
+
+.. _Swift_Python_Creating_A_Connection:
+
 Creating a Connection
 ---------------------
 
@@ -18,6 +31,8 @@ This creates a connection so that you can interact with the server.
             authurl='https://objects.dreamhost.com/auth',
             )
 
+
+.. _Swift_Python_Listing_Owned_Containers:
 
 Listing Owned Containers
 ------------------------
@@ -37,6 +52,8 @@ The output will look something like this::
    mahbuckat3
 
 
+.. _Swift_Python_Creating_A_Container:
+
 Creating a Container
 --------------------
 
@@ -46,6 +63,8 @@ This creates a new container called ``my-new-container``
 
     container = conn.create_container('my-new-container')
 
+
+.. _Swift_Python_Listing_A_Containers_Content:
 
 Listing a Container's Content
 -----------------------------
@@ -65,6 +84,8 @@ The output will look something like this::
    myphoto2.jpg	262518	2011-08-08T21:38:01.000Z
 
 
+.. _Swift_Python_Deleting_A_Container:
+
 Deleting a Container
 --------------------
 
@@ -76,6 +97,8 @@ Deleting a Container
 
     conn.delete_container(container.name)
 
+
+.. _Swift_Python_Creating_An_Object:
 
 Creating an Object
 ------------------
@@ -89,6 +112,8 @@ This creates a file ``hello.txt`` from the file named ``my_hello.txt``
     obj.load_from_filename('./my_hello.txt')
 
 
+.. _Swift_Python_Download_An_Object:
+
 Download an Object (to a file)
 ------------------------------
 
@@ -100,6 +125,8 @@ This downloads the object ``hello.txt`` and saves it in
     obj = container.get_object('hello.txt')
     obj.save_to_filename('./my_hello.txt')
 
+
+.. _Swift_Python_Delete_An_Object:
 
 Delete an Object
 ----------------

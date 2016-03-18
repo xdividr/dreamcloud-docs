@@ -3,6 +3,23 @@
 Sample C++ Code Using DreamObjects S3-compatible API
 ====================================================
 
+.. container:: table_of_content
+
+    - :ref:`S3_Cpp_Generate_Object_Download_URL`
+    - :ref:`S3_Cpp_Setup`
+    - :ref:`S3_Cpp_Creating_a_Connection`
+    - :ref:`S3_Cpp_Listing_Owned_Buckets`
+    - :ref:`S3_Cpp_Creating_A_Bucket`
+    - :ref:`S3_Cpp_Listing_A_Buckets_content`
+    - :ref:`S3_Cpp_Deleting_A_Bucket`
+    - :ref:`S3_Cpp_Creating_An_Object`
+    - :ref:`S3_Cpp_Download_An_Object`
+    - :ref:`S3_Cpp_Delete_An_Object`
+    - :ref:`S3_Cpp_Change_An_Objects_ACL`
+    - :ref:`S3_Cpp_Generate_Object_Download_URL`
+
+.. _S3_Cpp_Setup:
+
 Setup
 -----
 
@@ -54,6 +71,8 @@ The following contains includes and globals that will be used in later examples:
     };
 
 
+.. _S3_Cpp_Creating_a_Connection:
+
 Creating (and Closing) a Connection
 -----------------------------------
 
@@ -65,6 +84,8 @@ This creates a connection so that you can interact with the server.
     // Do stuff...
     S3_deinitialize();
 
+
+.. _S3_Cpp_Listing_Owned_Buckets:
 
 Listing Owned Buckets
 ---------------------
@@ -108,6 +129,8 @@ for each bucket.
     S3_list_service(S3ProtocolHTTP, access_key, secret_key, host, 0, &listServiceHandler, &header_printed);
 
 
+.. _S3_Cpp_Creating_A_Bucket:
+
 Creating a Bucket
 -----------------
 
@@ -117,6 +140,8 @@ This creates a new bucket.
 
     S3_create_bucket(S3ProtocolHTTP, access_key, secret_key, host, sample_bucket, S3CannedAclPrivate, NULL, NULL, &responseHandler, NULL);
 
+
+.. _S3_Cpp_Listing_A_Buckets_content:
 
 Listing a Bucket's Content
 --------------------------
@@ -170,6 +195,8 @@ The output will look something like this::
    myphoto2.jpg	262518	2011-08-08T21:38:01.000Z
 
 
+.. _S3_Cpp_Deleting_A_Bucket:
+
 Deleting a Bucket
 -----------------
 
@@ -181,6 +208,8 @@ Deleting a Bucket
 
     S3_delete_bucket(S3ProtocolHTTP, S3UriStylePath, access_key, secret_key, host, sample_bucket, NULL, &responseHandler, NULL);
 
+
+.. _S3_Cpp_Creating_An_Object:
 
 Creating an Object (from a file)
 --------------------------------
@@ -237,6 +266,8 @@ This creates a file ``hello.txt``.
     S3_put_object(&bucketContext, sample_key, contentLength, NULL, NULL, &putObjectHandler, &data);
 
 
+.. _S3_Cpp_Download_An_Object:
+
 Download an Object (to a file)
 ------------------------------
 
@@ -260,6 +291,8 @@ This downloads a file and prints the contents.
     S3_get_object(&bucketContext, sample_key, NULL, 0, 0, NULL, &getObjectHandler, outfile);
 
 
+.. _S3_Cpp_Delete_An_Object:
+
 Delete an Object
 ----------------
 
@@ -274,6 +307,8 @@ This deletes an object.
     };
     S3_delete_object(&bucketContext, sample_key, 0, &deleteResponseHandler, 0);
 
+
+.. _S3_Cpp_Change_An_Objects_ACL:
 
 Change an Object's ACL
 ----------------------
@@ -315,6 +350,8 @@ This changes an object's ACL to grant full control to another user.
 
     S3_set_acl(&bucketContext, sample_key, ownerId, ownerDisplayName, 3, grants, 0, &responseHandler, 0);
 
+
+.. _S3_Cpp_Generate_Object_Download_URL:
 
 Generate Object Download URL (signed)
 -------------------------------------

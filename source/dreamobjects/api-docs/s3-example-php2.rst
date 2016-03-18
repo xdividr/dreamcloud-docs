@@ -1,6 +1,20 @@
 Sample PHP Code Using DreamObjects S3-compatible API
 ====================================================
 
+.. container:: table_of_content
+
+    - :ref:`S3_PHP2_Creating_A_Connection`
+    - :ref:`S3_PHP2_Listing_Owned_Buckets`
+    - :ref:`S3_PHP2_Creating_A_Bucket`
+    - :ref:`S3_PHP2_List_A_Buckets_Content`
+    - :ref:`S3_PHP2_Deleting_A_Bucket`
+    - :ref:`S3_PHP2_Forced_Delete_For_Non-Empty_Buckets`
+    - :ref:`S3_PHP2_Creating_An_Object`
+    - :ref:`S3_PHP2_Change_An_Objects_ACL`
+    - :ref:`S3_PHP2_Delete_An_Object`
+    - :ref:`S3_PHP2_Download_An_Object`
+    - :ref:`S3_PHP2_Generate_Object_Download_URLs`
+
 .. note::
 
     This library can be obtained in from Amazon as a `zip file <http://pear.amazonwebservices.com/get/aws.zip>`_
@@ -10,6 +24,9 @@ Sample PHP Code Using DreamObjects S3-compatible API
     5.3.3+.  The complete API reference is available on the
     `Amazon <http://docs.aws.amazon.com/aws-sdk-php-2/latest/class-Aws.S3.S3Client.html>`_
     site.
+
+
+.. _S3_PHP2_Creating_A_Connection:
 
 Creating a Connection
 ---------------------
@@ -36,6 +53,8 @@ Create an S3 client object to interact with the DHO server.
     ));
 
 
+.. _S3_PHP2_Listing_Owned_Buckets:
+
 Listing Owned Buckets
 ---------------------
 
@@ -57,6 +76,9 @@ The output will look something like this::
    mahbuckat2	2011-04-21T18:05:48.000Z
    mahbuckat3	2011-04-21T18:07:18.000Z
 
+
+.. _S3_PHP2_Creating_A_Bucket:
+
 Creating a Bucket
 -----------------
 
@@ -71,6 +93,9 @@ Creating a Bucket
    bucket names not safe to use as a subdomain, but does allow
    "_" underscores. Sticking to DNS-safe names is generally the
    best practice.
+
+
+.. _S3_PHP2_List_A_Buckets_Content:
 
 List a Bucket's Content
 -----------------------
@@ -95,6 +120,8 @@ The output will look something like this if the bucket has some files::
    myphoto2.jpg	262518	2011-08-08T21:38:01.000Z
 
 
+.. _S3_PHP2_Deleting_A_Bucket:
+
 Deleting a Bucket
 -----------------
 
@@ -111,6 +138,8 @@ Deleting a Bucket
     $client->waitUntilBucketNotExists(array('Bucket' => $new_bucket));
 
 
+.. _S3_PHP2_Forced_Delete_For_Non-Empty_Buckets:
+
 Forced Delete for Non-empty Buckets
 -----------------------------------
 
@@ -118,6 +147,8 @@ Forced Delete for Non-empty Buckets
 
     This feature is not currently supported.
 
+
+.. _S3_PHP2_Creating_An_Object:
 
 Creating an Object
 -------------------
@@ -133,6 +164,8 @@ This uploads a file from the filesystem and sets it to be private.
     $bucket      = 'my-bucket-name';
     $client->upload($bucket, $key, fopen($source_file, 'r'), $acl);
 
+
+.. _S3_PHP2_Change_An_Objects_ACL:
 
 Change an Object's ACL
 ----------------------
@@ -160,6 +193,9 @@ publicly readable, and object ``secret_plans.txt`` to be private.
    bucket-owner-read, bucket-owner-full-control; `full reference
    <http://docs.aws.amazon.com/aws-sdk-php-2/latest/class-Aws.S3.S3Client.html#_putObjectAcl>`_.
 
+
+.. _S3_PHP2_Delete_An_Object:
+
 Delete an Object
 ----------------
 
@@ -173,6 +209,8 @@ This deletes the object ``goodbye.txt``
         'Key'    => 'goodbye.txt',
     ));
 
+
+.. _S3_PHP2_Download_An_Object:
 
 Download an Object (to a file)
 ------------------------------
@@ -189,6 +227,8 @@ in ``/home/larry/documents``
         'SaveAs' => '/home/larry/documents/poetry.pdf'
     ));
 
+
+.. _S3_PHP2_Generate_Object_Download_URLs:
 
 Generate Object Download URLs (signed and unsigned)
 ---------------------------------------------------

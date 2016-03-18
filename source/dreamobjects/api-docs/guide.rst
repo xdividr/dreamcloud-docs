@@ -2,6 +2,15 @@
 Getting Started using DreamObjects object store API
 ###################################################
 
+.. container:: table_of_content
+
+    - :ref:`Guide_Introduction`
+    - :ref:`Guide_Sample_Output`
+    - :ref:`Guide_Annotated_Script`
+    - :ref:`Guide_Digging_Deeper`
+
+.. _Guide_Introduction:
+
 Introduction
 ============
 
@@ -25,6 +34,8 @@ creating buckets, storing objects, linking to objects, setting permissions, and
 removing objects and buckets. The script will also print out the HTTP traffic
 that gets sent to DreamObjects.
 
+.. _Guide_Sample_Output:
+
 Sample Output
 =============
 
@@ -33,6 +44,8 @@ reference.
 
 .. literalinclude:: demo/sample-output.sh
    :language: console
+
+.. _Guide_Annotated_Script:
 
 Annotated Script
 ================
@@ -176,6 +189,8 @@ objects within the bucket have been deleted. Deleting objects is simply a matter
 of calling the ``delete_key`` method on a bucket. Deleting buckets is achieved
 by calling the ``delete_bucket`` method on a connection.
 
+
+.. _Guide_Digging_Deeper:
 
 Digging Deeper
 ==============

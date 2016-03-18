@@ -4,6 +4,22 @@
 Sample Perl Code Using DreamObjects S3-compatible API
 =====================================================
 
+.. container:: table_of_content
+
+    - :ref:`S3_Perl_Creating_A_Connection`
+    - :ref:`S3_Perl_Listing_Owned_Buckets`
+    - :ref:`S3_Perl_Creating_A_Bucket`
+    - :ref:`S3_Perl_Listing_A_Buckets_Content`
+    - :ref:`S3_Perl_Deleting_A_Bucket`
+    - :ref:`S3_Perl_Forced_Delete_For_Non-Empty_Buckets`
+    - :ref:`S3_Perl_Creating_An_Object`
+    - :ref:`S3_Perl_Change_An_Objects_ACL`
+    - :ref:`S3_Perl_Download_An_Object`
+    - :ref:`S3_Perl_Delete_An_Object`
+    - :ref:`S3_Perl_Generate_Object_Download_URLs`
+
+.. _S3_Perl_Creating_A_Connection:
+
 Creating a Connection
 ---------------------
 
@@ -23,6 +39,8 @@ This creates a connection so that you can interact with the server.
             retry                 => 1,
     });
 
+
+.. _S3_Perl_Listing_Owned_Buckets:
 
 Listing Owned Buckets
 ---------------------
@@ -44,6 +62,8 @@ The output will look something like this::
    mahbuckat3	2011-04-21T18:07:18.000Z
 
 
+.. _S3_Perl_Creating_A_Bucket:
+
 Creating a Bucket
 -----------------
 
@@ -53,6 +73,8 @@ This creates a new bucket called ``my-new-bucket``
 
     my $bucket = $conn->add_bucket({ bucket => 'my-new-bucket' });
 
+
+.. _S3_Perl_Listing_A_Buckets_Content:
 
 Listing a Bucket's Content
 --------------------------
@@ -74,6 +96,8 @@ The output will look something like this::
    myphoto2.jpg	262518	2011-08-08T21:38:01.000Z
 
 
+.. _S3_Perl_Deleting_A_Bucket:
+
 Deleting a Bucket
 -----------------
 
@@ -85,6 +109,8 @@ Deleting a Bucket
     $conn->delete_bucket($bucket);
 
 
+.. _S3_Perl_Forced_Delete_For_Non-Empty_Buckets:
+
 Forced Delete for Non-empty Buckets
 -----------------------------------
 
@@ -92,6 +118,8 @@ Forced Delete for Non-empty Buckets
 
    not available in the `Amazon::S3`_ perl module
 
+
+.. _S3_Perl_Creating_An_Object:
 
 Creating an Object
 ------------------
@@ -104,6 +132,9 @@ This creates a file ``hello.txt`` with the string ``"Hello World!"``
             'hello.txt', 'Hello World!',
             { content_type => 'text/plain' },
     );
+
+
+.. _S3_Perl_Change_An_Objects_ACL:
 
 Change an Object's ACL
 ----------------------
@@ -123,6 +154,8 @@ This makes the object ``hello.txt`` to be publicly readable and
     });
 
 
+.. _S3_Perl_Download_An_Object:
+
 Download an Object (to a file)
 ------------------------------
 
@@ -135,6 +168,8 @@ This downloads the object ``perl_poetry.pdf`` and saves it in
             '/home/larry/documents/perl_poetry.pdf');
 
 
+.. _S3_Perl_Delete_An_Object:
+
 Delete an Object
 ----------------
 
@@ -143,6 +178,9 @@ This deletes the object ``goodbye.txt``
 .. code-block:: perl
 
     $bucket->delete_key('goodbye.txt');
+
+
+.. _S3_Perl_Generate_Object_Download_URLs:
 
 Generate Object Download URLs (signed and unsigned)
 ---------------------------------------------------

@@ -1,6 +1,20 @@
 Sample Java Code Using DreamObjects OpenStack Swift-compatible API
 ==================================================================
 
+.. container:: table_of_content
+
+    - :ref:`Swift_Java_Setup`
+    - :ref:`Swift_Java_Create_A_Connection`
+    - :ref:`Swift_Java_List_Owned_Containers`
+    - :ref:`Swift_Java_Create_A_Container`
+    - :ref:`Swift_Java_List_A_Containers_Content`
+    - :ref:`Swift_Java_Delete_A_Container`
+    - :ref:`Swift_Java_Create_An_Object`
+    - :ref:`Swift_Java_Retrieve_Object_Metadata`
+    - :ref:`Swift_Java_Delete_An_Object`
+
+.. _Swift_Java_Setup:
+
 Setup
 -----
 
@@ -53,6 +67,8 @@ be imported:
     import java.io.File;
 
 
+.. _Swift_Java_Create_A_Connection:
+
 Create a Connection
 ---------------------
 
@@ -76,6 +92,8 @@ This creates a connection so that you can interact with the server.
     context.close();
 
 
+.. _Swift_Java_List_Owned_Containers:
+
 List Owned Containers
 ------------------------
 
@@ -95,6 +113,8 @@ The output will look something like this::
     container3
 
 
+.. _Swift_Java_Create_A_Container:
+
 Create a Container
 --------------------
 
@@ -104,6 +124,8 @@ This creates a new container called ``my-new-container``
 
     blobStore.createContainerInLocation(null, "my-new-container");
 
+
+.. _Swift_Java_List_A_Containers_Content:
 
 List a Container's Content
 -----------------------------
@@ -123,6 +145,8 @@ The output will look something like this::
    myphoto2.jpg
 
 
+.. _Swift_Java_Delete_A_Container:
+
 Delete a Container
 --------------------
 
@@ -136,6 +160,8 @@ This deletes the container called ``my-old-container``
 
     blobStore.deleteContainer("my-old-container");
 
+
+.. _Swift_Java_Create_An_Object:
 
 Create an Object
 ------------------
@@ -168,6 +194,8 @@ This uploads a file called ``bar.txt`` into the container ``my-new-container``
     blobStore.putBlob("my-new-container", blob);
 
 
+.. _Swift_Java_Retrieve_Object_Metadata:
+
 Retrieve Object Metadata
 ------------------------
 
@@ -179,6 +207,8 @@ in the container ``my-new-container``
    BlobMetadata metadata = blobStore.blobMetadata("my-new-container", "foo.txt");
    String contentType = metadata.getContentMetadata().getContentType();
 
+
+.. _Swift_Java_Delete_An_Object:
 
 Delete an Object
 ----------------

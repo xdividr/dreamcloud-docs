@@ -43,7 +43,7 @@
 203167028:
   build/html/dreamobjects/api-docs/:
     - guide.html
-    - s3-commons.html
+    - s3-api-reference.html
     - s3-example-cpp.html
     - s3-example-csharp.html
     - s3-example-java.html
@@ -51,17 +51,8 @@
     - s3-example-php2.html
     - s3-example-python.html
     - s3-example-ruby.html
-    - swift-commons.html
+    - swift-api-reference.html
     - swift-examples-java.html
     - swift-examples-python.html
     - swift-examples-ruby.html
     - swift-protocolsinteroperability.html
-    - s3-acl.html
-    - s3-authentication.html
-    - s3-bucketops.html
-    - s3-objectops.html
-    - s3-serviceops.html
-    - swift-authentication.html
-    - swift-containerops.html
-    - swift-objectops.html
-    - swift-serviceops.html

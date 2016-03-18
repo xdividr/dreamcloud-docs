@@ -1,6 +1,23 @@
 Sample C# Code Using DreamObjects S3-compatible API
 ===================================================
 
+.. container:: table_of_content
+
+    - :ref:`S3_C#_Creating_A_Connection`
+    - :ref:`S3_C#_Listing_Owned_Buckets`
+    - :ref:`S3_C#_Creating_A_Buckets`
+    - :ref:`S3_C#_Listing_A_Buckets_Content`
+    - :ref:`S3_C#_Deleting_A_Bucket`
+    - :ref:`S3_C#_Forced_Delete_For_Non-Empty_Buckets`
+    - :ref:`S3_C#_Creating_An_Objects`
+    - :ref:`S3_C#_Change_An_Objects_ACL`
+    - :ref:`S3_C#_Download_An_Object`
+    - :ref:`S3_C#_Delete_An_Object`
+    - :ref:`S3_C#_Generate_Object_Download_URLs`
+
+
+.. _S3_C#_Creating_A_Connection:
+
 Creating a Connection
 ---------------------
 
@@ -26,6 +43,8 @@ This creates a connection so that you can interact with the server.
             );
 
 
+.. _S3_C#_Listing_Owned_Buckets:
+
 Listing Owned Buckets
 ---------------------
 
@@ -47,6 +66,8 @@ The output will look something like this::
    mahbuckat3	2011-04-21T18:07:18.000Z
 
 
+.. _S3_C#_Creating_A_Buckets:
+
 Creating a Bucket
 -----------------
 This creates a new bucket called ``my-new-bucket``
@@ -56,6 +77,9 @@ This creates a new bucket called ``my-new-bucket``
     PutBucketRequest request = new PutBucketRequest();
     request.BucketName = "my-new-bucket";
     client.PutBucket(request);
+
+
+.. _S3_C#_Listing_A_Buckets_Content:
 
 Listing a Bucket's Content
 --------------------------
@@ -80,6 +104,8 @@ The output will look something like this::
    myphoto2.jpg	262518	2011-08-08T21:38:01.000Z
 
 
+.. _S3_C#_Deleting_A_Bucket:
+
 Deleting a Bucket
 -----------------
 
@@ -94,6 +120,8 @@ Deleting a Bucket
     client.DeleteBucket(request);
 
 
+.. _S3_C#_Forced_Delete_For_Non-Empty_Buckets:
+
 Forced Delete for Non-empty Buckets
 -----------------------------------
 
@@ -101,6 +129,8 @@ Forced Delete for Non-empty Buckets
 
    not available
 
+
+.. _S3_C#_Creating_An_Objects:
 
 Creating an Object
 ------------------
@@ -116,6 +146,8 @@ This creates a file ``hello.txt`` with the string ``"Hello World!"``
     request.ContentBody = "Hello World!";
     client.PutObject(request);
 
+
+.. _S3_C#_Change_An_Objects_ACL:
 
 Change an Object's ACL
 ----------------------
@@ -138,6 +170,8 @@ This makes the object ``hello.txt`` to be publicly readable, and
     client.SetACL(request2);
 
 
+.. _S3_C#_Download_An_Object:
+
 Download an Object (to a file)
 ------------------------------
 
@@ -153,6 +187,8 @@ This downloads the object ``perl_poetry.pdf`` and saves it in
     response.WriteResponseStreamToFile("C:\\Users\\larry\\Documents\\perl_poetry.pdf");
 
 
+.. _S3_C#_Delete_An_Object:
+
 Delete an Object
 ----------------
 
@@ -165,6 +201,8 @@ This deletes the object ``goodbye.txt``
     request.Key        = "goodbye.txt";
     client.DeleteObject(request);
 
+
+.. _S3_C#_Generate_Object_Download_URLs:
 
 Generate Object Download URLs (signed and unsigned)
 ---------------------------------------------------

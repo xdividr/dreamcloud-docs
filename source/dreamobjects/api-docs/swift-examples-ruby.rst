@@ -1,6 +1,19 @@
 Sample Ruby Code Using DreamObjects OpenStack Swift-compatible API
 ==================================================================
 
+.. container:: table_of_content
+
+    - :ref:`Swift_Ruby_Creating_A_Connection`
+    - :ref:`Swift_Ruby_Listing_Owned_Containers`
+    - :ref:`Swift_Ruby_Creating_A_Container`
+    - :ref:`Swift_Ruby_Listing_A_Containers_Content`
+    - :ref:`Swift_Ruby_Delete_A_Container`
+    - :ref:`Swift_Ruby_Creating_An_Object`
+    - :ref:`Swift_Ruby_Download_An_Object`
+    - :ref:`Swift_Ruby_Delete_An_Object`
+
+.. _Swift_Ruby_Creating_A_Connection:
+
 Creating a Connection
 ---------------------
 
@@ -18,6 +31,8 @@ This creates a connection so that you can interact with the server.
             :auth_url => 'http://objects.dreamhost.com/auth'
     )
 
+
+.. _Swift_Ruby_Listing_Owned_Containers:
 
 Listing Owned Containers
 ------------------------
@@ -38,6 +53,8 @@ The output will look something like this::
    mahbuckat3
 
 
+.. _Swift_Ruby_Creating_A_Container:
+
 Creating a Container
 --------------------
 
@@ -47,6 +64,8 @@ This creates a new container called ``my-new-container``
 
     container = conn.create_container('my-new-container')
 
+
+.. _Swift_Ruby_Listing_A_Containers_Content:
 
 Listing a Container's Content
 -----------------------------
@@ -69,6 +88,8 @@ The output will look something like this::
    myphoto2.jpg	262518	2011-08-08T21:38:01.000Z
 
 
+.. _Swift_Ruby_Delete_A_Container:
+
 Deleting a Container
 --------------------
 
@@ -80,6 +101,8 @@ Deleting a Container
 
     container.delete_container('my-new-container')
 
+
+.. _Swift_Ruby_Creating_An_Object:
 
 Creating an Object
 ------------------
@@ -93,6 +116,8 @@ This creates a file ``hello.txt`` from the file named ``my_hello.txt``
     obj.content_type = 'text/plain'
 
 
+.. _Swift_Ruby_Download_An_Object:
+
 Download an Object (to a file)
 ------------------------------
 
@@ -104,6 +129,8 @@ This downloads the object ``hello.txt`` and saves it in
     obj = container.object('hello.txt')
     obj.save_to_filename('./my_hello.txt')
 
+
+.. _Swift_Ruby_Delete_An_Object:
 
 Delete an Object
 ----------------

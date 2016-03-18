@@ -3,6 +3,23 @@
 Sample Java Code Using DreamObjects S3-compatible API
 =====================================================
 
+.. container:: table_of_content
+
+    - :ref:`S3_Java_Setup`
+    - :ref:`S3_Java_Creating_A_Connection`
+    - :ref:`S3_Java_Listing_Owned_Buckets`
+    - :ref:`S3_Java_Creating_A_Bucket`
+    - :ref:`S3_Java_Listing_A_Buckets_Content`
+    - :ref:`S3_Java_Deleting_A_Bucket`
+    - :ref:`S3_Java_Forced_Delete_For_Non-Empty_Buckets`
+    - :ref:`S3_Java_Creating_An_Object`
+    - :ref:`S3_Java_Change_An_Objects_ACL`
+    - :ref:`S3_Java_Download_An_Object`
+    - :ref:`S3_Java_Delete_An_Object`
+    - :ref:`S3_Java_Generate_Object_Download_URLs`
+
+.. _S3_Java_Setup:
+
 Setup
 -----
 
@@ -28,6 +45,8 @@ classes to be imported:
     import com.amazonaws.services.s3.model.S3ObjectSummary;
 
 
+.. _S3_Java_Creating_A_Connection:
+
 Creating a Connection
 ---------------------
 
@@ -42,6 +61,8 @@ This creates a connection so that you can interact with the server.
     AmazonS3 conn = new AmazonS3Client(credentials);
     conn.setEndpoint("objects.dreamhost.com");
 
+
+.. _S3_Java_Listing_Owned_Buckets:
 
 Listing Owned Buckets
 ---------------------
@@ -64,6 +85,8 @@ The output will look something like this::
    mahbuckat3	2011-04-21T18:07:18.000Z
 
 
+.. _S3_Java_Creating_A_Bucket:
+
 Creating a Bucket
 -----------------
 
@@ -73,6 +96,8 @@ This creates a new bucket called ``my-new-bucket``
 
     Bucket bucket = conn.createBucket("my-new-bucket");
 
+
+.. _S3_Java_Listing_A_Buckets_Content:
 
 Listing a Bucket's Content
 --------------------------
@@ -98,6 +123,8 @@ The output will look something like this::
    myphoto2.jpg	262518	2011-08-08T21:38:01.000Z
 
 
+.. _S3_Java_Deleting_A_Bucket:
+
 Deleting a Bucket
 -----------------
 
@@ -109,11 +136,15 @@ Deleting a Bucket
     conn.deleteBucket(bucket.getName());
 
 
+.. _S3_Java_Forced_Delete_For_Non-Empty_Buckets:
+
 Forced Delete for Non-empty Buckets
 -----------------------------------
 .. attention::
    not available
 
+
+.. _S3_Java_Creating_An_Object:
 
 Creating an Object
 ------------------
@@ -126,6 +157,8 @@ This creates a file ``hello.txt`` with the string ``"Hello World!"``
     conn.putObject(bucket.getName(), "hello.txt", input, new ObjectMetadata());
 
 
+.. _S3_Java_Change_An_Objects_ACL:
+
 Change an Object's ACL
 ----------------------
 
@@ -137,6 +170,8 @@ This makes the object ``hello.txt`` to be publicly readable, and
     conn.setObjectAcl(bucket.getName(), "hello.txt", CannedAccessControlList.PublicRead);
     conn.setObjectAcl(bucket.getName(), "secret_plans.txt", CannedAccessControlList.Private);
 
+
+.. _S3_Java_Download_An_Object:
 
 Download an Object (to a file)
 ------------------------------
@@ -152,6 +187,8 @@ This downloads the object ``perl_poetry.pdf`` and saves it in
     );
 
 
+.. _S3_Java_Delete_An_Object:
+
 Delete an Object
 ----------------
 
@@ -161,6 +198,8 @@ This deletes the object ``goodbye.txt``
 
     conn.deleteObject(bucket.getName(), "goodbye.txt");
 
+
+.. _S3_Java_Generate_Object_Download_URLs:
 
 Generate Object Download URLs (signed and unsigned)
 ---------------------------------------------------

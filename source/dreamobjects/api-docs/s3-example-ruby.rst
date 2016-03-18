@@ -1,6 +1,21 @@
 Sample Ruby Code Using DreamObjects S3-compatible API
 =====================================================
 
+.. container:: table_of_content
+
+    - :ref:`S3_Ruby_Listing_Owned_Buckets`
+    - :ref:`S3_Ruby_Creating_A_Bucket`
+    - :ref:`S3_Ruby_Listing_A_Buckets_Content`
+    - :ref:`S3_Ruby_Deleting_A_Bucket`
+    - :ref:`S3_Ruby_Forced_Delete_For_Non-Empty_Buckets`
+    - :ref:`S3_Ruby_Creating_An_Object`
+    - :ref:`S3_Ruby_Change_An_Objects_ACL`
+    - :ref:`S3_Ruby_Download_An_Object`
+    - :ref:`S3_Ruby_Delete_An_Object`
+    - :ref:`S3_Ruby_Generate_Object_Download_URLs`
+
+.. _S3_Ruby_Creating_A_Connection:
+
 Creating a Connection
 ---------------------
 
@@ -15,6 +30,8 @@ This creates a connection so that you can interact with the server.
             :secret_access_key => 'my-secret-key'
     )
 
+
+.. _S3_Ruby_Listing_Owned_Buckets:
 
 Listing Owned Buckets
 ---------------------
@@ -35,6 +52,8 @@ The output will look something like this::
    mahbuckat3	2011-04-21T18:07:18.000Z
 
 
+.. _S3_Ruby_Creating_A_Bucket:
+
 Creating a Bucket
 -----------------
 
@@ -44,6 +63,8 @@ This creates a new bucket called ``my-new-bucket``
 
     AWS::S3::Bucket.create('my-new-bucket')
 
+
+.. _S3_Ruby_Listing_A_Buckets_Content:
 
 Listing a Bucket's Content
 --------------------------
@@ -65,6 +86,8 @@ The output will look something like this if the bucket has some files::
    myphoto2.jpg	262518	2011-08-08T21:38:01.000Z
 
 
+.. _S3_Ruby_Deleting_A_Bucket:
+
 Deleting a Bucket
 -----------------
 .. note::
@@ -75,6 +98,8 @@ Deleting a Bucket
     AWS::S3::Bucket.delete('my-new-bucket')
 
 
+.. _S3_Ruby_Forced_Delete_For_Non-Empty_Buckets:
+
 Forced Delete for Non-empty Buckets
 -----------------------------------
 
@@ -82,6 +107,8 @@ Forced Delete for Non-empty Buckets
 
     AWS::S3::Bucket.delete('my-new-bucket', :force => true)
 
+
+.. _S3_Ruby_Creating_An_Object:
 
 Creating an Object
 ------------------
@@ -97,6 +124,8 @@ This creates a file ``hello.txt`` with the string ``"Hello World!"``
             :content_type => 'text/plain'
     )
 
+
+.. _S3_Ruby_Change_An_Objects_ACL:
 
 Change an Object's ACL
 ----------------------
@@ -115,6 +144,8 @@ to be private.
     AWS::S3::S3Object.acl('secret_plans.txt', 'my-new-bucket', policy)
 
 
+.. _S3_Ruby_Download_An_Object:
+
 Download an Object (to a file)
 ------------------------------
 
@@ -130,6 +161,8 @@ This downloads the object ``poetry.pdf`` and saves it in
     end
 
 
+.. _S3_Ruby_Delete_An_Object:
+
 Delete an Object
 ----------------
 
@@ -139,6 +172,8 @@ This deletes the object ``goodbye.txt``
 
     AWS::S3::S3Object.delete('goodbye.txt', 'my-new-bucket')
 
+
+.. _S3_Ruby_Generate_Object_Download_URLs:
 
 Generate Object Download URLs (signed and unsigned)
 ---------------------------------------------------

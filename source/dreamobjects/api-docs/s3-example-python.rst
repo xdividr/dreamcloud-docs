@@ -1,6 +1,22 @@
 Sample Python Code Using DreamObjects S3-compatible API And Boto
 ================================================================
 
+.. container:: table_of_content
+
+    - :ref:`S3_Python_Creating_A_Connection`
+    - :ref:`S3_Python_Listing_Owned_Buckets`
+    - :ref:`S3_Python_Creating_A_Bucket`
+    - :ref:`S3_Python_Listing_A_Buckets_Content`
+    - :ref:`S3_Python_Deleting_A_Bucket`
+    - :ref:`S3_Python_Forced_Delete_For_Non-Empty_Buckets`
+    - :ref:`S3_Python_Creating_An_Object`
+    - :ref:`S3_Python_Change_An_Objects_ACL`
+    - :ref:`S3_Python_Download_An_Object`
+    - :ref:`S3_Python_Delete_An_Object`
+    - :ref:`S3_Python_Generate_Object_Download_URLs`
+
+.. _S3_Python_Creating_A_Connection:
+
 Creating a Connection
 ---------------------
 
@@ -20,6 +36,8 @@ This creates a connection so that you can interact with the server.
             calling_format = boto.s3.connection.OrdinaryCallingFormat(),
             )
 
+
+.. _S3_Python_Listing_Owned_Buckets:
 
 Listing Owned Buckets
 ---------------------
@@ -42,6 +60,8 @@ The output will look something like this::
    mahbuckat3	2011-04-21T18:07:18.000Z
 
 
+.. _S3_Python_Creating_A_Bucket:
+
 Creating a Bucket
 -----------------
 
@@ -51,6 +71,8 @@ This creates a new bucket called ``my-new-bucket``
 
     bucket = conn.create_bucket('my-new-bucket')
 
+
+.. _S3_Python_Listing_A_Buckets_Content:
 
 Listing a Bucket's Content
 --------------------------
@@ -74,6 +96,8 @@ The output will look something like this::
    myphoto2.jpg	262518	2011-08-08T21:38:01.000Z
 
 
+.. _S3_Python_Deleting_A_Bucket:
+
 Deleting a Bucket
 -----------------
 
@@ -86,6 +110,8 @@ Deleting a Bucket
     conn.delete_bucket(bucket.name)
 
 
+.. _S3_Python_Forced_Delete_For_Non-Empty_Buckets:
+
 Forced Delete for Non-empty Buckets
 -----------------------------------
 
@@ -93,6 +119,8 @@ Forced Delete for Non-empty Buckets
 
    not available in python
 
+
+.. _S3_Python_Creating_An_Object:
 
 Creating an Object
 ------------------
@@ -104,6 +132,8 @@ This creates a file ``hello.txt`` with the string ``"Hello World!"``
     key = bucket.new_key('hello.txt')
     key.set_contents_from_string('Hello World!')
 
+
+.. _S3_Python_Change_An_Objects_ACL:
 
 Change an Object's ACL
 ----------------------
@@ -119,6 +149,8 @@ This makes the object ``hello.txt`` to be publicly readable, and
     plans_key.set_canned_acl('private')
 
 
+.. _S3_Python_Download_An_Object:
+
 Download an Object (to a file)
 ------------------------------
 
@@ -131,6 +163,8 @@ This downloads the object ``perl_poetry.pdf`` and saves it in
     key.get_contents_to_filename('/home/larry/documents/perl_poetry.pdf')
 
 
+.. _S3_Python_Delete_An_Object:
+
 Delete an Object
 ----------------
 
@@ -140,6 +174,8 @@ This deletes the object ``goodbye.txt``
 
     bucket.delete_key('goodbye.txt')
 
+
+.. _S3_Python_Generate_Object_Download_URLs:
 
 Generate Object Download URLs (signed and unsigned)
 ---------------------------------------------------
