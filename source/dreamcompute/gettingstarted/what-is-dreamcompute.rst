@@ -112,6 +112,8 @@ With any of our DreamCompute plans, you can easily create virtual machines,
 block devices and networks using the DreamCompute Dashboard, or via OpenStack
 APIs and command-line tools.
 
+`DreamCompute Billing Details are located here`_
+
 Where are the data centers located?
 -----------------------------------
 
@@ -161,6 +163,8 @@ period, we recommend that you take a regular snapshot of your disk volume as a
 back up, which can be stored locally.
 
 .. _DreamObjects: https://dreamhost.com/cloud/storage
+
+.. _DreamCompute Billing Details are located here: 217744568
 
 .. meta::
     :labels: nova glance keystone akanda neutron network dashboard
