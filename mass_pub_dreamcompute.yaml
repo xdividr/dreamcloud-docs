@@ -6,6 +6,8 @@
     - connect-to-an-instance-with-ssh-keys.html
     - network-topology.html
     - different-boot-disks-explained.html
+    - new-dreamcompute-billing.html
+    - billing-faq.html
 
 203167038:
   build/html/dreamcompute/tutorials/:

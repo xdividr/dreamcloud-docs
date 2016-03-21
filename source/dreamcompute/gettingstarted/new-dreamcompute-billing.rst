@@ -17,7 +17,7 @@ Additionally, we're adding a new, faster DreamCompute cluster called US-East 2.
 It's twice as fast as US-East 1, and powered by speedy Intel Xeon E5 processors,
 all-SSD storage, and hardware accelerated virtual networking.
 
-.. include:: common/faq.rst
+.. include:: common/billing-faq.rst
 
 Do I have to switch to hourly billing now?
 ------------------------------------------
