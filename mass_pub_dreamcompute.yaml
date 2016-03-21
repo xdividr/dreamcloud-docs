@@ -21,3 +21,4 @@
     - configure-mariadb-on-fedora-or-centos.html
     - configure-php-on-debian-or-ubuntu.html
     - configure-php-on-fedora-or-centos.html
+    - deploy-nginx-with-cloud-init.html

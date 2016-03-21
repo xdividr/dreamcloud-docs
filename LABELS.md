@@ -44,6 +44,7 @@ duplicity
 arq
 cloudberry
 s3cmd
+cloud-init
 
 Services
 ~~~~~~~~
