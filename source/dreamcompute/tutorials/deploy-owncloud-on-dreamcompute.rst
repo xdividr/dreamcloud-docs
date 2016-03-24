@@ -1,19 +1,22 @@
-===============================================
-How to deploy ownCloud manually on DreamCompute
-===============================================
+=====================================================
+Step-by-step guide to deploy ownCloud on DreamCompute
+=====================================================
 
 Preparation
 ~~~~~~~~~~~
 
 In this tutorial we are going to install ownCloud on two DreamCompute
 instances, one for the application itself and one for the database it uses.
+We'll install and configure all necessary components without making use of
+automatic configuration management systems. Future tutorials will cover
+automation.
 
-First you need to deploy 2 Ubuntu 14.04 boxes. I recommend that you install
-these on volume backed instances as they are permanent as opposed to ephemeral
-disks. You can do this in the web UI or
-with the nova client. Once you have those instances up and running, you need to
-add a security group to the instance that runs the database so that it allows
-tcp on port 3306, the MySQL/MariaDB port.
+First you need to deploy 2 Ubuntu 14.04LTS virtual machines. It's better to
+boot volume backed instances as they are permanent as opposed to ephemeral
+disks. You can do this in the web UI or with the nova client [FIXME LINK].
+Once you have those instances up and running, you need to add a security
+group to the instance that runs the database so that it allows tcp on port
+3306, the MySQL/MariaDB port.
 
 Installing MariaDB
 ~~~~~~~~~~~~~~~~~~
