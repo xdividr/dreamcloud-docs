@@ -1,5 +1,5 @@
 =================================================================
-How to Configure MariaDB on DreamCompute running Fedora or Centos
+How to Configure MariaDB on DreamCompute running Fedora or CentOS
 =================================================================
 
 Installing MariaDB

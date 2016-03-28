@@ -65,7 +65,7 @@ Using A different Linux Distro
 
 If you wanted to deploy NGINX on a different Linux distro, the only thing that
 needs to be changed is the script that cloud-init runs to install NGINX.
-For example if you wanted to deploy NGINX on Centos, your file would look
+For example if you wanted to deploy NGINX on CentOS, your file would look
 something like:
 
 .. code::

@@ -1,5 +1,5 @@
 ==============================================================
-How to Configure LAMP on DreamCompute running Fedora or Centos
+How to Configure LAMP on DreamCompute running Fedora or CentOS
 ==============================================================
 
 LAMP (Linux, Apache, MySQL (we'll use mariadb instead), PHP) stacks are a

@@ -105,7 +105,7 @@ What are the pricing plans?
 A simple pricing plan: you only pay for what you use, with a maximum monthly
 expense. No more confusing invoices or bills, and no surprise at the end of
 the month. For example, if all you need is a lightspeed size machine (1 CPU,
-1Gb RAM) for 5 hours a month, you’ll pay 5 cents. If you use that for more
+1GB RAM) for 5 hours a month, you’ll pay 5 cents. If you use that for more
 than 25 days in a month, you’ll only pay a maximum of $6.
 
 With any of our DreamCompute plans, you can easily create virtual machines,
