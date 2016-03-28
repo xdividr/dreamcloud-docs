@@ -12,7 +12,7 @@
     - how-to-configure-qnap.html
     - how-to-configure-synology.html
     - what-happens-when-trial-ends.html
-    - what-applications-dreamobjects.html
+    - dreamobjects-compatible-applications.html
 
 203167018:
   build/html/dreamobjects/tutorials/:
@@ -39,7 +39,6 @@
     - how-to-use-aws-cli-with-dreamobjects.html
     - how-to-use-dropshare-with-dreamobjects.html
     - dreamspeed-advanced-cache-settings.html
-    - dreamobjects-compatible-applications.html
 
 203167028:
   build/html/dreamobjects/api-docs/:
