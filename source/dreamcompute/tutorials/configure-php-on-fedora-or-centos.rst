@@ -1,5 +1,5 @@
 =============================================================
-How to Configure PHP on DreamCompute running Fedora or Centos
+How to Configure PHP on DreamCompute running Fedora or CentOS
 =============================================================
 
 PHP is a popular server-side scripting language used by many web software and

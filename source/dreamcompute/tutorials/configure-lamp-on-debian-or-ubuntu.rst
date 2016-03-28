@@ -92,4 +92,4 @@ installed LAMP stack.
 .. _PHP Configuration Files: 215231198-How-to-Configure-PHP-on-DreamCompute-running-Debian-or-Ubuntu
 
 .. meta::
-    :labels: php apache mysql nova debia ubuntu
+    :labels: php apache mysql nova debian ubuntu
