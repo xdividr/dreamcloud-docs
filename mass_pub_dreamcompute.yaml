@@ -23,6 +23,7 @@
     - configure-php-on-debian-or-ubuntu.html
     - configure-php-on-fedora-or-centos.html
     - deploy-nginx-with-cloud-init.html
+    - deploy-owncloud-on-dreamcompute.html
     - how-to-migrate-instances-between-clusters.html
     - how-to-migrate-volumes-between-clusters.html
     - jump-host.html

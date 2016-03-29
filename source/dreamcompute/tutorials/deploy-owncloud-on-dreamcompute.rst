@@ -13,21 +13,23 @@ automation.
 
 First you need to deploy 2 Ubuntu 14.04LTS virtual machines. It's better to
 boot volume backed instances as they are permanent as opposed to ephemeral
-disks. You can do this in the web UI or with the nova client [FIXME LINK].
-Once you have those instances up and running, you need to add a security
-group to the instance that runs the database so that it allows tcp on port
-3306, the MySQL/MariaDB port.
+disks. You can do this in the `web UI <215912848>`_ or with the `nova client
+<215912778>`_.  Once you have those instances up and running, you need to add
+a security group to the instance that runs the database so that it allows tcp
+on port 3306, the MySQL/MariaDB port. That can be done with the `web
+interface <215912838>`_ or the `nova command line client <216511637>`_ as well.
 
 Installing MariaDB
 ~~~~~~~~~~~~~~~~~~
 
-In order to install MariaDB on your database server, first ssh to the box with:
+In order to install MariaDB on your database server, first login to the server
+with:
 
 .. code::
 
-    ssh dhc-user@ip
+    ssh dhc-user@$IP
 
-changing the IP to your box's public IP address. Then run
+changing the IP to your server's public IP address. Then run
 
 .. code::
 
@@ -41,7 +43,7 @@ shell you can install mariadb by running:
 
     apt-get install mariadb-server
 
-It will ask for a root password, enter whatever you want as a root password and
+It will ask for a root password for the Database, enter whatever you want and
 remember it, you will need it later.
 
 Configuring MariaDB
@@ -50,8 +52,7 @@ Configuring MariaDB
 Changing the bind address
 -------------------------
 
-As root, open the /etc/mysql/my.conf file in an editor and edit the line that
-says
+Open the /etc/mysql/my.conf file in an editor and edit the line that says
 
 .. code::
 
@@ -61,9 +62,9 @@ and change it to
 
 .. code::
 
-    bind-address            = $ip
+    bind-address            = $IP
 
-where **$ip** is the ip address of the DB server.
+where **$IP** is the IP address of the DB server.
 
 .. note::
 
@@ -76,9 +77,9 @@ only listening on 127.0.0.1, which is localhost.
 Allowing root login from a foreign IP address
 ---------------------------------------------
 
-Now our database will listen to connections from other boxes, but we have to
-allow root to login from another IP address. We do this by logging into the DB
-as root with
+Now our database will listen to connections from other servers, but we have
+to allow root to login from another IP address. We do this by logging into the
+DB as root with
 
 .. code::
 
@@ -89,16 +90,16 @@ then enter the root pasword for your database. Then run:
 .. code::
 
     use mysql;
-    update user set host='$ip' where user='root' and host='$hostname';
+    update user set host='$IP' where user='root' and host='$HOSTNAME';
     flush privileges;
 
-where **$ip** is the IP address of your application instance, and **$hostname**
+where **$IP** is the IP address of your application instance, and **$HOSTNAME**
 is the hostname of your database server.
 
 .. note::
 
-    If you want to allow root login from any ip address, change $ip to '%', but
-    this is not recommended, especially if your database server has a public ip
+    If you want to allow root login from any IP address, change $IP to '%', but
+    this is not recommended, especially if your database server has a public IP
     address, because then anyone can try access it.
 
 now restart the mariadb service so the new configs are loaded by running:
@@ -114,8 +115,8 @@ Installing Dependencies
 -----------------------
 
 Now that we have a database that owncloud can use, we need to deploy the
-frontend application. First login to the box that you will be installing
-ownCloud on. Create a root shell again by running
+frontend application. First login to the server that you will be
+installing ownCloud on. Create a root shell again by running
 
 .. code::
 
@@ -136,26 +137,23 @@ Downloading ownCloud
 
 Now we need to download the actual ownCloud application. Do this by going to
 https://owncloud.org/install/#instructions-server in a browser and right click
-the *zip* link and click *copy link location* then in your root shell run
+the *.tar.bz2* link and click *copy link location* then in your root shell run
 
 .. code::
 
-    wget $url
+    wget $URL
 
-where **$url** is the url you just copied. This will download a zip compressed
-copy of the ownCloud application. Unzip the folder using
+where **$URL** is the url you just copied. This will download a compressed
+copy of the ownCloud application. Decompress the file by running
 
 .. code::
 
-    unzip dir
+    bzip2 -d owncloud-9.0.0.tar.bz2
+    tar -xvf owncloud-9.0.0.tar
 
-where **dir** is the name of the directory that you just downloaded.
-
-.. note::
-
-    If it says something like "unzip command not found" you need to install
-    unzip, do this by running `apt-get install unzip`
-
+owncloud-9.0.0.tar.bz2 is the name of the file you just downloaded and
+owncloud-9.0.0.tar is the directory created by running the bzip2 command. The
+version numbers for your download might be different from mine.
 This should create a directory called "owncloud" in your current directory.
 
 Setting up the owncloud directory
@@ -228,10 +226,10 @@ Finishing the Installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now everything is configured on the server, open a browser and visit
-https://ip/owncloud where ip is the ip address of your application instance.
+https://IP/owncloud where **IP** is the IP address of your application instance.
 Create an admin account using the web interface. Then fill in the details for
 the database. The database user is "root", the password is the root password
-for the database, the host is the ip of your database
+for the database, the host is the IP address of your database
 server, and the database name can be set to anything, I recommend "owncloud".
 Then continue and **BAM** you have a working owncloud.
 
