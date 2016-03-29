@@ -1,5 +1,5 @@
 ================================================================
-How to Configure Apache on DreamCompute Running Fedora or Centos
+How to Configure Apache on DreamCompute Running Fedora or CentOS
 ================================================================
 
 Apache is the most widely used HTTP server on the internet, and we use
