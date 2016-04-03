@@ -51,7 +51,7 @@ Here are a few things to keep in mind and plan while doing a migration.
   TTL changed from 4 hours to 5 minutes if you contact support, and can help
   minimize propagation time.
 
-* **Epheramal Instances**
+* **Ephemeral Instances**
 
   Ephemeral instances cannot have snapshots taken, and when shutdown cannot
   have their data accessed by another instance.  These instances can only be
