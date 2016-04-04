@@ -14,7 +14,7 @@ show you how to accomplish this yourself.
 
 This guide assumes that you are comfortable working with SSH, and some
 command line utilities such as `dd <http://man7.org/linux/man-pages/man1/dd.1.html>`_
-and in some cases `glance <http://docs.openstack.org/developer/python-glanceclient/man/glance.html>`_.
+and `glance <http://docs.openstack.org/developer/python-glanceclient/man/glance.html>`_.
 
 Things To Keep in Mind
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -57,7 +57,7 @@ Here are a few things to keep in mind and plan while doing a migration.
   have their data accessed by another instance.  These instances can only be
   migrated while running, so it is best to shut down as many services like
   MySQL, apache, and so on to limit possible corruption.  Please see the last
-  section below on how to move migrate running instances.
+  section below on how to migrate running instances.
 
 Migrate a Volume-backed Instance using Glance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -72,12 +72,12 @@ As an overview, we are going to setup the following to accomplish this task.
 
 .. code::
 
-        SOURCE CLUSTER           DESTINATION CLUSTER
+        SOURCE CLUSTER         DESTINATION CLUSTER
 
-       +---------------+       +----------------------+
-       | Copy Instance |------>| Glance Image Service |
-       +---------------+       +----------------------+
-               |
+       +---------------+     +----------------------+     +-------------------+
+       | Temp Instance |---->| Glance Image Service |---->| Migrated Instance |
+       +---------------+     +----------------------+     +-------------------+
+               |(mount)
        +----------------+
        | Volume To Copy |
        +----------------+
@@ -226,4 +226,4 @@ instance and to select the image we just uploaded.  It is best to use a volume
 instead of ephemeral in this situation if the data is meant to be persistent.
 
 .. meta::
-    :labels: apache ubuntu debian linux
+    :labels: glance migrate image
