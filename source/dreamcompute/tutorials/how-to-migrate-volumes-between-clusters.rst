@@ -42,7 +42,7 @@ Migrate a Volume using SSH and dd
 
 For this type of move, we will assume you have stopped all services using the
 data on the volume, safely unmounted it on the instance using it, and detached
-it from the instance in the Volumes menu in the dashboard.  
+it from the instance in the Volumes menu in the dashboard.
 
 As an overview, we are going to setup the following to accomplish this task.
 
