@@ -27,7 +27,7 @@ Building the Documentation
 
 run `tox` in the repo to build the documentation, the build
 directories are in build/html/$category/$section/$article. For
-example, the dreamcompute tutorials documentation will be built to    
+example, the dreamcompute tutorials documentation will be built to
 "build/html/dreamcompute/tutorials/"
 
 How to contribute
@@ -41,7 +41,7 @@ Publishing to DreamHost Knowledge Base
 --------------------------------------
 
 The built html files are automatically published via Jenkins job to
-(DreamHost Knowledge Base)[https://support.dreamhost.com] once merged
+(DreamHost Knowledge Base)[https://help.dreamhost.com] once merged
 to master.
 
 Hacks we have to make things pretty
