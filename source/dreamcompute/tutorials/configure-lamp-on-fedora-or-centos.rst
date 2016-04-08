@@ -65,7 +65,7 @@ installed LAMP stack.
 
 `PHP Configuration Files`_
 
-.. _Apache Directories and Main Configuration Files: 215231178-How-to-Configure-Apache-on-DreamCompute-Running-Fedora-or-Centos
+.. _Apache Directories and Main Configuration Files: 217880028-How-to-Configure-Apache-on-DreamCompute-Running-Fedora-or-CentOS
 
 .. _PHP Configuration Files: 215231208-How-to-Configure-PHP-on-DreamCompute-running-Fedora-or-Centos
 
