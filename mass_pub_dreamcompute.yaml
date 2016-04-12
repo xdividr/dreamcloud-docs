@@ -1,18 +1,17 @@
 203141767:
   build/html/dreamcompute/gettingstarted/:
-    - what-is-dreamcompute.html
+    - billing-faq.html
+    - connect-to-an-instance-with-ssh-keys.html
+    - different-boot-disks-explained.html
+    - how-to-activate-us-east-2.html
+    - network-topology.html
+    - new-dreamcompute-billing.html
     - password-reset.html
     - ssh-keys-and-dreamcompute.html
-    - connect-to-an-instance-with-ssh-keys.html
-    - network-topology.html
-    - different-boot-disks-explained.html
-    - new-dreamcompute-billing.html
-    - billing-faq.html
+    - what-is-dreamcompute.html
 
 203167038:
   build/html/dreamcompute/tutorials/:
-    - jump-host.html
-    - load-balancing-with-haproxy.html
     - configure-apache-on-debian-or-ubuntu.html
     - configure-apache-on-fedora-or-centos.html
     - configure-lamp-on-debian-or-ubuntu.html
@@ -22,3 +21,7 @@
     - configure-php-on-debian-or-ubuntu.html
     - configure-php-on-fedora-or-centos.html
     - deploy-nginx-with-cloud-init.html
+    - how-to-migrate-instances-between-clusters.html
+    - how-to-migrate-volumes-between-clusters.html
+    - jump-host.html
+    - load-balancing-with-haproxy.html

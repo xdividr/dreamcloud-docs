@@ -11,34 +11,36 @@
     - what-are-buckets.html
     - how-to-configure-qnap.html
     - how-to-configure-synology.html
+    - how-to-download-files-in-dreamobjects.html
     - what-happens-when-trial-ends.html
     - dreamobjects-compatible-applications.html
+    - dreamobjects-billing.html
 
 203167018:
   build/html/dreamobjects/tutorials/:
     - backing-up-with-boto.html
     - backing-up-with-duplicity.html
     - dreamobjects-cname.html
+    - dreamspeed-advanced-cache-settings.html
     - how-to-use-arq-with-dreamobjects.html
+    - how-to-use-aws-cli-with-dreamobjects.html
     - how-to-use-cloudberry-backup-with-dreamobjects.html
     - how-to-use-crossftp-with-dreamobjects.html
-    - how-to-use-duck-with-dreamobjects.html
     - how-to-use-cyberduck-with-dreamobjects.html
-    - how-to-use-s3cmd-with-dreamobjects.html
-    - uploading-screenshots-to-dreamobjects.html
-    - what-is-dreamspeed.html
-    - how-to-use-arq-with-dreamobjects.html
+    - how-to-use-dropshare-with-dreamobjects.html
+    - how-to-use-duck-with-dreamobjects.html
     - how-to-use-duplicati-with-dreamobjects.html
     - how-to-use-expandrive-with-dreamobjects.html
+    - how-to-use-goodsync-with-dreamobjects.html
     - how-to-use-owncloud-with-dreamobjects.html
+    - how-to-use-s3cmd-with-dreamobjects.html
     - how-to-use-sharex-with-dreamobjects.html
+    - how-to-use-strongsync-with-dreamobjects.html
     - how-to-use-transmit-for-ios-with-dreamobjects.html
     - how-to-use-transmit-with-dreamobjects.html
-    - how-to-use-strongsync-with-dreamobjects.html
     - how-to-use-updraftplus-with-dreamobjects.html
-    - how-to-use-aws-cli-with-dreamobjects.html
-    - how-to-use-dropshare-with-dreamobjects.html
-    - dreamspeed-advanced-cache-settings.html
+    - uploading-screenshots-to-dreamobjects.html
+    - what-is-dreamspeed.html
 
 203167028:
   build/html/dreamobjects/api-docs/:
