@@ -43,13 +43,13 @@ Why the bucket names have to be unique
 
 Objects stored DreamObjects are identified by a URL that looks like:
 
-   `https://$BUCKET_NAME.objects.dreamhost.com/$OBJECT_NAME`
+   `https://$BUCKET_NAME.objects-us-west-1.dream.io/$OBJECT_NAME`
 
 Since the bucket name is part of the host name in the URL and host
 names must be unique, the bucket name also must be unique. For
 example, if a bucket called "my-bucket" would have the URL:
 
-   `https://my-bucket.objects.dreamhost.com`
+   `https://my-bucket.objects-us-west-1.dream.io`
 
 This means that there can only be **one** bucket called "my-bucket" on
 DreamObjects. Therefore, the easiest way to create a new bucket is to

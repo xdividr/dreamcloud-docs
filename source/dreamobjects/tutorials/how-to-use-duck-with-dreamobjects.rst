@@ -34,7 +34,7 @@ Similar to Cyberduck, the duck CLI tool uses a connection profile as a
 pre-configured settings file to connect to DreamObjects.
 
 #. Download the `DreamObjects Connection Profile
-   <https://objects.dreamhost.com/applications/DreamObjects-CLI.cyberduckprofile>`_
+   <https://objects-us-west-1.dream.io/applications/DreamObjects-CLI.cyberduckprofile>`_
    if you're going to run duck on your computer.
 #. Once you've downloaded the DreamObjects Connection Profile, move it into
    the proper directory:

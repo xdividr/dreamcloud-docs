@@ -38,7 +38,7 @@ Create an S3 client object to interact with the DHO server.
     <?php
     define('AWS_KEY', 'place access key here');
     define('AWS_SECRET_KEY', 'place secret key here');
-    define('HOST', 'https://objects.dreamhost.com');
+    define('HOST', 'https://objects-us-west-1.dream.io');
 
     // require the AWS SDK for PHP library
     require 'aws-autoloader.php';
@@ -251,8 +251,8 @@ the URL will stop working).
 
 The output of this will look something like::
 
-   http://my-bucket-name.objects.dreamhost.com/hello.txt
-   http://my-bucket-name.objects.dreamhost.com/secret_plans.txt?Signature=XXXXXXXXXXXXXXXXXXXXXXXXXXX&Expires=1316027075&AWSAccessKeyId=XXXXXXXXXXXXXXXXXXX
+   http://my-bucket-name.objects-us-west-1.dream.io/hello.txt
+   http://my-bucket-name.objects-us-west-1.dream.io/secret_plans.txt?Signature=XXXXXXXXXXXXXXXXXXXXXXXXXXX&Expires=1316027075&AWSAccessKeyId=XXXXXXXXXXXXXXXXXXX
 
 .. meta::
     :labels: PHP S3

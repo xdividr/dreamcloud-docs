@@ -21,7 +21,7 @@ This creates a connection so that you can interact with the server.
     define('AWS_SECRET_KEY', 'place secret key here');
     define('AWS_CANONICAL_ID', 'your DHO Username');
     define('AWS_CANONICAL_NAME', 'Also your DHO Username!');
-    $HOST = 'objects.dreamhost.com';
+    $HOST = 'objects-us-west-1.dream.io';
 
     // require the amazon sdk for php library
     require_once 'AWSSDKforPHP/sdk.class.php';
@@ -216,8 +216,8 @@ the URL will stop working).
 
 The output of this will look something like::
 
-   http://my-bucket-name.objects.dreamhost.com/hello.txt
-   http://my-bucket-name.objects.dreamhost.com/secret_plans.txt?Signature=XXXXXXXXXXXXXXXXXXXXXXXXXXX&Expires=1316027075&AWSAccessKeyId=XXXXXXXXXXXXXXXXXXX
+   http://my-bucket-name.objects-us-west-1.dream.io/hello.txt
+   http://my-bucket-name.objects-us-west-1.dream.io/secret_plans.txt?Signature=XXXXXXXXXXXXXXXXXXXXXXXXXXX&Expires=1316027075&AWSAccessKeyId=XXXXXXXXXXXXXXXXXXX
 
 .. meta::
     :labels: PHP S3

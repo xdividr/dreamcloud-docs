@@ -74,7 +74,7 @@ class DreamObjectsDemo(object):
 
         DreamObjects can be connected to via the Amazon S3 protocol. By
         supplying an "access key" and a "secret key", and setting the hostname
-        for connections to "objects.dreamhost.com", you can use most standard
+        for connections to "objects-us-west-1.dream.io", you can use most standard
         Amazon S3 access libraries.
 
         This demonstration is implemented in Python, with the Boto library.
@@ -93,7 +93,7 @@ class DreamObjectsDemo(object):
             kwargs['debug'] = 2
 
         if not self.use_s3:
-            kwargs['host'] = 'objects.dreamhost.com'
+            kwargs['host'] = 'objects-us-west-1.dream.io'
 
         # create a connection via the S3 protocol to DreamObjects
         self.conn = boto.connect_s3(**kwargs)
@@ -138,11 +138,11 @@ class DreamObjectsDemo(object):
 
         Objects can be referenced by a public URL, which is of the format:
 
-            http://<bucket-name>.objects.dreamhost.com/<object-name>
+            http://<bucket-name>.objects-us-west-1.dream.io/<object-name>
 
         The URL for our object will thus be:
 
-            http://{bucket_name}.objects.dreamhost.com/{object_name}
+            http://{bucket_name}.objects-us-west-1.dream.io/{object_name}
         '''
 
         self.public_url = self.key.generate_url(

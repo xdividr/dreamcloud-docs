@@ -32,7 +32,7 @@ This creates a connection so that you can interact with the server.
     conn = boto.connect_s3(
             aws_access_key_id = access_key,
             aws_secret_access_key = secret_key,
-            host = 'objects.dreamhost.com',
+            host = 'objects-us-west-1.dream.io',
             calling_format = boto.s3.connection.OrdinaryCallingFormat(),
             )
 
@@ -199,8 +199,8 @@ URL will stop working).
 
 The output of this will look something like::
 
-   http://objects.dreamhost.com/my-bucket-name/hello.txt
-   http://objects.dreamhost.com/my-bucket-name/secret_plans.txt?Signature=XXXXXXXXXXXXXXXXXXXXXXXXXXX&Expires=1316027075&AWSAccessKeyId=XXXXXXXXXXXXXXXXXXX
+   http://objects-us-west-1.dream.io/my-bucket-name/hello.txt
+   http://objects-us-west-1.dream.io/my-bucket-name/secret_plans.txt?Signature=XXXXXXXXXXXXXXXXXXXXXXXXXXX&Expires=1316027075&AWSAccessKeyId=XXXXXXXXXXXXXXXXXXX
 
 .. meta::
     :labels: python S3

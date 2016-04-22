@@ -93,8 +93,8 @@ do the following:
     [default]
     access_key = Your_DreamObjects_Access_Key
     secret_key = Your_DreamObjects_Secret_Key
-    host_base = objects.dreamhost.com
-    host_bucket = %(bucket)s.objects.dreamhost.com
+    host_base = objects-us-west-1.dream.io
+    host_bucket = %(bucket)s.objects-us-west-1.dream.io
     enable_multipart = True
     multipart_chunk_size_mb = 15
     use_https = True

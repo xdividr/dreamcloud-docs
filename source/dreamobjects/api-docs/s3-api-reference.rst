@@ -110,13 +110,13 @@ the URI.
 ::
 
    GET /mybucket HTTP/1.1
-   Host: objects.dreamhost.com
+   Host: objects-us-west-1.dream.io
 
 The second method identifies the bucket via a virtual bucket host
 name. For example:::
 
   GET / HTTP/1.1
-  Host: mybucket.objects.dreamhost.com
+  Host: mybucket.objects-us-west-1.dream.io
 
 .. note::
 
@@ -230,7 +230,7 @@ RGW server. RGW uses an S3-compatible authentication approach.
 
     HTTP/1.1
     PUT /buckets/bucket/object.mpeg
-    Host: objects.dreamhost.com
+    Host: objects-us-west-1.dream.io
     Date: Mon, 2 Jan 2012 00:01:01 +0000
     Content-Encoding: mpeg
     Content-Length: 9999999
@@ -307,7 +307,7 @@ Syntax
 ::
 
     GET / HTTP/1.1
-    Host: objects.dreamhost.com
+    Host: objects-us-west-1.dream.io
 
     Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
@@ -362,7 +362,7 @@ Syntax
 ::
 
     PUT /{bucket} HTTP/1.1
-    Host: objects.dreamhost.com
+    Host: objects-us-west-1.dream.io
     x-amz-acl: public-read-write
 
     Authorization: AWS {access-key}:{hash-of-header-and-secret}
@@ -402,7 +402,7 @@ Syntax
 ::
 
     DELETE /{bucket} HTTP/1.1
-    Host: objects.dreamhost.com
+    Host: objects-us-west-1.dream.io
 
     Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
@@ -426,7 +426,7 @@ Syntax
 ::
 
     GET /{bucket}?max-keys=25 HTTP/1.1
-    Host: objects.dreamhost.com
+    Host: objects-us-west-1.dream.io
 
 Parameters
 ^^^^^^^^^^
@@ -514,7 +514,7 @@ Add the ``acl`` subresource to the bucket request as shown below.
 ::
 
     GET /{bucket}?acl HTTP/1.1
-    Host: objects.dreamhost.com
+    Host: objects-us-west-1.dream.io
 
     Authorization: AWS {access-key}:{hash-of-header-and-secret}
 

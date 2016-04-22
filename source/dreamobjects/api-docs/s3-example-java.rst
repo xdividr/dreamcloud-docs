@@ -59,7 +59,7 @@ This creates a connection so that you can interact with the server.
 
     AWSCredentials credentials = new BasicAWSCredentials(accessKey, secretKey);
     AmazonS3 conn = new AmazonS3Client(credentials);
-    conn.setEndpoint("objects.dreamhost.com");
+    conn.setEndpoint("objects-us-west-1.dream.io");
 
 
 .. _S3_Java_Listing_Owned_Buckets:
@@ -222,7 +222,7 @@ URL will stop working).
 
 The output will look something like this::
 
-   https://my-bucket-name.objects.dreamhost.com/secret_plans.txt?Signature=XXXXXXXXXXXXXXXXXXXXXXXXXXX&Expires=1316027075&AWSAccessKeyId=XXXXXXXXXXXXXXXXXXX
+   https://my-bucket-name.objects-us-west-1.dream.io/secret_plans.txt?Signature=XXXXXXXXXXXXXXXXXXXXXXXXXXX&Expires=1316027075&AWSAccessKeyId=XXXXXXXXXXXXXXXXXXX
 
 .. meta::
     :labels: java S3 api

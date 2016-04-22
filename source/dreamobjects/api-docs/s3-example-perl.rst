@@ -34,7 +34,7 @@ This creates a connection so that you can interact with the server.
     my $conn = Amazon::S3->new({
             aws_access_key_id     => $access_key,
             aws_secret_access_key => $secret_key,
-            host                  => 'objects.dreamhost.com',
+            host                  => 'objects-us-west-1.dream.io',
             secure                => 1,
             retry                 => 1,
     });
@@ -208,7 +208,7 @@ URL will stop working).
             $access_key,
             $secret_key,
             0, # 0 means use 'http'. set this to 1 for 'https'
-            'objects.dreamhost.com',
+            'objects-us-west-1.dream.io',
     );
 
     my $hello_url = $generator->make_bare_url($bucket->bucket, 'hello.txt');
@@ -220,8 +220,8 @@ URL will stop working).
 
 The output will look something like this::
 
-   http://objects.dreamhost.com:80/my-bucket-name/hello.txt
-   http://objects.dreamhost.com:80/my-bucket-name/secret_plans.txt?Signature=XXXXXXXXXXXXXXXXXXXXXXXXXXX&Expires=1316027075&AWSAccessKeyId=XXXXXXXXXXXXXXXXXXX
+   http://objects-us-west-1.dream.io:80/my-bucket-name/hello.txt
+   http://objects-us-west-1.dream.io:80/my-bucket-name/secret_plans.txt?Signature=XXXXXXXXXXXXXXXXXXXXXXXXXXX&Expires=1316027075&AWSAccessKeyId=XXXXXXXXXXXXXXXXXXX
 
 
 .. _`Amazon::S3`: http://search.cpan.org/~tima/Amazon-S3-0.441/lib/Amazon/S3.pm

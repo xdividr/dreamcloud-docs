@@ -35,7 +35,7 @@ the `Mac App Store
 2. Select S3 on the right side as the connection type.
 
 3. Enter the following:
-    * **Server:**  objects.dreamhost.com
+    * **Server:**  objects-us-west-1.dream.io
     * **Access Key ID:** Your Access Key
     * **Secret:** Your Secret Key
     * **Initial Path:** Leave blank

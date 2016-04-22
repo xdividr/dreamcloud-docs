@@ -25,7 +25,7 @@ Connecting Cyberduck with DreamObjects semi-automatically using a connection pro
 
 
 1. Download the `DreamObjects Connection Profile
-   <http://applications.objects.dreamhost.com/DreamObjects.cyberduckprofile>`_.
+   <http://applications.objects-us-west-1.dream.io/DreamObjects.cyberduckprofile>`_.
 2. Once it's downloaded, double-click the file to open Cyberduck and then
    create a new DreamObjects bookmark.
 
@@ -78,7 +78,7 @@ Connecting to Cyberduck manually
     .. figure:: images/02_DHO_Cyberduck.fw.png
 
 4. Enter the following:
-    * **Server**: objects.dreamhost.com
+    * **Server**: objects-us-west-1.dream.io
     * **Username**: enter the access key for the DreamObjects user/buckets to
       which you wish to connect, and then close the window to save the
       connection settings.

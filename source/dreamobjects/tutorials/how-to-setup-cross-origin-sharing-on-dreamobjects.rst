@@ -203,7 +203,7 @@ configuration to DreamObjects:
 .. code-block:: python
 
     from boto.s3.connection import S3Connection
-    host = 'objects.dreamhost.com'
+    host = 'objects-us-west-1.dream.io'
     access_key = '...'
     secret_key = '...'
     conn = S3Connection(host=host, aws_access_key_id=access_key, aws_secret_access_key=secret_key)
@@ -227,7 +227,7 @@ configuration to DreamObjects:
     import boto.s3.cors
     import itertools
 
-    host = 'objects.dreamhost.com'
+    host = 'objects-us-west-1.dream.io'
     access_key = '...'
     secret_key = '...'
     bucket_name = '...'

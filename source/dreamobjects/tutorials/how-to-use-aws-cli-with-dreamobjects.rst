@@ -73,49 +73,49 @@ Example Commands
 
 .. code::
 
-    $ aws --endpoint-url http://objects.dreamhost.com s3 mb s3://newbucketname
+    $ aws --endpoint-url http://objects-us-west-1.dream.io s3 mb s3://newbucketname
     make_bucket: s3://newbucketname/
 
 **Listing all buckets**
 
 .. code::
 
-    $ aws --endpoint-url http://objects.dreamhost.com s3 ls
+    $ aws --endpoint-url http://objects-us-west-1.dream.io s3 ls
     2016-01-27 20:14:46 newbucketname
 
 **Uploading a file into a bucket**
 
 .. code::
 
-    $ aws --endpoint-url http://objects.dreamhost.com s3 cp testfile.txt s3://newbucketname/testfile.txt
+    $ aws --endpoint-url http://objects-us-west-1.dream.io s3 cp testfile.txt s3://newbucketname/testfile.txt
     upload: ./testfile.txt to s3://newbucketname/testfile.txt
 
 **Listing the contents of a bucket**
 
 .. code::
 
-    $ aws --endpoint-url http://objects.dreamhost.com s3 ls s3://newbucketname
+    $ aws --endpoint-url http://objects-us-west-1.dream.io s3 ls s3://newbucketname
     2016-01-27 19:30:21       8803 testfile.txt
 
 **Downloading a file from a bucket**
 
 .. code::
 
-    $ aws --endpoint-url http://objects.dreamhost.com s3 cp s3://newbucketname/testfile.txt testfile.txt
+    $ aws --endpoint-url http://objects-us-west-1.dream.io s3 cp s3://newbucketname/testfile.txt testfile.txt
     download: s3://newbucketname/testfile.txt to ./testfile.txt
 
 **Deleting a file in a bucket**
 
 .. code::
 
-    $ aws --endpoint-url http://objects.dreamhost.com s3 rm s3://newbucketname/testfile.txt
+    $ aws --endpoint-url http://objects-us-west-1.dream.io s3 rm s3://newbucketname/testfile.txt
     delete: s3://newbucketname/testfile.txt
 
 **Deleting an empty bucket**
 
 .. code::
 
-    $ aws --endpoint-url http://objects.dreamhost.com s3 rb s3://newbucketname/
+    $ aws --endpoint-url http://objects-us-west-1.dream.io s3 rb s3://newbucketname/
     remove_bucket: s3://newbucketname/
 
 **Sync a directory and its files to or from a bucket**
@@ -127,7 +127,7 @@ values such as "private" or "public-read".
 
 .. code::
 
-    $ aws --endpoint-url http://objects.dreamhost.com s3 sync syncdir s3://newbucketname/
+    $ aws --endpoint-url http://objects-us-west-1.dream.io s3 sync syncdir s3://newbucketname/
     upload: syncdir/file3 to s3://newbucketname/file3
     upload: syncdir/file1 to s3://newbucketname/file1
     upload: syncdir/file2 to s3://newbucketname/file2

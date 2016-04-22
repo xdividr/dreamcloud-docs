@@ -9,7 +9,7 @@ DreamObjects allows you to create aliases that point to your buckets using
 CNAME records. For example, you can use a CNAME record to map a DreamHost.com
 bucket URL to a domain under your control, like media.example.com. Using a
 CNAME record in this way makes your links look more professional as they do
-not show the full 'objects.dreamhost.com' portion of the URL.
+not show the full 'objects-us-west-1.dream.io' portion of the URL.
 
 Examples of CNAME records and bucket
 ------------------------------------
@@ -17,9 +17,9 @@ Examples of CNAME records and bucket
 +-----------------------------------------------------------+-------------------------------------------------------------------------------------+
 | CNAME Record                                              | DH Bucket to which it points                                                        |
 +-----------------------------------------------------------+-------------------------------------------------------------------------------------+
-| `bucket.mwod.net <http://bucket.mwod.net>`_               | `bucket.objects.dreamhost.com <http://bucket.objects.dreamhost.com>`_               |
+| `bucket.mwod.net <http://bucket.mwod.net>`_               | `bucket.objects-us-west-1.dream.io <http://bucket.objects-us-west-1.dream.io>`_               |
 +-----------------------------------------------------------+-------------------------------------------------------------------------------------+
-| `bucket.mwod.net/object <http://bucket.mwod.net/object>`_ | `bucket.objects.dreamhost.com/object <http://bucket.objects.dreamhost.com/object>`_ |
+| `bucket.mwod.net/object <http://bucket.mwod.net/object>`_ | `bucket.objects-us-west-1.dream.io/object <http://bucket.objects-us-west-1.dream.io/object>`_ |
 +-----------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 .. note::

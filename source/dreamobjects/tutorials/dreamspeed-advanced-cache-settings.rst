@@ -83,7 +83,7 @@ The script below sets the Cache-Control header to a max-age of 2592000 seconds
 
     # Replace with your DreamObjects access key and secret key
     connection = S3Connection('Your_Access_Key', 'Your_Secret_Key',
-    host='objects.dreamhost.com')
+    host='objects-us-west-1.dream.io')
 
     # Change Your_Bucket_Name to the name of the bucket with CDN enabled
     bucket = connection.get_bucket('Your_Bucket_Name')

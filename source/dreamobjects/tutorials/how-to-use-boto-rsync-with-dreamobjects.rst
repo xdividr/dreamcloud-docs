@@ -25,14 +25,14 @@ Example Commands
 
 .. code:: bash
 
-    $ boto-rsync -a ACCESSKEY -s SECRETKEY --endpoint objects.dreamhost.com \
+    $ boto-rsync -a ACCESSKEY -s SECRETKEY --endpoint objects-us-west-1.dream.io \
     /SOURCE/PATH s3://DESTINATIONBUCKET/PATH
 
 **Downloading a file or directory**
 
 .. code::
 
-    $ boto-rsync -a ACCESSKEY -s SECRETKEY --endpoint objects.dreamhost.com \
+    $ boto-rsync -a ACCESSKEY -s SECRETKEY --endpoint objects-us-west-1.dream.io \
     s3://SOURCEBUCKET/PATH /DESTINATION/PATH
 
 .. meta::

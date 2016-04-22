@@ -79,7 +79,7 @@ This creates a connection so that you can interact with the server.
     String provider = "swift";
     String identity = "USER:SUB-USER"; // Your DreamObjects user and sub-user
     String password = "SECRET-KEY";    // Your DreamObjects secret key
-    String auth_url = "https://objects.dreamhost.com/auth";
+    String auth_url = "https://objects-us-west-1.dream.io/auth";
 
     BlobStoreContext context = ContextBuilder.newBuilder(provider)
         .endpoint(auth_url)
