@@ -24,7 +24,7 @@ This creates a connection so that you can interact with the server.
 .. code-block:: ruby
 
     AWS::S3::Base.establish_connection!(
-            :server            => 'objects.dreamhost.com',
+            :server            => 'objects-us-west-1.dream.io',
             :use_ssl           => true,
             :access_key_id     => 'my-access-key',
             :secret_access_key => 'my-secret-key'
@@ -201,8 +201,8 @@ URL will stop working).
 
 The output of this will look something like::
 
-   http://objects.dreamhost.com/my-bucket-name/hello.txt
-   http://objects.dreamhost.com/my-bucket-name/secret_plans.txt?Signature=XXXXXXXXXXXXXXXXXXXXXXXXXXX&Expires=1316027075&AWSAccessKeyId=XXXXXXXXXXXXXXXXXXX
+   http://objects-us-west-1.dream.io/my-bucket-name/hello.txt
+   http://objects-us-west-1.dream.io/my-bucket-name/secret_plans.txt?Signature=XXXXXXXXXXXXXXXXXXXXXXXXXXX&Expires=1316027075&AWSAccessKeyId=XXXXXXXXXXXXXXXXXXX
 
 .. _`AWS::S3`: http://amazon.rubyforge.org/
 .. _`AWS::S3::Bucket`: http://amazon.rubyforge.org/doc/

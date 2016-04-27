@@ -31,7 +31,7 @@ Checking the size of a bucket
     # -*- coding: utf-8 -*-
     #Programmatically calculate the total size of your bucket, by iterating over all your objects
     import  boto
-    c = boto.connect_s3("ACCESS KEY", "SECRET KEY", host="objects.dreamhost.com")
+    c = boto.connect_s3("ACCESS KEY", "SECRET KEY", host="objects-us-west-1.dream.io")
     b = c.get_bucket("BUCKET_NAME")
     s = 0
     for o in b.list():
@@ -56,7 +56,7 @@ Purging a directory from a bucket
     #!/usr/bin/python
     import boto
 
-    c = boto.connect_s3("ACCESS KEY", "SECRET KEY", host="objects.dreamhost.com")
+    c = boto.connect_s3("ACCESS KEY", "SECRET KEY", host="objects-us-west-1.dream.io")
     b = c.get_bucket("BUCKET_NAME", validate=True)
 
     l = [o for o in b.list(prefix="path/to/directory/to/delete")]
@@ -80,7 +80,7 @@ permission you wish to use.
     import boto
 
     #Connect to S3
-    c = boto.connect_s3("ACCESS KEY", "SECRET KEY", host="objects.dreamhost.com")
+    c = boto.connect_s3("ACCESS KEY", "SECRET KEY", host="objects-us-west-1.dream.io")
     b = c.get_bucket("BUCKET_NAME")
 
     for o in b.list():
@@ -109,7 +109,7 @@ boto script below.
     from filechunkio import FileChunkIO
 
     #Connect to S3
-    c = boto.connect_s3("ACCESS KEY", "SECRET KEY", host="objects.dreamhost.com")
+    c = boto.connect_s3("ACCESS KEY", "SECRET KEY", host="objects-us-west-1.dream.io")
     b = c.get_bucket("BUCKET NAME")
 
     #file info

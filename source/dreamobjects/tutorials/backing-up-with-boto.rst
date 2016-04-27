@@ -144,7 +144,7 @@ First, open a connection to DreamObjects:
 
 .. code-block:: python
 
-    connection = boto.connect_s3( host='objects.dreamhost.com' )
+    connection = boto.connect_s3( host='objects-us-west-1.dream.io' )
 
 That's only a single line because we already defined the
 access key and secret key in our .boto file earlier.

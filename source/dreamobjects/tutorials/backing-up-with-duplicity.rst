@@ -36,7 +36,7 @@ this example I’m backing up my Pictures directory to the blogdemo bucket:
 .. code-block:: bash
 
     duplicity –allow-source-mismatch ~/Pictures \
-    s3://objects.dreamhost.com/blogdemo
+    s3://objects-us-west-1.dream.io/blogdemo
 
 It prompts for a encryption password which you won’t want to forget and then
 syncs your files, the output should look something like this:

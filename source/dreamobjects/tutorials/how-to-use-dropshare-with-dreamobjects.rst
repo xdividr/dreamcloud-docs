@@ -37,7 +37,7 @@ Configure Dropshare
 5. Enter your DreamObjects Bucket name, Access and Secret keys. Visit the
    `DreamObjects keys`_ article for details.
 
-   Use **objects.dreamhost.com** for the server. Also be sure to check the box
+   Use **objects-us-west-1.dream.io** for the server. Also be sure to check the box
    for **Use SSL**.
 
    .. figure:: images/04-dropshare.png

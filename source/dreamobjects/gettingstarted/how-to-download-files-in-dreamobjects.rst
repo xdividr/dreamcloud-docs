@@ -37,7 +37,7 @@ with Amazon S3 to specify permissions on buckets and objects.
   downloaded through any web browser simply by browsing to its URL.
   For example, an object called 'MY_OBJECT' in the bucket called
   'MY_BUCKET' can be downloaded by browsing to
-  `https://objects.dreamhost.com/MY_BUCKET/MY_OBJECT`.
+  `https://objects-us-west-1.dream.io/MY_BUCKET/MY_OBJECT`.
 
 Objects are limited to 10TBs, but must be uploaded in 5GB chunks.
 Please note, not all clients are able to do multipart uploads. For

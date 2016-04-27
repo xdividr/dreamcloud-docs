@@ -28,7 +28,7 @@ This creates a connection so that you can interact with the server.
     conn = cloudfiles.get_connection(
             username=username,
             api_key=api_key,
-            authurl='https://objects.dreamhost.com/auth',
+            authurl='https://objects-us-west-1.dream.io/auth',
             )
 
 

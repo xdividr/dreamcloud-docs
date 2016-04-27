@@ -34,7 +34,7 @@ This creates a connection so that you can interact with the server.
     string secretKey = "put your secret key here!";
 
     AmazonS3Config config = new AmazonS3Config();
-    config.ServiceURL = "objects.dreamhost.com";
+    config.ServiceURL = "objects-us-west-1.dream.io";
 
     AmazonS3 client = Amazon.AWSClientFactory.CreateAmazonS3Client(
             accessKey,
@@ -231,7 +231,7 @@ URL will stop working).
 
 The output of this will look something like::
 
-   http://objects.dreamhost.com/my-bucket-name/secret_plans.txt?Signature=XXXXXXXXXXXXXXXXXXXXXXXXXXX&Expires=1316027075&AWSAccessKeyId=XXXXXXXXXXXXXXXXXXX
+   http://objects-us-west-1.dream.io/my-bucket-name/secret_plans.txt?Signature=XXXXXXXXXXXXXXXXXXXXXXXXXXX&Expires=1316027075&AWSAccessKeyId=XXXXXXXXXXXXXXXXXXX
 
 .. meta::
     :labels: C# S3

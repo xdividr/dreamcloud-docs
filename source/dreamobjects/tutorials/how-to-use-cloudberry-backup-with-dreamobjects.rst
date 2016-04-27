@@ -42,7 +42,7 @@ Setting up CloudBerry Backupup with DreamObjects
       specific bucket name
     * **Secret Key** – To the left of the Access Key (also known as the
       password)
-    * **Service Point** – objects.dreamhost.com
+    * **Service Point** – objects-us-west-1.dream.io
 
     .. note::
 

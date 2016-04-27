@@ -68,7 +68,7 @@ Connecting to DreamObjects
                 kwargs['debug'] = 2
 
             if not self.use_s3:
-                kwargs['host'] = 'objects.dreamhost.com'
+                kwargs['host'] = 'objects-us-west-1.dream.io'
 
             # create a connection via the S3 protocol to DreamObjects
             self.conn = boto.connect_s3(**kwargs)
@@ -76,7 +76,7 @@ Connecting to DreamObjects
 
 The boto ``connect_s3`` function call requires the credentials for accessing the
 S3 endpoint and a hostname. The hostname for DreamObjects is
-``objects.dreamhost.com``. Boto will use the credentials to sign requests sent to
+``objects-us-west-1.dream.io``. Boto will use the credentials to sign requests sent to
 DreamObjects for security purposes.
 
 
@@ -128,8 +128,8 @@ objects. DreamObjects supports two formats for public links to objects:
 
 .. code-block: sh
 
-    http://<bucket-name>.objects.dreamhost.com/<key-name>
-    http://objects.dreamhost.com/<bucket-name>/<key-name>
+    http://<bucket-name>.objects-us-west-1.dream.io/<key-name>
+    http://objects-us-west-1.dream.io/<bucket-name>/<key-name>
 
 
 If the object that you are attempting to link to isn't accessible because of

@@ -33,7 +33,7 @@ To set up CrossFTP to use with your DreamObjects account:
     * **Protocol**: Select 'S3' from the drop down list.
     * **Label**: DreamObjects <Bucket_Name_Here> (In this example, the bucket
       name is 'bucketexample'.)
-    * **Host**: objects.dreamhost.com
+    * **Host**: objects-us-west-1.dream.io
     * **Port**: 80
     * **Access Key** and **Secret**: You can find your access/secret key
       within the (`Panel > ‘Cloud Services’ > ‘DreamObjects’

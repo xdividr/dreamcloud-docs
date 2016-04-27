@@ -51,7 +51,7 @@ Connecting to GoodSync (Windows version)
 7. In the list on the left, select the ‘Amazon S3’ option and enter
    your DreamObjects credentials:
 
-   - Address – s3://objects.dreamhost.com/yourbucketname
+   - Address – s3://objects-us-west-1.dream.io/yourbucketname
      (make sure to enter the name of the bucket you’re connecting to).
    - Access/Secret Keys – You can find these in your panel.
      View the `DreamObjects keys </hc/en-us/articles/215986357>`_

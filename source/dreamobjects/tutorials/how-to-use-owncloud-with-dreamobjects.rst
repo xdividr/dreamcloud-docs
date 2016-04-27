@@ -111,7 +111,7 @@ To locate and copy your access keys, please see:
 
     .. figure:: images/13_owncloud_with_DreamObjects.fw.png
 
-2. Enter objects.dreamhost.com into the DreamObjects hostname field.
+2. Enter objects-us-west-1.dream.io into the DreamObjects hostname field.
     * You'll see a green icon indicating the connection once you enter the
       hostname.
     * You can leave the fields empty for port and region.

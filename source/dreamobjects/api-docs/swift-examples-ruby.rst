@@ -28,7 +28,7 @@ This creates a connection so that you can interact with the server.
     conn = CloudFiles::Connection.new(
             :username => username,
             :api_key  => api_key,
-            :auth_url => 'http://objects.dreamhost.com/auth'
+            :auth_url => 'http://objects-us-west-1.dream.io/auth'
     )
 
 
