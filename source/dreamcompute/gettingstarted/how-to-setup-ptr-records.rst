@@ -28,11 +28,16 @@ control panel.
   processing.
 * Back on the Manage Domains page, click the "DNS" link directly under your
   domain name.
+
+.. figure:: images/DreamCompute-dns-panel.png
+
 * In the "Add a custom DNS record to YOURDOMAIN:" section, enter the A record
   for the domain or subdomain you wish to host, and the PTR record to be based
   on.  For example, if you want "mail.mydomain.com" then "Name" will be "mail",
   "Type" will be "A" and "Value" will be your public IPv4 address for your
   DreamCompute instance.  Click "Add Record Now!".
+
+.. figure:: images/DreamCompute-adding-custom-dns-record.png
 
 Repeat the last step as many times as needed to add additional A records for
 domains you wish to host on your instance.  If you add multiple records, our
