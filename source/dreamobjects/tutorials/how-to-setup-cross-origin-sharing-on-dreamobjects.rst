@@ -242,7 +242,7 @@ configuration to DreamObjects:
         corsobj = boto.s3.cors.CORSConfiguration()
 
     id = 'DH-CORS-Example-ID1234' # each rule may have an optional ID, and if so they must be unique
-    domains = ['example.com', 'demo.com', ... ] # edit as needed
+    domains = ['example.com', 'demo.com', '...' ] # edit as needed
     methods = ['GET', 'HEAD', 'PUT', 'POST', 'DELETE' ] # edit as needed, this covers AWS JS SDK + WebFont
     ahdr = ['Authorization', 'Content-*', 'X-Amz-*', 'Origin', 'Host'] # edit as needed, this covers AWS JS SDK + WebFont
     ehdr = ['ETag', 'Content-MD5']
