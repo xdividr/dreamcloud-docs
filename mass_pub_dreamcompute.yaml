@@ -9,6 +9,8 @@
     - password-reset.html
     - ssh-keys-and-dreamcompute.html
     - what-is-dreamcompute.html
+    - how-to-setup-dns-for-your-domains.html
+    - how-to-setup-ptr-records.html
 
 203167038:
   build/html/dreamcompute/tutorials/:
