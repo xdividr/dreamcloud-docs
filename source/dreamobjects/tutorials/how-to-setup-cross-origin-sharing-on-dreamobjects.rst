@@ -104,6 +104,7 @@ www.example.com and also works at example.com):
         <ExposeHeader>ETag</ExposeHeader>
         <MaxAgeSeconds>86400</MaxAgeSeconds>
     </CORSRule>
+    </CORSConfiguration>
 
 Example AWS S3 JS policy
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -236,9 +237,9 @@ configuration to DreamObjects:
     bucket = conn.get_bucket(bucket_name)
 
     try:
-      corsobj = bucket.get_cors()
+        corsobj = bucket.get_cors()
     except:
-      corsobj = boto.s3.cors.CORSConfiguration()
+        corsobj = boto.s3.cors.CORSConfiguration()
 
     id = 'DH-CORS-Example-ID1234' # each rule may have an optional ID, and if so they must be unique
     domains = ['example.com', 'demo.com', ... ] # edit as needed
@@ -256,6 +257,7 @@ configuration to DreamObjects:
     # 1. Allow us to compare CORSRule elements
     def CORSRule_eq(self, other):
         return self.__dict__ == other.__dict__
+
     boto.s3.cors.CORSRule.__eq__ = CORSRule_eq
     # 2. Now find unique elements
     corsobj = boto.s3.cors.CORSConfiguration([key for key,_ in itertools.groupby(corsobj)])
