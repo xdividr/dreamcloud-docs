@@ -1,0 +1,25 @@
+# hosts the play runs on
+- hosts: localhost
+
+  # List of tasks
+  tasks:
+  - name: launch an Ubuntu server
+
+    # This lets us define an server
+    os_server:
+
+      # Cloud authentication information
+      auth:
+        auth_url: https://iad2.dream.io:5000
+        username: {username}
+        password: {password}
+        project_name: {project}
+
+      # VM details
+      state: present
+      name: ansible-vm1
+      image: Ubuntu-16.04
+      key_name: raynor
+      flavor: 50
+      network: public
+      wait: yes
