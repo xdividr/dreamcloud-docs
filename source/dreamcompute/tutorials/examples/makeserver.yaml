@@ -1,4 +1,4 @@
-# hosts the play runs on
+# hosts the playbook runs on
 - hosts: localhost
 
   # List of tasks

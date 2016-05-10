@@ -1,6 +1,6 @@
-======================================================
-How to launch an server with Ansible on DreamCompute
-======================================================
+================================================
+How to launch a DreamCompute server with Ansible
+================================================
 
 Ansible is a configuration management tool with built in OpenStack support.
 Which means it's easy to use it to deploy servers and manage them on
@@ -11,40 +11,46 @@ Installation
 ~~~~~~~~~~~~
 
 For this tutorial we're going to use Ubuntu 16.04 (Xenial Xerus) as our host to
-run ansible plays from. First we need to install a few packages.
+run Ansible playbooks from. First we need to install a few packages.
 On Ubuntu 16.04 that can be done with one simple command.
+
+.. Note::
+
+    If you are not using Ubuntu 16.04, you can read
+    http://docs.ansible.com/ansible/intro_installation.html#latest-releases-via-pip
+    to figure out how to install ansible on your system
 
 .. code::
 
-    $ sudo apt-get install ansible python2.7 python-virtualenv python-pip
+    $ sudo apt-get install -y ansible python2.7 python-virtualenv python-pip
 
-Type in your password for sudo (If you have one), then hit **y** when it asks
-you for confirmation. It then will download some packages and install them.
-Next we need to install shade in a virtual environment as Ansible depends on
-it.
+Type in your password for sudo (If you have one). It then will download some
+packages and install them. Next we need to install shade in a virtual
+environment as Ansible depends on it.
 
 .. code::
 
     $ virtualenv -p /usr/bin/python2 venv && source venv/bin/activate && pip \
           install shade
 
-Now you will have shade installed and are ready to start writing ansible plays.
+Now you have shade installed and are ready to start writing Ansible
+playbooks.
 
 Writing a Ansible Playbook to Launch a Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Make a file named **launch-server.yaml**, that will be our play (Ansibles term
-for a yaml file that Ansible can interpret and use to perform some tasks).
+Make a file named **launch-server.yaml**, that will be our playbook (Ansible's
+term for a yaml file that Ansible can interpret and use to perform some tasks).
 
-The first part of your play is a list of hosts that your play will run on, we
-only have one, localhost.
+The first part of your playbook is a list of hosts that your playbook will run
+on, we only have one, localhost.
 
 .. literalinclude:: examples/makeserver.yaml
-    :start-after: # hosts the play runs on
+    :start-after: # hosts the playbook runs on
     :end-before: # List of tasks
 
-Then we need to define a list of tasks to perform in this play. We will only
-have one that launches an Ubuntu Xenial server on DreamCompute.
+Then we need to define a list of tasks to perform in this playbook. We will
+only have one that launches an Ubuntu Xenial server on DreamCompute.
 
 .. literalinclude:: examples/makeserver.yaml
     :start-after: # List of tasks
@@ -58,9 +64,9 @@ server to look like in DreamCompute.
     :end-before: # Cloud authentication information
 
 Now we have to tell it how to authenticate to DreamCompute so that it can
-create a server there. use the following example, substituting **{username}** with
-your DreamCompute username, **{password}** with your DreamCompute password, and
-**{project}** with your DreamCompute project.
+create a server there. use the following example, substituting **{username}**
+with your DreamCompute username, **{password}** with your DreamCompute
+password, and **{project}** with your DreamCompute project.
 
 .. literalinclude:: examples/makeserver.yaml
     :start-after: # Cloud authentication information
@@ -110,10 +116,10 @@ Lets break down the previous few lines
     * yes
     * no
 
-Running the Ansible play
-~~~~~~~~~~~~~~~~~~~~~~~~
+Running the Ansible playbook
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Ansible play can be run with the following command:
+The Ansible playbook can be run with the following command:
 
 .. code::
 
