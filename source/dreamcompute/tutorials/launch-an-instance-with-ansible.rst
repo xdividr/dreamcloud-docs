@@ -116,7 +116,7 @@ Lets break down the previous few lines
     * yes
     * no
 
-Running the Ansible playbook
+Running the Ansible Playbook
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Ansible playbook can be run with the following command:
@@ -148,8 +148,8 @@ Now if you check the `web UI
 <https://iad2.dreamcompute.com/project/instances/>`_ you should see a instance
 named "ansible-vm1"
 
-Full Play
-~~~~~~~~~
+Full Playbook
+~~~~~~~~~~~~~
 
 .. literalinclude:: examples/makeserver.yaml
 
