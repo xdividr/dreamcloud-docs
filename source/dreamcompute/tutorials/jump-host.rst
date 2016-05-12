@@ -5,8 +5,8 @@ How to SSH to an Instance Without a Public IP Address
 Overview
 ~~~~~~~~
 
-DreamCompute plans include a small amount of floating (public) IPv4
-address. That's perfect for exposing one machine to the public
+If you have private networking enabled in DreamCompute, you may use
+it to expose some servers to the
 internet while limiting access to others on the private network. For
 example, you may want your web server exposed on port 80 or 443 while
 keeping your database access restricted to only the private network.
