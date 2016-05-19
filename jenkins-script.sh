@@ -43,6 +43,17 @@ fi
 # to zendesk
 files="`git diff --name-only $GIT_PREVIOUS_SUCCESSFUL_COMMIT $GIT_COMMIT`"
 
+# If a file is an image, add the places where it is referenced to $files
+for file in $files ; do
+    if `echo "$file" | egrep -i '\.png$|\.jpg$' > /dev/null` ; then
+        file_name="`basename $file`"
+        affected_files="`grep -R $file_name source/* | cut -d ':' -f1`"
+        files="$(echo -e "${files}\n${affected_files}")"
+    fi
+done
+
+files="`echo "$files" | sort -u`"
+
 for file in $files ; do
     if [ -e "$file" ] ; then
         # if the file extension is .rst and it is not "index.rst", get the
