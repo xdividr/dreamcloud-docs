@@ -58,3 +58,6 @@ target/
 
 # Build location
 /firstapp/build*/
+
+# OS X
+*.DS_Store
