@@ -38,12 +38,13 @@ Navigate to *S3 Storage*.
 
 .. figure:: images/s3.jpg
 
-Your *S3 Server* should be :command:objects-us-west-1.dream.io. Once you provide
+Your *S3 Server* should be a Custom Server URL. Fill in
+objects-us-west-1.dream.io for the *Server address*. Once you provide
 your access key (public key) and secret keys, all of your available
 DreamObjects buckets will populate the dropdown list. Select the one
 that you want to use (you might only have one.)
 
-.. figure:: images/synccredentials.jpg
+.. figure:: images/synccredentials.png
 
 Now you’ll need to give this sync job a name and tell Cloud Sync which
 directories to include.
