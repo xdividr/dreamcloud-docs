@@ -13,7 +13,7 @@ Contents:
    :glob:
 
    dream*/*/*
-   dream*/*/common/*
+   dream*/*/*/*
 
 Indices and tables
 ==================
