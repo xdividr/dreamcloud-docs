@@ -63,7 +63,16 @@ for file in $files ; do
             html_file="`echo $file | sed 's/^source\(.*\).rst$/build\/html\1\.html/'`"
             echo "$html_file"
             dir="`dirname $file`"
-            section_id="`cat ${dir}/section_id.txt`"
+            `cat ${dir}/section_id.txt`
+            if [ -f "${dir}/section_id.txt" ] ; then
+                section_id="$( cat "${dir}/section_id.txt" )"
+            elif [ -f "${dir}/../section_id.txt" ] ; then
+                section_id="$( cat "${dir}/../section_id.txt" )"
+            fi
+            if [ -z "$section_id" ] ; then
+                echo "Cannot find the section id for file $file"
+                exit 1
+            fi
             python zendesk-publish-script/publish.py "$html_file" "$section_id"
             if [ $? -ne 0 ] ; then
                 exit 1
