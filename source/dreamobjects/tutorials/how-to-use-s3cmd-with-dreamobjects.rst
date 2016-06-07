@@ -18,7 +18,7 @@ DreamObjects.
 Installing S3cmd
 ~~~~~~~~~~~~~~~~
 
-These instructions were performed with **s3cmd v1.5.2**. If you'd like to
+These instructions were performed with **s3cmd v1.6.1**. If you'd like to
 install a different version, you'll need to modify the file names
 appropriately.
 
@@ -35,21 +35,21 @@ appropriately.
 
     .. code::
 
-        curl -O -L https://github.com/s3tools/s3cmd/archive/v1.5.2.tar.gz
+        curl -O -L https://github.com/s3tools/s3cmd/archive/v1.6.1.tar.gz
 
 4. Untar the file.
 
     .. code::
 
-        tar xzf v1.5.2.tar.gz
+        tar xzf v1.6.1.tar.gz
 
-    *You should now have a directory called s3cmd-1.5.2*
+    *You should now have a directory called s3cmd-1.6.1*
 
 5. Change into that directory
 
     .. code::
 
-        cd s3cmd-1.5.2
+        cd s3cmd-1.6.1
 
 6. Copy the s3cmd executable and S3 folder into the bin directory we created
    earlier
@@ -75,7 +75,7 @@ appropriately.
 
     .. code::
 
-        . ~/.bash_profile
+        . ~/.bashrc
 
 Configuring S3cmd
 ~~~~~~~~~~~~~~~~~
