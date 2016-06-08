@@ -62,7 +62,7 @@ Connecting to DreamObjects
             kwargs = dict(
                 aws_access_key_id=self.access_key,
                 aws_secret_access_key=self.secret_key,
-            )
+                )
 
             if self.show_http_traffic:
                 kwargs['debug'] = 2
@@ -118,8 +118,10 @@ Linking to Objects
 
         def get_public_reference(self):
             self.public_url = self.key.generate_url(
-                0, query_auth=False, force_http=True
-            )
+                expires_in=0,
+                query_auth=False,
+                force_http=True
+                )
 
 
 Linking to objects in DreamObjects is as simple as generating a link using a
@@ -141,12 +143,15 @@ can be active for a limited period of time.
 
         def generate_signed_url(self):
             self.signed_url = self.key.generate_url(
-                3600, query_auth=True, force_http=True
-            )
+                expires_in=3600,
+                query_auth=True,
+                force_http=True
+                )
 
 Key objets in boto provide a utility method for generating signed URLs. Simply
-call the ``generate_url`` method and pass a number of seconds for the link to be
-active, and pass the ``query_auth`` keyword argument as ``True``.
+call the ``generate_url`` method and pass a number of seconds for the link to
+be active (to a maximum of one week), and pass the ``query_auth`` keyword
+argument as ``True``.
 
 
 Setting ACLs

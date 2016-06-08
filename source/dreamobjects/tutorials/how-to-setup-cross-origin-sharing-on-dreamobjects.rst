@@ -207,7 +207,11 @@ configuration to DreamObjects:
     host = 'objects-us-west-1.dream.io'
     access_key = '...'
     secret_key = '...'
-    conn = S3Connection(host=host, aws_access_key_id=access_key, aws_secret_access_key=secret_key)
+    conn = S3Connection(
+        host=host,
+        aws_access_key_id=access_key,
+        aws_secret_access_key=secret_key,
+        )
     my_cors_conf = """
     <CORSConfiguration>
     <!-- policy goes here -->
@@ -241,17 +245,28 @@ configuration to DreamObjects:
     except:
         corsobj = boto.s3.cors.CORSConfiguration()
 
-    id = 'DH-CORS-Example-ID1234' # each rule may have an optional ID, and if so they must be unique
+    id = 'DH-CORS-Example-ID1234' # each rule MAY have an optional ID, and if so they MUST be unique
     domains = ['example.com', 'demo.com', '...' ] # edit as needed
     methods = ['GET', 'HEAD', 'PUT', 'POST', 'DELETE' ] # edit as needed, this covers AWS JS SDK + WebFont
     ahdr = ['Authorization', 'Content-*', 'X-Amz-*', 'Origin', 'Host'] # edit as needed, this covers AWS JS SDK + WebFont
     ehdr = ['ETag', 'Content-MD5']
 
     # Construct the origins from domains, allowing HTTP, HTTPS, on the domain with and without 'www.'
-    # If you want to require HTTPS, you should remove http:// elements from this list.
-    origins = list(itertools.chain.from_iterable([('http://'+d, 'https://'+d, 'http://www.'+d, 'https://www.'+d) for d in domains]))
+    # If you want to require HTTPS, you should remove 'http' element from the first list
+    protocols = ['http', 'https']
+    domain_prefix = ['','www.']
+    origins_tuple = itertools.product(protocols, domain_prefix, domains)
+    origins = ['{0}://{1}{2}'.format(*t) for t in origins_tuple]
+
     # Add the rule to the CORS object
-    corsobj.add_rule(methods, origins, id=id, allowed_header=ahdr, max_age_seconds=3600, expose_header=ehdr)
+    corsobj.add_rule(
+        methods,
+        origins,
+        id=id,
+        allowed_header=ahdr,
+        max_age_seconds=3600,
+        expose_header=ehdr,
+        )
 
     # This little bit of magic allows us to deduplicate CORS rules:
     # 1. Allow us to compare CORSRule elements
