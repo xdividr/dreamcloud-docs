@@ -29,9 +29,12 @@ is as follows:
 
     sudo apt-get install lamp-server^
 
-This is interactive, so you’ll be asked ‘are you sure?’ in some places, and in others it will want a password for SQL. Make up a secure password for SQL and save it as you will need this later to set up SQL for WordPress.
+This is interactive, so you’ll be asked ‘are you sure?’ in some places, and 
+in others it will want a password for SQL. Make up a secure password for SQL 
+and save it as you will need this later to set up SQL for WordPress.
 
-After it runs, you’ll want to add mod_rewrite so WordPress can make pretty pages:
+After it runs, you’ll want to add mod_rewrite so WordPress can make pretty 
+pages:
 
 .. code::
 
@@ -64,35 +67,37 @@ And we create a user and give them access:
     sudo adduser wp_example www-data
     sudo chown -R wp_example:www-data /var/www/example.com/
 
-The reason we add the users to the www-data group is to allow Ubuntu to properly manage WordPress updates and images.
+The reason we add the users to the www-data group is to allow Ubuntu to properly 
+manage WordPress updates and images.
 
 Add SSH Access
 ~~~~~~~~~~~~~~
 
-WordPress users often need SSH access in order to do extra configuration with WordPress. By default, this is disabled, so you will need to edit your config
-
-If you need SSH access
-
-Apparently not. See, sshd by default doesn't allow password auth, so /etc/ssh/sshd_config needs to be edited, changing PasswordAuthentication to yes, then "service sshd restart" to reload sshd.
+WordPress users often need SSH access in order to do extra configuration with 
+WordPress. By default, this is disabled, so you will need to edit your config.
 
 .. code::
 
     sudo vi /etc/ssh/sshd_config
 
-Look for the setting of PasswordAuthentication, change it to "yes", and save your file. Remember to restart SSHD once you've done this.
+Look for the setting of PasswordAuthentication, change it to "yes", and save 
+your file. Remember to restart SSHD once you've done this.
 
 .. code::
 
     sudo service sshd restart
 
-Will this make your server less secure? Not significantly. As this new account only has access to itself, it can only hack itself.
+Will this make your server less secure? Not significantly. As this new account 
+only has access to itself, it can only hack itself.
 
 Add Your Domain
 ~~~~~~~~~~~~~~~
 
-There are a few steps to set up your domain. First you'll need to `Setup DNS for DreamCompute<218672058>`_ for all your domains.
+There are a few steps to set up your domain. First you'll need to `Setup DNS 
+for DreamCompute<218672058>`_ for all your domains.
 
-Next you'll want to configure VirtualHosts so your server knows how to handle the domain.
+Next you'll want to configure VirtualHosts so your server knows how to handle 
+the domain.
 
 To do this, you need to make a .conf file:
 
@@ -100,7 +105,8 @@ To do this, you need to make a .conf file:
 
     sudo touch /etc/apache2/sites-available/example.com.conf
 
-It's recommended you name the file after your domain, so you can always know what file is for what domain.
+It's recommended you name the file after your domain, so you can always know 
+what file is for what domain.
 
 Edit that file and put this in:
 
@@ -118,13 +124,15 @@ Edit that file and put this in:
         CustomLog ${APACHE_LOG_DIR}/example.com-access.log combined
 	</VirtualHost>
 
-Once the site is added, we'll need to enable it via a command called a2ensite (if you want to disable, it’s a2dissite):
+Once the site is added, we'll need to enable it via a command called a2ensite 
+(if you want to disable, it’s a2dissite):
 
 .. code::
 
     sudo a2ensite
 
-This will prompt you to pick what site you want to enable. Type it in, hit enter, and you’ll be told what’s next.
+This will prompt you to pick what site you want to enable. Type it in, hit 
+enter, and you’ll be told what’s next.
 
 .. code::
 
@@ -135,7 +143,8 @@ This will prompt you to pick what site you want to enable. Type it in, hit enter
     To activate the new configuration, you need to run:
       service apache2 reload
 
-Remember this command. It's a fast way to enable sites without having to rename or mess with files. Finally bounce your apache service so it reads the changes:
+Remember this command. It's a fast way to enable sites without having to rename 
+or mess with files. Finally bounce your apache service so it reads the changes:
 
 .. code::
 
@@ -170,7 +179,9 @@ You can check this by running the following command:
 Install WP-CLI
 ~~~~~~~~~~~~~~
 
-While this is optional, we strongly recommend this. DreamHost includes `WP-CLI<http://wp-cli.org/>`_ on all servers due to it's usefulness. To install, log in as your default user (not the web user we created earlier) and run the following:
+While this is optional, we strongly recommend this. DreamHost includes `WP-CLI<http://wp-cli.org/>`_ 
+on all servers due to it's usefulness. To install, log in as your default user 
+(not the web user we created earlier) and run the following:
 
 .. code::
 
@@ -195,7 +206,8 @@ That will make it accessible for all users.
 Install WordPress
 ~~~~~~~~~~~~~~~~~
 
-Log into your server as your WordPress SSH account (wp_example) and go to your webfolder. If you've installed WP-CLI, then all you have to do is this:
+Log into your server as your WordPress SSH account (wp_example) and go to your 
+webfolder. If you've installed WP-CLI, then all you have to do is this:
 
 .. code::
 
@@ -210,7 +222,8 @@ Of course since you have wp-cli you can also do this:
     wp core config --dbname=examplecom_wordpress --dbuser=examplecom --dbpass=PASSWORD
     wp core install --url=http://example.com --title=DreamComputePress --admin_user=YOURUSERNAME --admin_password=PASSWORD --admin_email=admin@example.com --skip-email
 
-If you use secure passwords like cWG8j8FPPj{T9UDL_PW8 then you MUST put quotes around the password.
+If you use secure passwords like cWG8j8FPPj{T9UDL_PW8 then you MUST put quotes 
+around the password.
 
 I chose to skip-emails since I’m making it right there.
 
@@ -238,7 +251,8 @@ Run a restart of apache when you’re done:
 Troubleshooting
 ~~~~~~~~~~~~~~~
 
-If WordPress can’t save files, you probably forgot to put your user in the right group:
+If WordPress can’t save files, you probably forgot to put your user in the right 
+group:
 
 .. code::
 
