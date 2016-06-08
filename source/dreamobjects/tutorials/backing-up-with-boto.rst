@@ -114,12 +114,18 @@ variable I've used there, though.  Here's how we can do that
 .. code-block:: python
 
     import datetime
+    import os.path
     day_number = datetime.datetime.today().weekday()
 
-    backup_filename = target_dir + '.backup.' + str(day_number) +
-    '.tar.gz'
-    backup_filepath = home_dir + '/' + tmp_dir + '/' +
-    backup_filename
+    backup_filename = "{0}.backup.{1}.tar.gz".format(
+        target_dir,
+        str(day_number),
+        )
+    backup_filepath = os.path.join(
+        home_dir,
+        tmp_dir,
+        backup_filename,
+        )
 
 Let's step through that.  In this simple example we're going to
 keep 7 daily backups, each day overwriting the backup from one
@@ -144,7 +150,9 @@ First, open a connection to DreamObjects:
 
 .. code-block:: python
 
-    connection = boto.connect_s3( host='objects-us-west-1.dream.io' )
+    connection = boto.connect_s3(
+        host='objects-us-west-1.dream.io',
+        )
 
 That's only a single line because we already defined the
 access key and secret key in our .boto file earlier.
@@ -201,7 +209,7 @@ exist already:
 .. code-block:: python
 
     if not os.path.isdir(tmp_dir):
-    os.makedirs(tmp_dir)
+        os.makedirs(tmp_dir)
 
 In my version I've also added comments to make it easier
 to read and added print statements telling us what step

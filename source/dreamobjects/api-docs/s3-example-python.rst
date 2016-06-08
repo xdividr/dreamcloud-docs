@@ -30,11 +30,11 @@ This creates a connection so that you can interact with the server.
     secret_key = 'put your secret key here!'
 
     conn = boto.connect_s3(
-            aws_access_key_id = access_key,
-            aws_secret_access_key = secret_key,
-            host = 'objects-us-west-1.dream.io',
-            calling_format = boto.s3.connection.OrdinaryCallingFormat(),
-            )
+        aws_access_key_id = access_key,
+        aws_secret_access_key = secret_key,
+        host = 'objects-us-west-1.dream.io',
+        calling_format = boto.s3.connection.OrdinaryCallingFormat(),
+        )
 
 
 .. _S3_Python_Listing_Owned_Buckets:
@@ -48,7 +48,7 @@ This also prints out the bucket name and creation date of each bucket.
 .. code-block:: python
 
     for bucket in conn.get_all_buckets():
-    print "{name}\t{created}".format(
+        print "{name}\t{created}".format(
             name = bucket.name,
             created = bucket.creation_date,
             )
@@ -84,11 +84,11 @@ modified date.
 .. code-block:: python
 
     for key in bucket.list():
-            print "{name}\t{size}\t{modified}".format(
-                    name = key.name,
-                    size = key.size,
-                    modified = key.last_modified,
-                    )
+        print "{name}\t{size}\t{modified}".format(
+            name = key.name,
+            size = key.size,
+            modified = key.last_modified,
+            )
 
 The output will look something like this::
 
