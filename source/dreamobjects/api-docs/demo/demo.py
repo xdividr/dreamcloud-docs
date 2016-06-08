@@ -10,11 +10,17 @@ import sys
 import argparse
 
 # import required third-party modules
-missing_packages = [] # pylint: disable=invalid-name
 try:
+    # termcolor is NOT packaged in Ubuntu 12.04
+    # Users on shared servers cannot install Python packages themselves, so
+    # simply fall back to uncolored output.
     from termcolor import colored # pylint: disable=wrong-import-position
 except ImportError:
-    missing_packages += ['termcolor']
+    def colored(string, color, **kwargs): # pylint: disable=unused-argument
+        '''Fallback version of termcolor.colored()'''
+        return string
+
+missing_packages = [] # pylint: disable=invalid-name
 try:
     import boto # pylint: disable=wrong-import-position
     import boto.s3.connection # pylint: disable=wrong-import-position
@@ -24,9 +30,12 @@ except ImportError:
 
 if len(missing_packages) > 0:
     print 'This demonstration requires some packages that are missing.'
+    print 'You can use your distribution package manager and local name'
+    print 'for the package, or try the pip installer.'
+    print ''
     print 'To continue, please install these packages:'
     print '   $ pip install '+(' '.join(missing_packages))
-    sys.exit(0)
+    sys.exit(1)
 
 class OrderedStep(object): # pylint: disable=too-few-public-methods
     '''
