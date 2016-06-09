@@ -63,7 +63,6 @@ for file in $files ; do
             html_file="`echo $file | sed 's/^source\(.*\).rst$/build\/html\1\.html/'`"
             echo "$html_file"
             dir="`dirname $file`"
-            `cat ${dir}/section_id.txt`
             if [ -f "${dir}/section_id.txt" ] ; then
                 section_id="$( cat "${dir}/section_id.txt" )"
             elif [ -f "${dir}/../section_id.txt" ] ; then
