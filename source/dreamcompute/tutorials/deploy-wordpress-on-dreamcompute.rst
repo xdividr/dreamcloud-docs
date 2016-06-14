@@ -1,6 +1,6 @@
-====================================================
+======================================================
 Step-by-step guide to deploy WordPress on DreamCompute
-====================================================
+======================================================
 
 Preparation
 ~~~~~~~~~~~~
@@ -8,13 +8,13 @@ Preparation
 In this tutorial we are going to install WordPress on a DreamCompute
 instance, including both the application itself and the database it uses.
 We'll install and configure all necessary components without making use of
-automatic configuration management systems. 
+automatic configuration management systems.
 
 This example will use an Ubuntu virtual machine, but you can use whichever
 flavor of linux you prefer. As long as you can install Apache, PHP, and
 database software, WordPress will be able to run.
 
-Whichever machine type you pick, remember it's better to boot volume backed 
+Whichever machine type you pick, remember it's better to boot volume backed
 instances as they are permanent as opposed to ephemeral disks.
 
 Installing LAMP
@@ -22,18 +22,19 @@ Installing LAMP
 
 While you certainly can install everything on it's own, the LAMP stack for
 Ubuntu is perfect for WordPress. If necessary, you can follow the directions
-on `how to configure LAMP <215879467-How-to-Configure-LAMP-on-DreamCompute-running-Debian-or-Ubuntu>`_ but the overview
-is as follows:
+on `how to configure LAMP
+<215879467-How-to-Configure-LAMP-on-DreamCompute-running-Debian-or-Ubuntu>`_
+but the overview is as follows:
 
 .. code::
 
     sudo apt-get install lamp-server^
 
-This is interactive, so you’ll be asked ‘are you sure?’ in some places, and 
-in others it will want a password for SQL. Make up a secure password for SQL 
+This is interactive, so you’ll be asked ‘are you sure?’ in some places, and
+in others it will want a password for SQL. Make up a secure password for SQL
 and save it as you will need this later to set up SQL for WordPress.
 
-After it runs, you’ll want to add mod_rewrite so WordPress can make pretty 
+After it runs, you’ll want to add mod_rewrite so WordPress can make pretty
 pages:
 
 .. code::
@@ -51,7 +52,11 @@ At this point, your server will be accessible via its IP address.
 Create a User
 ~~~~~~~~~~~~~
 
-While it's not required to make a separate user ID for WordPress, it's strongly recommended for security. Having a user who only has access to the one website will limit the havoc caused should that account be hacked. This also limits the danger caused by rogue plugins or themes. The server itself will be safe, containing the damage just to that user account.
+While it's not required to make a separate user ID for WordPress, it's strongly
+recommended for security. Having a user who only has access to the one website
+will limit the havoc caused should that account be hacked. This also limits the
+danger caused by rogue plugins or themes. The server itself will be safe,
+containing the damage just to that user account.
 
 To do this, we make a folder for the website:
 
@@ -67,36 +72,36 @@ And we create a user and give them access:
     sudo adduser wp_example www-data
     sudo chown -R wp_example:www-data /var/www/example.com/
 
-The reason we add the users to the www-data group is to allow Ubuntu to properly 
+The reason we add the users to the www-data group is to allow Ubuntu to properly
 manage WordPress updates and images.
 
 Add SSH Access
 ~~~~~~~~~~~~~~
 
-WordPress users often need SSH access in order to do extra configuration with 
+WordPress users often need SSH access in order to do extra configuration with
 WordPress. By default, this is disabled, so you will need to edit your config.
 
 .. code::
 
     sudo vi /etc/ssh/sshd_config
 
-Look for the setting of PasswordAuthentication, change it to "yes", and save 
+Look for the setting of PasswordAuthentication, change it to "yes", and save
 your file. Remember to restart SSHD once you've done this.
 
 .. code::
 
     sudo service sshd restart
 
-Will this make your server less secure? Not significantly. As this new account 
+Will this make your server less secure? Not significantly. As this new account
 only has access to itself, it can only hack itself.
 
 Add Your Domain
 ~~~~~~~~~~~~~~~
 
-There are a few steps to set up your domain. First you'll need to `Setup DNS 
-for DreamCompute<218672058>`_ for all your domains.
+There are a few steps to set up your domain. First you'll need to `Setup DNS
+for DreamCompute <218672058>`_ for all your domains.
 
-Next you'll want to configure VirtualHosts so your server knows how to handle 
+Next you'll want to configure VirtualHosts so your server knows how to handle
 the domain.
 
 To do this, you need to make a .conf file:
@@ -105,7 +110,7 @@ To do this, you need to make a .conf file:
 
     sudo touch /etc/apache2/sites-available/example.com.conf
 
-It's recommended you name the file after your domain, so you can always know 
+It's recommended you name the file after your domain, so you can always know
 what file is for what domain.
 
 Edit that file and put this in:
@@ -117,21 +122,21 @@ Edit that file and put this in:
         ServerAdmin admin@example.com
         DocumentRoot /var/www/example.com
         <Directory /var/www/example.com>
-            	AllowOverride all
+                AllowOverride all
         </Directory>
 
         ErrorLog ${APACHE_LOG_DIR}/example.com-error.log
         CustomLog ${APACHE_LOG_DIR}/example.com-access.log combined
-	</VirtualHost>
+    </VirtualHost>
 
-Once the site is added, we'll need to enable it via a command called a2ensite 
+Once the site is added, we'll need to enable it via a command called a2ensite
 (if you want to disable, it’s a2dissite):
 
 .. code::
 
     sudo a2ensite
 
-This will prompt you to pick what site you want to enable. Type it in, hit 
+This will prompt you to pick what site you want to enable. Type it in, hit
 enter, and you’ll be told what’s next.
 
 .. code::
@@ -143,7 +148,7 @@ enter, and you’ll be told what’s next.
     To activate the new configuration, you need to run:
       service apache2 reload
 
-Remember this command. It's a fast way to enable sites without having to rename 
+Remember this command. It's a fast way to enable sites without having to rename
 or mess with files. Finally bounce your apache service so it reads the changes:
 
 .. code::
@@ -153,7 +158,7 @@ or mess with files. Finally bounce your apache service so it reads the changes:
 Create the Database and Users
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-WordPress absolutely requires a database. You'll want to create one 
+WordPress absolutely requires a database. You'll want to create one
 
 .. code::
 
@@ -179,16 +184,17 @@ You can check this by running the following command:
 Install WP-CLI
 ~~~~~~~~~~~~~~
 
-While this is optional, we strongly recommend this. DreamHost includes `WP-CLI<http://wp-cli.org/>`_ 
-on all servers due to it's usefulness. To install, log in as your default user 
-(not the web user we created earlier) and run the following:
+While this is optional, we strongly recommend this. DreamHost includes `WP-CLI
+<http://wp-cli.org/>`_ on all servers due to it's usefulness. To install, log
+in as your default user (not the web user we created earlier) and run the
+following:
 
 .. code::
 
     cd ~
     curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 
-Check that it works: 
+Check that it works:
 
 .. code::
 
@@ -206,7 +212,7 @@ That will make it accessible for all users.
 Install WordPress
 ~~~~~~~~~~~~~~~~~
 
-Log into your server as your WordPress SSH account (wp_example) and go to your 
+Log into your server as your WordPress SSH account (wp_example) and go to your
 webfolder. If you've installed WP-CLI, then all you have to do is this:
 
 .. code::
@@ -222,7 +228,7 @@ Of course since you have wp-cli you can also do this:
     wp core config --dbname=examplecom_wordpress --dbuser=examplecom --dbpass=PASSWORD
     wp core install --url=http://example.com --title=DreamComputePress --admin_user=YOURUSERNAME --admin_password=PASSWORD --admin_email=admin@example.com --skip-email
 
-If you use secure passwords like cWG8j8FPPj{T9UDL_PW8 then you MUST put quotes 
+If you use secure passwords like cWG8j8FPPj{T9UDL_PW8 then you MUST put quotes
 around the password.
 
 I chose to skip-emails since I’m making it right there.
@@ -251,7 +257,7 @@ Run a restart of apache when you’re done:
 Troubleshooting
 ~~~~~~~~~~~~~~~
 
-If WordPress can’t save files, you probably forgot to put your user in the right 
+If WordPress can’t save files, you probably forgot to put your user in the right
 group:
 
 .. code::
@@ -276,8 +282,11 @@ And make absolutely sure you have AllowOverride set to All in your Virtual Host:
 
 .. code::
 
-	<Directory /var/www/example.com>
-		AllowOverride all
-	</Directory>
+    <Directory /var/www/example.com>
+        AllowOverride all
+    </Directory>
 
 It won’t work without it.
+
+.. meta::
+    :labels: wordpress

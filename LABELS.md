@@ -56,6 +56,7 @@ dns
 cdn
 mysql
 mariadb
+wordpress
 
 Operating Systems
 ~~~~~~~~~~~~~~~~~
