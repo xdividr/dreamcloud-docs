@@ -52,7 +52,7 @@ Setting up CloudBerry Backupup with DreamObjects
     *The new DreamObjects account now appears on the ‘Select Cloud Storage’
     window:*
 
-    .. figure:: images/05_Cloudberry.fw.png
+    .. figure:: images/cloudberry-backup/05_Cloudberry.fw.png
 
 6. Click the **Next** button.
 
