@@ -17,7 +17,8 @@ How to use Cyberduck with DreamObjects
 
 You can set up your DreamObjects connection inside Cyberduck in two ways:
 
-* Semi-automatically by downloading a preconfigured connection profile.
+* Semi-automatically by downloading a preconfigured connection profile
+  (Recommended).
 * Manually by creating a new profile.
 
 Connecting Cyberduck with DreamObjects semi-automatically using a connection profile
@@ -28,74 +29,57 @@ Connecting Cyberduck with DreamObjects semi-automatically using a connection pro
    <http://applications.objects-us-west-1.dream.io/DreamObjects.cyberduckprofile>`_.
 2. Once it's downloaded, double-click the file to open Cyberduck and then
    create a new DreamObjects bookmark.
+3. Give your bookmark a nickname and close the window to save it.
 
-    *The following window appears when Cyberduck opens:*
+    .. figure:: images/cyberduck/auto_01.png
 
-    .. figure:: images/01_DHO_Cyberduck.fw.png
+4. Double-click on your newly created bookmark and enter the Access Key and
+   Secret Key for the DreamObjects user/buckets to which you wish to connect.
 
-    *If you wish to use a different nickname for the connection, you can
-    update the nickname. Updating the connection nickname will also prevent
-    Cyberduck from displaying the connection URL in the window title:*
-
-    .. figure:: images/02_DHO_Cyberduck.fw.png
-
-3. In the 'Username' field, enter the access key for the DreamObjects
-   user/buckets to which you wish to connect.
-4. Close the window to save the connection.
-
-    .. figure:: images/03_DHO_Cyberduck.fw.png
-
-5. Double-click the DreamObjects bookmark you just created, and then enter
-   your Secret Key when prompted.
-6. Click the **Login** button to log in to DreamObjects.
     * If you are using a Mac, the 'Add to Keychain' option appears. If you
-      choose to add the information to your keychain, you will not be prompted
-      for your Secret Key in the future.
+      choose to save your credentials, you won't be prompted to enter them
+      again.
 
-      *Upon successful connection, your buckets appear listed as drives in the
-      interface:*
+    .. figure:: images/cyberduck/cyberduck_creds.png
 
-    .. figure:: images/03_DHO_Cyberduck_SAME.fw.png
+5. Upon successful connection, your buckets appear listed as drives in the
+   interface.
+
+    .. figure:: images/cyberduck/cyberduck_buckets.png
 
 Connecting to Cyberduck manually
 --------------------------------
 
-1. Open Cyberduck.
+1. Open Cyberduck and create a new bookmark.
 
-    .. figure:: images/04_DHO_Cyberduck.fw.png
+    .. figure:: images/cyberduck/manual_01.png
 
-2. Create a new bookmark.
-
-    .. figure:: images/05_DHO_Cyberduck.fw.png
-
-3. Click the connection menu, and then select 'S3 (Amazon Simple Storage
+2. Click the connection menu, and then select 'S3 (Amazon Simple Storage
    Service)' from the protocol drop down list.
 
-    *You can use a different nickname for the connection. Updating the
-    connection nickname will also prevent Cyberduck from displaying the
-    connection URL in the window title:*
+    .. figure:: images/cyberduck/manual_02.png
 
-    .. figure:: images/02_DHO_Cyberduck.fw.png
-
-4. Enter the following:
+3. Give your bookmark a nickname and enter the following:
     * **Server**: objects-us-west-1.dream.io
-    * **Username**: enter the access key for the DreamObjects user/buckets to
-      which you wish to connect, and then close the window to save the
+    * **Access Key ID**: enter the Access Key for the DreamObjects user/buckets
+      to which you wish to connect, and then close the window to save the
       connection settings.
 
-    .. figure:: images/03_DHO_Cyberduck.fw.png
+    .. figure:: images/cyberduck/manual_03.png
 
-5. Double-click the DreamObjects bookmark you just created and enter your
-   Secret Key when prompted.
+4. Double-click on your newly created bookmark and enter the Secret Key for
+   the DreamObjects user/buckets to which you wish to connect.
 
-    * If you are using a Mac you’ll see an option to 'Add to Keychain'. If you
-      choose to add the information to your keychain, you will not be prompted
-      for your Secret Key in the future.
+    * If you are using a Mac, the 'Add to Keychain' option appears. If you
+      choose to save your credentials, you won't be prompted to enter them
+      again.
 
-      *Upon successful connection, your buckets appear listed as drives in the
-      interface:*
+    .. figure:: images/cyberduck/cyberduck_creds.png
 
-    .. figure:: images/03_DHO_Cyberduck_SAME.fw.png
+5. Upon successful connection, your buckets appear listed as drives in the
+   interface.
+
+    .. figure:: images/cyberduck/cyberduck_buckets.png
 
 Managing DreamObjects data using Cyberduck
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -105,7 +89,7 @@ DreamObjects, simply click and drag files and folders to and from Cyberduck.
 
     *When uploading or downloading files, a transfer window appears:*
 
-    .. figure:: images/10_DHO_Cyberduck.fw.png
+    .. figure:: images/cyberduck/cyberduck_transfer.png
 
 .. meta::
     :labels: cyberduck
