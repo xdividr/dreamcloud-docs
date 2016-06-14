@@ -22,20 +22,20 @@ Setting up Duplicati with DreamObjects
 1. Launch Duplicati.
     *The following options appear when first setting up Duplicati:*
 
-    .. figure:: images/01_Duplicati.fw.png
+    .. figure:: images/duplicati/01_Duplicati.png
 
 2. Select the ‘Setup a new backup’ option.
 
-    .. figure:: images/02_Duplicati.fw.png
+    .. figure:: images/duplicati/02_Duplicati.png
 
 3. Enter a backup name, and then click the **Next** button.
 
-    .. figure:: images/03_Duplicati.fw.png
+    .. figure:: images/duplicati/03_Duplicati.png
 
 4. Select which type of files you wish to back up, and then click the **Next**
    button.
 
-    .. figure:: images/04_Duplicati.fw.png
+    .. figure:: images/duplicati/04_Duplicati.png
 
 5. Enter the following:
     * **Protect the backups with this password** - This is optional but
@@ -46,12 +46,12 @@ Setting up Duplicati with DreamObjects
 
 6. Click the **Next** button.
 
-    .. figure:: images/05_Duplicati.fw.png
+    .. figure:: images/duplicati/05_Duplicati.png
 
 7. Select the 'Amazon S3 based' radio button, and then click the **Next**
    button.
 
-    .. figure:: images/06_Duplicati.fw.png
+    .. figure:: images/duplicati/06_Duplicati.png
 
 8. Enter the following required DreamObjects credentials:
     * **S3 Servername** – objects-us-west-1.dream.io
@@ -61,14 +61,14 @@ Setting up Duplicati with DreamObjects
 
 9. Click the **Next** button.
 
-    .. figure:: images/07_Duplicati.fw.png
+    .. figure:: images/duplicati/07_Duplicati.png
 
 10. Select the desired Advanced settings, and then click the **Next** button.
      *A summary window appears where you can review details of the backup:*
 
-    .. figure:: images/08_Duplicati.fw.png
+    .. figure:: images/duplicati/08_Duplicati.png
 
-10. Click the **Finish** button to save.
+11. Click the **Finish** button to save.
 
 .. _DreamObjects keys: 215986357-What-are-Keys-in-DreamObjects-and-How-Do-You-Use-Them-
 
