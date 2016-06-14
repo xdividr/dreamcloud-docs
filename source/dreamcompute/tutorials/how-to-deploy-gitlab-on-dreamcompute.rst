@@ -4,63 +4,55 @@ How to setup Gitlab on DreamCompute
 
 Setting up
 ----------
-Before you can put Gitlab on a DreamCompute instance, you must first have an
-instance running. I recommend launching an Ubuntu 14.04 instance, the
-instructions that we will be following may also work for other Debian based
-distros, although I have not tested that. You can spin up an instance using the
-Web UI (the smallest flavor should be fine), I recommend writing a small script
-to do it for you, but you can also launch the instance from the web UI. After
-the instance is running , give it an IP and then proceed.
+Before you can put Gitlab on a DreamCompute server, you must first have an
+server running. I recommend launching an Ubuntu 16.04 server. You can launch a
+server using the Web UI.  Your server must have at least 2GB of RAM in order
+to run gitlab properly, although more is better (especially if you have lots
+of users). Gitlab will install if you have less than 2GB of RAM, but you will
+run into weird errors, like 500 errors when you visit the site. For more info
+about system requirments, visit
+http://docs.gitlab.com/ee/install/requirements.html#hardware-requirements . It
+is also recommended that you run gitlab on a volume backed instance, for more
+info on this, visit our `tutorial on launching instances <215912848>`_
 
 Installing Gitlab
 -----------------
-Once you have an Ubuntu 14.04 instance running, ssh in with
+Once you have an Ubuntu 16.04 server running, ssh in with
 
 .. code-block:: shell
 
     ssh dhc-user@floatingip
 
-replacing "floatingip" with the ip address of your instance, then run
+replacing "floatingip" with the ip address of your server, then run
 
 .. code-block:: shell
 
-    sudo apt-get install curl openssh-server ca-certificates postfix
+    sudo apt install postfix
 
-In the postfix installer, select "Internet site".
-
-.. code-block:: shell
-
-    curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash
-    sudo apt-get install gitlab-ce
-
-This command curls a url and then runs every command in that url as root. and
-because of this, you should use it with great caution. You should really never
-run that command unless you are 100% confident that the url doesnt have
-anything malitious in it. In this case it is the easiest way to install
-gitlab-ce. If you are uncomfortable with this method of installation, you can
-go to https://packages.gitlab.com/gitlab/gitlab-ce , click on the version you
-want, copy the url for the download, then run the following commands.
+In the postfix installer, select "Internet site". In order to get the package
+for gitlab and install it run the following.
 
 .. code-block:: shell
 
-    curl -LJO $url
-    sudo dpkg -i $debfile
+    curl -LJO https://packages.gitlab.com/gitlab/gitlab-ce/packages/ubuntu/xenial/gitlab-ce_8.8.4-ce.0_amd64.deb/download
+    sudo dpkg -i gitlab-ce_8.8.4-ce.0_amd64.deb
 
-The url should look something like
-https://packages.gitlab.com/gitlab/gitlab-ce/packages/ubuntu/precise/gitlab-ce_8.1.2-ce.0_amd64.deb/download
-and the filename should start with "gitlab-ce" and end with ".deb".
+.. Note::
+
+    The url that you curl may be different, go to
+    https://packages.gitlab.com/gitlab/gitlab-ce to find the newest version of
+    gitlab.
 
 Configuration
 -------------
+
 .. code-block:: shell
 
     sudo gitlab-ctl reconfigure
 
-Congrats, you are now running gitlab. The last thing you need to do is login to the web
-page in a browser (using your instance's ip as the url), and login with the
-credentials
+Congrats, you are now running gitlab. The last thing you need to do is visit
+gitlab in a web browser by going to the ip of your server, then use the webpage
+to change the password for root.
 
-Username: root
-Password: 5iveL!fe
-
-and change the password for root.
+.. meta::
+    :labels: gitlab
