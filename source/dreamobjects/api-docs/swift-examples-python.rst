@@ -26,10 +26,10 @@ This creates a connection so that you can interact with the server.
     api_key = 'your_api_key'
 
     conn = cloudfiles.get_connection(
-            username=username,
-            api_key=api_key,
-            authurl='https://objects-us-west-1.dream.io/auth',
-            )
+        username=username,
+        api_key=api_key,
+        authurl='https://objects-us-west-1.dream.io/auth',
+        )
 
 
 .. _Swift_Python_Listing_Owned_Containers:
@@ -43,7 +43,7 @@ This also prints out the container name.
 .. code-block:: python
 
     for container in conn.get_all_containers():
-            print container.name
+        print container.name
 
 The output will look something like this::
 
@@ -76,7 +76,11 @@ modified date.
 .. code-block:: python
 
     for obj in container.get_objects():
-            print "{0}\t{1}\t{2}".format(obj.name, obj.size, obj.last_modified)
+        print "{0}\t{1}\t{2}".format(
+            obj.name,
+            obj.size,
+            obj.last_modified,
+            )
 
 The output will look something like this::
 

@@ -43,6 +43,17 @@ fi
 # to zendesk
 files="`git diff --name-only $GIT_PREVIOUS_SUCCESSFUL_COMMIT $GIT_COMMIT`"
 
+# If a file is an image, add the places where it is referenced to $files
+for file in $files ; do
+    if `echo "$file" | egrep -i '\.png$|\.jpg$' > /dev/null` ; then
+        file_name="`basename $file`"
+        affected_files="`grep -R $file_name source/* | cut -d ':' -f1`"
+        files="$(echo -e "${files}\n${affected_files}")"
+    fi
+done
+
+files="`echo "$files" | sort -u`"
+
 for file in $files ; do
     if [ -e "$file" ] ; then
         # if the file extension is .rst and it is not "index.rst", get the
@@ -52,7 +63,15 @@ for file in $files ; do
             html_file="`echo $file | sed 's/^source\(.*\).rst$/build\/html\1\.html/'`"
             echo "$html_file"
             dir="`dirname $file`"
-            section_id="`cat ${dir}/section_id.txt`"
+            if [ -f "${dir}/section_id.txt" ] ; then
+                section_id="$( cat "${dir}/section_id.txt" )"
+            elif [ -f "${dir}/../section_id.txt" ] ; then
+                section_id="$( cat "${dir}/../section_id.txt" )"
+            fi
+            if [ -z "$section_id" ] ; then
+                echo "Cannot find the section id for file $file"
+                exit 1
+            fi
             python zendesk-publish-script/publish.py "$html_file" "$section_id"
             if [ $? -ne 0 ] ; then
                 exit 1
@@ -60,3 +79,6 @@ for file in $files ; do
         fi
     fi
 done
+
+git clone https://github.com/dreamhost/zendesk-pull-article-id
+python zendesk-pull-article-id/get_metadata.py
