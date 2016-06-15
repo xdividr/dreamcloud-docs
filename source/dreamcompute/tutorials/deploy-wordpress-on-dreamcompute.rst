@@ -28,13 +28,13 @@ but the overview is as follows:
 
 .. code::
 
-    sudo apt-get install lamp-server^
+    sudo apt-get install lamp-server
 
-This is interactive, so you’ll be asked ‘are you sure?’ in some places, and
+This is interactive, so you'll be asked 'are you sure?' in some places, and
 in others it will want a password for SQL. Make up a secure password for SQL
 and save it as you will need this later to set up SQL for WordPress.
 
-After it runs, you’ll want to add mod_rewrite so WordPress can make pretty
+After it runs, you'll want to add mod_rewrite so WordPress can make pretty
 pages:
 
 .. code::
@@ -130,14 +130,14 @@ Edit that file and put this in:
     </VirtualHost>
 
 Once the site is added, we'll need to enable it via a command called a2ensite
-(if you want to disable, it’s a2dissite):
+(if you want to disable, it's a2dissite):
 
 .. code::
 
     sudo a2ensite
 
 This will prompt you to pick what site you want to enable. Type it in, hit
-enter, and you’ll be told what’s next.
+enter, and you'll be told what's next.
 
 .. code::
 
@@ -164,9 +164,9 @@ WordPress absolutely requires a database. You'll want to create one
 
     mysql -u root -p
 
-Remember the password we set earlier? That’s what it’s for.
+Remember the password we set earlier? That's what it's for.
 
-Your command prompt will be “mysql>” so let’s make the database:
+Your command prompt will be `mysql>` so let's make the database:
 
 .. code::
 
@@ -219,7 +219,7 @@ webfolder. If you've installed WP-CLI, then all you have to do is this:
 
     wp core download
 
-If you go to http://example.com now you’ll get that 5 minute install page.
+If you go to http://example.com now you'll get that 5 minute install page.
 
 Of course since you have wp-cli you can also do this:
 
@@ -231,7 +231,7 @@ Of course since you have wp-cli you can also do this:
 If you use secure passwords like cWG8j8FPPj{T9UDL_PW8 then you MUST put quotes
 around the password.
 
-I chose to skip-emails since I’m making it right there.
+I chose to skip-emails since I'm making it right there.
 
 Miscellaneous Stuff
 ~~~~~~~~~~~~~~~~~~~
@@ -245,19 +245,20 @@ Make sure apt has the latest and greatest.
     sudo apt-get -y update
 
 Make PHP Better
+~~~~~~~~~~~~~~~
 
-If you use a lot of media, install these to make PHP process images more better.
+If you use a lot of media, install these to improve how PHP processes images.
 
 .. code::
 
     sudo apt install php-imagick php7.0-gd
 
-Run a restart of apache when you’re done:
+Run a restart of apache when you're done:
 
 Troubleshooting
 ~~~~~~~~~~~~~~~
 
-If WordPress can’t save files, you probably forgot to put your user in the right
+If WordPress can't save files, you probably forgot to put your user in the right
 group:
 
 .. code::
@@ -265,7 +266,7 @@ group:
     sudo adduser wp_example www-data
     sudo chown -R wp_example:www-data /var/www/example.com/
 
-If that still doesn’t work, try this:
+If that still doesn't work, try this:
 
 .. code::
 
@@ -286,7 +287,7 @@ And make absolutely sure you have AllowOverride set to All in your Virtual Host:
         AllowOverride all
     </Directory>
 
-It won’t work without it.
+It won't work without it.
 
 .. meta::
     :labels: wordpress
