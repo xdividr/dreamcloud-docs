@@ -57,6 +57,7 @@ cdn
 mysql
 mariadb
 wordpress
+gitlab
 
 Operating Systems
 ~~~~~~~~~~~~~~~~~
