@@ -57,6 +57,7 @@ cdn
 mysql
 mariadb
 wordpress
+trellis
 
 Operating Systems
 ~~~~~~~~~~~~~~~~~

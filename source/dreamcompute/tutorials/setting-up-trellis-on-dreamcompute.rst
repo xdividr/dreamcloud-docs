@@ -421,3 +421,6 @@ can find the experts you need debuggig issues. Many errors with possible
 solution can also be found at the Imagewize Blog article called `Roots
 Trellis Errors
 <https://imagewize.com/web-development/roots-trellis-errors/>`_ .
+
+.. meta::
+    :labels: trellis wordpress nginx
