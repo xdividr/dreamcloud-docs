@@ -307,7 +307,7 @@ Clients
 -------
 
 * `S3 Browser: Bucket CORS Configuration <http://s3browser.com/s3-bucket-cors-configuration.php>`_
-* `boto: S3 <http://boto.readthedocs.org/en/latest/ref/s3.html>`_
+* `boto: S3 <https://boto.readthedocs.io/en/latest/ref/s3.html>`_
 * `Bucket Explorer: Amazon S3 - Manage Cross-Origin Resource Sharing (CORS) <http://www.bucketexplorer.com/documentation/amazon-s3--manage-cross-origin-resource-sharing.html>`_
 * `CyberDuck: Not supported as of 2015/09/29 <https://trac.cyberduck.io/wiki/help/en/howto/s3>`_
 
