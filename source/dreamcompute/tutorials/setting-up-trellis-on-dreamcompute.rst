@@ -7,7 +7,7 @@ Trellis
 
 In this tutorial we are going to use `Trellis
 <https://roots.io/trellis/>`_
-to install a very sold modern LEMP stack on DreamCompute. This LEMP stack by
+to install a very solid modern LEMP stack on DreamCompute. This LEMP stack by
 Roots is great to run WordPress websites and works well with `Bedrock
 <https://roots.io/bedrock/>`_
 , the modern WordPress stack.
@@ -32,7 +32,7 @@ in this totorial) with:
 * Mailhog
 
 Locally it works with an automated Vagrant setup and remotely for staging
-it sets you up with a full fledged WordPress server. It also helps you to
+it sets you up with a fully fledged WordPress server. It also helps you
 deploy your WordPress site once you are ready to do so.
 
 
@@ -188,9 +188,6 @@ recommended we recommend you checking out the `Bedrock documentation
 logical file structure, dependency management with Composer, easy WordPress
 configuration and enhanced security!
 
-
-
-
 Setting Up Your Instance
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -213,7 +210,6 @@ run the LEMP setup are built with Ubuntu/Debian in mind.
 Whichever Ubuntu version you pick, remember it's better to boot volume
 backed instances as they are permanent as opposed to ephemeral disks.
 
-
 Provisoning Your DreamCompute Instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -225,14 +221,9 @@ site setup and have setup things locally.
 
 Passwordless SSH
 ****************
+
 Trellis works best with passwordless SSH login so do make sure you have
 added your public SSH key in the DreamCompute Dashboard.
-
-    We assume that when you first create your server you've already added
-    your SSH key to the root account. Digital Ocean will add this for you
-    when you create a droplet. If you don't want to use an SSH key, you
-    will need to add the --ask-pass option each time you run the
-    server.yml playbook.
 
 DreamCompute allows you to add your key in the DC Dashboard under Access &
 Security > Key Pairs.
