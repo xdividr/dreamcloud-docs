@@ -58,6 +58,7 @@ mysql
 mariadb
 wordpress
 gitlab
+trellis
 
 Operating Systems
 ~~~~~~~~~~~~~~~~~
