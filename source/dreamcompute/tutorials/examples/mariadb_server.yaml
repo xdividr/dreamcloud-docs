@@ -1,0 +1,60 @@
+- hosts: localhost
+  connection: local
+  vars:
+    private_key: /path/to/your/private/key
+  tasks:
+
+    - name: create a Ubuntu server
+      os_server:
+            cloud: iad2
+            name: mariadb01
+            state: present
+            image: Ubuntu-16.04
+            flavor_ram: 2048
+            key_name: mykey
+            boot_from_volume: True
+            volume_size: 10
+            network: public
+            wait: yes
+      register: mariadb_server
+
+    - name: get facts about the server (including its public v4 IP address)
+      os_server_facts:
+        cloud: iad2
+        server: mariadb01
+      until: mariadb_server.server.public_v4 != ""
+      retries: 5
+      delay: 10
+
+    - set_fact: public_v4="{{ mariadb_server.server.public_v4 }}"
+
+    - name: add the server to our ansible inventory
+      add_host: hostname={{ public_v4 }} groups=sql ansible_ssh_user=dhc-user ansible_ssh_private_key_file={{ private_key }}
+
+
+- hosts: sql
+  gather_facts: no
+
+  tasks:
+
+    - name: Install python2.7
+      raw: "sudo apt-get update -qq && sudo apt-get install -qq python2.7 aptitude"
+
+- hosts: sql
+  vars:
+   ansible_python_interpreter: /usr/bin/python2.7
+
+  become: True
+
+  roles:
+
+    - ansible-newserver
+
+  tasks:
+    - name: Install MariaDB
+      apt: name={{ item }} state=latest update_cache=yes
+      with_items:
+        - mariadb-server
+        - python-mysqldb
+    - name: Create a new db
+      mysql_db: name=backend_db state=present
