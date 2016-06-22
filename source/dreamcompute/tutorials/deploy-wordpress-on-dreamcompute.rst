@@ -28,7 +28,7 @@ but the overview is as follows:
 
 .. code::
 
-    sudo apt-get install lamp-server
+    sudo apt-get install lamp-server^
 
 This is interactive, so you'll be asked 'are you sure?' in some places, and
 in others it will want a password for SQL. Make up a secure password for SQL
@@ -79,7 +79,9 @@ Add SSH Access
 ~~~~~~~~~~~~~~
 
 WordPress users often need SSH access in order to do extra configuration with
-WordPress. By default, this is disabled, so you will need to edit your config.
+WordPress. By default, this is disabled, so you will need to edit your config
+using a text editor, such as vi, emacs, or nano (this one is easiest for
+beginners).
 
 .. code::
 
@@ -185,7 +187,7 @@ Install WP-CLI
 ~~~~~~~~~~~~~~
 
 While this is optional, we strongly recommend this. DreamHost includes `WP-CLI
-<http://wp-cli.org/>`_ on all servers due to it's usefulness. To install, log
+<http://wp-cli.org/>`_ on all servers due to its usefulness. To install, log
 in as your default user (not the web user we created earlier) and run the
 following:
 
