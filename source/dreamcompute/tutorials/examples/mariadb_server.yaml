@@ -46,10 +46,6 @@
 
   become: True
 
-  roles:
-
-    - ansible-newserver
-
   tasks:
     - name: Install MariaDB
       apt: name={{ item }} state=latest update_cache=yes

@@ -41,19 +41,19 @@ like:
             state: present
             image: Ubuntu-16.04
             flavor_ram: 2048
-            key_name: stef
+            key_name: mykey
             boot_from_volume: True
             volume_size: 10
             network: public
             wait: yes
       register: mariadb_server
 
-The task above will connect to the cloud named **iad2** in you
+The task above will connect to the cloud named **iad2** in your
 openstack/clouds.yaml configuration file, tell OpenStack Nova to
 create a new instance called *mariadb01* based on the Glance image
 called Ubuntu-16-04, picking the flavor with 2GB RAM, and booting from
-a new 10GB volume. The task will also assign to the new instance the
-SSH key called `mykey`: make sure the corresponding private key is the
+a new 10GB volume. The task will also add the public key associated with
+`mykey` to your server: make sure the corresponding private key is the
 one specified on the `private_key` variable.  Finally the task waits
 for the new machine to be created before registers the name
 `mariadb_server` and moving on to the next steps.
@@ -97,7 +97,7 @@ now in place: next steps are going to be executed on the new host.
       tasks:
 
         - name: Install python2.7 since Ubuntu 16.04 doesn't ship it
-          raw: "sudo apt-get update -qq && sudo apt-get install -qq python2.7 aptitude"
+          raw: "sudo apt-get update -y && sudo apt-get install -y python2.7 aptitude"
 
 The first line specifies the group of hosts to execute tasks on. Since
 Ubuntu LTS 16.04 Xenial comes only with Python3, we need to install
