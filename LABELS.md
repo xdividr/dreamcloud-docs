@@ -35,6 +35,7 @@ ansible
 chef
 saltstack
 puppet
+docker-machine
 
 tools
 ~~~~~
@@ -45,6 +46,7 @@ arq
 cloudberry
 s3cmd
 cloud-init
+docker
 
 Services
 ~~~~~~~~
