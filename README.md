@@ -37,6 +37,14 @@ Fork the repository, modify or add articles, run tox for basic syntax
 checks and verify the built html locally before committing. Once
 you're satisfied with the local results, create a pull request.
 
+Gotchas of contributing
+-----------------------
+
+If you change a title of an article, you must first change it in the Knowledge
+Base, this is because the publishing script compares articles by title and it
+will create a new article with the new title if you dont change the article
+title in the Knowledge Base.
+
 Publishing to DreamHost Knowledge Base
 --------------------------------------
 
@@ -51,3 +59,8 @@ Hacks we have to make things pretty
    TOC in '.. container:: table_of_content' and the Headers associated with
    each item in the TOC will remain at the top of the screen as you scroll past
    them
+
+Styleguide
+----------
+
+Check the styleguide.rst for style requirements
