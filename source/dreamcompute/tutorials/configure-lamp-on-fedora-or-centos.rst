@@ -2,7 +2,7 @@
 How to Configure LAMP on DreamCompute running Fedora or CentOS
 ==============================================================
 
-LAMP (Linux, Apache, MySQL (we'll use mariadb instead), PHP) stacks are a
+LAMP (Linux, Apache, MySQL (we'll use MariaDB instead), PHP) stacks are a
 popular way to create web service solutions that offer consistent tools and
 capabilities between multiple systems.  DreamHost shared, VPS and dedicated
 hosting services are based on these same services, and you can use it for your
@@ -31,17 +31,17 @@ Install MariaDB client and server with the following command:
 
 .. code::
 
-    yum install mariadb-server
+    yum install MariaDB-server
 
 MariaDB can be started and the system told to start it on boot with these
 commands:
 
 .. code::
 
-    systemctl start mariadb
-    systemctl enable mariadb
+    systemctl start MariaDB
+    systemctl enable MariaDB
 
-Both operating systems use "mariadb" for the service start.
+Both operating systems use "MariaDB" for the service start.
 
 PHP can be installed with the following command:
 
@@ -72,4 +72,4 @@ installed LAMP stack.
 .. _MariaDB Configuration: 217471877-How-to-Configure-MariaDB-on-DreamCompute-running-Fedora-or-Centos
 
 .. meta::
-    :labels: php apache mariadb mysql fedora centos nova
+    :labels: php apache MariaDB mysql fedora centos nova

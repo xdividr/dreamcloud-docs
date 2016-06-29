@@ -20,7 +20,7 @@ To install Apache on your system, run the following command:
     yum install httpd
 
 The install process asks you to confirm if you wish to install any
-dependancy packages needed for Apache.  Confirm by entering "**y**"
+dependency packages needed for Apache.  Confirm by entering "**y**"
 and hitting enter. When it completes, the Apache HTTP server is
 installed.  To start it, you can run:
 

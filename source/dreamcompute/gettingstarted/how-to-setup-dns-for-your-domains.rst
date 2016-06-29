@@ -69,7 +69,7 @@ domains you wish to host on your instance.
 Wait For DNS Propagation
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-The default TTL (time-to-live) for DreamHost nameservers is 4 hours, and so
+The default TTL (time-to-live) for DreamHost name servers is 4 hours, and so
 any change to your DNS records should be updated nearly everywhere around the
 world in that time.  If you will be making frequent changes to DNS, you can
 `contact DreamHost support <https://panel.dreamhost.com/index.cgi?tree=support.msg&>`_

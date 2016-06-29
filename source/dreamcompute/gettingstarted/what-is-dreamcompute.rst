@@ -119,8 +119,8 @@ Where are the data centers located?
 
 DreamHost cloud services are currently located in the United States, but
 accessible from anywhere globally.  DreamCompute is located in our
-Ashburn, Virginia (US-East) datacenter, and DreamObjects is located in our
-Irvine, California (US-West) datacenter.
+Ashburn, Virginia (US-East) data center, and DreamObjects is located in our
+Irvine, California (US-West) data center.
 
 Will DreamCompute scale?
 ------------------------

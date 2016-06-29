@@ -15,7 +15,7 @@ First you need to deploy 2 Ubuntu 14.04LTS virtual machines. It's better to
 boot volume backed instances as they are permanent as opposed to ephemeral
 disks. You can do this in the `web UI <215912848>`_ or with the `nova client
 <215912778>`_.  Once you have those instances up and running, you need to add
-a security group to the instance that runs the database so that it allows tcp
+a security group to the instance that runs the database so that it allows TCP
 on port 3306, the MySQL/MariaDB port. That can be done with the `web
 interface <215912838>`_ or the `nova command line client <216511637>`_ as well.
 
@@ -85,7 +85,7 @@ DB as root with
 
     mysql -u root -p
 
-then enter the root pasword for your database. Then run:
+then enter the root password for your database. Then run:
 
 .. code::
 
@@ -114,7 +114,7 @@ Installing the ownCloud application
 Installing Dependencies
 -----------------------
 
-Now that we have a database that owncloud can use, we need to deploy the
+Now that we have a database that ownCloud can use, we need to deploy the
 frontend application. First login to the server that you will be
 installing ownCloud on. Create a root shell again by running
 
@@ -143,7 +143,7 @@ the *.tar.bz2* link and click *copy link location* then in your root shell run
 
     wget $URL
 
-where **$URL** is the url you just copied. This will download a compressed
+where **$URL** is the URL you just copied. This will download a compressed
 copy of the ownCloud application. Decompress the file by running
 
 .. code::
@@ -212,7 +212,7 @@ running
 
     a2enmod rewrite
 
-You should also use SSL with owncloud to protect login information and data,
+You should also use SSL with ownCloud to protect login information and data,
 Apache installed on Ubuntu comes with a self-signed cert. To enable SSL using
 that cert run
 
@@ -231,7 +231,7 @@ Create an admin account using the web interface. Then fill in the details for
 the database. The database user is "root", the password is the root password
 for the database, the host is the IP address of your database
 server, and the database name can be set to anything, I recommend "owncloud".
-Then continue and **BAM** you have a working owncloud.
+Then continue and **BAM** you have a working ownCloud.
 
 .. meta::
     :labels: owncloud

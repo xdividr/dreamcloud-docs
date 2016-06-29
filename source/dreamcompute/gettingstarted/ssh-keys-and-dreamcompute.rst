@@ -16,7 +16,7 @@ SSH Key Components
 
 There are two parts to an SSH key: a private key and a public key.
 The private key is known only to you and should be safeguarded.  On
-unix-based systems such as Mac and Linux, the private key is generally
+UNIX-based systems such as Mac and Linux, the private key is generally
 stored in:
 
 .. code-block:: bash

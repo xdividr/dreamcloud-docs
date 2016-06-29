@@ -104,7 +104,7 @@ missing.  Install them with:
 
     pip install MODULENAME
 
-3.  Setup your openstack RC file for the DESTINATION cluster on this new
+3.  Setup your OpenStack RC file for the DESTINATION cluster on this new
 instance, which can be downloaded from its Access & Security -> API Access menu
 in the dashboard.  Either upload the file to your instance, or copy/paste its
 contents into a file on this instance.  Once you are run, you can run it like
@@ -184,7 +184,7 @@ missing.  Install them with:
 
     pip install MODULENAME
 
-3.  Setup your openstack RC file for the DESTINATION cluster on this new
+3.  Setup your OpenStack RC file for the DESTINATION cluster on this new
 instance, which can be downloaded from its Access & Security -> API Access menu
 in the dashboard.  Either upload the file to your instance, or copy/paste its
 contents into a file on this instance.  Once you are run, you can run it like
