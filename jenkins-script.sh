@@ -59,7 +59,7 @@ for file in $files ; do
         # if the file extension is .rst and it is not "index.rst", get the
         # location it built to and publish it to the section specified in the
         # file "section_id.txt" in the rst file's directory
-        if `echo "$file" | egrep '\.rst$' > /dev/null` && ! `echo "$file" | egrep '\/index\.rst$' > /dev/null` && ! `echo "$file" | egrep '\/common\/.*\.rst$' > /dev/null` ; then
+        if `echo "$file" | egrep '^source/.*\.rst$' > /dev/null` && ! `echo "$file" | egrep '\/index\.rst$' > /dev/null` && ! `echo "$file" | egrep '\/common\/.*\.rst$' > /dev/null` ; then
             html_file="`echo $file | sed 's/^source\(.*\).rst$/build\/html\1\.html/'`"
             echo "$html_file"
             dir="`dirname $file`"
