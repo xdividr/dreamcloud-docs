@@ -1,5 +1,5 @@
 ===============================================
-How to Create and Mount Volumes on DreamCompute
+How to create and mount volumes on DreamCompute
 ===============================================
 
 Introduction
