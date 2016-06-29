@@ -223,4 +223,4 @@ ready for use, if you need to reboot.
 .. _differences between ephemeral and volume storage: 217701757-What-s-the-difference-between-ephemeral-and-volume-boot-disks
 
 .. meta::
-    :labels: migrate volume
+    :labels: volume attach mount dreamcompute mkfs mkfs.ext4 fdisk
