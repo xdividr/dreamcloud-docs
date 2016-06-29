@@ -15,17 +15,53 @@ Volumes can be thought of like a hot-swap hard disk, in that you can pull it
 out of one system (detach it), plug it into another system (attach it) and the
 data will remain on it as it is reused.
 
-Check Volume Storage Quota
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+There are several ways to do the initial steps of creating and attach the
+volume, so please select the method you wish to use:
+
+    * `DreamCompute Dashboard <#create-and-attach-a-volume-via-dashboard>`_
+    * `Command Line via openstack CLI <#create-and-attach-a-volume-via-openstack-cli>`_
+
+Create and Attach a Volume via Dashboard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The first step is to make sure you have sufficient volume storage quota to add
-a new volume.  This can be done in the DreamCompute dashboard
-`project overview <https://iad2.dreamcompute.com/project/>`_ page and then
-checking the Volume Storage pie chart.
+a new volume.  Check the DreamCompute dashboard
+`project overview <https://iad2.dreamcompute.com/project/>`_ page and the
+Volume Storage pie chart.
 
 .. figure:: images/create-and-mount-volumes/volume-storage-quota.png
 
-To accomplish this via via the command line run the following:
+If you need additional storage, more can be added in the DreamHost
+`control panel <https://panel.dreamhost.com/index.cgi?tree=cloud.compute&>`_.
+
+To create the new volume, in the DreamCompute dashboard `volumes <https://iad2.dreamcompute.com/project/volumes/?tab=volumes_and_snapshots__volumes_tab>`_
+page click the **Create Volume** button on the top right and give the volume
+a required size in GB, and an optional name and description while leaving the
+other options set to the defaults.
+
+To use your volume, it now needs to be attached to a running instance.  If you
+have no instances, please create one.  In the DreamCompute dashboard, again on
+the `volumes <https://iad2.dreamcompute.com/project/volumes/?tab=volumes_and_snapshots__volumes_tab>`_
+page, you can click the drop-down menu and select **Manage Attachments**:
+
+.. figure:: images/create-and-mount-volumes/volumes-attach-button.png
+
+The new window will show no attachments at this time, and at drop-down with a
+list of your instances.  Click on the list and select your instance name, then
+click **Attach Volume**.
+
+.. figure:: images/create-and-mount-volumes/volumes-attach-to-instance.png
+
+This completes the creation of the volume.  Please click below to continue with
+creationg your file system and mounting the volume.
+
+*  `Creating A File System <#create-a-file-system>`_
+
+Create and Attach a Volume via openstack CLI
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The first step is to make sure you have sufficient volume storage quota to add
+a new volume.  Run the following command to determine this:
 
 .. code:: bash
 
@@ -49,16 +85,10 @@ which will output a table like so:
 You would want to check the "gigabytes" row, and that the column "In_use" was
 lower than the "Limit" column.
 
-Create Your New Volume
-~~~~~~~~~~~~~~~~~~~~~~
+If you need additional storage, more can be added in the DreamHost
+`control panel <https://panel.dreamhost.com/index.cgi?tree=cloud.compute&>`_.
 
-Now that we have storage capacity, we can create the volume.  As before, you
-can do this via the DreamCompute dashboard `volumes <https://iad2.dreamcompute.com/project/volumes/?tab=volumes_and_snapshots__volumes_tab>`_
-page, by clicking the **Create Volume** button on the top right and giving
-the volume a required size in GB, and an optional name and description while
-leaving the other options set to the defaults.
-
-To do this via the command line instead requires running this:
+To create the new volume, run this command:
 
 .. code:: bash
 
@@ -72,23 +102,8 @@ The volume should now show up in the dashboard, and on the command line:
 
     $ cinder list
 
-Attach Your New Volume
-~~~~~~~~~~~~~~~~~~~~~~
-
 To use your volume, it now needs to be attached to a running instance.  If you
-have no instances, please create one.  In the DreamCompute dashboard, again on
-the `volumes <https://iad2.dreamcompute.com/project/volumes/?tab=volumes_and_snapshots__volumes_tab>`_
-page, you can click the drop-down menu and select **Manage Attachments**:
-
-.. figure:: images/create-and-mount-volumes/volumes-attach-button.png
-
-The new window will show no attachments at this time, and at drop-down with a
-list of your instances.  Click on the list and select your instance name, then
-click **Attach Volume**.
-
-.. figure:: images/create-and-mount-volumes/volumes-attach-to-instance.png
-
-The same can be accomplished from the command line, and requires the instance
+have no instances, please create one.  Using the CLI requires the instance
 name and the UUID of the volume.  Find the volume details by running:
 
 .. code:: bash
