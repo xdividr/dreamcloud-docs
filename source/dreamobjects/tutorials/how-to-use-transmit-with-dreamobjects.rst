@@ -12,7 +12,7 @@ developed by Panic which also includes capabilities to mount SFTP, Amazon S3,
 and WebDAV connections. The client is a shareware so it's free to evaluate but
 after the trial period is over you’re limited to seven-minute sessions.
 
-This guide describes how to use Transmit to mount your DreamObject buckets.
+This guide describes how to use Transmit to mount your DreamObjects buckets.
 
 For more information, please visit the Transmit website:
 

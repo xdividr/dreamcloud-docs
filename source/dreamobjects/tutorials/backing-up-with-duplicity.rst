@@ -5,7 +5,7 @@ Backing up Data to DreamObjects Using Duplicity
 I’m setting up backups for a Linux machine in this tutorial. First
 you will need to setup a plan for DreamObjects; if you already
 have an account with us you can do so from the panel here, otherwise you can
-signup and then head over to the panel. Once you have a plan you will want to
+sign up and then head over to the panel. Once you have a plan you will want to
 create a user, and after submitting a user name you’ll have to periodically
 refresh the page to see if it is now available. Now once you have a
 DreamObjects user you will want to click the “1 keys” button on the right side

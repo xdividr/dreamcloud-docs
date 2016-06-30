@@ -14,7 +14,7 @@ Setting up Synology’s Cloud Sync
 --------------------------------
 
 You’ll need  a private bucket on DreamObjects — this where your data
-will live. All in all, you need tohave three things: a *public key*, a
+will live. All in all, you need to have three things: a *public key*, a
 *secret key*, and a *bucket name*.
 
 Once you’re all set on the DreamHost side of things, log in to your

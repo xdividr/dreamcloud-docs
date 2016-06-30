@@ -141,7 +141,7 @@ To locate and copy your access keys, please see:
 
     .. figure:: images/18_owncloud_with_DreamObjects.fw.png
 
-    * Clicking on this folder will show you the data in your DreamObject
+    * Clicking on this folder will show you the data in your DreamObjects
       bucket linked to ownCloud. Anything you keep, upload, or create there is
       stored in DreamObjects. Deleting an object inside ownCloud will remove
       the object from DreamObjects.
@@ -158,11 +158,11 @@ to be aware of some limitations and make some configuration changes since
 uploading large files can be very memory intensive.
 
 A Web VPS with at least 512MB of memory is recommended, and required for
-extremely large file sizes. DreamObject’s objects are limited to 10TBs in
+extremely large file sizes. DreamObjects' objects are limited to 10TBs in
 size, but must be uploaded in 5GB chunks. ownCloud does not support multi-part
 file uploads so you are limited to 5GB file uploads via ownCloud.
 
-ownCloud uses an .htaccess file located in the ownClound folder on the server
+ownCloud uses an .htaccess file located in the ownCloud folder on the server
 to set the following custom PHP parameters:
 
 .. code::

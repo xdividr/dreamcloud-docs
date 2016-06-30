@@ -34,7 +34,7 @@ Installation and Configuration of Backups
 
     .. figure:: images/04_UpdraftPlus.png
 
-#. Scroll down on the same settings page to the section titled 'Copyin Your
+#. Scroll down on the same settings page to the section titled 'Copying Your
    Backup To Remote Storage'.
 #. Choose DreamObjects from the 'remote storage' dropdown, then enter your
    DreamObjects keys and existing DreamObjects bucket name.

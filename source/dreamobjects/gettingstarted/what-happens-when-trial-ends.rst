@@ -7,7 +7,7 @@ DreamObjects provides 100GB of storage and outbound bandwidth free for
 usage-based billing rates described below.
 
 Once the trial expires, you'll be automatically converted to
-Usage-Based Billing unless you specifiy a prepaid monthly storage
+Usage-Based Billing unless you specify a prepaid monthly storage
 plan.
 
 You can visualize your storage and bandwidth consumption history on

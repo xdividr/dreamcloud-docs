@@ -34,7 +34,7 @@ different:
 - there are no real directories in DreamObjects: the `buckets` are
   names assigned to a common space and are part of the object's URI.
 - `access key` and `user key` are used instead of usernames and
-  passwords. Each user can generate multiple access key anda secret
+  passwords. Each user can generate multiple access key and a secret
   key is automatically generated for each access key and cannot be
   changed. Together access and user keys are called `key pair`.
 

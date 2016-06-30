@@ -30,7 +30,7 @@ prioritized in the order listed below:
 +--------------------------------------------------+--------------------------------------------------------------------------------+
 | **Expires: (HTTP Date)**                         | * Caches content until a specified time.                                       |
 |                                                  | * Header is respected by DreamSpeed CDN, all cache services, and the browser.  |
-|                                                  | * Overriden by Cache-Control header with a max-age directive.                  |
+|                                                  | * Overridden by Cache-Control header with a max-age directive.                 |
 +--------------------------------------------------+--------------------------------------------------------------------------------+
 
 Do not cache

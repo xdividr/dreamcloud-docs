@@ -5,7 +5,7 @@ How to setup Cross-Origin Resource Sharing (CORS) on DreamObjects
 Overview
 ~~~~~~~~
 
-This aricle describes how to set up the Cross-Origin Resource Sharing
+This article describes how to set up the Cross-Origin Resource Sharing
 (**CORS**) capabilities of DreamObjects as implemented in Ceph, and is
 intended for any users that need to set up DreamObjects for use across domains,
 such as WebFonts, or cross-domain uploads.

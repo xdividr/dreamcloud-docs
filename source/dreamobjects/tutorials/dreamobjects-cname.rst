@@ -25,7 +25,7 @@ Examples of CNAME records and bucket
 .. note::
 
     If you're using a third-party DNS, be sure to manually copy the CNAME from
-    the panel to the nameservers since it won't automatically propagate.
+    the panel to the name servers since it won't automatically propagate.
 
 Adding a DreamObjects CNAME record
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

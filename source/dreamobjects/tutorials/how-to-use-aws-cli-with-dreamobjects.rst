@@ -55,8 +55,8 @@ things:
     $ aws configure set default.s3.signature_version ""
 
 2. Run the following command to input your access and secret keys for AWS CLI
-   to store them rypted) for you.  Accept the default region and output format
-   by hitting enter.
+   to store them encrypted for you.  Accept the default region and output
+   format by hitting enter.
 
 .. code::
 

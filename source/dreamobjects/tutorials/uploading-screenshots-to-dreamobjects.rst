@@ -35,7 +35,7 @@ Installation
 ------------
 If you don’t have one already, create a folder called bin in your home
 directory and copy dhdo-screencap.py file into it.
-Open dhdo-screencapy.py with a text editor and paste in your DreamObjects
+Open dhdo-screencap.py with a text editor and paste in your DreamObjects
 Access Key, Secret Key and bucket name (ensure each of these are
 surrounded by single quotes). If you are running the script on Linux you
 will need to change some things, such as set the program that will take the screenshot

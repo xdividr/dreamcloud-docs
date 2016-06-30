@@ -221,7 +221,7 @@ A cron job is just a request to the system to execute a
 specific command on a schedule.  This is very easy to
 set up.
 
-In order to set up a cronjob on your website you must first
+In order to set up a cron job on your website you must first
 make a shell user for that site. To do this, open the DreamHost
 web dashboard, go to Users > Manage Users and add a user. Fill
 out the required information and click on the "Shell User"

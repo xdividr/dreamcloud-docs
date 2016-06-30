@@ -13,8 +13,8 @@ backup.
 
 This guide describes how to configure CloudBerry with DreamObjects.
 
-Setting up CloudBerry Backupup with DreamObjects
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Setting up CloudBerry Backup with DreamObjects
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Launch CloudBerry.
 

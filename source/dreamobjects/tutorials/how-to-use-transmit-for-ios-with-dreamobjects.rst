@@ -45,7 +45,7 @@ Before you begin, make sure you already have a
     access and secret keys.
 
 5. Connect to DreamObjects.
-    *Your buckets diplay when you connect to DreamObjects:*
+    *Your buckets display when you connect to DreamObjects:*
 
     .. figure:: images/04-Transmit-ios-buckets.png
 

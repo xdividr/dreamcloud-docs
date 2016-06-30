@@ -36,9 +36,9 @@ Checking the size of a bucket
     s = 0
     for o in b.list():
        s += o.size
-    #show you the file size in MegaBytes if it.s too small to be legible in GigaBytes.
+    #show you the file size in Megabytes if it's too small to be legible in Gigabytes.
     print str(s * 1.0 / 1024 ** 2) + " MB\n"
-    #Shows you the file size in GigaBytes
+    #Shows you the file size in Gigabytes
     print str(s * 1.0 / 1024 ** 3) + " GB"
 
 Purging a directory from a bucket
