@@ -18,7 +18,7 @@ Modern LEMP Stack
 Trellis is a set of Ansible playbooks that help you setup a full local,
 staging and development environment for your WordPress project. With it you
 will have a WordPress ready server running locally or remotely (intention
-in this totorial) with:
+in this tutorial) with:
 
 * Nginx
 * MariaDB (MySQL drop-in replacement)
@@ -52,11 +52,11 @@ to work with Trellis locally and to be able to work on the remote server:
 **NOTES**
 
 Ansible is both needed for setting up a remote server for staging or
-production on DreamCompute. Git and an accesible online repo will also be
+production on DreamCompute. Git and an accessible online repo will also be
 needed as well as the latest Python 2.x version for running Ansible 2.0.2.0.
 
 
-On Ubuntu most if not alll of these tools can be installed using the
+On Ubuntu most if not all of these tools can be installed using the
 package manager apt-get. On OSX Homebrew and Pip are your friends. On
 Windows more Linux tools have become available with the latest version
 such as Bash and other needed dependencies can be installed as well using
@@ -210,8 +210,8 @@ run the LEMP setup are built with Ubuntu/Debian in mind.
 Whichever Ubuntu version you pick, remember it's better to boot volume
 backed instances as they are permanent as opposed to ephemeral disks.
 
-Provisoning Your DreamCompute Instance
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Provisioning Your DreamCompute Instance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Provisioning Trellis means setting up the actual LEMP stack for your
 staging or production website. Staging and Production do not differ much.
@@ -237,7 +237,7 @@ Configuration Files
 
 Let's say you work locally and on production only and have worked out
 things locally. Then you only need to set up / edit a couple of files for
-provisioning your remote server - `setting up remote server documention
+provisioning your remote server - `setting up remote server documentation
 <https://roots.io/trellis/docs/remote-server-setup/>`_
 **NB** You can most of the time just copy data from the local development files.
 
@@ -261,7 +261,7 @@ well, this should work out just fine.
 Vault
 *****
 
-Once that is done you also need to edit vault.yml - extended documention
+Once that is done you also need to edit vault.yml - extended documentation
 at https://roots.io/trellis/docs/vault/ under trellis/group_vars/production
 . There you have to add:
 
@@ -305,7 +305,7 @@ it you will net be able to connect and sometimes not get any errors at all
 
 You can either add the domain connected to the DreamCompute public ip
 address using an A record or use the ip address itself. Better connect the
-domain to your instance before you provision. See this `Dreamhost KB
+domain to your instance before you provision. See this `DreamHost KB
 article on Custom DNS Records
 <https://goo.gl/vYHa1h>`_ .
 
@@ -408,7 +408,7 @@ Issues setting up Trellis
 If you do run into issues ask a question at `Roots Discourse
 <https://discourse.roots.io/c/trellis>`_
 This is the dedicated forum sub section for Trellis and that is where you
-can find the experts you need debuggig issues. Many errors with possible
+can find the experts you need debugging issues. Many errors with possible
 solution can also be found at the Imagewize Blog article called `Roots
 Trellis Errors
 <https://imagewize.com/web-development/roots-trellis-errors/>`_ .
