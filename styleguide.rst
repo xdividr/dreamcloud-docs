@@ -194,3 +194,8 @@ Bold and Italicized Text
 
 Bold and italicized text are allowed in our documentation to emphasize key
 words or points, they can be done by surrounding a word with * or **
+
+Using domain names in documentation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When using an example domain name in an article, use "example.com".
