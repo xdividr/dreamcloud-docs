@@ -45,7 +45,8 @@ old for Dokku, so we're going to use the upstream Docker repository).
     sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 0x2C52609D # this is the Docker key
     sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 0xD59097AB # this is the Dokku key
 
-If you've already pointed a wildcard DNS entry at this machine, you can
+If you've already pointed a wildcard `DNS <215414867>`__ entry at this
+machine, you can
 enable Dokku's vhost support (which will get you easy-to-use project
 URLs like ``project.example.com``). If you don't have a wildcard DNS
 entry pointing at this IP address, you should set vhost\_enable to
