@@ -17,7 +17,7 @@ Using the Web Dashboard
 Open the web dashboard in a browser, then navigate to the instance tab
 by clicking on Compute > Instances on the left side of the browser.
 Click the `Launch Instance button
-https://iad2.dreamcompute.com/project/instances/launch`_, give your
+<https://iad2.dreamcompute.com/project/instances/launch>`_, give your
 instance a name, boot from a Linux-based image (Ubuntu, Debian, , select the default
 security group, then click the "Post Creation" Button on the far right
 of the "Launch Instance" page. Here you can either upload a file to be
@@ -25,6 +25,7 @@ used with Cloud-Init or just input the contents of the file into the
 web UI. Copy and paste the text below into the text box.
 
 .. code::
+
     #cloud-config
     package_upgrade: true
     packages:
