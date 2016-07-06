@@ -1,5 +1,6 @@
-Deploying software with Dokku on DreamCompute
-=============================================
+=================================================
+How to deploy software with Dokku on DreamCompute
+=================================================
 
 What is Dokku, and why would I want it?
 ---------------------------------------
@@ -46,7 +47,7 @@ old for Dokku, so we're going to use the upstream Docker repository).
 
 If you've already pointed a wildcard DNS entry at this machine, you can
 enable Dokku's vhost support (which will get you easy-to-use project
-URLs like ``project.domain.com``). If you don't have a wildcard DNS
+URLs like ``project.example.com``). If you don't have a wildcard DNS
 entry pointing at this IP address, you should set vhost\_enable to
 ``false``.
 
@@ -119,7 +120,11 @@ for example, but each language has different requirements.
 Deploying to Dokku
 ------------------
 
-Dokku has `some helpful documentation <http://dokku.viewdocs.io/dokku~v0.6.2/application-deployment/>`__ which goes into much more detail (especially if your application requires additional services, like MySQL/PostgreSQL/redis/etc), but here's the short version for a simple app with no database requirements like the example provided above.
+Dokku has `some helpful documentation
+<http://dokku.viewdocs.io/dokku~v0.6.2/application-deployment/>`__ which goes
+into much more detail (especially if your application requires additional
+services, like MySQL/PostgreSQL/redis/etc), but here's the short version for
+a simple app with no database requirements like the example provided above.
 
 You'll need to tell dokku about your project before you can deploy it.
 On your Debian instance:
@@ -137,3 +142,6 @@ On your local machine, in your project's source folder:
 
 And voila! Assuming that you have configured everything correctly, you
 should now have a working deployed application.
+
+.. meta::
+    :labels: dokku
