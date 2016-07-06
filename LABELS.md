@@ -59,6 +59,8 @@ mariadb
 wordpress
 gitlab
 trellis
+letsencrypt
+https
 
 Operating Systems
 ~~~~~~~~~~~~~~~~~

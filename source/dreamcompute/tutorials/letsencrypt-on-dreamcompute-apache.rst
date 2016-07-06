@@ -1,5 +1,5 @@
-Setting up Let's Encrypt on DreamCompute
-========================================
+Setting up Let's Encrypt on DreamCompute with Apache
+====================================================
 
 What is Let's Encrypt?
 ----------------------
@@ -40,11 +40,10 @@ control domain names that you request certificates for.
 
 But, let's say that you have ``example.com`` configured with a DNS
 ``A`` record pointing at the IP address for your instance, and you
-have ``apache`` or ``nginx`` already configured properly to respond
+have ``apache`` already configured properly to respond
 to requests for ``example.com``. (Configuring your webserver is kind
-of out of the scope of this guide, but there are `plenty
-<http://httpd.apache.org/docs/current/>`__ of `tutorials
-<https://www.nginx.com/resources/wiki/start/>`__ out there.)
+of out of the scope of this guide, but there are `plenty of tutorials
+<http://httpd.apache.org/docs/current/>`__ out there.)
 
 These sample snippets assume that the webserver is configured to
 serve files for ``example.com`` from the location ``/srv/example.com``
@@ -55,34 +54,16 @@ If you're using Apache on a Debian or Ubuntu instance, you can
 use the Apache plugin for ``letsencrypt-auto`` like so:
 
 .. code:: bash
+
     cd /opt/letsencrypt
     ./letsencrypt-auto --apache -d example.com
 
-
-If you're using ``nginx``, or ``lighttpd``, or any other webserver
-that supports HTTPS, it might be a better idea to go with the
-``certonly`` plugin:
-
-.. code:: bash
-
-    cd /opt/letsencrypt
-    ./letsencrypt-auto certonly --webroot --webroot-path /srv/example.com -d example.com
-
-Either way, this will prompt you for some information including
+This will prompt you for some information including
 your email address. Fill it in with valid information and you
-should get a shiny new certificate! Apache users shouldn't even
+should get a shiny new certificate! You shouldn't even
 need to restart their web server or modify a configuration file,
 as the ``apache`` plugin for ``letsencrypt-auto`` handles that for
-you. ``nginx`` and other users will need to update configurations
-by hand to point at the new SSL certificate and key files. A sample
-nginx snippet is included below (insert something like this into the
-``server {`` stanza for your domain):
-
-.. code:: nginx
-
-    listen 443 ssl;
-    ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
+you.
 
 Adding a subdomain to an existing certificate
 ---------------------------------------------
@@ -91,26 +72,10 @@ If you just realized that you also need a certificate for a subdomain,
 don't worry! You can add a new subdomain to your existing cert at any
 time, by simply calling ``letsencrypt-auto`` again like so...
 
-For Apache users:
-
 .. code:: bash
 
     cd /opt/letsencrypt
     ./letsencrypt-auto --apache -d example.com -d sub.example.com
-
-For everybody else:
-
-.. code:: bash
-    cd /opt/letsencrypt
-    ./letsencrypt-auto certonly --webroot --webroot-path /srv/example.com -d example.com --webroot-path /srv/sub.example.com -d sub.example.com
-
-This is, of course, assuming that you have a different document root
-for the files for your subdomain. You can omit the additional
-``--webroot-path`` argument if the document root is the same for
-the top-level domain and the subdomain. Always remember to specify the
-``--webroot-path`` *before* each ``-d`` argument, because the ``-d``
-argument uses the most-recently-specified ``webroot-path`` variable
-supplied.
 
 Automatic renewal
 -----------------
@@ -126,11 +91,9 @@ certificates for you. I wrote a small shell script I called
 
     /opt/letsencrypt/letsencrypt-auto renew
 
-    systemctl reload nginx.service
-
 Using ``cron``, I have this scheduled like so:
 
-.. code:: cron
+.. code::
 
     30 0 * 0 * /usr/local/bin/update_certs
 
@@ -138,3 +101,6 @@ And now, my system attempts to renew all of my certificates once a week.
 If there are no certificates in danger of expiring soon, nothing bad
 happens, but if they would otherwise expire, then they get renewed and
 I don't have to think about it.
+
+.. meta::
+    :labels: apache https letsencrypt
