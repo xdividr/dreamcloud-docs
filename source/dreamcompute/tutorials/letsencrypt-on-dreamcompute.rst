@@ -38,16 +38,16 @@ that your webserver is configured to respond to requests for your
 domain name. Let's Encrypt performs checks to make sure that you
 control domain names that you request certificates for.
 
-But, let's say that you have ``domain.com`` configured with a DNS
+But, let's say that you have ``example.com`` configured with a DNS
 ``A`` record pointing at the IP address for your instance, and you
 have ``apache`` or ``nginx`` already configured properly to respond
-to requests for ``domain.com``. (Configuring your webserver is kind
+to requests for ``example.com``. (Configuring your webserver is kind
 of out of the scope of this guide, but there are `plenty
 <http://httpd.apache.org/docs/current/>`__ of `tutorials
 <https://www.nginx.com/resources/wiki/start/>`__ out there.)
 
 These sample snippets assume that the webserver is configured to
-serve files for ``domain.com`` from the location ``/srv/domain.com``
+serve files for ``example.com`` from the location ``/srv/example.com``
 on your instance. Make sure to update that location to match your
 domain's document root!
 
@@ -56,7 +56,7 @@ use the Apache plugin for ``letsencrypt-auto`` like so:
 
 .. code:: bash
     cd /opt/letsencrypt
-    ./letsencrypt-auto --apache -d domain.com
+    ./letsencrypt-auto --apache -d example.com
 
 
 If you're using ``nginx``, or ``lighttpd``, or any other webserver
@@ -66,7 +66,7 @@ that supports HTTPS, it might be a better idea to go with the
 .. code:: bash
 
     cd /opt/letsencrypt
-    ./letsencrypt-auto certonly --webroot --webroot-path /srv/domain.com -d domain.com
+    ./letsencrypt-auto certonly --webroot --webroot-path /srv/example.com -d example.com
 
 Either way, this will prompt you for some information including
 your email address. Fill it in with valid information and you
@@ -81,8 +81,8 @@ nginx snippet is included below (insert something like this into the
 .. code:: nginx
 
     listen 443 ssl;
-    ssl_certificate /etc/letsencrypt/live/domain.com/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/domain.com/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
 
 Adding a subdomain to an existing certificate
 ---------------------------------------------
@@ -96,13 +96,13 @@ For Apache users:
 .. code:: bash
 
     cd /opt/letsencrypt
-    ./letsencrypt-auto --apache -d domain.com -d sub.domain.com
+    ./letsencrypt-auto --apache -d example.com -d sub.example.com
 
 For everybody else:
 
 .. code:: bash
     cd /opt/letsencrypt
-    ./letsencrypt-auto certonly --webroot --webroot-path /srv/domain.com -d domain.com --webroot-path /srv/sub.domain.com -d sub.domain.com
+    ./letsencrypt-auto certonly --webroot --webroot-path /srv/example.com -d example.com --webroot-path /srv/sub.example.com -d sub.example.com
 
 This is, of course, assuming that you have a different document root
 for the files for your subdomain. You can omit the additional
