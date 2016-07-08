@@ -1,0 +1,90 @@
+- hosts: localhost
+  connection: local
+  vars:
+    private_key: $PATH_TO_SSH_PUBLIC_KEY
+  tasks:
+
+    - name: create a Ubuntu server
+      os_server:
+            cloud: iad2
+            name: postgres01
+            state: present
+            image: Ubuntu-16.04
+            flavor_ram: 2048
+            key_name: stef
+            boot_from_volume: True
+            volume_size: 10
+            network: public
+      register: pgdb_server
+
+    - name: get facts about the server (including its public v4 IP address)
+      os_server_facts:
+        cloud: iad2
+        server: postgres01
+        wait: yes
+      until: pgdb_server.server.public_v4 != ""
+      retries: 5
+      delay: 10
+
+    - set_fact: public_v4="{{ pgdb_server.server.public_v4 }}"
+
+    - name: add the server to our ansible inventory
+      add_host: hostname={{ public_v4 }} groups=pgsql ansible_ssh_user=dhc-user ansible_ssh_private_key_file={{ private_key }}
+
+- hosts: pgsql
+  gather_facts: no
+
+  tasks:
+    - name: Install python2.7
+      raw: "sudo apt-get update -qq && sudo apt-get install -qq python2.7 aptitude"
+
+- hosts: pgsql
+  vars:
+   ansible_python_interpreter: /usr/bin/python2.7
+
+  become: True
+  vars:
+      db_name: mydb
+      db_user: dreamer
+      db_password: secretpass
+
+  tasks:
+
+    - name: Install PostgreSQL
+      apt: name={{ item }} state=latest update_cache=yes
+      with_items:
+        - postgresql
+        - python-psycopg2
+        - postgresql-contrib
+        - libpq-dev
+
+    - name: Ensure the PostgreSQL service is running
+      service: name=postgresql state=started enabled=yes
+
+    - name: Ensure database is created
+      become_user: postgres
+      become: yes
+      postgresql_db: name={{ db_name }}
+                     encoding='UTF-8'
+                     lc_collate='en_US.UTF-8'
+                     lc_ctype='en_US.UTF-8'
+                     template='template0'
+                     state=present
+
+    - name: Ensure user has access to the database
+      become_user: postgres
+      become: yes
+      postgresql_user: db={{ db_name }}
+                       name={{ db_user }}
+                       password={{ db_password }}
+                       priv=ALL
+                       state=present
+                       encrypted=no
+
+    - name: Ensure user does not have unnecessary privileges
+      become_user: postgres
+      become: yes
+      postgresql_user: name={{ db_user }}
+                       role_attr_flags=NOSUPERUSER,NOCREATEDB
+                       state=present
+
