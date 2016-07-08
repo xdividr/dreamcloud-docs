@@ -1,5 +1,5 @@
 ===================================================================
-How to deploy and configure PostgreSQL in DreamCompute with Ansible
+How to deploy and configure PostgreSQL on DreamCompute with Ansible
 ===================================================================
 
 Ansible is a configuration management tool with built-in support for
