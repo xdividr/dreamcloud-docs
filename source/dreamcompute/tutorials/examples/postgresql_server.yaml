@@ -1,7 +1,10 @@
+#step-1
 - hosts: localhost
   connection: local
   vars:
     private_key: $PATH_TO_SSH_PUBLIC_KEY
+
+#step-2
   tasks:
 
     - name: create a Ubuntu server
@@ -17,6 +20,8 @@
             network: public
       register: pgdb_server
 
+#step-3
+
     - name: get facts about the server (including its public v4 IP address)
       os_server_facts:
         cloud: iad2
@@ -31,12 +36,16 @@
     - name: add the server to our ansible inventory
       add_host: hostname={{ public_v4 }} groups=pgsql ansible_ssh_user=dhc-user ansible_ssh_private_key_file={{ private_key }}
 
+#step-4
+
 - hosts: pgsql
   gather_facts: no
 
   tasks:
     - name: Install python2.7
       raw: "sudo apt-get update -qq && sudo apt-get install -qq python2.7 aptitude"
+
+#step-5
 
 - hosts: pgsql
   vars:
@@ -57,6 +66,8 @@
         - python-psycopg2
         - postgresql-contrib
         - libpq-dev
+
+#step-6
 
     - name: Ensure the PostgreSQL service is running
       service: name=postgresql state=started enabled=yes

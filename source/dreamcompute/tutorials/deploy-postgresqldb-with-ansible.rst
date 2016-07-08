@@ -24,30 +24,17 @@ Prepare the playbook to launch a new DreamCompute cloud server
 First thing to do is to get the playbook ready to create a new server
 on DreamHost Cloud and setup the private SSH key to use to manage it.
 
-.. code::
 
-    - hosts: localhost
-      connection: local
-      vars:
-        private_key: /the/path/to/your/private/ssh/key
+.. literalinclude:: examples/postgresql_server.yaml
+     :start-after: step-1
+     :end-before: step-2
 
 Next step is to define what the new Ubuntu server will have to look
 like:
 
-.. code::
-
-    - name: create a Ubuntu server
-      os_server:
-            cloud: iad2
-            name: postgres01
-            state: present
-            image: Ubuntu-16.04
-            flavor_ram: 2048
-            key_name: stef
-            boot_from_volume: True
-            volume_size: 40
-            network: public
-      register: pgdb_server
+.. literalinclude:: examples/postgresql_server.yaml
+     :start-after: step-2
+     :end-before: step-3
 
 The task above will connect to the cloud named `iad2` in your
 openstack/clouds.yaml configuration file, tell OpenStack Nova to
@@ -63,22 +50,9 @@ Once the server has been created, Ansible needs to store some basic
 facts about it. The next tasks are all about getting to know the new
 server:
 
-.. code::
-
-    - name: get facts about the server (including its public v4 IP
-      address)
-      os_server_facts:
-        cloud: iad2
-        server: postgres01
-        wait: yes
-      until: pgdb_server.server.public_v4 != ""
-      retries: 5
-      delay: 10
-
-    - set_fact: public_v4="{{ pgdb_server.server.public_v4 }}"
-
-    - name: add the server to our ansible inventory 
-      add_host: hostname={{ public_v4 }} groups=pgsql ansible_ssh_user=dhc-user ansible_ssh_private_key_file={{ private_key }}
+.. literalinclude:: examples/postgresql_server.yaml
+     :start-after: step-3
+     :end-before: step-4
 
 Gather the public IP address of the server and add it to the Ansible
 hosts catalog. The `add_host` task creates a new entry assigning the
@@ -93,14 +67,9 @@ All the information necessary to install PostgreSQL on the new server
 are now in place. All next steps are going to be executed on the newly
 created DreamHost Cloud server.
 
-.. code::
-
-    - hosts: pgsql
-      gather_facts: no
-
-      tasks:
-        - name: Install python2.7
-          raw: "sudo apt-get update -qq && sudo apt-get install -qq python2.7 aptitude"
+.. literalinclude:: examples/postgresql_server.yaml
+     :start-after: step-4
+     :end-before: step-5
 
 The first line specifies the group of hosts to execute tasks on. Since
 Ubuntu LTS 16.04 Xenial comes only with Python3, we need to install
@@ -124,63 +93,17 @@ Install PostgreSQL and create a new database
 The new server is ready to install PostgreSQL server and create a
 database in it.
 
-.. code::
-
-
-    - hosts: pgsql
-      vars:
-       ansible_python_interpreter: /usr/bin/python2.7
-       db_name: mydb
-       db_user: dreamer
-       db_password: supersecretpassword
-
-      become: True
-
-      tasks:
-        - name: Install PostgreSQL
-          apt: name={{ item }} state=latest update_cache=yes
-          with_items:
-            - postgresql
-            - python-psycopg2
-            - postgresql-contrib
-            - libpq-dev
-
+.. literalinclude:: examples/postgresql_server.yaml
+     :start-after: step-5
+     :end-before: step-6
 
 This task instructs Ansible to connect to all hosts in the `pgsql`
 group, use python2.7 interpreter and install PostgreSQL server, Python
 Psycopg interface and libraries. It also sets the variables to be used
 to create the new postgres DB using the Ansible module for PostgreSQL:
 
-.. code::
-
-    - name: Ensure the PostgreSQL service is running
-      service: name=postgresql state=started enabled=yes
-
-    - name: Ensure database is created
-      become_user: postgres
-      become: yes
-      postgresql_db: name={{ db_name }}
-                     encoding='UTF-8'
-                     lc_collate='en_US.UTF-8'
-                     lc_ctype='en_US.UTF-8'
-                     template='template0'
-                     state=present
-
-    - name: Ensure user has access to the database
-      become_user: postgres
-      become: yes
-      postgresql_user: db={{ db_name }}
-                       name={{ db_user }}
-                       password={{ db_password }}
-                       priv=ALL
-                       state=present
-
-    - name: Ensure user does not have unnecessary privileges
-      become_user: postgres
-      become: yes
-      postgresql_user: name={{ db_user }}
-                       role_attr_flags=NOSUPERUSER,NOCREATEDB
-                       state=present
+.. literalinclude:: examples/postgresql_server.yaml
+     :start-after: step-6
 
 Running the Ansible Playbook
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
