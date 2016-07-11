@@ -21,8 +21,8 @@ to time. For this reason it's very important to keep Nginx up-to-date. Most
 modern Linux distros will not push the latest version of Nginx into their
 default package lists, so to install the latest version of Nginx via a package,
 you may need to add additional package respositories to your system. See
-Nginx's documentation at http://nginx.org/en/linux_packages.html#stable
-for per-distro details.
+`Nginx's documentation <http://nginx.org/en/linux_packages.html#stable>`_ for
+per-distro details.
 
 Compiling from Source
 ---------------------
@@ -241,7 +241,7 @@ As a note, it's strongly recommended that encrypted traffic use only newer TLS
 protocols, instead of legacy SSL. Both versions of SSL widely available today
 (SSLv2 and SSLv3) have severe security flaws, and should never be used in
 productions environments. Historically, the configurations associated with
-SSL/TLS configuration in Nginx are prefixed with `ssl_`; to promote the use of
+SSL/TLS configuration in Nginx are prefixed with `ssl`; to promote the use of
 modern security protocols, we will use the term 'TLS' when referencing encrypted
 (HTTPS) traffic, and 'ssl' when applicable to specific Nginx configuration
 directives.
@@ -362,17 +362,20 @@ your site from SQLi, XSS, CSRF, and DDoS attacks, as well as provide brute force
 attack mitigation and zero-day threat patching. There are a few open-source WAF
 options available for Nginx:
 
-* ModSecurity, originally written as a WAF for Apache servers, is the de-facto
-standard for open-source WAF solutions. Recent work on the project has shifted
-focus toward Nginx support; see the project's GitHub page for more detail on
-installation and configuration.
+* `ModSecurity <https://www.modsecurity.org/>`_, originally written as a WAF for
+Apache servers, is the de-facto standard for open-source WAF solutions. Recent
+work on the project has shifted focus toward Nginx support; see the project's
+`GitHub page <https://github.com/SpiderLabs/ModSecurity>`_ 
+for more detail on installation and configuration.
 
-* Naxsi is a lightweight alternative to ModSecurity, designed as a native Nginx
-module, and focuses on XSS/SQLi prevention in request parameters.
+* `Naxsi <https://github.com/nbs-system/naxsi>`_ is a lightweight alternative to
+ModSecurity, designed as a native Nginx module, and focuses on XSS/SQLi
+prevention in request parameters.
 
 * For users of the OpenResty bundle seeking a scriptable, high-performance WAF,
-check out the lua-resty-waf project, which seeks to provide a ModSecurity-
-compatible rule engine integreated into the Nginx + LuaJIT ecosystem.
+check out `lua-resty-waf <https://github.com/p0pr0ck5/lua-resty-waf>`_, which
+seeks to provide a ModSecurity- compatible rule engine integreated into the
+Nginx + LuaJIT ecosystem.
 
 Automated Log Analysis + Monitoring
 -----------------------------------
