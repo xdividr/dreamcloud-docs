@@ -199,3 +199,15 @@ Using domain names in documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When using an example domain name in an article, use "example.com".
+
+Links
+~~~~~
+
+In most cases you will use links that look like `text to be clickable
+<https://example.com>>`__ , note that there are two underscores, that tells the RST
+compiler to throw away the reference when it is done, so you can later have the
+same text be a link to a different target. If you have one underscore it will
+create a link and save the text as a reference, so the next time you use it you
+dont have to add the target, just the text, like `text to be clickable`_.
+http://docutils.sourceforge.net/docs/user/rst/quickref.html#hyperlink-targets
+for more info on links.
