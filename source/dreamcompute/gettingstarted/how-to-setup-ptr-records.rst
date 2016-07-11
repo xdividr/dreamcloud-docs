@@ -33,7 +33,7 @@ control panel.
 
 * In the "Add a custom DNS record to YOURDOMAIN:" section, enter the A record
   for the domain or subdomain you wish to host, and the PTR record to be based
-  on.  For example, if you want "mail.mydomain.com" then "Name" will be "mail",
+  on.  For example, if you want "mail.example.com" then "Name" will be "mail",
   "Type" will be "A" and "Value" will be your public IPv4 address for your
   DreamCompute instance.  Click "Add Record Now!".
 

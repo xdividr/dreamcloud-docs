@@ -165,12 +165,12 @@ when it receives a request.
 .. code::
 
     <VirtualHost *:80>
-    ServerName foo.com
-    ServerAlias www.foo.com
-    DocumentRoot /var/www/www.foo.com
+    ServerName example.com
+    ServerAlias www.example.com
+    DocumentRoot /var/www/www.example.com
 
-    CustomLog /var/log/apache/www.foo.com-access.log combined
-    ErrorLog /var/log/apache/www.foo.com-error.log
+    CustomLog /var/log/apache/www.example.com-access.log combined
+    ErrorLog /var/log/apache/www.example.com-error.log
     </VirtualHost>
 
 * Alternatively, if you wish to specify the ip instead of "**\***" you

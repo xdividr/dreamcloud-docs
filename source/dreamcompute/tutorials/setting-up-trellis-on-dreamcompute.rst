@@ -298,10 +298,10 @@ it you will net be able to connect and sometimes not get any errors at all
     multiple sites.
 
     [production]
-    domain.com
+    example.com
 
     [web]
-    domain.com
+    example.com
 
 You can either add the domain connected to the DreamCompute public ip
 address using an A record or use the ip address itself. Better connect the
