@@ -48,5 +48,9 @@ have less than 40G to store. The rates for usage billing are:
     * 2.5¢/GB of storage
     * 5¢/GB of download
 
+Your DreamObjects bill is based off the most amount of data you used for the
+month, so if you used 20GB for most of the month, but at some point you used
+25GB, then 25GB would be the amount of storage you are billed for.
+
 .. meta::
     :labels: DreamObjects Billing
