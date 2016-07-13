@@ -396,3 +396,6 @@ increase the security of the host by preventing intrusion attempts. A common
 approach is to whitelist known IPs that will access your host via SSH, and deny
 all other port 22 traffic, or to use a jump box that strictly filters shell
 access.
+
+.. meta::
+    :labels: nginx security
