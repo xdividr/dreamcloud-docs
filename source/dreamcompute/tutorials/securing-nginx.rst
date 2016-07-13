@@ -1,6 +1,6 @@
-==============
-Securing Nginx
-==============
+====================================================================
+The most important steps to take to make an Nginx server more secure
+====================================================================
 
 Nginx is a high performance web server designed for serving high-performance,
 scalable applications in an efficient, responsive manner. It can be used to
@@ -36,9 +36,9 @@ the current stable branch as of this writing, 1.10.1:
 
 .. code::
 
-	# grab the latest tarball from the official Nginx website
-	# we will use the latest stable, not mainline, version
-	$ wget http://nginx.org/download/nginx-1.10.1.tar.gz
+    # grab the latest tarball from the official Nginx website
+    # we will use the latest stable, not mainline, version
+    $ wget http://nginx.org/download/nginx-1.10.1.tar.gz
 
 We'll also want to grab the developer's signing key and verify the contents of
 our download. First, we'll need the signing key, which we can download from
@@ -46,42 +46,42 @@ a public PGP keyserver:
 
 .. code::
 
-	$ gpg --keyserver pgp.mit.edu --recv a1c052f8
-	gpg: requesting key A1C052F8 from hkp server pgp.mit.edu
-	gpg: key A1C052F8: public key "Maxim Dounin <mdounin@mdounin.ru>" imported
-	gpg: 3 marginal(s) needed, 1 complete(s) needed, PGP trust model
-	gpg: depth: 0  valid:   3  signed:   5  trust: 0-, 0q, 0n, 0m, 0f, 3u
-	gpg: depth: 1  valid:   5  signed:   0  trust: 4-, 0q, 0n, 0m, 1f, 0u
-	gpg: next trustdb check due at 2017-11-22
-	gpg: Total number processed: 1
-	gpg:               imported: 1  (RSA: 1)
+    $ gpg --keyserver pgp.mit.edu --recv a1c052f8
+    gpg: requesting key A1C052F8 from hkp server pgp.mit.edu
+    gpg: key A1C052F8: public key "Maxim Dounin <mdounin@mdounin.ru>" imported
+    gpg: 3 marginal(s) needed, 1 complete(s) needed, PGP trust model
+    gpg: depth: 0  valid:   3  signed:   5  trust: 0-, 0q, 0n, 0m, 0f, 3u
+    gpg: depth: 1  valid:   5  signed:   0  trust: 4-, 0q, 0n, 0m, 1f, 0u
+    gpg: next trustdb check due at 2017-11-22
+    gpg: Total number processed: 1
+    gpg:               imported: 1  (RSA: 1)
 
 Next, we'll grab the signature for this tarball:
 
 .. code::
 
-	$ wget http://nginx.org/download/nginx-1.10.1.tar.gz.asc
+    $ wget http://nginx.org/download/nginx-1.10.1.tar.gz.asc
 
 And finally, we'll verify the signature:
 
 .. code::
 
-	$ gpg --verify nginx-1.10.1.tar.gz.asc nginx-1.10.1.tar.gz
-	gpg: Signature made Tue 31 May 2016 06:58:32 AM PDT using RSA key ID A1C052F8
-	gpg: Good signature from "Maxim Dounin <mdounin@mdounin.ru>"
-	Primary key fingerprint: B0F4 2533 73F8 F6F5 10D4  2178 520A 9993 A1C0 52F8
+    $ gpg --verify nginx-1.10.1.tar.gz.asc nginx-1.10.1.tar.gz
+    gpg: Signature made Tue 31 May 2016 06:58:32 AM PDT using RSA key ID A1C052F8
+    gpg: Good signature from "Maxim Dounin <mdounin@mdounin.ru>"
+    Primary key fingerprint: B0F4 2533 73F8 F6F5 10D4  2178 520A 9993 A1C0 52F8
 
 From here, we will unpack the tarball, compile Nginx, and install it:
 
 .. code::
 
-	$ tar -zxf nginx-1.10.1.tar.gz 
-	$ cd nginx-1.10.1/
-	$ ls
-		auto  CHANGES  CHANGES.ru  conf  configure
-		contrib  html  LICENSE  man README  src
+    $ tar -zxf nginx-1.10.1.tar.gz
+    $ cd nginx-1.10.1/
+    $ ls
+        auto  CHANGES  CHANGES.ru  conf  configure
+        contrib  html  LICENSE  man README  src
 
-	$ ./configure && make && make install
+    $ ./configure && make && make install
 
 Removing Unnecessary Modules
 ----------------------------
@@ -97,8 +97,8 @@ compile-time via the configure script. For example:
 
 .. code::
 
-	# disable the ngx_http_uwsgi_module
-	$ ./configure --without-http_uwsgi_module
+    # disable the ngx_http_uwsgi_module
+    $ ./configure --without-http_uwsgi_module
 
 The configure script provided with the Nginx script provides a large number of
 compile-time options.
@@ -124,8 +124,8 @@ done via the `user` directive in the Nginx configuration file:
 
 .. code::
 
-	# configure a non-privileged user. this user must exist on your system
-	user nginx;
+    # configure a non-privileged user. this user must exist on your system
+    user nginx;
 
 
 Disable Server Tokens
@@ -139,7 +139,7 @@ Nginx can be configured to not display its version in the `Server` header:
 
 .. code::
 
-	server_tokens off;
+    server_tokens off;
 
 Hide Upstream Proxy Headers
 ---------------------------
@@ -151,31 +151,31 @@ consider the following response from an Nginx server running a PHP application:
 
 .. code::
 
-	$ curl -I http://example.com
-	HTTP/1.1 200 OK
-	Server: nginx
-	Content-Type: text/html; charset=UTF-8
-	Connection: keep-alive
-	Vary: Accept-Encoding
-	X-Powered-By: PHP/5.3.3
+    $ curl -I http://example.com
+    HTTP/1.1 200 OK
+    Server: nginx
+    Content-Type: text/html; charset=UTF-8
+    Connection: keep-alive
+    Vary: Accept-Encoding
+    X-Powered-By: PHP/5.3.3
 
 Disclosing the version of PHP can be undesirable; Nginx configurations make this
 easy to hide with the `proxy_hide_header` directive:
 
 .. code::
 
-	proxy_hide_header X-Powered-By;
+    proxy_hide_header X-Powered-By;
 
 Our request to the same server would now look like:
 
 .. code::
 
-	$ curl -I http://example.com
-	HTTP/1.1 200 OK
-	Server: nginx
-	Content-Type: text/html; charset=UTF-8
-	Connection: keep-alive
-	Vary: Accept-Encoding
+    $ curl -I http://example.com
+    HTTP/1.1 200 OK
+    Server: nginx
+    Content-Type: text/html; charset=UTF-8
+    Connection: keep-alive
+    Vary: Accept-Encoding
 
 Add Security Headers
 --------------------
@@ -187,7 +187,7 @@ is trivial to do:
 
 .. code::
 
-	add_header X-Frame-Options SAMEORIGIN;
+    add_header X-Frame-Options SAMEORIGIN;
 
 This directive can also be used to add arbitrary headers at your whim.
 
@@ -200,14 +200,14 @@ certain locations of your website and deny traffic to all other IP addresses:
 
 .. code::
 
-	location /wp-admin {
+    location /wp-admin {
 
-		# allow access from one IP and an additional IP range,
-		# and block everything else
-		allow 1.2.3.4;
-		allow 192.168.0.0/24;
-		deny all;
-	}
+        # allow access from one IP and an additional IP range,
+        # and block everything else
+        allow 1.2.3.4;
+        allow 192.168.0.0/24;
+        deny all;
+    }
 
 Restrict Access by Password
 ---------------------------
@@ -217,21 +217,21 @@ using the same format that Apache's .htaccess and .htpasswd files use:
 
 .. code::
 
-	location /wp-admin {
-		auth_basic "Admin Area";
-		auth_basic_user_file /path/to/htpasswd;
-	}
+    location /wp-admin {
+        auth_basic "Admin Area";
+        auth_basic_user_file /path/to/htpasswd;
+    }
 
 Where the contents of `path/to/htpasswd` looks something like:
 
 .. code::
 
-	user1:password1
-	user2:password2
-	user3:password3
+    user1:password1
+    user2:password2
+    user3:password3
 
 Securing SSL/TLS
-~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 Nginx excels at serving SSL/TLS traffic. Configuring your web server to provide
 securing SSL/TLS configurations for clients is essential to maintaining a secure
@@ -255,15 +255,15 @@ enabled/disabled on a per-server basis in Nginx:
 
 .. code::
 
-	server {
-		# regular server listening for HTTP traffic
-		listen 80;
-	}
+    server {
+        # regular server listening for HTTP traffic
+        listen 80;
+    }
 
-	server {
-		# server listening for SSL traffic on port 443;
-		listen 443 ssl;
-	}
+    server {
+        # server listening for SSL traffic on port 443;
+        listen 443 ssl;
+    }
 
 Enable Strong TLS Ciphers
 -------------------------
@@ -291,8 +291,8 @@ a client/browser does not need to perform the full TLS handshake:
 
 .. code::
 
-	ssl_session_cache shared:SSL:50m;
-	ssl_session_timeout 5m;
+    ssl_session_cache shared:SSL:50m;
+    ssl_session_timeout 5m;
 
 Use Custom Diffie-Hellman Parameters
 ------------------------------------
@@ -305,13 +305,14 @@ unique set of Diffie-Hellman parameters and configuring Nginx to use this value:
 
 .. code::
 
-	# build a 2048-bit DH prime
-	$ openssl dhparam 2048 > /path/to/dhparam
+    # build a 2048-bit DH prime
+    $ openssl dhparam 2048 > /path/to/dhparam
 
 From here we only need to tell Nginx to use our custom values:
 
 .. code::
-	ssl_dhparam /path/to/dhparam;
+
+    ssl_dhparam /path/to/dhparam;
 
 For more information on the Logjam attack, see https://weakdh.org/
 
@@ -325,25 +326,25 @@ in your Nginx config as we've seen before:
 
 .. code::
 
-	add_header Strict-Transport-Security max-age=15768000;
+    add_header Strict-Transport-Security max-age=15768000;
 
 We can also configure Nginx to send a 301 redirect for plaintext HTTP requests
 to the TLS version of your site:
 
 .. code::
 
-	server {
-		listen 80;
-		server_name example.com;
-		return 301 https://$host$request_uri;
-	}
+    server {
+        listen 80;
+        server_name example.com;
+        return 301 https://$host$request_uri;
+    }
 
-	server {
-		listen 443 ssl;
-		server_name example.com;
+    server {
+        listen 443 ssl;
+        server_name example.com;
 
-		# the rest of the appropriate server block below...
-	}
+        # the rest of the appropriate server block below...
+    }
 
 Additional Security Measures
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -363,19 +364,19 @@ attack mitigation and zero-day threat patching. There are a few open-source WAF
 options available for Nginx:
 
 * `ModSecurity <https://www.modsecurity.org/>`_, originally written as a WAF for
-Apache servers, is the de-facto standard for open-source WAF solutions. Recent
-work on the project has shifted focus toward Nginx support; see the project's
-`GitHub page <https://github.com/SpiderLabs/ModSecurity>`_ 
-for more detail on installation and configuration.
+  Apache servers, is the de-facto standard for open-source WAF solutions. Recent
+  work on the project has shifted focus toward Nginx support; see the project's
+  `GitHub page <https://github.com/SpiderLabs/ModSecurity>`_
+  for more detail on installation and configuration.
 
 * `Naxsi <https://github.com/nbs-system/naxsi>`_ is a lightweight alternative to
-ModSecurity, designed as a native Nginx module, and focuses on XSS/SQLi
-prevention in request parameters.
+  ModSecurity, designed as a native Nginx module, and focuses on XSS/SQLi
+  prevention in request parameters.
 
 * For users of the OpenResty bundle seeking a scriptable, high-performance WAF,
-check out `lua-resty-waf <https://github.com/p0pr0ck5/lua-resty-waf>`_, which
-seeks to provide a ModSecurity- compatible rule engine integreated into the
-Nginx + LuaJIT ecosystem.
+  check out `lua-resty-waf <https://github.com/p0pr0ck5/lua-resty-waf>`_, which
+  seeks to provide a ModSecurity- compatible rule engine integreated into the
+  Nginx + LuaJIT ecosystem.
 
 Automated Log Analysis + Monitoring
 -----------------------------------
