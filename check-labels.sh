@@ -1,6 +1,6 @@
 #!/bin/bash
 
-files="`find ./source/dream* -iname *.rst | egrep -v '\/common\/.*\.rst' | xargs -I FILE grep -L ':labels:' FILE`"
+files="`find ./source/dream*/*/*.rst | egrep -v '\/common\/.*\.rst' | xargs -I FILE grep -L ':labels:' FILE`"
 
 if [ -z "$files" ] ; then
     echo "All articles have labels"
