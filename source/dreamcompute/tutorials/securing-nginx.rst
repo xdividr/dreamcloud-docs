@@ -375,7 +375,7 @@ options available for Nginx:
 
 * For users of the OpenResty bundle seeking a scriptable, high-performance WAF,
   check out `lua-resty-waf <https://github.com/p0pr0ck5/lua-resty-waf>`_, which
-  seeks to provide a ModSecurity- compatible rule engine integreated into the
+  seeks to provide a ModSecurity- compatible rule engine integrated into the
   Nginx + LuaJIT ecosystem.
 
 Automated Log Analysis + Monitoring
