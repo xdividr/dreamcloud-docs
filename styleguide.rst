@@ -222,3 +222,11 @@ dont have to add the target, just the text, like
 
 http://docutils.sourceforge.net/docs/user/rst/quickref.html#hyperlink-targets
 for more info on links.
+
+Standard phrasing for introducing paragraphs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When introducing a new paragraph about installing or configuring something,
+phrase it like "The following describes how to configure/install X...", if you
+have bulleted points describing how to install or configure something, phrase
+it as "Configure/Install X...".
