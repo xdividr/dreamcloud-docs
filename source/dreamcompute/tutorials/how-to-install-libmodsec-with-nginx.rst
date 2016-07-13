@@ -53,14 +53,6 @@ library:
 
     ~/ModSecurity# ./configure && make && make install
 
-As part of the installation output, you will see where libmodsecurity has been
-installed. By default, this location is:
-
-.. code::
-
-    Libraries have been installed in:
-        /usr/local/modsecurity/lib
-
 Building Nginx with libmodsecurity
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -117,7 +109,7 @@ ModSecurity-nginx module we previously downloaded:
 
 .. code::
 
-    #$ tar -zxf nginx-1.10.1.tar.gz 
+    # tar -zxf nginx-1.10.1.tar.gz
     # cd nginx-1.10.1/
     ~/nginx-1.10.1# ls
         auto  CHANGES  CHANGES.ru  conf  configure
