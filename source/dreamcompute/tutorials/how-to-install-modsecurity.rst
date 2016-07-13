@@ -57,6 +57,7 @@ CRS rulesets, so we can use those as a extra source of rules for our WAF.
 Navigate to the directory containing these rules:
 
 .. code::
+
     # cd /usr/shared/modsecurity-crs
     /usr/share/modsecurity-crs# ls
         activated_rules  base_rules  experimental_rules  lua
@@ -76,7 +77,7 @@ as configuration files. More information is available in the README file
 in the `activated_rules` directory.
 
 We now need to link our desired rulesets into our included locations.
-For example, to add rules designed to protect against SQL injectio
+For example, to add rules designed to protect against SQL injection
 attacks, we will link in the `sql_injection_attacks` file:
 
 .. code::
@@ -84,7 +85,7 @@ attacks, we will link in the `sql_injection_attacks` file:
     # cd /usr/share/modsecurity-crs/
     # ln -s ./base_rules/modsecurity_crs_41_sql_injection_attacks.conf \
         ./activated_rules/
-        
+
 Of course, it's possible to link only certain rulesets, or entire groups,
 depending on your needs. The CRS is also distributed with custom and
 expirimental rulesets to detect and mitigate a wide variety of emerging threats.
@@ -121,6 +122,7 @@ And set its value to `On`:
 And of course, reload Apache to effect the changes:
 
 .. code::
+
     service apache2 restart
 
 Further Configuration
