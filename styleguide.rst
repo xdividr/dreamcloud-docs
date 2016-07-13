@@ -11,7 +11,8 @@ write code of some sort, ie. python, ansible, etc. add a file that contains
 just the program and put it in examples/filename (relative to the article)
 and include it at the end of your article. Article titles should be in the
 "down style", only capitalize the first word in article titles and section
-headings, except when a proper noun exists which is always capitalized.
+headings, except when a proper noun exists which is always capitalized. Use 4
+spaces instead of one hard tab for indentation.
 
 Headers
 ~~~~~~~
