@@ -30,11 +30,12 @@ using the `openstack` command line client, for example. Download the
 
    $ source openrc.sh
    $ openstack server create \
-       --image Ubuntu-16.04 \
+       --image Ubuntu-14.04 \
        --flavor gp1.semisonic \
        --security-group default \
        --key-name $YOUR_SSH_KEYNAME \
-       --user-data dokku-cloudinit.sh
+       --user-data dokku-cloudinit.sh \
+       dokku-server
 
 It's also possible to use the web UI, pasting the content of
 `dokku-cloudinit.sh` in the Post-Creation tab as Customization Script
