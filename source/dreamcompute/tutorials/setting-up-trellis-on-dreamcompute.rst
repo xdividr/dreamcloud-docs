@@ -52,7 +52,7 @@ to work with Trellis locally and to be able to work on the remote server:
 **NOTES**
 
 Ansible is both needed for setting up a remote server for staging or
-production on DreamCompute. Git and an accessible online repo will also be
+production on DreamCompute. Git and an accessible online repository will also be
 needed as well as the latest Python 2.x version for running Ansible 2.0.2.0.
 
 
@@ -87,7 +87,7 @@ Set up a directory for your project:
      $ mkdir example.com && cd example.com
 
 
-Then clone the repo:
+Then clone the repository:
 
 .. code::
 
@@ -250,7 +250,7 @@ following:
 
 * name of site
 * site_hosts
-* repo (Github repo for example)
+* repository (Github repository for example)
 * multisite or not
 * ssl or not and which provider
 * cache enabled or not
@@ -303,8 +303,8 @@ it you will net be able to connect and sometimes not get any errors at all
     [web]
     example.com
 
-You can either add the domain connected to the DreamCompute public ip
-address using an A record or use the ip address itself. Better connect the
+You can either add the domain connected to the DreamCompute public IP
+address using an A record or use the IP address itself. Better connect the
 domain to your instance before you provision. See this `DreamHost KB
 article on Custom DNS Records
 <https://goo.gl/vYHa1h>`_ .
@@ -375,7 +375,7 @@ Deploying your site to DreamCompute
 
 You have to realize that provisioning is just setting up your server for
 working with WordPress really well and at lightning speed. The instance is
-still not loading a site at all and going to the ip address or domain will
+still not loading a site at all and going to the IP address or domain will
 show you a nice Nginx 404 as nothing can be found. You simply need to
 push your locally deployed WordPress site to the server still. Once that
 is done you still either have to go through the installation process or
@@ -384,8 +384,8 @@ import and existing database.
 For deploys, there are a couple more settings needed besides the ones you
 did for provisioning:
 
-* repo (required) - git URL of your Bedrock-based WordPress project (in SSH format: git@github.com:roots/bedrock.git)
-* repo_subtree_path (optional) - relative path to your Bedrock/WP directory in your repo if its not the root (like site in roots-example-project)
+* repository (required) - git URL of your Bedrock-based WordPress project (in SSH format: git@github.com:roots/bedrock.git)
+* repo_subtree_path (optional) - relative path to your Bedrock/WP directory in your repository if its not the root (like site in roots-example-project)
 * branch (optional) - the git branch to deploy (default: master)
 
 You can deploy with a single command:
