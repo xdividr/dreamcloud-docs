@@ -2,27 +2,28 @@
 How to Configure Apache on DreamCompute Running Fedora or CentOS
 ================================================================
 
-Apache is the most widely used HTTP server on the internet, and we use
-it extensively at DreamHost as the default HTTP server for all hosting
-products. You can use it for your DreamCompute instance as well, and
-the following information helps you install and configure it.
+Apache is the most widely used HTTP server on the internet, and DreamHost uses
+it extensively as the default HTTP server for all hosting products.
 
-These instructions assume you run a Fedora- or CentOS-based system as
-they have their own specific configuration and file hierarchy.
+.. note::
+
+    These instructions assume you run a Fedora- or CentOS-based system as
+    they have their own specific configuration and file hierarchy.
 
 Installing Apache
 ~~~~~~~~~~~~~~~~~
 
 To install Apache on your system, run the following command:
 
-.. code::
+.. code-block:: bash
 
     yum install httpd
 
-The install process asks you to confirm if you wish to install any
-dependency packages needed for Apache.  Confirm by entering "**y**"
-and hitting enter. When it completes, the Apache HTTP server is
-installed.  To start it, you can run:
+* The install process asks you to confirm if you wish to install any
+  dependency packages needed for Apache.
+* Enter "**y**" and hit enter to confirm.
+
+In order to start Apache run
 
 .. code::
 
