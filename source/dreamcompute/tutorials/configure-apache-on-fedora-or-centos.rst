@@ -15,7 +15,7 @@ Installing Apache
 
 To install Apache on your system, run the following command:
 
-.. code-block:: bash
+.. code:: bash
 
     yum install httpd
 
@@ -25,7 +25,7 @@ To install Apache on your system, run the following command:
 
 In order to start Apache run
 
-.. code::
+.. code:: bash
 
     service httpd start
 
@@ -41,7 +41,7 @@ will start anyways.
 You likely want apache to start on boot, and this can be configured
 with:
 
-.. code::
+.. code:: bash
 
     chkconfig httpd on
 
@@ -74,7 +74,7 @@ This directory contains all the configuration files for your Apache
 server, and symlinks to other parts of the Apache install such as the
 logs and modules directories.
 
-.. code::
+.. code:: bash
 
     [root@fedora20 ~]# ls /etc/httpd
     conf  conf.d  conf.modules.d  logs  modules  run
@@ -170,7 +170,7 @@ reloading Apache. Alternatively, you could comment out the entire file
 by adding "#" to the front of each line.  You can reload Apache via
 the command:
 
-.. code::
+.. code:: bash
 
     service httpd reload
 

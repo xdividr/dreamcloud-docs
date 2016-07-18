@@ -15,10 +15,10 @@ Installing Apache
 
 To install Apache on your system, run the following commands:
 
-.. code-block:: bash
+.. code:: bash
 
-    sudo apt-get update
-    sudo apt-get install apache2
+    $ sudo apt-get update
+    $ sudo apt-get install apache2
 
 * The install process asks you to confirm if you wish to install any
   additional packages needed for this instance of Apache.
@@ -115,7 +115,7 @@ values of interest in here are:
 To check which MPM configuration (and modules) exist, run the
 following:
 
-.. code-block:: bash
+.. code:: bash
 
     sudo apache2 -l
 
@@ -204,7 +204,7 @@ Modules
 
 Modules can be enabled or disabled by the following commands:
 
-.. code-block:: bash
+.. code:: bash
 
     sudo a2enmod
 
@@ -215,7 +215,7 @@ Modules can be enabled or disabled by the following commands:
 * After you enable or disable a site, reload Apache to make the change
   live by using the following command:
 
-    .. code-block:: bash
+    .. code:: bash
 
         service apache2 reload
 
