@@ -9,10 +9,10 @@ fi
 
 raw_keywords="$(grep -R '.. only::' ${toxinidir}/source/dream* | sed 's/\.\. only::/ /g' | awk '{print $2}' | sort -u)"
 
-echo "$raw_keywords"
-
 for i in $raw_keywords ; do
-    sphinx-build -W -E -b html -t "$i" -d "${toxinidir}/build-${i}/doctrees" "${toxinidir}/source" "${toxinidir}/build-${i}/html"
+    files="$(grep -R ".. only:: ${i}" ${toxinidir}/source/dream* | sed 's/:\.\. only::/ /g' | awk '{print $1}' | sort -u | xargs)"
+    echo "$files"
+    sphinx-build -E -b html -t "$i" -d "${toxinidir}/build-${i}/doctrees" "${toxinidir}/source" "${toxinidir}/build-${i}/html" "$files"
     status=$?
     if [ $status -ne 0 ] ; then
         exit $status
