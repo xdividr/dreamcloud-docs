@@ -285,3 +285,12 @@ or just:
 
     mysql -u root -p
 
+.. only:: mysql
+
+    .. meta::
+        :labels: mysql debian ubuntu
+
+.. only:: mariadb
+
+    .. meta::
+        :labels: mariadb fedora centos
