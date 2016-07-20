@@ -7,8 +7,8 @@ module for Apache web servers. ModSecurity provides a flexible rule engine,
 allowing users to write (or use third-party) rules for protecting websites
 from attacks such as XSS, SQLi, CSRF, DDoS, and brute force login (as well
 as a number of other exploits). This tutorial will walk through the basics
-of installing and configuring ModSecurity for an Apache web server. We will
-assume that Apache is already installed and running.
+of installing and configuring ModSecurity for an Apache web server. This
+tutorial will assume that Apache is already installed and running.
 
 Installing ModSecurity
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -26,7 +26,7 @@ Next, install ModSecurity:
     # apt-get install libapache2-mod-security2
 
 This will automatically install and activate ModSecurity. In order to begin
-using ModSecurity, we will need to put in place a configuration file. The
+using ModSecurity, a usable configuration file must be put into place. The
 ModSecurity package provided for Ubuntu contains a default recommended config
 file that can be used as a starting point:
 
@@ -46,14 +46,14 @@ Configuring ModSecurity
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 The default recommended config file provided for ModSecurity is a good starting,
-but has very few actual protective rules configured. We can use the
-OWASP Core Rule Set (CRS) to provide additional protection for our web server.
+but has very few actual protective rules configured. In this tutorial the OWASP
+\Core Rule Set (CRS) will be used to provide additional protection.
 
 Enabling CRS Rulesets
 ---------------------
 
 The Ubuntu package for ModSecurity recommends a separate package containing the
-CRS rulesets, so we can use those as a extra source of rules for our WAF.
+CRS rulesets, which can be used as an extra source of rules for our WAF.
 Navigate to the directory containing these rules:
 
 .. code::
@@ -63,7 +63,7 @@ Navigate to the directory containing these rules:
         activated_rules  base_rules  experimental_rules  lua
         modsecurity_crs_10_setup.conf  optional_rules  slr_rules  util
 
-We will configure ModSecurity  to read rule files from the `activated_rules`
+ModSecurity will be configured to read rule files from the `activated_rules`
 directory. Add the following directives to the
 `/etc/apache2/mods-enabled/security2.conf` file:
 
@@ -76,9 +76,9 @@ This instructs ModSecurity to attempt to use any files encding in `conf`
 as configuration files. More information is available in the README file
 in the `activated_rules` directory.
 
-We now need to link our desired rulesets into our included locations.
+Once this is done, link the desired rulesets into the newly included locations.
 For example, to add rules designed to protect against SQL injection
-attacks, we will link in the `sql_injection_attacks` file:
+attacks, link in the `sql_injection_attacks` file:
 
 .. code::
 
