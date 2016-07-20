@@ -60,8 +60,9 @@ for file in $files ; do
         # location it built to and publish it to the section specified in the
         # file "section_id.txt" in the rst file's directory
         if `echo "$file" | egrep '^source/.*\.rst$' > /dev/null` && ! `echo "$file" | egrep '\/index\.rst$' > /dev/null` && ! `echo "$file" | egrep '\/common\/.*\.rst$' > /dev/null` ; then
-            html_file="`echo $file | sed 's/^source\(.*\).rst$/build\/html\1\.html/'`"
-            echo "$html_file"
+            tags=""
+            tags="$(grep '.. only::' "$file" | awk '{print $2}' | sort -u)"
+            file_loc="`echo $file | sed 's/^source\(.*\).rst$/html\1\.html/'`"
             dir="`dirname $file`"
             if [ -f "${dir}/section_id.txt" ] ; then
                 section_id="$( cat "${dir}/section_id.txt" )"
@@ -72,9 +73,25 @@ for file in $files ; do
                 echo "Cannot find the section id for file $file"
                 exit 1
             fi
-            python zendesk-publish-script/publish.py "$html_file" "$section_id"
-            if [ $? -ne 0 ] ; then
-                exit 1
+
+            # If the article has any tags in it, publish the html that was
+            # built using the different tags
+            for tag in "$tags" ; do
+                html_file="build-${tag}/${file_loc}"
+                python zendesk-publish-script/publish.py "$html_file" "$section_id"
+                if [ $? -ne 0 ] ; then
+                    exit 1
+                fi
+            done
+
+            # If the article was built without tags, publish the html that was
+            # built without using tags
+            if [ -z "$tags" ] ; then
+                html_file="build/${file_loc}"
+                python zendesk-publish-script/publish.py "$html_file" "$section_id"
+                if [ $? -ne 0 ] ; then
+                    exit 1
+                fi
             fi
         fi
     fi
