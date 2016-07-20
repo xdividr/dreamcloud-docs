@@ -3,7 +3,7 @@
 toxinidir="$1"
 
 if [ -z "$toxinidir" ] ; then
-    echo "Pass in the toxinidir as arg 1"
+    echo "Run tox instead of running this script directly"
     exit 1
 fi
 
