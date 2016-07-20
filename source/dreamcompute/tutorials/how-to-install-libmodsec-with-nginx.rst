@@ -2,18 +2,18 @@
 How to Install libmodsecurity + Nginx on Ubuntu 14.04
 =====================================================
 
-`ModSecurity <https://www.modsecurity.org/>`_, originally written as a WAF for
-Apache servers, is the de-facto standard for open-source WAF solutions. Recent
-work on the project has shifted focus toward providing a generic shared library
-that any web server can use to protect HTTP(S) requests. These instructions will
-touch on building and configuring libmodsecurity for a DreamCompute instance
-running Ubuntu 14.04.
+`ModSecurity <https://www.modsecurity.org/>`_, originally written as a web
+application firewall (WAF) for Apache servers, is the de-facto standard for
+open-source WAF solutions. Recent work on the project has shifted focus toward
+providing a generic shared library that any web server can use to protect
+HTTP(S) requests. These instructions will touch on building and configuring
+libmodsecurity for a DreamCompute instance running Ubuntu 14.04.
 
 Building libmodsecurity
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-First, we need to install the necessary packages and libraries used to build
-source projects, as well as libraries used specifically by libmodsecurity:
+First, install the necessary packages and libraries used to build source
+projects, as well as libraries used specifically by libmodsecurity:
 
 .. code::
 
@@ -22,7 +22,7 @@ source projects, as well as libraries used specifically by libmodsecurity:
         libcurl4-openssl-dev libgeoip-dev libxml2-dev
 
 
-Next, we need to grab the most recent source of libmodsecurity. This is
+Next, download and unpack the most recent source of libmodsecurity. This is
 available from the ModSecurity GitHub project, on the `libmodsecurity` branch:
 
 .. code::
@@ -39,25 +39,24 @@ available from the ModSecurity GitHub project, on the `libmodsecurity` branch:
     ~/ModSecurity# git checkout -b origin/libmodsecurity
     Switched to a new branch 'origin/libmodsecurity'
 
-We also need to include the git submodules that libmodsecurity requires:
+Initialize and update the git submodules that libmodsecurity requires:
 
 .. code::
 
     ~/ModSecurity# git submodule init
     ~/ModSecurity# git submodule update
 
-Once this is done, we can configure, build, and install the libmodsecurity
-library:
+Finally, configure, build, and install the libmodsecurity library:
 
 .. code::
 
-    ~/ModSecurity# ./configure && make && make install
+    ~/ModSecurity# ./build.sh && ./configure && make && make install
 
 Building Nginx with libmodsecurity
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now that libmodsecurity has been installed and is available to be used by third-
-party programs, we can compile Nginx to use the ModSecurity-nginx connector to
+party programs, Nginx can be compiled with the ModSecurity-nginx connector to
 load libmodsecurity and process requests.
 
 First, grab the source for the Nginx module that communications with
@@ -67,14 +66,14 @@ libmodsecurity:
 
     # git clone https://github.com/SpiderLabs/ModSecurity-nginx.git
 
-Next, we need to grab the Nginx source and verify it:
+Next, grab the Nginx source and verify it:
 
 .. code::
 
     # wget http://nginx.org/download/nginx-1.10.1.tar.gz
 
-We'll also want to grab the developer's signing key and verify the contents of
-our download. First, we'll need the signing key, which we can download from
+It's also important to grab the developer's signing key and verify the contents
+of our download. First, we'll need the signing key, which we can download from
 a public PGP keyserver:
 
 .. code::
@@ -89,13 +88,13 @@ a public PGP keyserver:
     gpg: Total number processed: 1
     gpg:               imported: 1  (RSA: 1)
 
-Next, we'll grab the signature for this tarball:
+Next, grab the signature for this tarball:
 
 .. code::
 
     # wget http://nginx.org/download/nginx-1.10.1.tar.gz.asc
 
-And finally, we'll verify the signature:
+And finally, verify the signature:
 
 .. code::
 
@@ -104,8 +103,8 @@ And finally, we'll verify the signature:
     gpg: Good signature from "Maxim Dounin <mdounin@mdounin.ru>"
     Primary key fingerprint: B0F4 2533 73F8 F6F5 10D4  2178 520A 9993 A1C0 52F8
 
-From here, we will configure Nginx with an addition module, the
-ModSecurity-nginx module we previously downloaded:
+From here, Nginx will be configured with an addition module, the
+ModSecurity-nginx module that was previously downloaded:
 
 .. code::
 
@@ -117,16 +116,7 @@ ModSecurity-nginx module we previously downloaded:
 
     ~/nginx-1.10.1# ./configure --add-module /root/ModSecurity-nginx
 
-As part of the configure process, you should see the following output:
-
-.. code::
-
-    adding module in /root/ModSecurity-nginx
-    checking for ModSecurity library ... not found
-    checking for ModSecurity library in /usr/local/modsecurity ... found
-     + ngx_http_modsecurity was configured
-
-From here, we simply need to build and install Nginx:
+From here, simply build and install Nginx:
 
 .. code::
 
@@ -149,8 +139,8 @@ is straightforward. Add the following to the Nginx configuration:
     ';
 
 These directives can be added inside the `http` block, or one or more `server`
-or `location` blocks. Once this is added, reload Nginx. We can now test our rule
-by sending a regular request to Nginx and examining the output:
+or `location` blocks. Once this is added, reload Nginx. This rule can now be
+tested by sending a regular request to Nginx and examining the output:
 
 .. code::
 
@@ -165,9 +155,9 @@ by sending a regular request to Nginx and examining the output:
     ETag: "578681fe-264"
     Accept-Ranges: bytes
 
-The single rule we added via the `modsecurity_rules` directive will deny
-requests that have the word `test` inside a GET or POST argument. We can
-see this in action by changing our curl test:
+The single rule added via the `modsecurity_rules` directive will deny requests
+that have the word `test` inside a GET or POST argument. This can be seen by
+changing the curl test:
 
 .. code::
 
@@ -180,8 +170,8 @@ see this in action by changing our curl test:
     Connection: keep-alive
 
 A 403 response means that Nginx has blocked the request, due to the result from
-processing the request with libmodsecurity. From here, we can customize
-libmodsecurity using the available directives for ModSecurity (see the
+processing the request with libmodsecurity. From here, libmodsecurity can be
+customized using the available directives for ModSecurity (see the
 `ModSecurity reference manual <https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual>`_
 for more information).
 
