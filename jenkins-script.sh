@@ -38,7 +38,6 @@ if [ $? -ne 0 ] ; then
     echo "Failed to make a virtualenv with the proper modules"
     exit 1
 fi
-
 # Get all the files that have changed since the last time the script published
 # to zendesk
 files="`git diff --name-only $GIT_PREVIOUS_SUCCESSFUL_COMMIT $GIT_COMMIT`"
@@ -61,7 +60,7 @@ for file in $files ; do
         # file "section_id.txt" in the rst file's directory
         if `echo "$file" | egrep '^source/.*\.rst$' > /dev/null` && ! `echo "$file" | egrep '\/index\.rst$' > /dev/null` && ! `echo "$file" | egrep '\/common\/.*\.rst$' > /dev/null` ; then
             tags=""
-            tags="$(grep '.. only::' "$file" | awk '{print $2}' | sort -u)"
+            tags="$(grep '.. only::' "$file" | awk '{print $3}' | sort -u)"
             file_loc="`echo $file | sed 's/^source\(.*\).rst$/html\1\.html/'`"
             dir="`dirname $file`"
             if [ -f "${dir}/section_id.txt" ] ; then
@@ -76,7 +75,7 @@ for file in $files ; do
 
             # If the article has any tags in it, publish the html that was
             # built using the different tags
-            for tag in "$tags" ; do
+            for tag in $tags ; do
                 html_file="build-${tag}/${file_loc}"
                 python zendesk-publish-script/publish.py "$html_file" "$section_id"
                 if [ $? -ne 0 ] ; then

@@ -7,11 +7,11 @@ if [ -z "$toxinidir" ] ; then
     exit 1
 fi
 
-raw_keywords="$(grep -R '.. only::' ${toxinidir}/source/dream* | sed 's/\.\. only::/ /g' | awk '{print $2}' | sort -u )"
+raw_keywords="$(grep -R '.. only::' ${toxinidir}/source/dream* | sed 's/\.\. only::/ /g' | awk '{print $2}' | sort -u)"
 
 echo "$raw_keywords"
 
-for i in "$raw_keywords" ; do
+for i in $raw_keywords ; do
     sphinx-build -W -E -b html -t "$i" -d "${toxinidir}/build-${i}/doctrees" "${toxinidir}/source" "${toxinidir}/build-${i}/html"
     status=$?
     if [ $status -ne 0 ] ; then
