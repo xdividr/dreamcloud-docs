@@ -5,7 +5,7 @@ DreamCompute and DreamObjects documentation styleguide
 Basic Formatting
 ~~~~~~~~~~~~~~~~
 
-Lines should be wrapped at 80 characters for redability. Trailing whitespaces
+Lines should be wrapped at 80 characters for readability. Trailing whitespaces
 should also be watched out for and prevented. If your article describes how to
 write code of some sort, ie. python, ansible, etc. add a file that contains
 just the program and put it in examples/filename (relative to the article)
@@ -17,8 +17,8 @@ spaces instead of one hard tab for indentation.
 Headers
 ~~~~~~~
 
-RST does not have strict requirements on header heirarchy, but keeping a
-consistent heirarchy makes thing easier to read. In our docs, our
+RST does not have strict requirements on header hierarchy, but keeping a
+consistent hierarchy makes thing easier to read. In our docs, our
 titles and H1 are surrounded by =, H2 underlined by ~, H3 underlined by -, H4
 underlined by ^, H5 underlined by \*, and H6 underlined by " example:
 
@@ -68,7 +68,7 @@ Tables
 ~~~~~~
 
 RST allows for several different ways of creating tables, the easiest way is
-the following although it is not extremely flexable
+the following although it is not extremely flexible.
 
 .. code::
 
@@ -112,7 +112,7 @@ Which ends up looking like
 +----------+---------------------+
 
 The final way is easiest to manage but hardest to visualize before built to
-html
+html.
 
 .. code::
 
@@ -153,7 +153,7 @@ Which looks like:
 Lists
 ~~~~~
 
-Ordered lists should be done like the following
+Ordered lists should be done like the following:
 
 .. code::
 
@@ -184,7 +184,7 @@ Images
 
 Images are useful, but not required in our documentation. If you want to have
 an image in an article, put the image in the ./images directory relative to the
-article and reference it from there, using the following
+article and reference it from there, using the following:
 
 .. code::
 
@@ -194,7 +194,7 @@ Bold and Italicized Text
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Bold and italicized text are allowed in our documentation to emphasize key
-words or points, they can be done by surrounding a word with * or **
+words or points, they can be done by surrounding a word with * or **.
 
 Using domain names in documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -204,7 +204,7 @@ When using an example domain name in an article, use "example.com".
 Links
 ~~~~~
 
-In most cases you will use links that look like
+In most cases you will use links that look like:
 
 .. code::
 
@@ -214,7 +214,7 @@ note that there are two underscores, that tells the RST
 compiler to throw away the reference when it is done, so you can later have the
 same text be a link to a different target. If you have one underscore it will
 create a link and save the text as a reference, so the next time you use it you
-dont have to add the target, just the text, like
+dont have to add the target, just the text, like:
 
 .. code::
 
