@@ -73,8 +73,7 @@ Next, grab the Nginx source and verify it:
     # wget http://nginx.org/download/nginx-1.10.1.tar.gz
 
 It's also important to grab the developer's signing key and verify the contents
-of our download. First, we'll need the signing key, which we can download from
-a public PGP keyserver:
+of our download. Download the signing key from a public PGP keyserver:
 
 .. code::
 
@@ -103,7 +102,7 @@ And finally, verify the signature:
     gpg: Good signature from "Maxim Dounin <mdounin@mdounin.ru>"
     Primary key fingerprint: B0F4 2533 73F8 F6F5 10D4  2178 520A 9993 A1C0 52F8
 
-From here, Nginx will be configured with an addition module, the
+From here, configure Nginx with the `--add-module=` option, pointing to the
 ModSecurity-nginx module that was previously downloaded:
 
 .. code::
@@ -114,7 +113,7 @@ ModSecurity-nginx module that was previously downloaded:
         auto  CHANGES  CHANGES.ru  conf  configure
         contrib  html  LICENSE  man README  src
 
-    ~/nginx-1.10.1# ./configure --add-module /root/ModSecurity-nginx
+    ~/nginx-1.10.1# ./configure --add-module=/root/ModSecurity-nginx
 
 From here, simply build and install Nginx:
 
