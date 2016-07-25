@@ -6,7 +6,7 @@ How to Install libmodsecurity + Nginx on Ubuntu 14.04
 application firewall (WAF) for Apache servers, is the de-facto standard for
 open-source WAF solutions. Recent work on the project has shifted focus toward
 providing a generic shared library that any web server can use to protect
-HTTP(S) requests. These instructions will touch on building and configuring
+HTTP(S) requests. These instructions touch on building and configuring
 libmodsecurity for a DreamCompute instance running Ubuntu 14.04.
 
 Building libmodsecurity
