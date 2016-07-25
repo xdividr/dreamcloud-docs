@@ -2,29 +2,30 @@
 How to Configure Apache on DreamCompute Running Fedora or CentOS
 ================================================================
 
-Apache is the most widely used HTTP server on the internet, and we use
-it extensively at DreamHost as the default HTTP server for all hosting
-products. You can use it for your DreamCompute instance as well, and
-the following information helps you install and configure it.
+Apache is the most widely used HTTP server on the internet, and DreamHost uses
+it extensively as the default HTTP server for all hosting products.
 
-These instructions assume you run a Fedora- or CentOS-based system as
-they have their own specific configuration and file hierarchy.
+.. note::
+
+    These instructions assume you run a Fedora- or CentOS-based system as
+    they have their own specific configuration and file hierarchy.
 
 Installing Apache
 ~~~~~~~~~~~~~~~~~
 
 To install Apache on your system, run the following command:
 
-.. code::
+.. code:: bash
 
     yum install httpd
 
-The install process asks you to confirm if you wish to install any
-dependency packages needed for Apache.  Confirm by entering "**y**"
-and hitting enter. When it completes, the Apache HTTP server is
-installed.  To start it, you can run:
+* The install process asks you to confirm if you wish to install any
+  dependency packages needed for Apache.
+* Enter "**y**" and hit enter to confirm.
 
-.. code::
+In order to start Apache run
+
+.. code:: bash
 
     service httpd start
 
@@ -40,7 +41,7 @@ will start anyways.
 You likely want apache to start on boot, and this can be configured
 with:
 
-.. code::
+.. code:: bash
 
     chkconfig httpd on
 
@@ -73,7 +74,7 @@ This directory contains all the configuration files for your Apache
 server, and symlinks to other parts of the Apache install such as the
 logs and modules directories.
 
-.. code::
+.. code:: bash
 
     [root@fedora20 ~]# ls /etc/httpd
     conf  conf.d  conf.modules.d  logs  modules  run
@@ -169,7 +170,7 @@ reloading Apache. Alternatively, you could comment out the entire file
 by adding "#" to the front of each line.  You can reload Apache via
 the command:
 
-.. code::
+.. code:: bash
 
     service httpd reload
 

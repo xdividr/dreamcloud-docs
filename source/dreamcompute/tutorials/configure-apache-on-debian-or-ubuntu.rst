@@ -2,28 +2,27 @@
 How to Configure Apache on DreamCompute Running Debian or Ubuntu
 ================================================================
 
-Apache is the most widely used HTTP server on the internet, and we use
-it extensively at DreamHost as the default HTTP server for all hosting
-products.
+Apache is the most widely used HTTP server on the internet, and DreamHost uses
+it extensively as the default HTTP server for all hosting products.
 
-* You can use it for your DreamCompute instance as well, and the
-  following information helps you install and configure it.
-* These instructions assume you run a Debian- or Ubuntu-based system
-  as they have their own specific configuration and file hierarchy.
+.. note::
+
+    These instructions assume you run a Debian- or Ubuntu-based system
+    as they have their own specific configuration and file hierarchy.
 
 Installing Apache
 ~~~~~~~~~~~~~~~~~
 
 To install Apache on your system, run the following commands:
 
-.. code-block:: bash
+.. code:: bash
 
-    sudo apt-get update
-    sudo apt-get install apache2
+    $ sudo apt-get update
+    $ sudo apt-get install apache2
 
 * The install process asks you to confirm if you wish to install any
   additional packages needed for this instance of Apache.
-* Confirm by entering "**y**" and hitting enter.
+* Enter "**y**" and hit enter to confirm.
 
 .. code::
 
@@ -116,7 +115,7 @@ values of interest in here are:
 To check which MPM configuration (and modules) exist, run the
 following:
 
-.. code-block:: bash
+.. code:: bash
 
     sudo apache2 -l
 
@@ -154,7 +153,7 @@ when it receives a request.
 /etc/apache2/sites-available/YOURSITEHERE
 -----------------------------------------
 
-* For each site you wish to configure, we recommended you name a file
+* For each site you wish to configure, it is recommended you name a file
   similar to your site name in the **/etc/apache2/sites-available/**
   directory.
 * There are several example virtual hosts available on Apache's wiki
@@ -205,7 +204,7 @@ Modules
 
 Modules can be enabled or disabled by the following commands:
 
-.. code-block:: bash
+.. code:: bash
 
     sudo a2enmod
 
@@ -216,7 +215,7 @@ Modules can be enabled or disabled by the following commands:
 * After you enable or disable a site, reload Apache to make the change
   live by using the following command:
 
-    .. code-block:: bash
+    .. code:: bash
 
         service apache2 reload
 
