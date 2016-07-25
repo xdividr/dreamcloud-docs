@@ -21,7 +21,7 @@ Connecting with Arq on Windows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-1. Lunch Arq:
+1. Launch Arq:
 
     .. figure:: images/Arq-1-win.png
 
