@@ -2,6 +2,37 @@
 DreamCompute and DreamObjects documentation styleguide
 ======================================================
 
+Checklist
+~~~~~~~~~
+
+Use this checklist to determine if your documentation adheres to the
+major technical style guide rules we observe. Further details are provided on
+each rule later in this guide.
+
+* Be concise. Avoid unnecessary text, which can quickly
+  become wordy and confusing.
+* Use the third-person. For example, never use the words
+  'we', 'us', 'our', and so on. Always use the company name
+  DreamHost.
+* Avoid run-on sentences and stream-of-thought text. Every
+  sentence should be immediately clear and useful.
+* Avoid humor. It's generally a good idea to avoid any attempt
+  at humor in customer-facing technical documentation.
+* Don't use the future tense. Users are typically visiting our
+  articles to accomplish a goal right now, and when someone
+  sees the word "will", it presents ambiguity.
+* Limit exclamation points! They are distracting and lose their
+  emphasis if overused!!
+* Always use "example.com" when illustrating example
+  domains.
+* Use PNG for an image format. Icons can also use a SVG
+  format. Do NOT use JPG files.
+* If you must include callout to highlight a section of an
+  image, only use a single box. Do not use arrows, circles, or
+  more than a single box.
+* Try to break up a 'wall of text' with a bullet or numbered list,
+  table, graphic, or outside link.
+
 RST Formatting Style
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -190,11 +221,13 @@ article and reference it from there, using the following:
 
     .. figure:: images/image.png
 
+        Image caption goes here
+
 Bold and Italicized Text
 ------------------------
 
 Bold and italicized text are allowed in our documentation to emphasize key
-words or points, they can be done by surrounding a word with * or **.
+words or points, they can be done by surrounding a word with \* or \*\*.
 
 Using domain names in documentation
 -----------------------------------
@@ -214,7 +247,7 @@ note that there are two underscores, that tells the RST
 compiler to throw away the reference when it is done, so you can later have the
 same text be a link to a different target. If you have one underscore it will
 create a link and save the text as a reference, so the next time you use it you
-dont have to add the target, just the text, like:
+don't have to add the target, just the text, like:
 
 .. code::
 
@@ -233,38 +266,6 @@ it as "Configure/Install X...".
 
 Content Styling
 ~~~~~~~~~~~~~~~
-
-Checklist
----------
-
-Use this checklist to determine if your documentation adheres to the
-major technical style guide rules we observe.  Further details are provided on
-each rule later in this guide.  You can also click the link to read
-more about a guideline.
-
-* Be concise. Avoid unnecessary text, which can quickly
-  become wordy and confusing.
-* Use the third-person. For example, never use the words
-  'we', 'us', 'our', and so on. Always use the company name
-  DreamHost.
-* Avoid run-on sentences and stream-of-thought text. Every
-  sentence should be immediately clear and useful.
-* Avoid humor. It's generally a good idea to avoid any attempt
-  at humor in customer-facing technical documentation.
-* Don't use the future tense. Users are typically visiting our
-  articles to accomplish a goal right now, and when someone
-  sees the word "will", it presents ambiguity.
-* Limit exclamation points! They are distracting and lose their
-  emphasis if overused!!
-* Always use "example.com" when illustrating example
-  domains.
-* Use PNG for an image format. Icons can also use a SVG
-  format. Do NOT use JPG files.
-* If you must include callout to highlight a section of an
-  image, only use a single box. Do not use arrows, circles, or
-  more than a single box.
-* Try to break up a 'wall of text' with a bullet or numbered list,
-  table, graphic, or outside link.
 
 Grammar and mechanics
 ---------------------
@@ -414,24 +415,18 @@ Here is a simple example:
 "We, us, our" (tone)
 ^^^^^^^^^^^^^^^^^^^^
 
-This isn't a rule, but a choice we enforced on all articles. When
-we launched the wiki cleanup project in January 2015, we asked
-management what they preferred in terms of tone, as in the following
-example:
+When refering to DreamHost, do not use the word "we", use "DreamHost" instead.
 
-"*Dreamhost* recommends you always create a backup of your website."
+"*DreamHost* recommends you always create a backup of your website."
 
 Vs.
 
 "*We* recommend you always create a backup of your website."
 
-We were instructed to use the third person throughout the knowledge base, so
-anytime we saw 'we/us/our' we changed it to "DreamHost".
-
 What tone do I use in technical documentation?
 **********************************************
 
-Be warm, professional, clear, and direct. Avoide hyperbolic, overly casual, and
+Be warm, professional, clear, and direct. Avoid hyperbolic, overly casual, and
 wordy content, which can distract the reader from accomplishing a goal.
 
 Is humor acceptable?
@@ -444,9 +439,7 @@ unprofessional tone.
 Avoid the future tense
 ^^^^^^^^^^^^^^^^^^^^^^
 
-In technical writing, there is only one tense: the present. Users are typically
-visiting our articles to accomplish a goal right now, and when someone sees the
-word "will", it presents ambiguity.
+Use the present tense to avoid ambiguity
 
 Take for example the following sentence that is commonly seen in a numbered
 list:
@@ -457,18 +450,6 @@ When will it open? Now? Or, fifteen minutes from now? Instead, use the present
 tense to illustrate immediacy:
 
     "A screen opens which displays all of your domains."
-
-A word about how we treat "you'll need to..."
-*********************************************
-
-We also corrected numerous instances where "you'll need to..." is used to
-describe some sort of action a user needs to take. "You'll need to add the
-following lines to your script in order to make it work" — which also presents
-ambiguity.
-
-When do I need to add the lines? In most cases, we replace "you'll need to"
-with "must", as in "You must add the following lines..." or even more directly,
-"Add the following lines..."
 
 Formatting
 ----------
@@ -512,12 +493,12 @@ reader prepare for the ensuing information or task.
 Use "example.com"
 ^^^^^^^^^^^^^^^^^
 
-For illustration purposes, we corrected hundreds of instances where 'your-
-doman.com' , 'mydomain.com', or 'domain.com' (and many other variations) were
-used to show domain examples in the knowledge base. We always change
-this to "example.com" which is an official domain for illustrative examples in
-documents. Never use the other variations of 'domain.com' as they are often
-real websites, typically from competitive companies.
+For illustration purposes, we corrected hundreds of instances where
+'your-domain.com' , 'mydomain.com', or 'domain.com' (and many other
+variations) were used to show domain examples in the knowledge base. We always
+change this to "example.com" which is an official domain for illustrative
+examples in documents. Never use the other variations of 'domain.com' as they
+are often real websites, typically from competitive companies.
 
 Remove extra empty spaces
 ^^^^^^^^^^^^^^^^^^^^^^^^^
