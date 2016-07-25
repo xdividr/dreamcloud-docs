@@ -585,6 +585,8 @@ Highlighting content in an image
 Use a red or black square or rectangle to highlight a portion of an image. Do
 not use a circle to highlight content:
 
+.. image:: source/dreamcompute/gettingstarted/images/styleguide/styleguide1.png
+
 What image format should be used?
 *********************************
 
@@ -596,6 +598,18 @@ A word about screenshots in a numbered list
 
 Always put the step below the image that describes an action you wish a user to
 take based on a screenshot.
+
+*An example of how a numbered step correctly appears below a screenshot:*
+
+.. image:: source/dreamcompute/gettingstarted/images/styleguide/styleguide2.png
+
+#. Click the Go button
+
+*An example of how a numbered step incorrectly appears above a screenshot:*
+
+#. Click the Go button
+
+.. image:: source/dreamcompute/gettingstarted/images/styleguide/styleguide2.png
 
 Further reading
 ---------------
