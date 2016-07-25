@@ -8,7 +8,7 @@ allowing users to write (or use third-party) rules for protecting websites
 from attacks such as XSS, SQLi, CSRF, DDoS, and brute force login (as well
 as a number of other exploits). This tutorial will walk through the basics
 of installing and configuring ModSecurity for an Apache web server. This
-tutorial will assume that Apache is already installed and running.
+tutorial assumes that Apache is already installed and running.
 
 Installing ModSecurity
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -25,10 +25,10 @@ Next, install ModSecurity:
 
     # apt-get install libapache2-mod-security2
 
-This will automatically install and activate ModSecurity. In order to begin
-using ModSecurity, a usable configuration file must be put into place. The
-ModSecurity package provided for Ubuntu contains a default recommended config
-file that can be used as a starting point:
+This automatically installs and activate ModSecurity. In order to begin using
+ModSecurity, a usable configuration file must be put into place. The ModSecurity
+package provided for Ubuntu contains a default recommended config file that can
+be used as a starting point:
 
 .. code::
 
@@ -45,9 +45,9 @@ take effect:
 Configuring ModSecurity
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The default recommended config file provided for ModSecurity is a good starting,
-but has very few actual protective rules configured. In this tutorial the OWASP
-\Core Rule Set (CRS) will be used to provide additional protection.
+The default recommended config file provided for ModSecurity is a good starting
+point, but has very few actual protective rules configured. In this tutorial the
+OWASP Core Rule Set (CRS) is used to provide additional protection.
 
 Enabling CRS Rulesets
 ---------------------
@@ -63,8 +63,8 @@ Navigate to the directory containing these rules:
         activated_rules  base_rules  experimental_rules  lua
         modsecurity_crs_10_setup.conf  optional_rules  slr_rules  util
 
-ModSecurity will be configured to read rule files from the `activated_rules`
-directory. Add the following directives to the
+Configure ModSecurity to read rule files from the `activated_rules` directory.
+Add the following directives to the
 `/etc/apache2/mods-enabled/security2.conf` file:
 
 .. code::
@@ -129,7 +129,7 @@ Further Configuration
 ~~~~~~~~~~~~~~~~~~~~~
 
 WAF environments can be complex and time-consuming to tune and adjust based on
-your server's needs; this is largely why the CRS was created.If you need to
+your server's needs; this is largely why the CRS was created. If you need to
 write or change custom rules, its recommended to read though the `ModSecurity
 reference manual <https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual>`_.
 Additionally, the `modsecurity-users` mailing list and `#modsecurity` room on
