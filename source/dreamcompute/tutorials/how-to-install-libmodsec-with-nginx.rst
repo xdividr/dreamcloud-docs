@@ -180,3 +180,6 @@ It should be noted that libmodsecurity is still in active development, so
 certain functionality is subject to change. As with any actively developed
 open source project, be sure to check the source code for the most recent
 releases.
+
+.. meta::
+    :labels: nginx security
