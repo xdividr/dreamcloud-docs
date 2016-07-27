@@ -2,11 +2,11 @@
 Installing ModSecurity with Apache on Ubuntu 14.04
 ==================================================
 
-ModSecurity is an open source WAF (web application firewall) designed as a
+ModSecurity is an open source web application firewall (WAF) designed as a
 module for Apache web servers. ModSecurity provides a flexible rule engine,
 allowing users to write (or use third-party) rules for protecting websites
 from attacks such as XSS, SQLi, CSRF, DDoS, and brute force login (as well
-as a number of other exploits). This tutorial will walk through the basics
+as a number of other exploits). This tutorial walks through the basics
 of installing and configuring ModSecurity for an Apache web server. This
 tutorial assumes that Apache is already installed and running.
 
@@ -25,7 +25,7 @@ Next, install ModSecurity:
 
     # apt-get install libapache2-mod-security2
 
-This automatically installs and activate ModSecurity. In order to begin using
+This automatically installs and activates ModSecurity. In order to begin using
 ModSecurity, a usable configuration file must be put into place. The ModSecurity
 package provided for Ubuntu contains a default recommended config file that can
 be used as a starting point:
@@ -45,15 +45,16 @@ take effect:
 Configuring ModSecurity
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The default recommended config file provided for ModSecurity is a good starting
-point, but has very few actual protective rules configured. In this tutorial the
-OWASP Core Rule Set (CRS) is used to provide additional protection.
+The recommended default config file provided for ModSecurity has very few
+actual protective rules configured, but is a good starting point. In this
+tutorial the OWASP Core Rule Set (CRS) is used to provide additional
+protection.
 
 Enabling CRS Rulesets
 ---------------------
 
 The Ubuntu package for ModSecurity recommends a separate package containing the
-CRS rulesets, which can be used as an extra source of rules for our WAF.
+CRS rulesets, which can be used as an extra source of rules for WAF.
 Navigate to the directory containing these rules:
 
 .. code::
@@ -72,7 +73,7 @@ Add the following directives to the
     IncludeOptional "/usr/share/modsecurity-crs/*.conf"
     IncludeOptional "/usr/share/modsecurity-crs/activated_rules/*.conf"
 
-This instructs ModSecurity to attempt to use any files encding in `conf`
+This instructs ModSecurity to attempt to use any files ending in `conf`
 as configuration files. More information is available in the README file
 in the `activated_rules` directory.
 
@@ -88,7 +89,7 @@ attacks, link in the `sql_injection_attacks` file:
 
 Of course, it's possible to link only certain rulesets, or entire groups,
 depending on your needs. The CRS is also distributed with custom and
-expirimental rulesets to detect and mitigate a wide variety of emerging threats.
+experimental rulesets to detect and mitigate a wide variety of emerging threats.
 Rulesets for specific CMS/application installations, such as WordPress and
 Joomla, are also available in the `slr_rules` directory (though as a free WAF
 ruleset offering, these rulesets are not always current with the latest
@@ -104,9 +105,9 @@ in order for the rules to take effect:
 Activating ModSecurity
 ----------------------
 
-ModSecurity initially runs in `DetectionOnly` mode, in which the WAF will
-examine HTTP(S) traffic, but not actually block malicious requests. This
-must be adjusted in order to ModSecurity to deny attack traffic. In the
+ModSecurity initially runs in `DetectionOnly` mode, in which the WAF
+examines HTTP(S) traffic, but not actually block malicious requests. This
+must be adjusted in order for ModSecurity to deny attack traffic. In the
 file `/etc/modsecurity/modsecurity.conf`, find the directive `SecRuleEngine`:
 
 .. code::
@@ -130,8 +131,11 @@ Further Configuration
 
 WAF environments can be complex and time-consuming to tune and adjust based on
 your server's needs; this is largely why the CRS was created. If you need to
-write or change custom rules, its recommended to read though the `ModSecurity
+write or change custom rules, it's recommended to read though the `ModSecurity
 reference manual <https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual>`_.
 Additionally, the `modsecurity-users` mailing list and `#modsecurity` room on
 Freenode IRC are excellent resources for experienced ModSecurity users and
 developers.
+
+.. meta::
+    :labels: apache security
