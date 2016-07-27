@@ -3,7 +3,7 @@ How to Install libmodsecurity + Nginx on Ubuntu 14.04
 =====================================================
 
 `ModSecurity <https://www.modsecurity.org/>`_, originally written as a web
-application firewall (WAF) for Apache servers, is the de-facto standard for
+application firewall (WAF) for Apache servers, is the de facto standard for
 open-source WAF solutions. Recent work on the project has shifted focus toward
 providing a generic shared library that any web server can use to protect
 HTTP(S) requests. These instructions touch on building and configuring
@@ -55,12 +55,11 @@ Finally, configure, build, and install the libmodsecurity library:
 Building Nginx with libmodsecurity
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now that libmodsecurity has been installed and is available to be used by third-
-party programs, Nginx can be compiled with the ModSecurity-nginx connector to
-load libmodsecurity and process requests.
+Now that libmodsecurity has been installed and is available to be used by
+third-party programs, Nginx can be compiled with the ModSecurity-nginx connector
+to load libmodsecurity and process requests.
 
-First, grab the source for the Nginx module that communications with
-libmodsecurity:
+First, grab the source for the Nginx module wraps around libmodsecurity:
 
 .. code::
 
@@ -73,7 +72,7 @@ Next, grab the Nginx source and verify it:
     # wget http://nginx.org/download/nginx-1.10.1.tar.gz
 
 It's also important to grab the developer's signing key and verify the contents
-of our download. Download the signing key from a public PGP keyserver:
+of the download:
 
 .. code::
 
@@ -168,16 +167,16 @@ changing the curl test:
     Content-Length: 169
     Connection: keep-alive
 
-A 403 response means that Nginx has blocked the request, due to the result from
-processing the request with libmodsecurity. From here, libmodsecurity can be
-customized using the available directives for ModSecurity (see the
+A 403 response means that Nginx has blocked the request based on processing the
+request with libmodsecurity. From here, libmodsecurity can be customized using
+the available directives for ModSecurity (see the
 `ModSecurity reference manual <https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual>`_
 for more information).
 
 Final Notes
 ~~~~~~~~~~~
 
-It should be noted that libmodsecurity is still in active development, and as
-such certainly functionality is subject to change. As with any actively
-developed open source project, be sure to check the source code for the most
-recent releases.
+It should be noted that libmodsecurity is still in active development, so
+certain functionality is subject to change. As with any actively developed
+open source project, be sure to check the source code for the most recent
+releases.
