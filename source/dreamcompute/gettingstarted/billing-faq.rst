@@ -8,11 +8,6 @@ How does hourly billing work?
 We bill you for each virtual server per hour of usage until
 reaching the monthly price, at which the cost is capped for the month.
 
-When is a virtual server considered running?
---------------------------------------------
-
-Billing stops for a virtual server once it is deleted/terminated.
-
 What are the hourly prices?
 ---------------------------
 
@@ -24,14 +19,19 @@ accelerated public networking. Instance sizes range from 512MB to 16GB of RAM.
 
 .. include:: common/US-EAST-2-prices.rst
 
-How much do IPs cost?
----------------------
+When is a virtual server considered running?
+--------------------------------------------
+
+Billing stops for a virtual server once it is deleted/terminated.
+
+How much do IP addresses cost?
+------------------------------
 
 In US-East 2 virtual servers receive a public IPv4 and IPv6 address by default.
 The best part is that there is no additional charge!
 
-How much does block storage cost?
----------------------------------
+How much does extra block storage cost?
+---------------------------------------
 
 Each DreamCompute cluster includes 100 GB of block storage at no charge. You
 can adjust your monthly allotment of block storage by purchasing additional
