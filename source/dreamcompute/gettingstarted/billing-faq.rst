@@ -11,12 +11,6 @@ reaching the monthly price, at which the cost is capped for the month.
 What are the hourly prices?
 ---------------------------
 
-US-East 2
-~~~~~~~~~
-
-Powered by Intel Xeon E5 series processors, all- SSD storage, and hardware
-accelerated public networking. Instance sizes range from 512MB to 16GB of RAM.
-
 .. include:: common/US-EAST-2-prices.rst
 
 When is a virtual server considered running?
