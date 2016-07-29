@@ -36,7 +36,8 @@ field.  Select the .ppk file you generated and then
 click open.  You can now navigate to the "Session"
 setting page, and enter into the host name field
 "dhc-user@" followed immediately by your instance's
-public ip address.  Click Open to start your session.
+public ip address.  If using CoreOS, use "core@" instead
+of "dhc-user@".  Click Open to start your session.
 
 Using Mac & Linux
 -----------------
@@ -58,7 +59,8 @@ first.  There are several ways to do this:
         Host IPADDRESS
         IdentityFile ~/path/to/key
 
-The final step is to connect via ssh:
+The final step is to connect via ssh (replace "dhc-user" with "core" if using
+CoreOS):
 
 .. code-block:: bash
 
