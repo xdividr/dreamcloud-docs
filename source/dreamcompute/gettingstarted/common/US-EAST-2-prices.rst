@@ -1,6 +1,11 @@
 Prices
 ~~~~~~
 
+Run a DreamHost Cloud server for as long as you need and only get
+charged for up to 600 hours (25 days) in a given month.  No more
+confusing invoices, no need for complex calculators and no surprise
+bills at the end of the month.
+
 +----------------+--------+------+--------------+-------------------+
 |  Flavor Name   | Memory | vCPU | Hourly Price | Max Monthly Price |
 +================+========+======+==============+===================+
