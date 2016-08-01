@@ -38,20 +38,21 @@ RST Formatting Style
 
 Lines should be wrapped at 80 characters for readability. Trailing whitespaces
 should also be watched out for and prevented. If your article describes how to
-write code of some sort, ie. python, ansible, etc. add a file that contains
-just the program and put it in examples/filename (relative to the article)
-and include it at the end of your article. Article titles should be in the
+write code of some sort, ie. python, ansible, and so on, add a file that
+contains just the program and put it in examples/filename (relative to the
+article) and include it at the end of your article. Article titles use in the
 "down style", only capitalize the first word in article titles and section
-headings, except when a proper noun exists which is always capitalized. Use 4
-spaces instead of one hard tab for indentation.
+headings, except when a proper noun exists which is always capitalized. Use
+4 spaces instead of one hard tab for indentation.
 
 Headers
 -------
 
 RST does not have strict requirements on header hierarchy, but keeping a
-consistent hierarchy makes thing easier to read. In our docs, our
+consistent hierarchy makes thing easier to read. In DreamHost Cloud docs,
 titles and H1 are surrounded by =, H2 underlined by ~, H3 underlined by -, H4
-underlined by ^, H5 underlined by \*, and H6 underlined by " example:
+underlined by ^, H5 underlined by \*, and H6 underlined by " as shown in the
+following examples:
 
 .. code::
 
@@ -98,8 +99,8 @@ Header 6
 Tables
 ------
 
-RST allows for several different ways of creating tables, the easiest way is
-the following although it is not extremely flexible.
+RST allows for several different ways of creating tables. The easiest way is
+described in the following example, although it is not extremely flexible.
 
 .. code::
 
@@ -132,7 +133,7 @@ The second way is harder to manage, but more flexible
     +----------+---------------------+
 
 
-Which ends up looking like
+which ends up looking like
 
 +----------+----------+----------+
 | Column 1 | Column 2 | Column 3 |
@@ -142,8 +143,8 @@ Which ends up looking like
 | Data 4   |       Data 5        |
 +----------+---------------------+
 
-The final way is easiest to manage but hardest to visualize before built to
-html.
+The final way is the easiest to manage but hardest to visualize before built to
+HTML.
 
 .. code::
 
@@ -154,7 +155,7 @@ html.
        "Data 1", "Data 2"
        "Data 3", "Data 4"
 
-Which looks like:
+which looks like:
 
 .. csv-table:: Table Title
    :header: "Column 1", "Column 2"
@@ -166,8 +167,8 @@ Which looks like:
 Code Blocks
 -----------
 
-It is common to need to include code in tutorials. Our docs are built with
-sphinx, which allows you to include code by using the following:
+It is common to include code examples in tutorials. DreamHost Cloud docs are
+built with sphinx, which allows you to include code by using the following:
 
 .. code::
 
@@ -175,7 +176,7 @@ sphinx, which allows you to include code by using the following:
 
         code goes here
 
-Which looks like:
+which looks like:
 
 .. code::
 
@@ -213,9 +214,9 @@ and unordered lists should be done with "*", such as:
 Images
 ------
 
-Images are useful, but not required in our documentation. If you want to have
-an image in an article, put the image in the ./images directory relative to the
-article and reference it from there, using the following:
+Images are useful, but not required in DreamHost Cloud documentation. If you
+want to have an image in an article, put the image in the ./images directory
+relative to the article and reference it from there, using the following:
 
 .. code::
 
@@ -226,8 +227,9 @@ article and reference it from there, using the following:
 Bold and Italicized Text
 ------------------------
 
-Bold and italicized text are allowed in our documentation to emphasize key
-words or points, they can be done by surrounding a word with \* or \*\*.
+Bold and italicized text are allowed in DreamHost Cloud documentation to
+emphasize key words or points, they can be done by surrounding a word with \*
+or \*\*.
 
 Using domain names in documentation
 -----------------------------------
@@ -237,30 +239,31 @@ When using an example domain name in an article, use "example.com".
 Links
 -----
 
-In most cases you will use links that look like:
+In most cases use the following for links:
 
 .. code::
 
     `text to be clickable <https://example.com>`__
 
-note that there are two underscores, that tells the RST
-compiler to throw away the reference when it is done, so you can later have the
-same text be a link to a different target. If you have one underscore it will
-create a link and save the text as a reference, so the next time you use it you
-don't have to add the target, just the text, like:
+Note: There are two underscores, which tells the RST
+compiler to throw away the reference when it is done, so you can later link the
+same text to a different target. If there is one underscore it
+creates a link and saves the text as a reference, so the next time you use it
+you don't have to add the target, just the text, like:
 
 .. code::
 
     `text to be clickable`_
 
+See
 http://docutils.sourceforge.net/docs/user/rst/quickref.html#hyperlink-targets
-for more info on links.
+for more information on links.
 
 Standard phrasing for introducing paragraphs
 --------------------------------------------
 
-When introducing a new paragraph about installing or configuring something,
-phrase it like "The following describes how to configure/install X...", if you
+When introducing a new paragraph about an instalation or configuration process,
+include "The following describes how to configure/install X..." If you
 have bulleted points describing how to install or configure something, phrase
 it as "Configure/Install X...".
 
@@ -271,8 +274,8 @@ Grammar and mechanics
 ---------------------
 
 Good grammar is like good code: when it's bug free, things work and don't
-break.  The following are basic grammar guidelines we follow in order to
-maintain consistency, which allows the reader to quickly comprehend
+break. The following are basic grammar guidelines that ensure
+consistency, allowing the reader to quickly comprehend
 the information you present.
 
 Spelling, grammar, and punctuation
@@ -280,7 +283,7 @@ Spelling, grammar, and punctuation
 
 Typos must always be corrected, obviously. Spell checker is
 never 100% accurate, so reading through every article is imperative.
-This greatly helps us find grammar mistakes (a biggie is correcting
+This greatly helps you find grammar mistakes (a biggie is correcting
 subject/verb agreement), fixing missing or incorrect punctuation, and
 correcting those common gotchas (such as "there/their", "form/from",
 "then/than", and so on). It also helps in fixing sentence fragments and
@@ -308,12 +311,12 @@ Capitalize article title and section headings
 
 We use "down style" — we only capitalize the first word in article titles and
 section headings, except when a proper noun exists, which is always
-capitalized.  An example of a proper noun usage is when we spell out a service
-we offer, such as "Unique IP."
+capitalized.  An example of proper noun usage is when a DreamHost service is
+mentioned, such as "Unique IP."
 
-Also, we don't usually capitalize the first word after a colon (:), semicolon
-(;), or en/em dashes (–, —), unless it's a proper noun. There are exceptions,
-of course.
+Also, in most cases, don't usually capitalize the first word after a colon (:),
+semicolon (;), or en/em dashes (–, —), unless it's a proper noun. There are
+exceptions, of course.
 
 Serial comma (or, "the Oxford comma")
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -341,9 +344,9 @@ But, use an apostrophe to indicate possession:
 A word about how we spell certain acronyms
 ******************************************
 
-We always capitalize programming languages, and also pay close attention to
-internal capitalization rules for others. This is how we spell some of the
-major ones we most commonly use:
+Always capitalize programming languages, and also pay close attention to
+internal capitalization rules for others. This is how to spell some of the
+major ones that are commonly used:
 
     * PHP, Ruby, JavaScript, HTML, XML, Perl, Ajax, JSON, JQuery, Unix,
       Python, MySQL, phpMyAdmin, and CSS.
@@ -360,10 +363,10 @@ company, language, or acronym is spelled.
 Can I use an ampersand (&) in a sentence?
 *****************************************
 
-Generally speaking, we prefer you spell out "and" and not use an ampersand in
+Generally speaking, spell out "and" and do not use an ampersand in
 a heading or sentence to replace it. Using an ampersand (and other symbols)
-presents an overly casual and informal tone, which we try to avoid in technical
-documentation.
+presents an overly casual and informal tone, which you should try avoid in
+technical documentation.
 
 There are exceptions—such as AT&T, R&D, Smith & Wesson, and especially if it
 appears in a command (leave it alone!)—but as much as possible, do not use the
@@ -393,8 +396,8 @@ Voice, tone, and verb tense
 Using a consistent voice and tone also ensures rapid engagement of your
 written content.
 
-In technical writing, there are several strict guidelines
-that we recommend you use throughout your documentation.
+In technical writing, there are several recommended guidelines
+that you should use throughout your documentation.
 
 Use the active voice
 ^^^^^^^^^^^^^^^^^^^^
@@ -459,7 +462,7 @@ your information for rapid use.
 
 Whether it's using a list to better
 organize your items, or using a graphic to better illustrate a
-concept, good formatting will ensure that your readers are
+concept, good formatting ensures that your readers are
 prepared to quickly handle the task at hand.
 
 Avoid the 'wall of text'
@@ -467,11 +470,11 @@ Avoid the 'wall of text'
 
 Wherever possible, eliminate extra words and organize your
 content to maximize quick usage by your readers. Remember,
-users are raiding our articles to quickly find an answer to an issue.
+users are raiding these articles to quickly find an answer to an issue.
 Eliminating superfluous content and adding navigational queues
 greatly aids your audience in accomplishing this goal as quickly as
 possible. No one wants to read more than they have to, especially if
-they're under pressure to fix a problem.
+they're under pressure to setup a new install or fix a problem.
 
 When reviewing a long paragraph of two or more sentences, ask
 yourself the following questions:
@@ -493,10 +496,10 @@ reader prepare for the ensuing information or task.
 Use "example.com"
 ^^^^^^^^^^^^^^^^^
 
-For illustration purposes, we corrected hundreds of instances where
+For illustration purposes, you may sometimes see
 'your-domain.com' , 'mydomain.com', or 'domain.com' (and many other
-variations) were used to show domain examples in the knowledge base. We always
-change this to "example.com" which is an official domain for illustrative
+variations) for domain examples. Instead
+use "example.com" which is an official domain for illustrative
 examples in documents. Never use the other variations of 'domain.com' as they
 are often real websites, typically from competitive companies.
 
@@ -504,14 +507,14 @@ Remove extra empty spaces
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Extra empty spaces commonly show up after a period, but sometimes occur
-elsewhere. We always remove extra spaces (remember, only one space after
-a period), and the only exception being when we're showing a command line
-example where extra spaces may appear. In that case, we always leave it alone.
+elsewhere. Always remove extra spaces (remember, only one space after
+a period), and the only exception being when showing a command line
+example where extra spaces may appear. In that case, always leave it alone.
 
 Using lists
 ^^^^^^^^^^^
 
-There are two types of lists we commonly use: bulleted (unordered) and
+There are two types of lists: bulleted (unordered) and
 numbered (ordered).
 
 Use a bullet list to describe various items that do not have an order, and use
@@ -542,7 +545,7 @@ sure", "click", "move", and "upload".
 Using graphics and callouts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We all love graphics. A well-designed flow chart, screenshot with callouts,
+A well-designed flow chart, screenshot with callouts,
 or even a vector image greatly helps the reader understand a process or
 procedure. As you design your graphic, please adhere to the following practices
 to ensure maximum online readability and comprehension:
