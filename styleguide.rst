@@ -36,14 +36,16 @@ each rule later in this guide.
 RST Formatting Style
 ~~~~~~~~~~~~~~~~~~~~
 
-Lines should be wrapped at 80 characters for readability. Trailing whitespaces
-should also be watched out for and prevented. If your article describes how to
-write code of some sort, ie. python, ansible, and so on, add a file that
-contains just the program and put it in examples/filename (relative to the
-article) and include it at the end of your article. Article titles use in the
-"down style", only capitalize the first word in article titles and section
-headings, except when a proper noun exists which is always capitalized. Use
-4 spaces instead of one hard tab for indentation.
+* Lines should be wrapped at 80 characters for readability.
+* Trailing whitespaces should also be watched out for and prevented.
+* If your article describes how to write code of some sort, ie. python,
+  ansible, and so on, add a file that contains just the program and put it in
+  examples/filename (relative to the article) and include it at the end of
+  your article.
+* Article titles use the "down style", only capitalize the first word in
+  article titles and section headings, except when a proper noun exists which
+  is always capitalized.
+* Use 4 spaces instead of one hard tab for indentation.
 
 Headers
 -------
@@ -262,8 +264,8 @@ for more information on links.
 Standard phrasing for introducing paragraphs
 --------------------------------------------
 
-When introducing a new paragraph about an instalation or configuration process,
-include "The following describes how to configure/install X..." If you
+When introducing a new paragraph about an installation or configuration
+process, include "The following describes how to configure/install X..." If you
 have bulleted points describing how to install or configure something, phrase
 it as "Configure/Install X...".
 
