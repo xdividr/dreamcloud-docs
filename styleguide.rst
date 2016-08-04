@@ -1,5 +1,5 @@
 ======================================================
-DreamCompute and DreamObjects documentation styleguide
+DreamCompute and DreamObjects documentation style guide
 ======================================================
 
 Checklist
