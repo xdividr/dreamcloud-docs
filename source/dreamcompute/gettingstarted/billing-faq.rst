@@ -2,16 +2,31 @@
 What is DreamCompute Predictable Bill
 =====================================
 
+What are the hourly prices?
+---------------------------
+
+.. include:: common/US-EAST-2-prices.rst
+
+How long will bandwidth be free?
+--------------------------------
+
+For a limited time, upload and download bandwidth from virtual
+machines will not be included in your monthly bills. We have not
+decided when to end this special offer; once we decide, we will notify
+customers with plenty of advance.
+
+How much will bandwidth cost?
+-----------------------------
+
+Upload traffic will be free, only download bandwidth will be charged.
+Details are still being defined and will be in line with DreamHost's
+other products.
+
 How does hourly billing work?
 -----------------------------
 
 We bill you for each virtual server per hour of usage until
 reaching the monthly price, at which the cost is capped for the month.
-
-What are the hourly prices?
----------------------------
-
-.. include:: common/US-EAST-2-prices.rst
 
 When is a virtual server considered running?
 --------------------------------------------
