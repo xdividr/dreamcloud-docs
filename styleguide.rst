@@ -1,6 +1,6 @@
-======================================================
+=======================================================
 DreamCompute and DreamObjects documentation style guide
-======================================================
+=======================================================
 
 Checklist
 ~~~~~~~~~
@@ -38,8 +38,8 @@ RST Formatting Style
 
 * Lines should be wrapped at 80 characters for readability.
 * Trailing whitespaces should also be watched out for and prevented.
-* If your article describes how to write code of some sort, i.e., python,
-  ansible, and so on, add a file that contains just the program and put it in
+* If your article describes how to write code of some sort (i.e., python,
+  ansible, and so on) add a file that contains just the program and put it in
   examples/filename (relative to the article) and include it at the end of
   your article.
 * Article titles should use "down style": only capitalize the first word in
