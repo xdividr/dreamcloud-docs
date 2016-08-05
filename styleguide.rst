@@ -1,5 +1,5 @@
 ======================================================
-DreamCompute and DreamObjects documentation styleguide
+DreamCompute and DreamObjects documentation style guide
 ======================================================
 
 Checklist
@@ -38,11 +38,11 @@ RST Formatting Style
 
 * Lines should be wrapped at 80 characters for readability.
 * Trailing whitespaces should also be watched out for and prevented.
-* If your article describes how to write code of some sort, ie. python,
+* If your article describes how to write code of some sort, i.e., python,
   ansible, and so on, add a file that contains just the program and put it in
   examples/filename (relative to the article) and include it at the end of
   your article.
-* Article titles use the "down style", only capitalize the first word in
+* Article titles should use "down style": only capitalize the first word in
   article titles and section headings, except when a proper noun exists which
   is always capitalized.
 * Use 4 spaces instead of one hard tab for indentation.
@@ -102,7 +102,7 @@ Tables
 ------
 
 RST allows for several different ways of creating tables. The easiest way is
-described in the following example, although it is not extremely flexible.
+described in the following example, although it is not extremely flexible:
 
 .. code::
 
@@ -122,7 +122,7 @@ Column 1 Column 2
  Data 3   Data 4
 ======== ========
 
-The second way is harder to manage, but more flexible
+The second way is harder to manage, but more flexible:
 
 .. code::
 
@@ -135,7 +135,7 @@ The second way is harder to manage, but more flexible
     +----------+---------------------+
 
 
-which ends up looking like
+which ends up looking like:
 
 +----------+----------+----------+
 | Column 1 | Column 2 | Column 3 |
@@ -146,7 +146,7 @@ which ends up looking like
 +----------+---------------------+
 
 The final way is the easiest to manage but hardest to visualize before built to
-HTML.
+HTML:
 
 .. code::
 
@@ -241,7 +241,7 @@ When using an example domain name in an article, use "example.com".
 Links
 -----
 
-In most cases use the following for links:
+In most cases, use the following for links:
 
 .. code::
 
@@ -249,9 +249,9 @@ In most cases use the following for links:
 
 Note: There are two underscores, which tells the RST
 compiler to throw away the reference when it is done, so you can later link the
-same text to a different target. If there is one underscore it
+same text to a different target. If there is one underscore, it then
 creates a link and saves the text as a reference, so the next time you use it
-you don't have to add the target, just the text, like:
+you don't have to add the target, just the text, as in the following example:
 
 .. code::
 
@@ -316,7 +316,7 @@ section headings, except when a proper noun exists, which is always
 capitalized.  An example of proper noun usage is when a DreamHost service is
 mentioned, such as "Unique IP."
 
-Also, in most cases, don't usually capitalize the first word after a colon (:),
+Also, in most cases, don't capitalize the first word after a colon (:),
 semicolon (;), or en/em dashes (–, —), unless it's a proper noun. There are
 exceptions, of course.
 
@@ -343,7 +343,7 @@ But, use an apostrophe to indicate possession:
 
     The SSL's encryption method can fail.
 
-A word about how we spell certain acronyms
+A word about how to spell certain acronyms
 ******************************************
 
 Always capitalize programming languages, and also pay close attention to
@@ -367,7 +367,7 @@ Can I use an ampersand (&) in a sentence?
 
 Generally speaking, spell out "and" and do not use an ampersand in
 a heading or sentence to replace it. Using an ampersand (and other symbols)
-presents an overly casual and informal tone, which you should try avoid in
+presents an overly casual and informal tone, which you should try to avoid in
 technical documentation.
 
 There are exceptions—such as AT&T, R&D, Smith & Wesson, and especially if it
@@ -406,7 +406,7 @@ Use the active voice
 
 Using the passive voice presents ambiguity, complexity, and hides
 the subject. Get rid of it wherever possible, and use the active voice,
-which is more straightforward and clear:
+which is more straightforward and clear.
 
 Here is a simple example:
 
@@ -476,7 +476,7 @@ users are raiding these articles to quickly find an answer to an issue.
 Eliminating superfluous content and adding navigational queues
 greatly aids your audience in accomplishing this goal as quickly as
 possible. No one wants to read more than they have to, especially if
-they're under pressure to setup a new install or fix a problem.
+they're under pressure to set up a new install or fix a problem.
 
 When reviewing a long paragraph of two or more sentences, ask
 yourself the following questions:
@@ -500,7 +500,7 @@ Use "example.com"
 
 For illustration purposes, you may sometimes see
 'your-domain.com' , 'mydomain.com', or 'domain.com' (and many other
-variations) for domain examples. Instead
+variations) for domain examples. Instead,
 use "example.com" which is an official domain for illustrative
 examples in documents. Never use the other variations of 'domain.com' as they
 are often real websites, typically from competitive companies.
@@ -510,7 +510,7 @@ Remove extra empty spaces
 
 Extra empty spaces commonly show up after a period, but sometimes occur
 elsewhere. Always remove extra spaces (remember, only one space after
-a period), and the only exception being when showing a command line
+a period) — the only exception being when showing a command line
 example where extra spaces may appear. In that case, always leave it alone.
 
 Using lists
