@@ -36,6 +36,7 @@ chef
 saltstack
 puppet
 dokku
+serverpilot
 
 tools
 ~~~~~
@@ -140,3 +141,4 @@ billing
 CORS
 password
 security
+shade
