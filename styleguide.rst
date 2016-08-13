@@ -2,6 +2,13 @@
 DreamCompute and DreamObjects documentation style guide
 =======================================================
 
+.. csv-table::
+    :header: "Table of Contents"
+
+    `Checklist <#checklist>`_
+    `RST Formatting Style <#rst-formatting-style>`_
+    `Content Styling <#content-styling>`_
+
 Checklist
 ~~~~~~~~~
 
