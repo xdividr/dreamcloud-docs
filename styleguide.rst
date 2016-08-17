@@ -2,6 +2,14 @@
 DreamCompute and DreamObjects documentation style guide
 =======================================================
 
+.. csv-table::
+    :header: "Table of Contents"
+
+    `Checklist <#checklist>`_
+    `RST Formatting Style <#rst-formatting-style>`_
+    `Content Styling <#content-styling>`_
+    `Further reading <#further-reading>`_
+
 Checklist
 ~~~~~~~~~
 
@@ -598,7 +606,7 @@ take based on a screenshot.
 .. image:: source/dreamcompute/gettingstarted/images/styleguide/styleguide2.png
 
 Further reading
----------------
+~~~~~~~~~~~~~~~
 
 Click any of these links to view further information on how to write technical
 documentation, various style guides, and grammar tutorials.
