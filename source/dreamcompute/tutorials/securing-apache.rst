@@ -25,7 +25,7 @@ Securing Configurations
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 Computers are only as smart as the people using them. Apache is built to be
-stable and secure, but it will only be a secure as the user who configures it. 
+stable and secure, but it will only be a secure as the user who configures it.
 Once Apache is built and installed, it's important to configure the server to be
 as minimal as possible.
 
@@ -34,16 +34,16 @@ Run as an Unprivileged User
 
 In security, the principle of least privilege states that an entity should be
 given no more permission than necessary to accomplish its goals within a given
-system. In the context of our web server, this means locking down Apache to run 
+system. In the context of our web server, this means locking down Apache to run
 only with the permissions necessary to run. A first step in this process is to
 configure Apache to run as an unprivileged system user (e.g., not root). This is
 done via the `User` and `Group`  directives in the Apache configuration file:
 
 .. code::
 
-	# configure a non-privileged user. this user must exist on your system
-	User apache;
-	Group apache;
+    # configure a non-privileged user. this user must exist on your system
+    User apache;
+    Group apache;
 
 Apache servers distributed as a common OS package may also use a user and group
 name such as `www-data` or `nobody`. Regardless of the choice of user's name,
@@ -61,7 +61,7 @@ disclosure. Configure Apache not to display its version in `Server` header:
 
 .. code::
 
-	ServerTokens ProductOnly;
+    ServerTokens ProductOnly;
 
 Disable .htaccess Files
 -----------------------
@@ -75,16 +75,16 @@ disabling .htaccess files entirely, via the `AllowOverride` directive:
 
 .. code::
 
-	AllowOverride None
+    AllowOverride None
 
 Additionally, fine-grained control of which Apache directives can be used in
 .htaccess files can also be controlled by `AllowOverride`:
 
 .. code::
 
-	AllowOverride AuthConfig Indexes
+    AllowOverride AuthConfig Indexes
 
-In the example above, all directives that are neither in the group AuthConfig\
+In the example above, all directives that are neither in the group AuthConfig
 nor Indexes cause an internal server error.
 
 Restrict Access by IP
@@ -96,14 +96,14 @@ certain locations of your website and deny traffic to all other IP addresses:
 
 .. code::
 
-	<Directory "/wp-admin">
+    <Directory "/wp-admin">
 
-		# allow access from one IP and an additional IP range,
-		# and block everything else
-		Order Allow,Deny
-		Allow from 1.2.3.4
-		Allow from 192.168.0.0/24
-	</Directory>
+        # allow access from one IP and an additional IP range,
+        # and block everything else
+        Order Allow,Deny
+        Allow from 1.2.3.4
+        Allow from 192.168.0.0/24
+    </Directory>
 
 In this example, the use of the `Order` directive instructs Apache to allow
 requests coming from IP addresses listed in the `Allow` blocks, and to deny all
@@ -118,7 +118,7 @@ the desired user/password combinations:
 
 .. code::
 
-	# htpasswd -c /path/to/.htpasswd user1
+    # htpasswd -c /path/to/.htpasswd user1
 
 The `htpasswd` command creates the file `/path/to/.htpasswd` if it doesn't
 exist, and prompt for a password. To add another user, simply run the command,
@@ -126,19 +126,19 @@ leaving out the `-c` argument:
 
 .. code::
 
-	# htpasswd /path/to/.htpasswd user2
+    # htpasswd /path/to/.htpasswd user2
 
 Once you've created the user, configure Apache to read the password file and
 control access to the desired directory:
 
 .. code::
 
-	<Directory "/wp-admin">
-		AuthType Basic
-		AuthName "Restricted Content"
-		AuthUserFile /path/to/.htpasswd
-		Require valid-user
-	</Directory>
+    <Directory "/wp-admin">
+        AuthType Basic
+        AuthName "Restricted Content"
+        AuthUserFile /path/to/.htpasswd
+        Require valid-user
+    </Directory>
 
 Preventing DoS Attacks
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -162,7 +162,7 @@ example:
 
 .. code::
 
-	RequestReadTimeout header=10-20,MinRate=500 body=20,MinRate=500
+    RequestReadTimeout header=10-20,MinRate=500 body=20,MinRate=500
 
 In this example, Apache will close the connection if the client takes more than
 10 seconds to send its HTTP headers, or if the client takes more than 20 seconds
@@ -200,11 +200,11 @@ Enable secure communications with the `SSLEngine` directive:
 
 .. code::
 
-	<VirtualHost 192.168.1.1:443>
-		SSLEngine on
-		SSLCertificateFile /path/to/cert
-		SSLCertificateKeyFile /path/to/key
-	</VirtualHost>	
+    <VirtualHost 192.168.1.1:443>
+        SSLEngine on
+        SSLCertificateFile /path/to/cert
+        SSLCertificateKeyFile /path/to/key
+    </VirtualHost>
 
 Enable Strong TLS Ciphers
 -------------------------
@@ -219,9 +219,9 @@ which cipher to be used:
 
 .. code::
 
-	SSLCipherSuite 'ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA:ECDHE-ECDSA-DES-CBC3-SHA:ECDHE-RSA-DES-CBC3-SHA:EDH-RSA-DES-CBC3-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:DES-CBC3-SHA:!DSS';
-	SSLHonorCipherOrder on
-	SSLProtocol all -SSLv2 -SSLv3
+    SSLCipherSuite 'ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA:ECDHE-ECDSA-DES-CBC3-SHA:ECDHE-RSA-DES-CBC3-SHA:EDH-RSA-DES-CBC3-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:DES-CBC3-SHA:!DSS';
+    SSLHonorCipherOrder on
+    SSLProtocol all -SSLv2 -SSLv3
 
 Enable TLS Session Caching
 --------------------------
@@ -233,8 +233,8 @@ does not need to perform the full TLS handshake:
 
 .. code::
 
-	SSLSessionCache shm:/path/to/session_cache(512000)
-	SSLSessionCacheTimeout 300
+    SSLSessionCache shm:/path/to/session_cache(512000)
+    SSLSessionCacheTimeout 300
 
 Use Custom Diffie-Hellman Parameters
 ------------------------------------
@@ -247,15 +247,15 @@ unique set of Diffie-Hellman parameters and configuring Apache to use this value
 
 .. code::
 
-	# build a 2048-bit DH prime
-	$ openssl dhparam 2048 > /path/to/dhparam
+    # build a 2048-bit DH prime
+    $ openssl dhparam 2048 > /path/to/dhparam
 
 From here, add the params to the end of the file noted in the
 `SSLCertificateFile` directive:
 
 .. code::
 
-	# cat /path/to/custom/dhparam >> /path/to/sslcertfile
+    # cat /path/to/custom/dhparam >> /path/to/sslcertfile
 
 For more information on the Logjam attack, see https://weakdh.org/
 
@@ -268,18 +268,18 @@ the `Strict-Transport-Security` header:
 
 .. code::
 
-	Header always set Strict-Transport-Security max-age=15768000;
+    Header always set Strict-Transport-Security max-age=15768000;
 
 For all plaintext connections, configure Apache to send a 301 redirect for
 requests to the TLS version of the site:
 
 .. code::
 
-	<VirtualHost 192.168.1.1:80>
-		[...]
-		ServerName example.com
-		Redirect permanent / https://example.com/
-	</VirtualHost>
+    <VirtualHost 192.168.1.1:80>
+        [...]
+        ServerName example.com
+        Redirect permanent / https://example.com/
+    </VirtualHost>
 
 Additional Security Measures
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
