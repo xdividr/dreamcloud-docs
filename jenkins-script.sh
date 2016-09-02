@@ -1,5 +1,15 @@
 #! /bin/bash
 
+#################################################################################
+# This script takes diffs between the last successful jenkins run and the       #
+# current run to find what files have changed. The script updates (in zendesk)  #
+# each article that has changed (by looking at the rst files). It also updates  #
+# each article that uses an image that has changed (by finding images that have #
+# changed and then grepping recursively for that filename in each rst file).    #
+# The script figures out what section ID an article has by looking at the       #
+# "section_id.txt" file in the directory that also has the article source (rst) #
+#################################################################################
+
 if [ -z "$EMAIL" ] ; then
     echo '$EMAIL is not set'
     exit 1
