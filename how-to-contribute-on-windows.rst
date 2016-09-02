@@ -36,13 +36,15 @@ Reporting Issues
 If you only wish to notify us of an issue you found, you can do so by creating
 an issue on the `GitHub Issues <https://github.com/dreamhost/dreamcloud-docs/issues>`_ page.
 Our team will be notified of the issue and will fix it for you.
-Alternatively, you can submit a ticket via the DreamHot `Support panel page <https://panel.dreamhost.com/index.cgi?tree=support.msg&>`_
+Alternatively, you can submit a ticket via the DreamHost
+`Support panel page <https://panel.dreamhost.com/index.cgi?tree=support.msg&>`_
 about the needed correction.
 
 DreamHost Cloud Documentation Basics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The DreamHost Cloud documentation is stored on GitHub in the `dreamcloud-docs <https://github.com/dreamhost/dreamcloud-docs>`_
+The DreamHost Cloud documentation is stored on GitHub in the
+`dreamcloud-docs <https://github.com/dreamhost/dreamcloud-docs>`_
 repository with each article being stored in `RST <http://docutils.sourceforge.net/rst.html>`_
 (reStructuredText) format.  For RST examples and our style guideline, please
 check out `styleguide.rst <https://github.com/dreamhost/dreamcloud-docs/blob/master/styleguide.rst>`_.
