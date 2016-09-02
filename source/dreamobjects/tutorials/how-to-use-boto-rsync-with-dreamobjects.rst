@@ -36,4 +36,4 @@ Example Commands
     s3://SOURCEBUCKET/PATH /DESTINATION/PATH
 
 .. meta::
-    :labels: linux mac boto-rsync
+    :labels: linux mac boto-rsync rclone

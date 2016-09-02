@@ -40,6 +40,7 @@ serverpilot
 
 tools
 ~~~~~
+rclone
 boto
 ssh
 duplicity
