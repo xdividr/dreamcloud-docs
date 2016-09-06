@@ -64,3 +64,17 @@ Styleguide
 ----------
 
 Check the styleguide.rst for style requirements
+
+Automation
+----------
+
+Things the script does:
+ - Publish articles in the "source" directory (excluding things in the
+    "common" directory)
+ - Adds labels to the article in Zendesk from the rst meta
+ - Puts the article in the section specified in the "section_id" file in the
+    same directory as the rst file
+
+Things the script does not do:
+ - Rename articles in zendesk when their titles change
+ - Delete articles that have been deleted from this git repo
