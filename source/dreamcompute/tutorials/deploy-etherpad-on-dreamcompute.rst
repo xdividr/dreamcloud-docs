@@ -125,7 +125,7 @@ Creating a systemd service
 
 The best way to run Etherpad is to create a systemd service for it and create a
 user for it to run as. To create a systemd service copy the following into
-/etc/systemd/service/etherpad-lite.service.
+/etc/systemd/system/etherpad-lite.service.
 
 .. code::
 
