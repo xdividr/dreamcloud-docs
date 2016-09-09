@@ -40,17 +40,7 @@ Network
 -------
 
 Networking services for DreamCompute are delivered through OpenStack's
-`Neutron service <http://wiki.openstack.org/Neutron>`_, coupled with
-DreamHost's own `Akanda <https://github.com/openstack/astara>`_ project which
-has been picked up by OpenStack and renamed Astara.
-
-Another component to DreamCompute networking is the open source Akanda project
-developed by DreamHost. Akanda serves as a network traffic router (OSI Layer 3)
-for virtual networks created in DreamCompute. Akanda allows virtual networks to
-be configured to talk to each other, to LANs, to WANs or to the Internet.
-
-The combination of Neutron, and Akanda bring a level of network flexibility
-and security that sets DreamCompute apart from the competition.
+`Neutron service <http://wiki.openstack.org/Neutron>`_.
 
 Storage
 -------
