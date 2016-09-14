@@ -101,7 +101,7 @@ If you ``ssh`` into your newly created server:
 
 .. code:: bash
 
-    ssh -i /path/to/keyname.pem dhc-user@1.2.3.4
+    ssh -i /path/to/keyname.pem user@1.2.3.4
 
 you find a variety of processes running in the following configuration:
 

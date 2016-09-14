@@ -59,7 +59,7 @@ We're going to preconfigure dokku before we install it using debconf:
     echo 'dokku dokku/web_config boolean false' | sudo debconf-set-selections
     echo 'dokku dokku/vhost_enable boolean true' | sudo debconf-set-selections
     echo 'dokku dokku/hostname string [your-domain]' | sudo debconf-set-selections
-    echo 'dokku dokku/key_file string /home/dhc-user/.ssh/id_rsa.pub' | sudo debconf-set-selections
+    echo 'dokku dokku/key_file string /home/admin/.ssh/id_rsa.pub' | sudo debconf-set-selections
 
 You should modify the configuration to suit your own setup, and make
 sure that you point at the right SSH public key file.

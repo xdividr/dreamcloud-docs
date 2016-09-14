@@ -76,12 +76,12 @@ server:
     - set_fact: public_v4="{{ mariadb_server.server.public_v4 }}"
 
     - name: add the server to our ansible inventory
-      add_host: hostname={{ public_v4 }} groups=sql ansible_ssh_user=dhc-user ansible_ssh_private_key_file={{ private_key }}
+      add_host: hostname={{ public_v4 }} groups=sql ansible_ssh_user=user ansible_ssh_private_key_file={{ private_key }}
 
 Gather the public IP address of the server and add it to the Ansible
 hosts catalog. The `add_host` task creates a new entry assigning the
 IP of the new server to the Ansible group `sql` and configure the SSH
-connection with the default dhc-user, and set the private SSH key
+connection with the default user for your image, and set the private SSH key
 specified at the beginning.
 
 Make the new Ubuntu 16.04 compatible with Ansible

@@ -34,7 +34,7 @@ Here are a few things to keep in mind and plan while doing a migration.
   already setup in US-East 1, you will have to setup the same keys or new
   ones in US-East 2.  If OpenStack generated the SSH Key for you, it let you
   download the private key but the public key is what you would need for an
-  import.  You could grab it from /home/dhc-user/.ssh/authorized_keys on an
+  import.  You could grab it from ~/.ssh/authorized_keys on an
   instance that used the key.  For the instances themselves, the
   authorized_keys file isn't overwritten, only appended, and so whatever keys
   are currently setup will continue to work after the move.

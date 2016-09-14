@@ -58,7 +58,7 @@ machine.
 .. figure:: images/HAProxy_SSH1.fw.png
 
 4. SSH into your instance via its IPv4 address (the default user is
-dhc-user, you can't login as root).
+ubuntu, you can't login as root).
 
 Now, we’re ready to get HAProxy installed and configured.
 
@@ -70,7 +70,7 @@ Updating Packages
 
 Before installing HAProxy, its important to be sure that your
 operating system is up to date with the latest security fixes and
-packages available from Ubuntu. While logged in as dhc-user, simply
+packages available from Ubuntu. While logged in as ubuntu, simply
 run:
 
 .. code::

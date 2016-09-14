@@ -32,7 +32,10 @@ Configuring a Jump Host in DreamCompute
 
 The following example shows a setup of an SSH config file
 (~/.ssh/config) on a local machine so that it can connect first to a
-jump host called “jump”.
+jump host called “jump”. Change $username to the default user for your image,
+
+.. include:: common/usernames.rst
+    :start-line: 2
 
 #. Enter the following:
 
@@ -40,7 +43,7 @@ jump host called “jump”.
 
         Host jump
         HostName X.X.X.X #Replace with your Floating IP Address
-        User dhc-user
+        User $username
         IdentityFile ~/.ssh/id_rsa.pub
 
     * Replace "X.X.X.X" with the floating IP address for your instance in the
@@ -61,7 +64,7 @@ jump host called “jump”.
 
         Host 10.10.10.*
         ProxyCommand ssh jump -W %h:%p
-        User dhc-user
+        User $username
         IdentityFile ~/.ssh/dreamcompute.pem
 
     .. note::

@@ -27,7 +27,7 @@ with:
 
 .. code::
 
-    ssh dhc-user@$IP
+    ssh user@$IP
 
 changing the IP to your server's public IP address. Then run
 
