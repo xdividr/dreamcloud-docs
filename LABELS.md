@@ -63,6 +63,7 @@ wordpress
 gitlab
 trellis
 letsencrypt
+jenkins
 https
 
 Operating Systems
