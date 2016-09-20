@@ -18,7 +18,7 @@ with Amazon S3 to specify permissions on buckets and objects.
 
 - using the `DreamObjects control panel`_: If you are the owner of the
   DreamObjects account, you can log into the panel and navigate to the
-  `Panel > Could Services > DreamObjects`_ page. From there, you can
+  `Panel > Cloud Services > DreamObjects`_ page. From there, you can
   download the file from the file browser, which is also known as the
   'Object Viewer'. After selecting your object, click the download
   link to the right to save the file.
