@@ -143,3 +143,4 @@ CORS
 password
 security
 shade
+openrc
