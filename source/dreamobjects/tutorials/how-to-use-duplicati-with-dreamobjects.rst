@@ -7,7 +7,7 @@ Overview
 
 .. figure:: images/duplicati.png
 
-`Duplicati <http://www.duplicati.com/home>`_ is a free backup client that
+`Duplicati <http://www.duplicati.com>`_ is a free backup client that
 securely stores encrypted, incremental, compressed backups on cloud-storage
 services and remote-file servers. It works with Linux, Mac, and Windows.
 
