@@ -3,16 +3,16 @@ How to install OpenResty + lua-resty-waf on Ubuntu 14.04
 ========================================================
 
 OpenResty is a software bundle containing the Nginx web server,
-`lua-nginx-module <https://github.com/openresty/lua-nginx-module>`__, the 
-LuaJIT compiler, and a number of Lua modules designed to extend the capability 
+`lua-nginx-module <https://github.com/openresty/lua-nginx-module>`__, the
+LuaJIT compiler, and a number of Lua modules designed to extend the capability
 of Nginx and transform it into a full-fledged application server.
-`lua-resty-waf <https://github.com/p0pr0ck5/lua-resty-waf>`__ is a high-
+`lua-resty-waf <https://github.com/p0pr0ck5/lua-resty-waf>`__ is a high
 performance web application firewall (WAF) written for the OpenResty stack,
-leveraging the scalable architecture of Nginx, while providing a ModSecurity-compatible 
-rule syntax. This allows users to move their ModSecurity WAF installations to the 
-OpenResty ecosystem. 
+leveraging the scalable architecture of Nginx, while providing a ModSecurity-compatible
+rule syntax. This allows users to move their ModSecurity WAF installations to the
+OpenResty ecosystem.
 
-This tutorial walks you through the installation process for OpenResty and lua-resty-waf 
+This tutorial walks you through the installation process for OpenResty and lua-resty-waf
 on a DreamCompute instance running Ubuntu 14.04.
 
 Installing prerequisites
@@ -42,11 +42,11 @@ Most web application firewalls use a number of pattern matching techniques when
 examining HTTP traffic, including regular expressions. Because complex regular
 expressions can be expensive to process, it makes sense to use a regex library
 that is capable of optimizing regex execution. Modern versions of the Perl
-Compatible Regular Expressions (PCRE) library, the regular expression library 
-used by Nginx and OpenResty, are capable of performing just-in-time compilation 
-of regular expressions which greatly improves regex matching performance. 
+Compatible Regular Expressions (PCRE) library, the regular expression library
+used by Nginx and OpenResty, are capable of performing just-in-time compilation
+of regular expressions which greatly improves regex matching performance.
 
-Because the version of PCRE provided by the default Ubuntu package does not contain 
+Because the version of PCRE provided by the default Ubuntu package does not contain
 JIT support, you must download and unpack the PCRE source:
 
 .. code:: console
@@ -54,7 +54,7 @@ JIT support, you must download and unpack the PCRE source:
     # wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.39.tar.bz2 \
         && tar -jxf pcre-8.39.tar.bz2
 
-Note: Compiling and installing PCRE is not necessary, as it is statically compiled 
+Note: Compiling and installing PCRE is not necessary, as it is statically compiled
 into OpenResty.
 
 Compiling OpenResty
@@ -74,18 +74,19 @@ Build the OpenResty bundle from source and install it to the system:
 Nginx is built and configured to use the previously-downloaded version of PCRE
 that supports JIT, instead of the system PCRE, which greatly improves performance.
 
-Note: **`--with-debug`** and **`--with-pcre-opt=-g`** are provided to allow Nginx to
-write debugging information when configured to do so. Adding these options causes
-performance degredation in high-concurrency environments, so do not enable these 
-options for high-traffic sites.
+.. Note:: **`--with-debug`** and **`--with-pcre-opt=-g`** are provided
+        to allow Nginx to write debugging information when configured to do
+        so. Adding these options causes performance degredation in
+        high-concurrency environments, so do not enable these options for
+        high-traffic sites.
 
 Testing OpenResty
 ~~~~~~~~~~~~~~~~~
 
 Once OpenResty is installed, you can configure a simple test to confirm that it is
-responding as expected. 
+responding as expected.
 
-To test, add the following configuration snippet inside the existing `server` block 
+To test, add the following configuration snippet inside the existing `server` block
 located in the configuration file:
 
 .. code:: console
@@ -147,9 +148,7 @@ block:
 
     init_by_lua_block {
         require "resty.core"
-
         local waf = require "resty.waf"
-
         waf.init()
     }
 
@@ -160,18 +159,14 @@ Add the following directives to the test `location` directive created earlier:
     access_by_lua_block {
         local lrw = require "resty.waf"
         local waf = lrw:new()
-
         waf:set_option("debug", true)
-
         waf:set_option("mode", "ACTIVE")
-
         waf:exec()
     }
 
     log_by_lua_block {
         local lrw = require "resty.waf"
         local waf = lrw:new()
-
         waf:write_log_events()
     }
 
@@ -180,7 +175,7 @@ is handled by the test location directive, and to deny requests that look
 malicious. lua-resty-waf ships with a basic set of rules that mimic the
 `OWASP CRS <https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project>`__,
 which provides protection against HTTP protocol anomalies, known suspicious user
-agents, cross-site scripting (XSS), and SQL injection (SQLi) attacks. 
+agents, cross-site scripting (XSS), and SQL injection (SQLi) attacks.
 
 To test, reload Nginx and send the following request:
 
@@ -197,7 +192,7 @@ Further configuration
 
 By default, lua-resty-waf logs transactions that it blocks to the Nginx
 error log. This can be difficult to parse out, especially with debug logging
-enabled. 
+enabled.
 
 You can configure lua-resty-waf to write event logs to a file on disk, which provides
 more detailed information about the request, by adding the following
@@ -243,10 +238,11 @@ needs in a WAF installation, including:
 - Send audit event logs to a remote TCP/UDP/syslog server
 - Use memcached or redis to store long-term variables
 
-Check out the `lua-resty-waf Readme <https://github.com/p0pr0ck5/lua-resty-waf/blob/master/README.md>`__ and
-`wiki <https://github.com/p0pr0ck5/lua-resty-waf/wiki>`__ for updates on the
-project and further tutorials on specific behaviors. There is also a
-`#lua-resty-waf` channel on Freenode IRC.
+Check out the `lua-resty-waf Readme
+<https://github.com/p0pr0ck5/lua-resty-waf/blob/master/README.md>`__
+and `wiki <https://github.com/p0pr0ck5/lua-resty-waf/wiki>`__ for
+updates on the project and further tutorials on specific behaviors.
+There is also a `#lua-resty-waf` channel on Freenode IRC.
 
 .. meta::
     :labels: nginx openresty security
