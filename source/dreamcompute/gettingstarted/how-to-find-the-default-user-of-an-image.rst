@@ -20,5 +20,7 @@ How to find the default user of an image
 The default user is the user you can use to login with the public key that you
 added to your instance.
 
+.. include:: common/usernames.rst
+
 .. meta::
     :labels: images users
