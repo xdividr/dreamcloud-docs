@@ -34,7 +34,7 @@
     - set_fact: public_v4="{{ pgdb_server.server.public_v4 }}"
 
     - name: add the server to our ansible inventory
-      add_host: hostname={{ public_v4 }} groups=pgsql ansible_ssh_user=dhc-user ansible_ssh_private_key_file={{ private_key }}
+      add_host: hostname={{ public_v4 }} groups=pgsql ansible_ssh_user=ubuntu ansible_ssh_private_key_file={{ private_key }}
 
 #step-4
 

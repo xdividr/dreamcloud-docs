@@ -57,7 +57,7 @@ server:
 Gather the public IP address of the server and add it to the Ansible
 hosts catalog. The `add_host` task creates a new entry assigning the
 IP of the new server to the Ansible group `pgsql` and configure the
-SSH connection with the default dhc-user, and set the private SSH key
+SSH connection with the default username for your iamge, and set the private SSH key
 specified at the beginning.
 
 Make the new Ubuntu 16.04 compatible with Ansible
@@ -121,7 +121,7 @@ database is really there:
 
 .. code::
 
-    dhc-user@postgres01:~$ psql -h localhost -d mydb -U dreamer
+    ubuntu@postgres01:~$ psql -h localhost -d mydb -U dreamer
     Password for user dreamer:
     psql (9.5.3)
     SSL connection (protocol: TLSv1.2, cipher:

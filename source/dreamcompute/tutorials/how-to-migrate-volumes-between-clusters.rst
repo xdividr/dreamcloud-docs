@@ -73,7 +73,7 @@ commands.
 
 .. code:: bash
 
-    <login to dhc-user on each instance>
+    <login to each instance>
     sudo su -
     sed -i -e 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
     sed -i -e 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config

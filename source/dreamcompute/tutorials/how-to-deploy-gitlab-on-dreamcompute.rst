@@ -21,7 +21,7 @@ Once you have an Ubuntu 16.04 server running, ssh in with
 
 .. code-block:: shell
 
-    ssh dhc-user@floatingip
+    ssh ubuntu@floatingip
 
 replacing "floatingip" with the ip address of your server, then run
 

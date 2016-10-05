@@ -133,7 +133,7 @@ debconf_selections: | # Need to preserve newlines
     dokku dokku/web_config boolean false
     dokku dokku/vhost_enable boolean true
     dokku dokku/hostname string apps.example.com
-    dokku dokku/key_file string /home/dhc-user/.ssh/authorized_keys
+    dokku dokku/key_file string /home/admin/.ssh/authorized_keys
 
 packages:
    - dokku
