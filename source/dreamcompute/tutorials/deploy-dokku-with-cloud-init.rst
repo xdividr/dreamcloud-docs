@@ -24,7 +24,7 @@ that Dokku can work at its best. For this tutorial we'll use
 With the domain name set, we can start a new DreamHost Cloud server
 using the `openstack` command line client, for example. Download the
 `openrc file
-<https://iad2.dreamcompute.com/project/access_and_security/api_access/openrc/>`_:
+<228047207-How-to-download-your-DreamCompute-openrc-file>`__:
 
 .. code:: bash
 

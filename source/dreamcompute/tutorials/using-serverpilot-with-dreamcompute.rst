@@ -8,7 +8,7 @@ This article assumes you have
   <https://serverpilot.io/community/articles/how-to-use-the-serverpilot-api.html>`__
   for that account.
 * An `openrc.sh file
-  <https://iad2.dreamcompute.com/project/access_and_security/api_access/openrc/>`__
+  <228047207-How-to-download-your-DreamCompute-openrc-file>`__
 
 Authentication
 ~~~~~~~~~~~~~~

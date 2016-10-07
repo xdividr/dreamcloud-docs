@@ -64,10 +64,11 @@ include:
   requests
 
 In order for Ansible to run DreamCompute API calls on your behalf, you need
-to download a small shell script that sets up your API credentials. Do so by
-visiting `API Access
-<https://dashboard.dreamcompute.com/project/access_and_security/api_access/openrc/)>`_
-in the dashboard. After the shell script downloads, open your
+to download a small shell script that sets up your API credentials called an
+openrc file, read `the tutorial about openrc files
+<228047207-How-to-download-your-DreamCompute-openrc-file>`__ for information on
+how to download and use it.
+After the shell script downloads, open your
 computer's command line and run the following (substituting the actual
 location of your downloaded file).
 
