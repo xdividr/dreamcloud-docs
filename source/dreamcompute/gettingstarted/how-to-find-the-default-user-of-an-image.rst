@@ -14,7 +14,7 @@ How to find the default user of an image
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Click on the instance name that you want to know the default user of.
-#. Look under the "SSH Login" section for "ssh $user@$ip", the username is
+#. Look under the "SSH Login" section for "**ssh $user@$ip**", the username is
    found before the "@" in that command.
 
 The default user is the user you can use to login with the public key that you
