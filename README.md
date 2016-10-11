@@ -1,7 +1,10 @@
-# DreamCloud-docs
-Documentation for users of all DreamCloud products (DreamCompute,
+# Documentation for DreamHost Cloud products
+
+Documentation for users of all DreamHost Cloud products (DreamCompute,
 DreamObjects, etc). Aimed at developers who wish to learn how to use
 DreamCloud standard APIs to automate common tasks.
+
+[![Build Status](https://travis-ci.org/dreamhost/dreamcloud-docs.svg?branch=master)](https://travis-ci.org/dreamhost/dreamcloud-docs)
 
 The documentation is organized by product and level of knowledge
 required to understand the documentation, stored in the source/
