@@ -2,10 +2,10 @@
 What is private networking?
 ===========================
 
-Private networking is a type of network in which all the servers connected 
-to that network are able to talk to each other and reach the rest of the 
-internet through a router, but the rest of the internet cannot initialize 
-a connection to those servers. 
+Private networking is a type of network in which all the servers connected
+to that network are able to talk to each other and reach the rest of the
+internet through a router, but the rest of the internet cannot initialize
+a connection to those servers.
 
 Private networking is ideal for running services that you wish to make
 secure, as these services are unreachable from the internet and thus are
