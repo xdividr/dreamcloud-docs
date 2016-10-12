@@ -66,9 +66,9 @@ Step 3:  Checking PTR Records
 Please allow at least 4 hours for DNS propagation, and after this you can check
 for the proper value.  To do so from the command line:
 
-.. code:: bash
+.. code-block:: console
 
-    dig -x PUBLICIPADDRESSHERE
+    [user@localhost] dig -x PUBLICIPADDRESSHERE
 
 There are other websites that can help with this too, if you google for
 "PTR lookup".

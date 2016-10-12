@@ -56,17 +56,17 @@ first.  There are several ways to do this:
       your ~/.ssh/config file to specify that connections to
       that specific host will use this alternate key.
 
-    .. code-block:: bash
+    .. code-block:: nginx
 
         Host IPADDRESS
         IdentityFile ~/path/to/key
 
-.. code-block:: bash
+.. code-block:: console
 
-    $ ssh user@IPADDRESS
+    [user@localhost] ssh user@IPADDRESS
     Welcome to Ubuntu 12.04.2 LTS (GNU/Linux
     3.5.0-23-generic x86_64)
-    user@example:~$
+    [user@server]
 
 * No configuration, specifying the key on the command line
     * Connect via ssh -i ~/path/to/key user@IPADDRESS

@@ -27,9 +27,9 @@ page to see them listed in the "IP Address" column:
 
 or you can see them on the command line with "nova":
 
-.. code:: bash
+.. code-block:: console
 
-    $ nova list
+    [user@localhost] nova list
     +--------------------------------------+---------+--------+------------+-------------+-------------------------------------------------------------+
     | ID                                   | Name    | Status | Task State | Power State | Networks                                                    |
     +--------------------------------------+---------+--------+------------+-------------+-------------------------------------------------------------+

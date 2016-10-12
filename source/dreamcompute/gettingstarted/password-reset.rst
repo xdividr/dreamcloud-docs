@@ -37,9 +37,9 @@ You can use the Keystone command-line client to change your password. This
 assumes you already have the OS_PASSWORD variable set via the OpenStack RC
 file.
 
-.. code-block:: bash
+.. code-block:: console
 
-    keystone password-update --new-password  <new-password>
+    [user@localhost] keystone password-update --new-password  <new-password>
 
 **Don't have the Keystone client?** The
 `OpenStack wiki
@@ -66,15 +66,15 @@ your own.
 
 Set the variables.
 
-.. code-block:: bash
+.. code-block:: console
 
-    source TENANTNUM-openrc.sh
+    [user@localhost] source TENANTNUM-openrc.sh
 
 or
 
-.. code-block:: bash
+.. code-block:: console
 
-    . TENANTNUM-openrc.sh
+    [user@localhost] . TENANTNUM-openrc.sh
 
 Type in your current password when prompted.
 

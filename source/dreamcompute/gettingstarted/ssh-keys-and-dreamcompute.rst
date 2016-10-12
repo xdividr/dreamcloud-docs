@@ -87,9 +87,9 @@ not have a password.
 
 The output looks like this:
 
-.. code::
+.. code-block:: console
 
-    $ ssh-keygen -t rsa
+    [user@localhost] ssh-keygen -t rsa
     Generating public/private rsa key pair.
     Enter file in which to save the key (/home/myuser/.ssh/id_rsa):
     Enter passphrase (empty for no passphrase):
@@ -126,9 +126,9 @@ and perhaps find your public key in the same location.
 On Mac and Linux systems, you can check in the above
 described location:
 
-.. code-block:: bash
+.. code-block:: console
 
-    $ ls ~/.ssh/id_rsa*
+    [user@localhost] ls ~/.ssh/id_rsa*
     /home/myuser/.ssh/id_rsa  /home/myuser/.ssh/id_rsa.pub
 
 Import an Existing SSH key into the Dashboard

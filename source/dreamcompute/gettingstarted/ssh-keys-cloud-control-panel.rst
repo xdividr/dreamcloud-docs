@@ -17,9 +17,9 @@ Existing SSH key
 If you're using Mac or Linux, you may already have SSH keys. If so, they are
 typically stored in the hidden .ssh directory.
 
-.. code-block:: bash
+.. code-block:: console
 
-    $ ls ~/.ssh/
+    [user@localhost] ls ~/.ssh/
     /home/myuser/.ssh/id_rsa  /home/myuser/.ssh/id_rsa.pub
 
 If you're using Windows, there's a good chance you're using `PuTTY
@@ -59,9 +59,9 @@ Mac and Linux via ssh-keygen
 ssh-keygen is a command line key generator tool included on Mac, Linux and
 other unix-based operating systems. Run it in your terminal app.
 
-.. code::
+.. code-block:: console
 
-    $ ssh-keygen
+    [user@localhost] ssh-keygen
     Generating public/private rsa key pair.
     Enter file in which to save the key (/home/myuser/.ssh/id_rsa):
     Enter passphrase (empty for no passphrase):
