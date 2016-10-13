@@ -53,7 +53,7 @@ click **Attach Volume**.
 .. figure:: images/create-and-mount-volumes/volumes-attach-to-instance.png
 
 This completes the creation of the volume.  Please click below to continue with
-creationg your file system and mounting the volume.
+creating your file system and mounting the volume.
 
 *  `Creating A File System <#create-a-file-system>`_
 
