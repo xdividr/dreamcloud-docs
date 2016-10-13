@@ -57,7 +57,7 @@ server:
 Gather the public IP address of the server and add it to the Ansible
 hosts catalog. The `add_host` task creates a new entry assigning the
 IP of the new server to the Ansible group `pgsql` and configure the
-SSH connection with the default username for your iamge, and set the private SSH key
+SSH connection with the default username for your image, and set the private SSH key
 specified at the beginning.
 
 Make the new Ubuntu 16.04 compatible with Ansible
