@@ -20,7 +20,7 @@ and stable, though vulnerabilities in the main binary itself do pop up from time
 to time. For this reason it's very important to keep Nginx up-to-date. Most
 modern Linux distros will not push the latest version of Nginx into their
 default package lists, so to install the latest version of Nginx via a package,
-you may need to add additional package respositories to your system. See
+you may need to add additional package repositories to your system. See
 `Nginx's documentation <http://nginx.org/en/linux_packages.html#stable>`_ for
 per-distro details.
 
@@ -182,7 +182,7 @@ Add Security Headers
 
 In addition to masking sensitive information, Nginx can be used to inject
 headers with security-positive implications into responses as well. For
-example, adding and `X-Frame-Options` header to prevent clickingjacking attacks
+example, adding and `X-Frame-Options` header to prevent clickjacking attacks
 is trivial to do:
 
 .. code::
