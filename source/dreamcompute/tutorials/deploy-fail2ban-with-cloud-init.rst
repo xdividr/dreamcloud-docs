@@ -38,7 +38,7 @@ web UI. Copy and paste the text below into the text box.
 
 .. note::
 
-   Make sure to include the line `#cloud-config`, as that is not a commment.
+   Make sure to include the line `#cloud-config`, as that is not a comment.
 
 
 Visit `How to launch and manage instances with the DreamCompute dashboard`_ for
