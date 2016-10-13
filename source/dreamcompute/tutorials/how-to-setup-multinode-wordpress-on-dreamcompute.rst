@@ -396,7 +396,7 @@ following:
     server node1 WEB1-IP:80 cookie A check
     server node2 WEB2-IP:80 cookie A check
 
-Substitue HAPROXY-IP, WEB1-IP, and WEB2-IP with the IP addresses of your
+Substitute HAPROXY-IP, WEB1-IP, and WEB2-IP with the IP addresses of your
 servers. The HAPROXY-IP is the private IP of your HAProxy server and not the
 floating IP you assigned it.
 
