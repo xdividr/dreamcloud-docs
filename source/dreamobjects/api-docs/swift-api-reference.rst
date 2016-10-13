@@ -278,7 +278,7 @@ List Container Objects
 
 Use the Get request in combination with the Bucket name to retrieve a list of the objects stored within.
 
-You can specify query parameters to filter the full list, or leave out the paremeters to return a list
+You can specify query parameters to filter the full list, or leave out the parameters to return a list
 of the first 10,000 object names stored in the Bucket.
 
 Syntax
@@ -441,7 +441,7 @@ Get Object
 
 Retrieve an Object's data using the GET request.
 
-You can pefrom conditional GET requests using if-* headers.
+You can perform conditional GET requests using if-* headers.
 
 You can also fetch only a portion of the data using Range headers.
 
