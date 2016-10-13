@@ -148,7 +148,7 @@ This creates an object ``hello.txt`` with the string ``"Hello World!"``
 
 .. note::
 
-    If you use the ``fileUpload`` option instad of the ``body`` option to
+    If you use the ``fileUpload`` option instead of the ``body`` option to
     specify	your object's contents, you'll currently receive an error because
     the invocation of cURL to perform the upload in this library's code is
     incorrect and results in a slightly malformed set of request headers.  See
