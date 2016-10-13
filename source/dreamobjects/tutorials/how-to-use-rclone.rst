@@ -77,7 +77,7 @@ Next configure the type of storage as `Amazon S3`, option `2`:
     Storage> 2
 
 Get ready to insert the Access Key and the corresponding Secret Key
-you can take from the `DreamOjbects Control Panel
+you can take from the `DreamObjects Control Panel
 <https://panel.dreamhost.com/index.cgi?tree=cloud.objects&>`_:
 
 .. code:: bash
@@ -155,7 +155,7 @@ Next you need to set DreamObject's endpoint API:
     Specify if using an S3 clone such as Ceph.
     endpoint> objects-us-west-1.dream.io
 
-Leave the location contraint empty:
+Leave the location constraint empty:
 
 .. code:: bash
 
