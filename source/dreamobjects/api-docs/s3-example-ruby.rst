@@ -103,7 +103,7 @@ modified date.
 .. code-block:: ruby
 
     new_bucket = s3.buckets['my-new-bucket']
-    new_bucket.objetcs.each do |obj|
+    new_bucket.objects.each do |obj|
             puts "#{obj.key}\t#{obj.content_length}\t#{obj.last_modified}"
     end
 
