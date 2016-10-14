@@ -16,7 +16,7 @@ behind. The data is generally not used again, and silently uses additional
 disk space on your account until it is removed. It is worthwhile to check for
 and remove this MPU data if disk storage costs appear larger than expected.
 
-Most S3 clients don't have a MPU data purge feature, so in the following example 
+Most S3 clients don't have a MPU data purge feature, so in the following example
 python and the boto library is used to check for and clean up this data.
 
 Using the clean-up script
