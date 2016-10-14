@@ -229,7 +229,7 @@ Migrated and migrating Buckets reflect one of the following five states:
   failed, or was manually stopped by the user requesting the migration.
 * **Partial** – some Buckets or Containers and their contents have been
   migrated, and some have not. This may have been caused by a failure during
-  Object Sychronization. Such failures can be caused by deleting your S3 or
+  Object Synchronization. Such failures can be caused by deleting your S3 or
   Swift Buckets, or by revoking your S3 or Swift credentials before the
   migration is complete.
 * **Complete** – the Bucket or Container and all of its objects have been
