@@ -32,7 +32,7 @@ Checking the size of a bucket
     #Programmatically calculate the total size of your bucket, by iterating over all your objects
     import  boto
     c = boto.connect_s3("ACCESS KEY", "SECRET KEY", host="objects-us-west-1.dream.io")
-    b = c.get_bucket("BUCKET_NAME")
+    b = c.get_bucket("BUCKET NAME")
     s = 0
     for o in b.list():
        s += o.size
@@ -57,7 +57,7 @@ Purging a directory from a bucket
     import boto
 
     c = boto.connect_s3("ACCESS KEY", "SECRET KEY", host="objects-us-west-1.dream.io")
-    b = c.get_bucket("BUCKET_NAME", validate=True)
+    b = c.get_bucket("BUCKET NAME", validate=True)
 
     l = [o for o in b.list(prefix="path/to/directory/to/delete")]
     while len(l):
@@ -81,7 +81,7 @@ permission you wish to use.
 
     #Connect to S3
     c = boto.connect_s3("ACCESS KEY", "SECRET KEY", host="objects-us-west-1.dream.io")
-    b = c.get_bucket("BUCKET_NAME")
+    b = c.get_bucket("BUCKET NAME")
 
     for o in b.list():
     #       o.set_acl('public-read')
@@ -144,4 +144,4 @@ For more examples of Python code using DreamObjects, please see
 .. _Python: 215489338-Installing-virtualenv-and-custom-modules-in-Python
 
 .. meta::
-    :labels: linux mac windows aws awscli
+    :labels: linux mac windows python boto
