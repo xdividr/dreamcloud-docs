@@ -152,7 +152,7 @@ This creates a file ``hello.txt`` with the string ``"Hello World!"``
         'Hello World!',
     )
 
-This uploads a a file ``test.txt``, sets the content-type, and makes it
+This uploads a file ``test.txt``, sets the content-type, and makes it
 publicly readable.
 
 .. code-block:: ruby
