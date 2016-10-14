@@ -27,7 +27,7 @@ paste the text below into the text box.
 
 .. note::
 
-    The `-y` is so that it doesnt ask for user input, it just assumes yes to
+    The `-y` is so that it doesn't ask for user input, it just assumes yes to
     any questions.
 
 Visit `How to launch and manage instances with the DreamCompute dashboard`_ for
@@ -48,7 +48,7 @@ Cloud-Init to install NGINX, so the contents of cloud-init.sh should be:
 
 .. note::
 
-    The `-y` is so that it doesnt ask for user input, it just assumes yes to
+    The `-y` is so that it doesn't ask for user input, it just assumes yes to
     any questions.
 
 The command to create an instance that runs cloud-init.sh at creation is:
