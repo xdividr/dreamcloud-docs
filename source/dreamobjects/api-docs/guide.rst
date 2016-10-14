@@ -148,7 +148,7 @@ can be active for a limited period of time.
                 force_http=True
                 )
 
-Key objets in boto provide a utility method for generating signed URLs. Simply
+Key objects in boto provide a utility method for generating signed URLs. Simply
 call the ``generate_url`` method and pass a number of seconds for the link to
 be active (to a maximum of one week), and pass the ``query_auth`` keyword
 argument as ``True``.
