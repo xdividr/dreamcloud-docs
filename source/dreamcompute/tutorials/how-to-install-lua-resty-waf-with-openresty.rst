@@ -76,7 +76,7 @@ that supports JIT, instead of the system PCRE, which greatly improves performanc
 
 .. Note:: **`--with-debug`** and **`--with-pcre-opt=-g`** are provided
         to allow Nginx to write debugging information when configured to do
-        so. Adding these options causes performance degredation in
+        so. Adding these options causes performance degradation in
         high-concurrency environments, so do not enable these options for
         high-traffic sites.
 
