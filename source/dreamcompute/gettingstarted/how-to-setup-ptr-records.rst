@@ -68,7 +68,7 @@ for the proper value.  To do so from the command line:
 
 .. code-block:: console
 
-    [user@localhost] dig -x PUBLICIPADDRESSHERE
+    [user@localhost]$ dig -x PUBLICIPADDRESSHERE
 
 There are other websites that can help with this too, if you google for
 "PTR lookup".

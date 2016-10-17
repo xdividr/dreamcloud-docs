@@ -19,7 +19,7 @@ typically stored in the hidden .ssh directory.
 
 .. code-block:: console
 
-    [user@localhost] ls ~/.ssh/
+    [user@localhost]$ ls ~/.ssh/
     /home/myuser/.ssh/id_rsa  /home/myuser/.ssh/id_rsa.pub
 
 If you're using Windows, there's a good chance you're using `PuTTY
@@ -61,7 +61,7 @@ other unix-based operating systems. Run it in your terminal app.
 
 .. code-block:: console
 
-    [user@localhost] ssh-keygen
+    [user@localhost]$ ssh-keygen
     Generating public/private rsa key pair.
     Enter file in which to save the key (/home/myuser/.ssh/id_rsa):
     Enter passphrase (empty for no passphrase):

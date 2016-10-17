@@ -28,7 +28,7 @@ The way to run the openrc file is to use the command `source`:
 
 .. code-block:: console
 
-    [user@localhost] source /path/to/openrcfile.sh
+    [user@localhost]$ source /path/to/openrcfile.sh
 
 Type in the password you use for the DreamCompute Dashboard when it asks
 for it. Now all the environment variables necessary should be set to use the
