@@ -63,10 +63,7 @@ first.  There are several ways to do this:
 
 .. code-block:: console
 
-    [user@localhost] ssh user@IPADDRESS
-    Welcome to Ubuntu 12.04.2 LTS (GNU/Linux
-    3.5.0-23-generic x86_64)
-    [user@server]
+    [user@localhost]$ ssh user@IPADDRESS
 
 * No configuration, specifying the key on the command line
     * Connect via ssh -i ~/path/to/key user@IPADDRESS

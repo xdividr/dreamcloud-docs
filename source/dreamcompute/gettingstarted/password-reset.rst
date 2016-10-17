@@ -39,7 +39,7 @@ file.
 
 .. code-block:: console
 
-    [user@localhost] keystone password-update --new-password  <new-password>
+    [user@localhost]$ keystone password-update --new-password  <new-password>
 
 **Don't have the Keystone client?** The
 `OpenStack wiki
@@ -68,13 +68,13 @@ Set the variables.
 
 .. code-block:: console
 
-    [user@localhost] source TENANTNUM-openrc.sh
+    [user@localhost]$ source TENANTNUM-openrc.sh
 
 or
 
 .. code-block:: console
 
-    [user@localhost] . TENANTNUM-openrc.sh
+    [user@localhost]$ . TENANTNUM-openrc.sh
 
 Type in your current password when prompted.
 

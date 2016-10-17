@@ -89,7 +89,7 @@ The output looks like this:
 
 .. code-block:: console
 
-    [user@localhost] ssh-keygen -t rsa
+    [user@localhost]$ ssh-keygen -t rsa
     Generating public/private rsa key pair.
     Enter file in which to save the key (/home/myuser/.ssh/id_rsa):
     Enter passphrase (empty for no passphrase):
@@ -128,7 +128,7 @@ described location:
 
 .. code-block:: console
 
-    [user@localhost] ls ~/.ssh/id_rsa*
+    [user@localhost]$ ls ~/.ssh/id_rsa*
     /home/myuser/.ssh/id_rsa  /home/myuser/.ssh/id_rsa.pub
 
 Import an Existing SSH key into the Dashboard
