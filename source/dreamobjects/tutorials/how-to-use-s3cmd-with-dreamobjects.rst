@@ -160,7 +160,7 @@ Example Commands
 
 .. code-block:: console
 
-    [user@localhost]$ s3cmd setacl s3://3cmd-justin --acl-public --recursive
+    [user@localhost]$ s3cmd setacl s3://3cmd-justin --acl-private --recursive
 
 
 **Disable Directory Listing in a bucket**
