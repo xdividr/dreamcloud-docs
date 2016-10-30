@@ -184,6 +184,8 @@ Then, configure NFS to export that directory. Edit /etc/exports and add:
 where "/exports/www" is the directory to export and "10.10.10.0/24" is the range of IP
 addresses to allow to mount this directory.
 
+Note: You may need to `reboot the NFS server<216511647>`_ for your configuration changes to take effect.
+
 Security groups
 ---------------
 
@@ -246,6 +248,15 @@ Follow the `Step-by-step guide to deploy WordPress on DreamCompute
 <220973627>`_ as you normally would on a single-node computer, but
 skip the sections about installing the LAMP stack and setting up the
 database as those steps are already complete.
+
+When completing the section to create a separate user ID for WordPress, make a folder for the website _on the NFS server_, with the following commands, otherwise you may get permission issues.
+
+.. code::
+
+    sudo mkdir /exports/www/example.com
+    sudo adduser wp_example
+    sudo adduser wp_example www-data
+    sudo chown -R wp_example:www-data /exports/www/example.com/
 
 .. Note::
 
