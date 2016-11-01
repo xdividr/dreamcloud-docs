@@ -130,12 +130,12 @@ they manage to access your private network.
 Security groups
 ---------------
 
-The final step to setting up your database server is to add a security
-group to your server that allows TCP connections on port 3306 from an IP
-address inside your private network. To do this, follow the tutorial on
-`How use to the DreamCompute dashboard to add security groups to a server <215912838>`_.
-You must open the TCP port 3306 to the CIDR of your private network, which
-is 10.10.10.0/24 in this example:
+The final step to setting up your database server is to add a security group to
+your server that allows TCP connections on port 3306 from an IP address inside
+your private network. To do this, follow the tutorial on `How use to the
+DreamCompute dashboard to add security groups to a server <215912838>`_. You
+must open the TCP port 3306 to the CIDR of your private network, which is
+10.10.10.0/24 in this example:
 
 .. _NFS:
 
@@ -181,10 +181,11 @@ Then, configure NFS to export that directory. Edit /etc/exports and add:
 
     /exports/www  10.10.10.0/24(rw,sync,no_subtree_check)
 
-where "/exports/www" is the directory to export and "10.10.10.0/24" is the range of IP
-addresses to allow to mount this directory.
+where "/exports/www" is the directory to export and "10.10.10.0/24" is the range
+of IP addresses to allow to mount this directory.
 
-Note: You may need to `reboot the NFS server<216511647>`_ for your configuration changes to take effect.
+Note: You may need to `reboot the NFS server<216511647>`_ for your configuration
+changes to take effect.
 
 Security groups
 ---------------
@@ -249,7 +250,9 @@ Follow the `Step-by-step guide to deploy WordPress on DreamCompute
 skip the sections about installing the LAMP stack and setting up the
 database as those steps are already complete.
 
-When completing the section to create a separate user ID for WordPress, make a folder for the website _on the NFS server_, with the following commands, otherwise you may get permission issues.
+When completing the section to create a separate user ID for WordPress, make a
+folder for the website _on the NFS server_, with the following commands,
+otherwise you may get permission issues.
 
 .. code::
 
@@ -260,9 +263,9 @@ When completing the section to create a separate user ID for WordPress, make a f
 
 .. Note::
 
-    Since the `wp core install` requires an extra flag when you run your database on
-    another server, use the flag `--dbhost=MYSQL-SERVER-IP` to specify the IP
-    address of the MySQL server.
+    Since the `wp core install` requires an extra flag when you run your
+    database on another server, use the flag `--dbhost=MYSQL-SERVER-IP` to
+    specify the IP address of the MySQL server.
 
 Configuration
 -------------
